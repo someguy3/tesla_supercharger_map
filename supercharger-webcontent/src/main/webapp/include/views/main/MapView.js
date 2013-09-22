@@ -16,6 +16,9 @@ redshiftsoft.MapView = function (initialRangeMiles) {
  * Constants
  */
 redshiftsoft.MapView.METERS_PER_MILE = 1609.34;
+redshiftsoft.MapView.INITIAL_LAT = 38.0;
+redshiftsoft.MapView.INITIAL_LNG = -90.644;
+redshiftsoft.MapView.INITIAL_ZOOM = 5;
 
 
 /**
@@ -31,8 +34,8 @@ redshiftsoft.MapView.milesToMeters = function (miles) {
 redshiftsoft.MapView.prototype.initMap = function () {
 
     var mapOptions = {
-        center: new google.maps.LatLng(38.0, -90.644),
-        zoom: 5,
+        center: new google.maps.LatLng(redshiftsoft.MapView.INITIAL_LAT, redshiftsoft.MapView.INITIAL_LNG),
+        zoom: redshiftsoft.MapView.INITIAL_ZOOM,
         mapTypeControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
