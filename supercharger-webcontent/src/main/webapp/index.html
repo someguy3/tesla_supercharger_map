@@ -30,10 +30,23 @@
 
 <body>
 <div id="map-controls">
-    <label for="amount">Range (miles):</label>
-    <input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;"/>
 
-    <div id="slider"></div>
+    <table class="controls" style="width: 70%">
+        <colgroup>
+            <col style="width: 25%"/>
+            <col style="width: 75%"/>
+        </colgroup>
+        <tr>
+            <th>
+                Range (miles)
+            </th>
+            <td>
+                <input type="text" id="amount"/><div id="slider"></div>
+            </td>
+        </tr>
+    </table>
+
+
 </div>
 <div id="map-canvas"/>
 </body>
