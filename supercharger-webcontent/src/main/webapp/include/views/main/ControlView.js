@@ -33,7 +33,7 @@ redshiftsoft.ControlView.prototype.init = function () {
         });
 
     var newValue = $("#range-slider").slider("value");
-    $("#range-number-text").text(newValue);
+    this.setValueMiles(newValue);
 };
 
 /**
@@ -41,8 +41,15 @@ redshiftsoft.ControlView.prototype.init = function () {
  */
 redshiftsoft.ControlView.prototype.handleSlide = function (event) {
     var newValue = $("#range-slider").slider("value");
-    $("#range-number-text").text(newValue);
+    this.setValueMiles(newValue);
     this.valueChanged(newValue);
+};
+
+/**
+ * Initialize map
+ */
+redshiftsoft.ControlView.prototype.setValueMiles = function (valueMiles) {
+    $("#range-number-text").text(valueMiles + " miles");
 };
 
 
