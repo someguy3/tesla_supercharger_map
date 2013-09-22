@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/supercharger.iml" filepath="$PROJECT_DIR$/supercharger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/supercharger-geolocation/supercharger-geolocation.iml" filepath="$PROJECT_DIR$/supercharger-geolocation/supercharger-geolocation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/supercharger-webcontent/supercharger-webcontent.iml" filepath="$PROJECT_DIR$/supercharger-webcontent/supercharger-webcontent.iml" />
+    </modules>
+  </component>
+</project>
+
