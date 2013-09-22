@@ -8,8 +8,8 @@
 /**
  * Constructor.
  */
-redshiftsoft.MapView = function () {
-    this.radiusMeters = redshiftsoft.MapView.milesToMeters(265);
+redshiftsoft.MapView = function (initialRangeMiles) {
+    this.radiusMeters = redshiftsoft.MapView.milesToMeters(initialRangeMiles);
 };
 
 /**

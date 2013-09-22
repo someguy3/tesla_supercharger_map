@@ -1,8 +1,8 @@
 $(function () {
 
-    var INITIAL_RANGE_MILES = 250;
+    var INITIAL_RANGE_MILES = 230;
 
-    var mapView = new redshiftsoft.MapView();
+    var mapView = new redshiftsoft.MapView(INITIAL_RANGE_MILES);
     mapView.initMap();
 
     var controlView = new redshiftsoft.ControlView(INITIAL_RANGE_MILES);
