@@ -45,7 +45,7 @@ redshiftsoft.ControlView.prototype.handleSlide = function (event) {
 };
 
 /**
- * Initialize map
+ * Update the range text display value.
  */
 redshiftsoft.ControlView.prototype.updateTextMilesDisplay = function (newValue) {
     $("#range-number-text").text(newValue + " miles");
