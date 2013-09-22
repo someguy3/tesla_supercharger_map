@@ -23,7 +23,7 @@ redshiftsoft.ControlView.MILES_MAX = 300;
  */
 redshiftsoft.ControlView.prototype.init = function () {
 
-    $("#slider").slider(
+    $("#range-slider").slider(
         {
             value: 275,
             min: redshiftsoft.ControlView.MILES_MIN,
@@ -32,16 +32,16 @@ redshiftsoft.ControlView.prototype.init = function () {
             slide: jQuery.proxy(this.handleSlide, this)
         });
 
-    var newValue = $("#slider").slider("value");
-    $("#amount").val(newValue);
+    var newValue = $("#range-slider").slider("value");
+    $("#range-number-text").text(newValue);
 };
 
 /**
  * Initialize map
  */
 redshiftsoft.ControlView.prototype.handleSlide = function (event) {
-    var newValue = $("#slider").slider("value");
-    $("#amount").val(newValue);
+    var newValue = $("#range-slider").slider("value");
+    $("#range-number-text").text(newValue);
     this.valueChanged(newValue);
 };
 

@@ -5,7 +5,8 @@ html {
 body {
     height: 90%;
     margin: 10px;
-    padding: 0
+    padding: 0;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 #map-controls {
@@ -14,6 +15,13 @@ body {
 
 #map-canvas {
     height: 100%;
+}
+
+#range-number-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    color: deepskyblue;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -26,4 +34,8 @@ table.controls th {
     background: whitesmoke;
     text-align: right;
     padding-right: 5px;
+}
+
+table.controls td {
+    padding: 5px 5px 5px 5px;
 }
