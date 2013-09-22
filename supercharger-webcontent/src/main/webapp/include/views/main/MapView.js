@@ -33,6 +33,7 @@ redshiftsoft.MapView.prototype.initMap = function () {
     var mapOptions = {
         center: new google.maps.LatLng(38.0, -90.644),
         zoom: 5,
+        mapTypeControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 

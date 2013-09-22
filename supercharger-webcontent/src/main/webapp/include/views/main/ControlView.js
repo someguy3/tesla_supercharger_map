@@ -10,8 +10,11 @@
  */
 redshiftsoft.ControlView = function (initialRangeMiles) {
     this.initializeMap(initialRangeMiles);
-    this.valueChanged = function (arg) {
+    this.rangeChangedCallback = function (arg) {
     };
+    this.mapTypeChangedCallback = function (arg) {
+    };
+    $("input[name='mapType']").change(jQuery.proxy(this.handleMapType, this));
 };
 
 redshiftsoft.ControlView.MILES_MIN = 20;
@@ -41,7 +44,15 @@ redshiftsoft.ControlView.prototype.initializeMap = function (rangeMiles) {
 redshiftsoft.ControlView.prototype.handleSlide = function (event) {
     var newValue = $("#range-slider").slider("value");
     this.updateTextMilesDisplay(newValue);
-    this.valueChanged(newValue);
+    this.rangeChangedCallback(newValue);
+};
+
+/**
+ * Handle changes to map type.
+ */
+redshiftsoft.ControlView.prototype.handleMapType = function () {
+    var newMapType = $("input[name='mapType']:checked").val();
+    this.mapTypeChangedCallback(newMapType);
 };
 
 /**
