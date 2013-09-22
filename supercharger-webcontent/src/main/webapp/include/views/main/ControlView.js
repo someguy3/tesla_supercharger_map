@@ -8,7 +8,8 @@
 /**
  * Constructor.
  */
-redshiftsoft.ControlView = function () {
+redshiftsoft.ControlView = function (initialRangeMiles) {
+    this.initializeMap(initialRangeMiles);
     this.valueChanged = function (arg) {
     };
 };
@@ -20,18 +21,18 @@ redshiftsoft.ControlView.MILES_MAX = 300;
 /**
  * Initialize map
  */
-redshiftsoft.ControlView.prototype.init = function () {
+redshiftsoft.ControlView.prototype.initializeMap = function (rangeMiles) {
 
     $("#range-slider").slider(
         {
-            value: 275,
+            value: rangeMiles,
             min: redshiftsoft.ControlView.MILES_MIN,
             max: redshiftsoft.ControlView.MILES_MAX,
             step: 5,
             slide: jQuery.proxy(this.handleSlide, this)
         });
 
-    this.updateTextMilesDisplay(275);
+    this.updateTextMilesDisplay(rangeMiles);
 };
 
 /**
