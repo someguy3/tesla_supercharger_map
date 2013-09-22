@@ -9,7 +9,6 @@
  * Constructor.
  */
 redshiftsoft.ControlView = function () {
-    this.radiusMeters = 265;
     this.valueChanged = function (arg) {
     };
 };
@@ -32,8 +31,7 @@ redshiftsoft.ControlView.prototype.init = function () {
             slide: jQuery.proxy(this.handleSlide, this)
         });
 
-    var newValue = $("#range-slider").slider("value");
-    this.setValueMiles(newValue);
+    this.updateTextMilesDisplay(275);
 };
 
 /**
@@ -41,15 +39,15 @@ redshiftsoft.ControlView.prototype.init = function () {
  */
 redshiftsoft.ControlView.prototype.handleSlide = function (event) {
     var newValue = $("#range-slider").slider("value");
-    this.setValueMiles(newValue);
+    this.updateTextMilesDisplay(newValue);
     this.valueChanged(newValue);
 };
 
 /**
  * Initialize map
  */
-redshiftsoft.ControlView.prototype.setValueMiles = function (valueMiles) {
-    $("#range-number-text").text(valueMiles + " miles");
+redshiftsoft.ControlView.prototype.updateTextMilesDisplay = function (newValue) {
+    $("#range-number-text").text(newValue + " miles");
 };
 
 
