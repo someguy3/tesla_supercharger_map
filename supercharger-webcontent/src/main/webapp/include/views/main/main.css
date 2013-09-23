@@ -1,14 +1,18 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Html/Body
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 html {
-    height: 100%
 }
 
 body {
-    height: 90%;
     margin: 10px;
     padding: 0;
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Map Controls
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 #map-controls {
     height: 10%;
     text-align: center;
@@ -20,7 +24,7 @@ Canvas
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 #map-canvas {
     margin-top: 50px;
-    height: 80%;
+    min-height: 700px;
     border: 10px solid black;
 }
 
