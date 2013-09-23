@@ -11,20 +11,32 @@ body {
 
 #map-controls {
     height: 10%;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Canvas
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 #map-canvas {
-    height: 100%;
+    margin-top: 50px;
+    height: 80%;
+    border: 10px solid black;
 }
 
-#range-number-text {
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ Slider styling
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.slider-value-label {
     text-align: center;
     font-weight: bold;
     font-size: larger;
     color: deepskyblue;
 }
 
-/* - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ Controls Table
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 table.controls {
     border-collapse: collapse;
     border: 1px solid black;

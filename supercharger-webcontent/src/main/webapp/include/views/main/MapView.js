@@ -10,6 +10,7 @@
  */
 redshiftsoft.MapView = function (initialRangeMiles) {
     this.radiusMeters = redshiftsoft.MapView.milesToMeters(initialRangeMiles);
+    this.fillOpacity = .15;
 };
 
 /**
@@ -79,7 +80,7 @@ redshiftsoft.MapView.prototype.drawCircles = function () {
             strokeOpacity: 1.0,
             strokeWeight: 2,
             fillColor: '#F7F7F7',
-            fillOpacity: 0.15,
+            fillOpacity: this.fillOpacity,
             map: this.googleMap,
             center: supercharger.location,
             radius: this.radiusMeters

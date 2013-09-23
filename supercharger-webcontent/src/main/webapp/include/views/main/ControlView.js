@@ -8,9 +8,11 @@
 /**
  * Constructor.
  */
-redshiftsoft.ControlView = function (initialRangeMiles) {
-    this.initializeMap(initialRangeMiles);
+redshiftsoft.ControlView = function (initialRangeMiles, initialFillOpacity) {
+    this.initializeControls(initialRangeMiles, initialFillOpacity);
     this.rangeChangedCallback = function (arg) {
+    };
+    this.fillOpacityChangedCallback = function (arg) {
     };
     this.mapTypeChangedCallback = function (arg) {
     };
@@ -24,7 +26,7 @@ redshiftsoft.ControlView.MILES_MAX = 300;
 /**
  * Initialize map
  */
-redshiftsoft.ControlView.prototype.initializeMap = function (rangeMiles) {
+redshiftsoft.ControlView.prototype.initializeControls = function (rangeMiles, fillOpacity) {
 
     $("#range-slider").slider(
         {
@@ -32,20 +34,41 @@ redshiftsoft.ControlView.prototype.initializeMap = function (rangeMiles) {
             min: redshiftsoft.ControlView.MILES_MIN,
             max: redshiftsoft.ControlView.MILES_MAX,
             step: 5,
-            slide: jQuery.proxy(this.handleSlide, this)
+            slide: jQuery.proxy(this.handleRangeSlide, this)
         });
 
+    $("#fill-opacity-slider").slider(
+        {
+            value: fillOpacity,
+            min: 0.0,
+            max: 1.0,
+            step: .10,
+            slide: jQuery.proxy(this.handleFillOpacitySlide, this)
+        });
+
+
     this.updateTextMilesDisplay(rangeMiles);
+    this.updateTextFillOpacityDisplay(fillOpacity);
 };
 
 /**
- * Initialize map
+ * Handle range slider change.
  */
-redshiftsoft.ControlView.prototype.handleSlide = function (event) {
+redshiftsoft.ControlView.prototype.handleRangeSlide = function (event) {
     var newValue = $("#range-slider").slider("value");
     this.updateTextMilesDisplay(newValue);
     this.rangeChangedCallback(newValue);
 };
+
+/**
+ * Handle fill-opacity slider change.
+ */
+redshiftsoft.ControlView.prototype.handleFillOpacitySlide = function (event) {
+    var newValue = $("#fill-opacity-slider").slider("value");
+    this.updateTextFillOpacityDisplay(newValue);
+    this.fillOpacityChangedCallback(newValue);
+};
+
 
 /**
  * Handle changes to map type.
@@ -60,6 +83,13 @@ redshiftsoft.ControlView.prototype.handleMapType = function () {
  */
 redshiftsoft.ControlView.prototype.updateTextMilesDisplay = function (newValue) {
     $("#range-number-text").text(newValue + " miles");
+};
+
+/**
+ * Update the fill-opacity text display value.
+ */
+redshiftsoft.ControlView.prototype.updateTextFillOpacityDisplay = function (newValue) {
+    $("#fill-opacity-number-text").text(newValue);
 };
 
 
