@@ -34,9 +34,9 @@
                 <configuration>
                     <nosuffix>false</nosuffix>
 
-                    <excludes>
-                        <exclude>**/third/**</exclude>
-                    </excludes>
+                    <!--<excludes>-->
+                        <!--<exclude>**/third/**</exclude>-->
+                    <!--</excludes>-->
 
                     <aggregations>
 
@@ -47,7 +47,7 @@
                             <removeIncluded>true</removeIncluded>
 
                             <!-- insert new line after each concatenation (default: false) -->
-                            <insertNewLine>true</insertNewLine>
+                            <insertNewLine>false</insertNewLine>
 
                             <output>${project.build.directory}/${project.build.finalName}/include/all.js</output>
 
@@ -65,7 +65,7 @@
                             <removeIncluded>true</removeIncluded>
 
                             <!-- insert new line after each concatenation (default: false) -->
-                            <insertNewLine>true</insertNewLine>
+                            <insertNewLine>false</insertNewLine>
 
                             <output>${project.build.directory}/${project.build.finalName}/include/all.css</output>
 
@@ -87,7 +87,7 @@
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-war-plugin</artifactId>
               <configuration>
-                <warSourceExcludes>include/views/**/*.js, include/views/**/*.css</warSourceExcludes>
+                <warSourceExcludes>include/**</warSourceExcludes>
               </configuration>
             </plugin>
 
