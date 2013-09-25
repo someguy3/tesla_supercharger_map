@@ -8,9 +8,10 @@
 /**
  * Constructor.
  */
-redshiftsoft.MapView = function (initialRangeMiles) {
+redshiftsoft.MapView = function (initialRangeMiles, initialFillColor) {
     this.radiusMeters = redshiftsoft.MapView.milesToMeters(initialRangeMiles);
     this.fillOpacity = .15;
+    this.fillColor = initialFillColor;
 };
 
 /**
@@ -75,22 +76,22 @@ redshiftsoft.MapView.prototype.drawCircles = function () {
 
     for (var i = 0; i < superchargers.length; i++) {
         var supercharger = superchargers[i];
-        var rangeCircle = {
-            strokeColor: '#F7F7F7',
+        var rangeCircleOptions = {
+            strokeColor: this.fillColor,
             strokeOpacity: 1.0,
             strokeWeight: 2,
-            fillColor: '#F7F7F7',
+            fillColor: this.fillColor,
             fillOpacity: this.fillOpacity,
             map: this.googleMap,
             center: supercharger.location,
             radius: this.radiusMeters
         };
-        if (supercharger.circle != null) {
-            supercharger.circle.unbindAll();
-            supercharger.circle.setMap(null);
+        if (supercharger.circle == null) {
+            supercharger.circle = new google.maps.Circle(rangeCircleOptions);
         }
-        supercharger.circle = new google.maps.Circle(rangeCircle);
-
+        else {
+            supercharger.circle.setOptions(rangeCircleOptions);
+        }
     }
 };
 
@@ -101,4 +102,15 @@ redshiftsoft.MapView.prototype.drawCircles = function () {
 redshiftsoft.MapView.prototype.setRadiusMiles = function (radiusMilesIn) {
     this.radiusMeters = redshiftsoft.MapView.milesToMeters(radiusMilesIn);
     this.drawCircles();
+};
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// getters/setters
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+redshiftsoft.MapView.prototype.getFillColor = function () {
+    return this.fillColor;
+};
+redshiftsoft.MapView.prototype.setFillColor = function (colorVal) {
+    this.fillColor = colorVal;
 };

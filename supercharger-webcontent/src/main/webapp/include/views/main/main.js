@@ -3,7 +3,7 @@ $(function () {
     var INITIAL_RANGE_MILES = 230;
     var INITIAL_FILL_OPACITY = 0.15;
 
-    var mapView = new redshiftsoft.MapView(INITIAL_RANGE_MILES);
+    var mapView = new redshiftsoft.MapView(INITIAL_RANGE_MILES, "#c5e50b");
     mapView.initMap();
 
     var controlView = new redshiftsoft.ControlView(INITIAL_RANGE_MILES, INITIAL_FILL_OPACITY);
@@ -44,5 +44,13 @@ $(function () {
             mapView.googleMap.setMapTypeId(google.maps.MapTypeId.TERRAIN);
         }
     };
+
+    //
+    // Callback: fill color change
+    //
+    controlView.fillColorChangeCallback = function (newColor) {
+        mapView.setFillColor(newColor);
+        mapView.drawCircles();
+    }
 
 });

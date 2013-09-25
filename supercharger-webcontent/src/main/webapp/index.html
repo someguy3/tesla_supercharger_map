@@ -6,6 +6,7 @@
     <title>Superchargers</title>
 
     <link rel="stylesheet" type="text/css" href="include/views/main/main.css"/>
+    <link rel="stylesheet" type="text/css" href="include/third/bgrins-spectrum-2c2010c/spectrum.css"/>
     <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.css?v=F" rel="stylesheet"
           type="text/css"/>
 
@@ -19,6 +20,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
     <script type="text/javascript" src="include/third/jquery.doTimeout.js"></script>
+    <script type="text/javascript" src="include/third/bgrins-spectrum-2c2010c/spectrum.js"></script>
 
     <script type="text/javascript" src="include/views/main/common.js"></script>
     <script type="text/javascript" src="include/views/main/super_charger_data.js"></script>
@@ -45,7 +47,7 @@
                     <th>
                         Range
                     </th>
-                    <td>
+                    <td colspan="3">
                         <div id="range-number-text" class="slider-value-label"></div>
                         <div id="range-slider"></div>
                     </td>
@@ -54,16 +56,22 @@
                     <th>
                         Fill Opacity
                     </th>
-                    <td>
+                    <td style="width: 70%">
                         <div id="fill-opacity-number-text" class="slider-value-label"></div>
                         <div id="fill-opacity-slider"></div>
+                    </td>
+                    <th>
+                        Fill Color
+                    </th>
+                    <td>
+                        <input type='text' id="fill-color-input"/>
                     </td>
                 </tr>
                 <tr>
                     <th>
                         Map Type
                     </th>
-                    <td>
+                    <td colspan="3">
                         <input type="radio" name="mapType" id="map-type-radio-road" checked="checked" value="ROADMAP">Road
                         <input type="radio" name="mapType" id="map-type-radio-satellite" value="SATELLITE">Satellite
                         <input type="radio" name="mapType" id="map-type-radio-hybrid" value="HYBRID">Hybrid

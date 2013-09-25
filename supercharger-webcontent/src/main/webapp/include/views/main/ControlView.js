@@ -16,6 +16,8 @@ redshiftsoft.ControlView = function (initialRangeMiles, initialFillOpacity) {
     };
     this.mapTypeChangedCallback = function (arg) {
     };
+    this.fillColorChangeCallback = function(color) {
+    };
     $("input[name='mapType']").change(jQuery.proxy(this.handleMapType, this));
 };
 
@@ -46,9 +48,21 @@ redshiftsoft.ControlView.prototype.initializeControls = function (rangeMiles, fi
             slide: jQuery.proxy(this.handleFillOpacitySlide, this)
         });
 
+    $("#fill-color-input").spectrum({
+        color: "#f00",
+        change: jQuery.proxy(this.handleFillColorChange, this)
+    });
 
     this.updateTextMilesDisplay(rangeMiles);
     this.updateTextFillOpacityDisplay(fillOpacity);
+};
+
+
+/**
+ * Handle fill color change.
+ */
+redshiftsoft.ControlView.prototype.handleFillColorChange = function (newColor) {
+    this.fillColorChangeCallback("" + newColor);
 };
 
 /**
