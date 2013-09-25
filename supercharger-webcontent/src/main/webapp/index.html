@@ -29,47 +29,60 @@
 </head>
 
 <body>
-<div id="map-controls">
 
-    <table class="controls" style="width: 70%">
-        <colgroup>
-            <col style="width: 10%"/>
-            <col/>
-        </colgroup>
-        <tr>
-            <th>
-                Range
-            </th>
-            <td>
-                <div id="range-number-text" class="slider-value-label"></div>
-                <div id="range-slider"></div>
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Fill Opacity
-            </th>
-            <td>
-                <div id="fill-opacity-number-text" class="slider-value-label"></div>
-                <div id="fill-opacity-slider"></div>
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Map Type
-            </th>
-            <td>
-                <input type="radio" name="mapType" id="map-type-radio-road" checked="checked" value="ROADMAP">Road
-                <input type="radio" name="mapType" id="map-type-radio-satellite" value="SATELLITE">Satellite
-                <input type="radio" name="mapType" id="map-type-radio-hybrid" value="HYBRID">Hybrid
-                <input type="radio" name="mapType" id="map-type-radio-terrain" value="TERRAIN">Terrain
-            </td>
-        </tr>
-    </table>
+<div class="wrapper">
+
+    <div class="header">
+
+        <div id="map-controls">
+
+            <table class="controls">
+                <colgroup>
+                    <col style="width: 10%"/>
+                    <col/>
+                </colgroup>
+                <tr>
+                    <th>
+                        Range
+                    </th>
+                    <td>
+                        <div id="range-number-text" class="slider-value-label"></div>
+                        <div id="range-slider"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Fill Opacity
+                    </th>
+                    <td>
+                        <div id="fill-opacity-number-text" class="slider-value-label"></div>
+                        <div id="fill-opacity-slider"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Map Type
+                    </th>
+                    <td>
+                        <input type="radio" name="mapType" id="map-type-radio-road" checked="checked" value="ROADMAP">Road
+                        <input type="radio" name="mapType" id="map-type-radio-satellite" value="SATELLITE">Satellite
+                        <input type="radio" name="mapType" id="map-type-radio-hybrid" value="HYBRID">Hybrid
+                        <input type="radio" name="mapType" id="map-type-radio-terrain" value="TERRAIN">Terrain
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="content">
+        <div id="map-canvas"/>
+    </div>
 
 
 </div>
-<div id="map-canvas"/>
+
 </body>
 
 </html>

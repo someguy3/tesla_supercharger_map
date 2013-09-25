@@ -2,30 +2,51 @@
 Html/Body
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    margin: 10px;
     padding: 0;
+    margin: 0;
     font-family: Verdana, Arial, Helvetica, sans-serif;
+    height: 100%;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Layout
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.header {
+    display: table-row;
+}
+
+.content {
+    display: table-row;
+    height: 100%;
+}
+.footer {
+    display: table-row;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Map Controls
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 #map-controls {
-    height: 10%;
     text-align: center;
-    margin-bottom: 10px;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Canvas
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 #map-canvas {
-    margin-top: 50px;
-    min-height: 700px;
-    border: 10px solid black;
+    height: 100%;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
