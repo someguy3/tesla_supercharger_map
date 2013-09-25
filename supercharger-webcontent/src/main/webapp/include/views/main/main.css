@@ -64,8 +64,9 @@ Canvas
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 table.controls {
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 0px solid black;
     margin: 0 auto;
+    max-width: 900px;
 }
 
 table.controls th {
