@@ -12,9 +12,9 @@ redshiftsoft.ControlView = function (initialRangeMiles,
                                      initialFillOpacity,
                                      initialFillColor,
                                      initialBorderOpacity,
-                                     initialFillColor) {
+                                     initialBorderColor) {
 
-    this.initializeControls(initialRangeMiles, initialFillOpacity, initialFillColor, initialBorderOpacity, initialFillColor);
+    this.initializeControls(initialRangeMiles, initialFillOpacity, initialFillColor, initialBorderOpacity, initialBorderColor);
 
     this.rangeChangedCallback = function (arg) {
     };

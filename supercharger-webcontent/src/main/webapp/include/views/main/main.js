@@ -2,10 +2,10 @@ $(function () {
 
     var INITIAL_RANGE_MILES = 230;
     var INITIAL_FILL_OPACITY = 0.15;
-    var INITIAL_FILL_COLOR = "#c5e50b";
+    var INITIAL_FILL_COLOR = "#86c4ec";
 
-    var INITIAL_BORDER_OPACITY = 1.0;
-    var INITIAL_BORDER_COLOR = "#c5e50b";
+    var INITIAL_BORDER_OPACITY = 0.6;
+    var INITIAL_BORDER_COLOR = "#a7a99b";
 
     var mapView = new redshiftsoft.MapView(INITIAL_RANGE_MILES,
         INITIAL_FILL_OPACITY, INITIAL_FILL_COLOR,
