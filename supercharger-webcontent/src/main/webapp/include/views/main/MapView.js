@@ -87,7 +87,7 @@ redshiftsoft.MapView.prototype.drawCircles = function () {
         var rangeCircleOptions = {
             strokeColor: this.borderColor,
             strokeOpacity: this.borderOpacity,
-            strokeWeight: 2,
+            strokeWeight: 1,
             fillColor: this.fillColor,
             fillOpacity: this.fillOpacity,
             map: this.googleMap,
