@@ -37,6 +37,7 @@
     <div class="header">
 
         <div id="map-controls">
+            <a href="" style="font-size: smaller; font-weight: lighter; color: gray; float: right" id="advanced-options-trigger">advanced options...</a>
 
             <table class="controls">
                 <colgroup>
@@ -52,7 +53,7 @@
                         <div id="range-slider"></div>
                     </td>
                 </tr>
-                <tr>
+                <tr style="display: none" class="advanced">
                     <th>
                         Fill Opacity
                     </th>
@@ -67,7 +68,7 @@
                         <input type='text' id="fill-color-input"/>
                     </td>
                 </tr>
-                <tr>
+                <tr  style="display: none" class="advanced">
                     <th>
                         Border Opacity
                     </th>
@@ -82,8 +83,7 @@
                         <input type='text' id="border-color-input"/>
                     </td>
                 </tr>
-
-                <tr>
+                <tr style="display: none" class="advanced">
                     <th>
                         Map Type
                     </th>
@@ -95,7 +95,6 @@
                     </td>
                 </tr>
             </table>
-
         </div>
 
     </div>

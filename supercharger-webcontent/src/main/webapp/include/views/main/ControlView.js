@@ -32,6 +32,12 @@ redshiftsoft.ControlView = function (initialRangeMiles,
     };
 
     $("input[name='mapType']").change(jQuery.proxy(this.handleMapType, this));
+
+    $("#advanced-options-trigger").click(function(event) {
+        event.preventDefault();
+        $("tr.advanced").toggle();
+    });
+
 };
 
 redshiftsoft.ControlView.MILES_MIN = 20;
