@@ -33,6 +33,7 @@
 
                 <configuration>
                     <nosuffix>false</nosuffix>
+                    <linebreakpos>200</linebreakpos>
 
                     <!--<excludes>-->
                         <!--<exclude>**/third/**</exclude>-->
