@@ -5,7 +5,7 @@ $(function () {
     var INITIAL_FILL_COLOR = "#86c4ec";
 
     var INITIAL_BORDER_OPACITY = 0.6;
-    var INITIAL_BORDER_COLOR = "#a7a99b";
+    var INITIAL_BORDER_COLOR = "#181fe7";
 
     var mapView = new redshiftsoft.MapView(INITIAL_RANGE_MILES,
         INITIAL_FILL_OPACITY, INITIAL_FILL_COLOR,
