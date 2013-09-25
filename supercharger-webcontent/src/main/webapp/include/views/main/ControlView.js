@@ -8,16 +8,29 @@
 /**
  * Constructor.
  */
-redshiftsoft.ControlView = function (initialRangeMiles, initialFillOpacity) {
-    this.initializeControls(initialRangeMiles, initialFillOpacity);
+redshiftsoft.ControlView = function (initialRangeMiles,
+                                     initialFillOpacity,
+                                     initialFillColor,
+                                     initialBorderOpacity,
+                                     initialFillColor) {
+
+    this.initializeControls(initialRangeMiles, initialFillOpacity, initialFillColor, initialBorderOpacity, initialFillColor);
+
     this.rangeChangedCallback = function (arg) {
-    };
-    this.fillOpacityChangedCallback = function (arg) {
     };
     this.mapTypeChangedCallback = function (arg) {
     };
+
+    this.fillOpacityChangedCallback = function (arg) {
+    };
     this.fillColorChangeCallback = function(color) {
     };
+
+    this.borderOpacityChangedCallback = function (arg) {
+    };
+    this.borderColorChangeCallback = function(color) {
+    };
+
     $("input[name='mapType']").change(jQuery.proxy(this.handleMapType, this));
 };
 
@@ -28,7 +41,9 @@ redshiftsoft.ControlView.MILES_MAX = 300;
 /**
  * Initialize map
  */
-redshiftsoft.ControlView.prototype.initializeControls = function (rangeMiles, fillOpacity) {
+redshiftsoft.ControlView.prototype.initializeControls = function (rangeMiles,
+                                                                  fillOpacity, fillColor,
+                                                                  borderOpacity, borderColor) {
 
     $("#range-slider").slider(
         {
@@ -48,13 +63,29 @@ redshiftsoft.ControlView.prototype.initializeControls = function (rangeMiles, fi
             slide: jQuery.proxy(this.handleFillOpacitySlide, this)
         });
 
+    $("#border-opacity-slider").slider(
+        {
+            value: borderOpacity,
+            min: 0.0,
+            max: 1.0,
+            step: .10,
+            slide: jQuery.proxy(this.handleBorderOpacitySlide, this)
+        });
+
     $("#fill-color-input").spectrum({
-        color: "#f00",
+        color: fillColor,
         change: jQuery.proxy(this.handleFillColorChange, this)
     });
 
+    $("#border-color-input").spectrum({
+        color: borderColor,
+        change: jQuery.proxy(this.handleBorderColorChange, this)
+    });
+
+
     this.updateTextMilesDisplay(rangeMiles);
     this.updateTextFillOpacityDisplay(fillOpacity);
+    this.updateTextBorderOpacityDisplay(borderOpacity);
 };
 
 
@@ -63,6 +94,13 @@ redshiftsoft.ControlView.prototype.initializeControls = function (rangeMiles, fi
  */
 redshiftsoft.ControlView.prototype.handleFillColorChange = function (newColor) {
     this.fillColorChangeCallback("" + newColor);
+};
+
+/**
+ * Handle border color change.
+ */
+redshiftsoft.ControlView.prototype.handleBorderColorChange = function (newColor) {
+    this.borderColorChangeCallback("" + newColor);
 };
 
 /**
@@ -83,6 +121,14 @@ redshiftsoft.ControlView.prototype.handleFillOpacitySlide = function (event) {
     this.fillOpacityChangedCallback(newValue);
 };
 
+/**
+ * Handle fill-opacity slider change.
+ */
+redshiftsoft.ControlView.prototype.handleBorderOpacitySlide = function (event) {
+    var newValue = $("#border-opacity-slider").slider("value");
+    this.updateTextBorderOpacityDisplay(newValue);
+    this.borderOpacityChangedCallback(newValue);
+};
 
 /**
  * Handle changes to map type.
@@ -104,6 +150,13 @@ redshiftsoft.ControlView.prototype.updateTextMilesDisplay = function (newValue) 
  */
 redshiftsoft.ControlView.prototype.updateTextFillOpacityDisplay = function (newValue) {
     $("#fill-opacity-number-text").text(newValue);
+};
+
+/**
+ * Update the border-opacity text display value.
+ */
+redshiftsoft.ControlView.prototype.updateTextBorderOpacityDisplay = function (newValue) {
+    $("#border-opacity-number-text").text(newValue);
 };
 
 

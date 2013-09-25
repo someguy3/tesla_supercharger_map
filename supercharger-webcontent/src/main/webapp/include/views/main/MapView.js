@@ -8,10 +8,18 @@
 /**
  * Constructor.
  */
-redshiftsoft.MapView = function (initialRangeMiles, initialFillColor) {
+redshiftsoft.MapView = function (initialRangeMiles,
+                                 initialFillOpacity, initialFillColor,
+                                 initialBorderOpacity, initialBorderColor) {
+
     this.radiusMeters = redshiftsoft.MapView.milesToMeters(initialRangeMiles);
-    this.fillOpacity = .15;
+
+    this.fillOpacity = initialFillOpacity;
     this.fillColor = initialFillColor;
+
+    this.borderOpacity = initialBorderOpacity;
+    this.borderColor = initialBorderColor;
+
 };
 
 /**
@@ -77,8 +85,8 @@ redshiftsoft.MapView.prototype.drawCircles = function () {
     for (var i = 0; i < superchargers.length; i++) {
         var supercharger = superchargers[i];
         var rangeCircleOptions = {
-            strokeColor: this.fillColor,
-            strokeOpacity: 1.0,
+            strokeColor: this.borderColor,
+            strokeOpacity: this.borderOpacity,
             strokeWeight: 2,
             fillColor: this.fillColor,
             fillOpacity: this.fillOpacity,
@@ -108,9 +116,17 @@ redshiftsoft.MapView.prototype.setRadiusMiles = function (radiusMilesIn) {
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // getters/setters
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-redshiftsoft.MapView.prototype.getFillColor = function () {
-    return this.fillColor;
-};
 redshiftsoft.MapView.prototype.setFillColor = function (colorVal) {
     this.fillColor = colorVal;
+};
+redshiftsoft.MapView.prototype.setFillOpacity = function (newValue) {
+    this.fillOpacity = newValue;
+};
+
+
+redshiftsoft.MapView.prototype.setBorderColor = function (colorVal) {
+    this.borderColor = colorVal;
+};
+redshiftsoft.MapView.prototype.setBorderOpacity = function (newValue) {
+    this.borderOpacity = newValue;
 };
