@@ -9,9 +9,7 @@ redshiftsoft = createMyNamespace("redshiftsoft");
 /**
  * Constructor.
  */
-redshiftsoft.MapView = function (initialRangeMiles,
-                                 initialFillOpacity, initialFillColor,
-                                 initialBorderOpacity, initialBorderColor) {
+redshiftsoft.MapView = function (initialRangeMiles, initialFillOpacity, initialFillColor, initialBorderOpacity, initialBorderColor) {
 
     this.radiusMeters = redshiftsoft.MapView.milesToMeters(initialRangeMiles);
 
@@ -74,7 +72,11 @@ redshiftsoft.MapView.prototype.drawMarkers = function () {
         google.maps.event.addListener(marker, 'click', function () {
             var myMarker = this;
             var infoWindow = new google.maps.InfoWindow({
-                content: "<div id='content'>" + myMarker.supercharger.streetAddress + "</div>"
+                content: "<div class='info-window-content'>" +
+                    "<div class='title'>" + myMarker.supercharger.displayName + "</div>" + "" +
+                    myMarker.supercharger.streetAddress + "<br/>" +
+                    "<a target='_blank' href='" + myMarker.supercharger.url + "'>web page</a>" + "<br/>" +
+                    "</div>"
             });
             infoWindow.open(myMarker.map, myMarker);
         });

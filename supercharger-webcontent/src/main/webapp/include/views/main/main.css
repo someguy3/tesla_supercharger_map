@@ -79,3 +79,15 @@ table.controls th {
 table.controls td {
     padding: 5px 5px 5px 5px;
 }
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Info Window
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.info-window-content {
+}
+
+.info-window-content .title {
+    font-weight: bold !important;
+    font-size: 1.5em !important;
+}
