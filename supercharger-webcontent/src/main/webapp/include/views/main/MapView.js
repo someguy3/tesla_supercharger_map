@@ -57,7 +57,7 @@ redshiftsoft.MapView.prototype.initMap = function () {
 };
 
 /**
- * Initialize map
+ * MARKERS
  */
 redshiftsoft.MapView.prototype.drawMarkers = function () {
 
@@ -80,7 +80,7 @@ redshiftsoft.MapView.prototype.drawMarkers = function () {
 };
 
 /**
- *
+ * CIRCLES
  */
 redshiftsoft.MapView.prototype.drawCircles = function () {
 
