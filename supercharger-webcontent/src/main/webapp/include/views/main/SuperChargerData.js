@@ -1,15 +1,6 @@
 var superchargers = [
 
-    {
-        "displayName": "Centralia, WA",
-        "streetAddress": "1200 Lum Rd Centralia, WA 98531",
-        "location": new google.maps.LatLng(46.729732, -122.977454)
-    },
-    {
-        "displayName": "Woodburn, OR",
-        "streetAddress": "255 N Arney Rd Woodburn, Oregon 97071",
-        "location": new google.maps.LatLng(45.15313, -122.881254)
-    },
+    //-----------------------------------------------------------------------------------------------------------------| California
     {
         "displayName": "Folsom, CA",
         "streetAddress": "13000 Folsom Blvd, Folsom, CA 95630",
@@ -36,22 +27,12 @@ var superchargers = [
         "location": new google.maps.LatLng(34.849129, -117.085446)
     },
     {
-        "displayName": "Burlington, WA",
-        "streetAddress": "9384 Old Highway 99 North Burlington, WA 98233",
-        "location": new google.maps.LatLng(48.509772, -122.338625)
-    },
-    {
-        "displayName": "Glenwood Springs, CO",
-        "streetAddress": "125 Wulfsohn Rd, Glenwood Springs, CO",
-        "location": new google.maps.LatLng(39.552680, -107.340168)
-    },
-    {
         "displayName": "Fremont, CA",
         "streetAddress": "45500 Fremont Blvd, Fremont, CA 94538",
         "location": new google.maps.LatLng(37.493447, -121.945654)
     },
     {
-        "displayName": "Harris Ranch",
+        "displayName": "Harris Ranch, CA",
         "streetAddress": "24505 W. Dorris Ave, Coalinga, CA 93210",
         "location": new google.maps.LatLng(36.254150, -120.237896)
     },
@@ -65,6 +46,13 @@ var superchargers = [
         "streetAddress": "1 Rocket Rd, Hawthorne, CA 90250",
         "location": new google.maps.LatLng(33.921068, -118.330054)
     },
+    //-----------------------------------------------------------------------------------------------------------------| Colorado
+    {
+        "displayName": "Glenwood Springs, CO",
+        "streetAddress": "125 Wulfsohn Rd, Glenwood Springs, CO",
+        "location": new google.maps.LatLng(39.552680, -107.340168)
+    },
+    //-----------------------------------------------------------------------------------------------------------------| Connecticut
     {
         "displayName": "Milford, CT (north)",
         "streetAddress": "1 CT Turnpike N, Milford, CT 06460",
@@ -85,55 +73,69 @@ var superchargers = [
         "displayName": "Darien, CT (south)",
         "streetAddress": "I-95 South after exit 10, Darien, CT 06820",
         "location": new google.maps.LatLng(41.068167, -73.504659)
-    }
-    ,
+    },
+    //-----------------------------------------------------------------------------------------------------------------| Delaware
     {
         "displayName": "Newark, DE",
         "streetAddress": "530 JFK Memorial Highway, Newark, DE 19725",
         "location": new google.maps.LatLng(39.662313, -75.691980)
-    }
-    ,
-    {
-        "displayName": "Rockford, IL",
-        "streetAddress": "7200 Harrison Ave, Rockford, Illinois 61112",
-        "location": new google.maps.LatLng(42.243896, -88.978877)
-    }
-    ,
-    {
-        "displayName": "Normal, IL",
-        "streetAddress": "Uptown Station Parking Deck, 11 Uptown Circle, Normal, IL 61761",
-        "location": new google.maps.LatLng(40.508497, -88.985575)
-    }
-    ,
-    {
-        "displayName": "Waco, TC",
-        "streetAddress": "701 Interstate 35, Bellmead, TX 76705",
-        "location": new google.maps.LatLng(31.582267, -97.109121)
-    }
-    ,
-    {
-        "displayName": "San Marcos, TX",
-        "streetAddress": "3939 Interstate 35 San Marcos, TX 78666",
-        "location": new google.maps.LatLng(29.827692, -97.979677)
-    }
-    ,
+    },
+    //-----------------------------------------------------------------------------------------------------------------| Florida
     {
         "displayName": "Port Orange, FL",
         "streetAddress": "5302 S. Williamson Blvd, Port Orange, FL",
         "location": new google.maps.LatLng(29.108566, -81.034569)
-    }
-    ,
+    },
     {
         "displayName": "Port St. Lucie, FL",
         "streetAddress": "1773 N.W. St. Lucie W. Boulevard, Port St. Lucie, FL 34986",
         "location": new google.maps.LatLng(27.313023, -80.406688)
-    }
-    ,
+    },
     {
         "displayName": "Fort Myers, FL",
         "streetAddress": "9903 Gulf Coast Main Street Fort Myers, FL 33913",
         "location": new google.maps.LatLng(26.485640, -81.787136)
-    }
+    },
 
+    //-----------------------------------------------------------------------------------------------------------------| Illinois
+    {
+        "displayName": "Rockford, IL",
+        "streetAddress": "7200 Harrison Ave, Rockford, Illinois 61112",
+        "location": new google.maps.LatLng(42.243896, -88.978877)
+    },
+    {
+        "displayName": "Normal, IL",
+        "streetAddress": "Uptown Station Parking Deck, 11 Uptown Circle, Normal, IL 61761",
+        "location": new google.maps.LatLng(40.508497, -88.985575)
+    },
+    //-----------------------------------------------------------------------------------------------------------------| Texas
+    {
+        "displayName": "Waco, TX",
+        "streetAddress": "701 Interstate 35, Bellmead, TX 76705",
+        "location": new google.maps.LatLng(31.582267, -97.109121)
+    },
+    {
+        "displayName": "San Marcos, TX",
+        "streetAddress": "3939 Interstate 35 San Marcos, TX 78666",
+        "location": new google.maps.LatLng(29.827692, -97.979677)
+    },
+    //-----------------------------------------------------------------------------------------------------------------| Oregon
+    {
+        "displayName": "Woodburn, OR",
+        "streetAddress": "255 N Arney Rd Woodburn, Oregon 97071",
+        "location": new google.maps.LatLng(45.15313, -122.881254)
+    },
+
+    //-----------------------------------------------------------------------------------------------------------------| Washington
+    {
+        "displayName": "Burlington, WA",
+        "streetAddress": "9384 Old Highway 99 North Burlington, WA 98233",
+        "location": new google.maps.LatLng(48.509772, -122.338625)
+    },
+    {
+        "displayName": "Centralia, WA",
+        "streetAddress": "1200 Lum Rd Centralia, WA 98531",
+        "location": new google.maps.LatLng(46.729732, -122.977454)
+    }
 
 ];
