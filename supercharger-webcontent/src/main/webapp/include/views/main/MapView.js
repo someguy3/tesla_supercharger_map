@@ -70,11 +70,13 @@ redshiftsoft.MapView.prototype.drawMarkers = function () {
             title: supercharger.displayName,
             animation: google.maps.Animation.DROP
         });
-        var infoWindow = new google.maps.InfoWindow({
-            content: "<div id='content'>" + supercharger.streetAddress + "</div>"
-        });
+        marker['supercharger'] = supercharger;
         google.maps.event.addListener(marker, 'click', function () {
-            infoWindow.open(this.googleMap, marker);
+            var myMarker = this;
+            var infoWindow = new google.maps.InfoWindow({
+                content: "<div id='content'>" + myMarker.supercharger.streetAddress + "</div>"
+            });
+            infoWindow.open(myMarker.map, myMarker);
         });
     }
 
