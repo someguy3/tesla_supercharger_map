@@ -1,4 +1,6 @@
-var superchargers = [
+redshiftsoft = createMyNamespace("redshiftsoft");
+
+redshiftsoft.SUPER_CHARGER_LIST = [
 
     //-----------------------------------------------------------------------------------------------------------------| California
     {

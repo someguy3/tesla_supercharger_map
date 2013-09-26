@@ -61,15 +61,16 @@ redshiftsoft.MapView.prototype.initMap = function () {
  */
 redshiftsoft.MapView.prototype.drawMarkers = function () {
 
-    for (var i in superchargers) {
+    for (var i = 0; i < redshiftsoft.SUPER_CHARGER_LIST.length; i++) {
+        var supercharger = redshiftsoft.SUPER_CHARGER_LIST[i];
 
         var marker = new google.maps.Marker({
-            position: superchargers[i].location,
+            position: supercharger.location,
             map: this.googleMap,
-            title: superchargers[i].displayName
+            title: supercharger.displayName
         });
         var infoWindow = new google.maps.InfoWindow({
-            content: "<div id='content'>" + superchargers[i].streetAddress + "</div>"
+            content: "<div id='content'>" + supercharger.streetAddress + "</div>"
         });
         google.maps.event.addListener(marker, 'click', function () {
             infoWindow.open(this.googleMap, marker);
@@ -83,8 +84,8 @@ redshiftsoft.MapView.prototype.drawMarkers = function () {
  */
 redshiftsoft.MapView.prototype.drawCircles = function () {
 
-    for (var i = 0; i < superchargers.length; i++) {
-        var supercharger = superchargers[i];
+    for (var i = 0; i < redshiftsoft.SUPER_CHARGER_LIST.length; i++) {
+        var supercharger = redshiftsoft.SUPER_CHARGER_LIST[i];
         var rangeCircleOptions = {
             strokeColor: this.borderColor,
             strokeOpacity: this.borderOpacity,
