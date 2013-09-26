@@ -67,7 +67,8 @@ redshiftsoft.MapView.prototype.drawMarkers = function () {
         var marker = new google.maps.Marker({
             position: supercharger.location,
             map: this.googleMap,
-            title: supercharger.displayName
+            title: supercharger.displayName,
+            animation: google.maps.Animation.DROP
         });
         var infoWindow = new google.maps.InfoWindow({
             content: "<div id='content'>" + supercharger.streetAddress + "</div>"
