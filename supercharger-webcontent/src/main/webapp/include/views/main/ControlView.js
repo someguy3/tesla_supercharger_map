@@ -31,6 +31,7 @@ redshiftsoft.ControlView = function (initialRangeMeters, initialFillOpacity, ini
     };
 
     $("input[name='mapType']").change(jQuery.proxy(this.handleMapType, this));
+    $("input[name='distUnit']").change(jQuery.proxy(this.handleDistanceUnit, this));
 
     $("#advanced-options-trigger").click(function (event) {
         event.preventDefault();
@@ -139,10 +140,23 @@ redshiftsoft.ControlView.prototype.handleMapType = function () {
 };
 
 /**
+ * Handle changes to distance unit.
+ */
+redshiftsoft.ControlView.prototype.handleDistanceUnit = function () {
+    var newUnit = $("input[name='distUnit']:checked").val();
+    if (newUnit == "M") {
+        this.range.setUnit(redshiftsoft.Range.Unit.miles);
+    } else if (newUnit == "K") {
+        this.range.setUnit(redshiftsoft.Range.Unit.kilometers);
+    }
+    this.initializeControls();
+};
+
+/**
  * Update the range text display value.
  */
 redshiftsoft.ControlView.prototype.updateTextRangeDisplay = function () {
-    $("#range-number-text").text(this.range.getCurrent() + " miles");
+    $("#range-number-text").text(this.range.getCurrent() + " " + this.range.getUnitName());
 };
 
 /**

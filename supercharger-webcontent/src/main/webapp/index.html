@@ -51,7 +51,7 @@
                     <th>
                         Fill Opacity
                     </th>
-                    <td style="width: 70%">
+                    <td>
                         <div id="fill-opacity-number-text" class="slider-value-label"></div>
                         <div id="fill-opacity-slider"></div>
                     </td>
@@ -66,7 +66,7 @@
                     <th>
                         Border Opacity
                     </th>
-                    <td style="width: 70%">
+                    <td>
                         <div id="border-opacity-number-text" class="slider-value-label"></div>
                         <div id="border-opacity-slider"></div>
                     </td>
@@ -81,12 +81,20 @@
                     <th>
                         Map Type
                     </th>
-                    <td colspan="3">
+                    <td>
                         <input type="radio" name="mapType" id="map-type-radio-road" checked="checked" value="ROADMAP">Road
                         <input type="radio" name="mapType" id="map-type-radio-satellite" value="SATELLITE">Satellite
                         <input type="radio" name="mapType" id="map-type-radio-hybrid" value="HYBRID">Hybrid
                         <input type="radio" name="mapType" id="map-type-radio-terrain" value="TERRAIN">Terrain
                     </td>
+                    <th>
+                        Distance Unit
+                    </th>
+                    <td style="text-align: left">
+                        <input type="radio" name="distUnit" id="unit-radio-mile" checked="checked" value="M">Mile<br/>
+                        <input type="radio" name="distUnit" id="unit-radio-kilometer" value="K">Kilometer
+                    </td>
+
                 </tr>
             </table>
         </div>
