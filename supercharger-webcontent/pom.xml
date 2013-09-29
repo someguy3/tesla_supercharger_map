@@ -35,6 +35,10 @@
                     <nosuffix>false</nosuffix>
                     <linebreakpos>200</linebreakpos>
 
+                    <!-- Set to true to include JS/CSS without modification -->
+                    <nomunge>false</nomunge>
+
+
                     <!--<excludes>-->
                         <!--<exclude>**/third/**</exclude>-->
                     <!--</excludes>-->
