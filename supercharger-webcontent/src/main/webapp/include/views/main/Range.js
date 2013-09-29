@@ -32,7 +32,7 @@ redshiftsoft.Range.prototype.setCurrent = function (newRange) {
     if (this.unit == redshiftsoft.Range.Unit.miles) {
         this.rangeMeters = redshiftsoft.Range.milesToMeters(newRange);
     } else {
-        this.rangeMeters = newRange * 1000;
+        this.rangeMeters = redshiftsoft.Range.kilometersToMeters(newRange);
     }
 };
 
@@ -40,7 +40,7 @@ redshiftsoft.Range.prototype.getMin = function () {
     if (this.unit == redshiftsoft.Range.Unit.miles) {
         return redshiftsoft.Range.MILES_MIN;
     } else {
-        return redshiftsoft.Range.milesToMeters(redshiftsoft.Range.MILES_MIN);
+        return redshiftsoft.Range.milesToKilometers(redshiftsoft.Range.MILES_MIN);
     }
 };
 
@@ -48,7 +48,7 @@ redshiftsoft.Range.prototype.getMax = function () {
     if (this.unit == redshiftsoft.Range.Unit.miles) {
         return redshiftsoft.Range.MILES_MAX;
     } else {
-        return redshiftsoft.Range.milesToMeters(redshiftsoft.Range.MILES_MAX);
+        return redshiftsoft.Range.milesToKilometers(redshiftsoft.Range.MILES_MAX);
     }
 };
 
@@ -87,15 +87,30 @@ redshiftsoft.Range.prototype.setUnit = function (newUnit) {
 redshiftsoft.Range.milesToMeters = function (miles) {
     return Math.round(redshiftsoft.Range.METERS_PER_MILE * miles);
 };
+
+/**
+ * CONVERT: miles to kilometers
+ */
+redshiftsoft.Range.milesToKilometers = function (miles) {
+    return Math.round(redshiftsoft.Range.METERS_PER_MILE * miles / redshiftsoft.Range.METERS_PER_KM);
+};
 /**
  * CONVERT: meters to miles
  */
 redshiftsoft.Range.metersToMiles = function (meters) {
     return Math.round(meters / redshiftsoft.Range.METERS_PER_MILE);
 };
+
 /**
  * CONVERT: meters to kilometers
  */
 redshiftsoft.Range.metersToKilometers = function (meters) {
     return Math.round(meters / redshiftsoft.Range.METERS_PER_KM);
+};
+
+/**
+ * CONVERT: kilometers to meters
+ */
+redshiftsoft.Range.kilometersToMeters = function (kilometers) {
+    return Math.round(kilometers * redshiftsoft.Range.METERS_PER_KM);
 };
