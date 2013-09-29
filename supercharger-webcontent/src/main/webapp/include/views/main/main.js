@@ -1,29 +1,30 @@
 $(function () {
 
-    var INITIAL_RANGE_MILES = 230;
+    var INITIAL_RANGE_METERS = redshiftsoft.Range.milesToMeters(230.0);
     var INITIAL_FILL_OPACITY = 0.15;
     var INITIAL_FILL_COLOR = "#86c4ec";
 
     var INITIAL_BORDER_OPACITY = 0.6;
     var INITIAL_BORDER_COLOR = "#181fe7";
 
-    var mapView = new redshiftsoft.MapView(INITIAL_RANGE_MILES,
+    var mapView = new redshiftsoft.MapView(INITIAL_RANGE_METERS,
         INITIAL_FILL_OPACITY, INITIAL_FILL_COLOR,
         INITIAL_BORDER_OPACITY, INITIAL_BORDER_COLOR);
 
     mapView.initMap();
 
     var controlView = new redshiftsoft.ControlView(
-        INITIAL_RANGE_MILES,
+        INITIAL_RANGE_METERS,
         INITIAL_FILL_OPACITY, INITIAL_FILL_COLOR,
         INITIAL_BORDER_OPACITY, INITIAL_BORDER_COLOR);
 
     //
     // Callback: range change
     //
-    controlView.rangeChangedCallback = function (newValue) {
+    controlView.rangeChangedCallback = function (newRadiusMeters) {
         jQuery.doTimeout("rangeTimerId", 200, function () {
-            mapView.setRadiusMiles(newValue);
+            mapView.setRadiusMeters(newRadiusMeters);
+            mapView.drawCircles();
         });
     };
 

@@ -9,9 +9,9 @@ redshiftsoft = createMyNamespace("redshiftsoft");
 /**
  * Constructor.
  */
-redshiftsoft.MapView = function (initialRangeMiles, initialFillOpacity, initialFillColor, initialBorderOpacity, initialBorderColor) {
+redshiftsoft.MapView = function (initialRangeMeters, initialFillOpacity, initialFillColor, initialBorderOpacity, initialBorderColor) {
 
-    this.radiusMeters = redshiftsoft.MapView.milesToMeters(initialRangeMiles);
+    this.radiusMeters = initialRangeMeters;
 
     this.fillOpacity = initialFillOpacity;
     this.fillColor = initialFillColor;
@@ -24,18 +24,11 @@ redshiftsoft.MapView = function (initialRangeMiles, initialFillOpacity, initialF
 /**
  * Constants
  */
-redshiftsoft.MapView.METERS_PER_MILE = 1609.34;
 redshiftsoft.MapView.INITIAL_LAT = 38.0;
 redshiftsoft.MapView.INITIAL_LNG = -90.644;
 redshiftsoft.MapView.INITIAL_ZOOM = 5;
 
 
-/**
- * Status function to convert miles to meters.
- */
-redshiftsoft.MapView.milesToMeters = function (miles) {
-    return redshiftsoft.MapView.METERS_PER_MILE * miles;
-};
 
 /**
  * Initialize map
@@ -111,15 +104,6 @@ redshiftsoft.MapView.prototype.drawCircles = function () {
 };
 
 
-/**
- *
- */
-redshiftsoft.MapView.prototype.setRadiusMiles = function (radiusMilesIn) {
-    this.radiusMeters = redshiftsoft.MapView.milesToMeters(radiusMilesIn);
-    this.drawCircles();
-};
-
-
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // getters/setters
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -136,4 +120,7 @@ redshiftsoft.MapView.prototype.setBorderColor = function (colorVal) {
 };
 redshiftsoft.MapView.prototype.setBorderOpacity = function (newValue) {
     this.borderOpacity = newValue;
+};
+redshiftsoft.MapView.prototype.setRadiusMeters = function (radiusMetersIn) {
+    this.radiusMeters = radiusMetersIn;
 };

@@ -9,54 +9,46 @@ redshiftsoft = createMyNamespace("redshiftsoft");
 /**
  * Constructor.
  */
-redshiftsoft.ControlView = function (initialRangeMiles,
-                                     initialFillOpacity,
-                                     initialFillColor,
-                                     initialBorderOpacity,
-                                     initialBorderColor) {
+redshiftsoft.ControlView = function (initialRangeMeters, initialFillOpacity, initialFillColor, initialBorderOpacity, initialBorderColor) {
 
-    this.initializeControls(initialRangeMiles, initialFillOpacity, initialFillColor, initialBorderOpacity, initialBorderColor);
+    this.range = new redshiftsoft.Range(initialRangeMeters);
 
-    this.rangeChangedCallback = function (arg) {
+    this.initializeControls(initialFillOpacity, initialFillColor, initialBorderOpacity, initialBorderColor);
+
+    this.rangeChangedCallback = function (newRadiusMeters) {
     };
     this.mapTypeChangedCallback = function (arg) {
     };
 
     this.fillOpacityChangedCallback = function (arg) {
     };
-    this.fillColorChangeCallback = function(color) {
+    this.fillColorChangeCallback = function (color) {
     };
 
     this.borderOpacityChangedCallback = function (arg) {
     };
-    this.borderColorChangeCallback = function(color) {
+    this.borderColorChangeCallback = function (color) {
     };
 
     $("input[name='mapType']").change(jQuery.proxy(this.handleMapType, this));
 
-    $("#advanced-options-trigger").click(function(event) {
+    $("#advanced-options-trigger").click(function (event) {
         event.preventDefault();
         $("tr.advanced").toggle();
     });
 
 };
 
-redshiftsoft.ControlView.MILES_MIN = 20;
-redshiftsoft.ControlView.MILES_MAX = 300;
-
-
 /**
  * Initialize map
  */
-redshiftsoft.ControlView.prototype.initializeControls = function (rangeMiles,
-                                                                  fillOpacity, fillColor,
-                                                                  borderOpacity, borderColor) {
+redshiftsoft.ControlView.prototype.initializeControls = function (fillOpacity, fillColor, borderOpacity, borderColor) {
 
     $("#range-slider").slider(
         {
-            value: rangeMiles,
-            min: redshiftsoft.ControlView.MILES_MIN,
-            max: redshiftsoft.ControlView.MILES_MAX,
+            value: this.range.getCurrent(),
+            min: this.range.getMin(),
+            max: this.range.getMax(),
             step: 5,
             slide: jQuery.proxy(this.handleRangeSlide, this)
         });
@@ -90,7 +82,7 @@ redshiftsoft.ControlView.prototype.initializeControls = function (rangeMiles,
     });
 
 
-    this.updateTextMilesDisplay(rangeMiles);
+    this.updateTextRangeDisplay();
     this.updateTextFillOpacityDisplay(fillOpacity);
     this.updateTextBorderOpacityDisplay(borderOpacity);
 };
@@ -114,9 +106,10 @@ redshiftsoft.ControlView.prototype.handleBorderColorChange = function (newColor)
  * Handle range slider change.
  */
 redshiftsoft.ControlView.prototype.handleRangeSlide = function (event) {
-    var newValue = $("#range-slider").slider("value");
-    this.updateTextMilesDisplay(newValue);
-    this.rangeChangedCallback(newValue);
+    var newValueMiles = $("#range-slider").slider("value");
+    this.range.setCurrent(newValueMiles);
+    this.updateTextRangeDisplay();
+    this.rangeChangedCallback(this.range.getRangeMeters());
 };
 
 /**
@@ -148,8 +141,8 @@ redshiftsoft.ControlView.prototype.handleMapType = function () {
 /**
  * Update the range text display value.
  */
-redshiftsoft.ControlView.prototype.updateTextMilesDisplay = function (newValue) {
-    $("#range-number-text").text(newValue + " miles");
+redshiftsoft.ControlView.prototype.updateTextRangeDisplay = function () {
+    $("#range-number-text").text(this.range.getCurrent() + " miles");
 };
 
 /**
@@ -165,5 +158,4 @@ redshiftsoft.ControlView.prototype.updateTextFillOpacityDisplay = function (newV
 redshiftsoft.ControlView.prototype.updateTextBorderOpacityDisplay = function (newValue) {
     $("#border-opacity-number-text").text(newValue);
 };
-
 
