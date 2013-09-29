@@ -162,6 +162,50 @@ redshiftsoft.SUPER_CHARGER_LIST = [
         "streetAddress": "1200 Lum Rd Centralia, WA 98531",
         "location": new google.maps.LatLng(46.729732, -122.977454),
         "url": "http://www.teslamotors.com/supercharger/centralia"
+    },
+
+    //-----------------------------------------------------------------------------------------------------------------| NORWAY
+    //
+    //
+    //
+    //-----------------------------------------------------------------------------------------------------------------| NORWAY
+
+    {
+        "displayName": "Dombås, Norway",
+        "streetAddress": "P plass bak KIWI Mini Pris Dombås, Dombås 2660",
+        "location": new google.maps.LatLng(62.074926, 9.128281),
+        "url": "http://www.teslamotors.com/supercharger/dombas"
+    },
+    {
+        "displayName": "Lillehammer, Norway",
+        "streetAddress": "Korgvegen 37, 2619 Lillehammer, Norway",
+        "location": new google.maps.LatLng(61.13045, 10.43491),
+        "url": "http://www.teslamotors.com/supercharger/lillehammer"
+    },
+    {
+        "displayName": "Gol, Norway",
+        "streetAddress": "5 Heradvegen Gol, 3550",
+        "location": new google.maps.LatLng(60.70232, 8.98620),
+        "url": "http://www.teslamotors.com/supercharger/gol"
+    },
+    {
+        "displayName": "Aurland, Norway",
+        "streetAddress": "Nyheim Aurland, Aurland 5745",
+        "location": new google.maps.LatLng(60.89863, 7.21082),
+        "url": "http://www.teslamotors.com/supercharger/aurland"
+    },
+    {
+        "displayName": "Cinderella, Norway",
+        "streetAddress": "Gnr 3 Bnr 318 Brokelandsheia 4993 Sundebru, Norway",
+        "location": new google.maps.LatLng(58.820783, 9.073746),
+        "url": "http://www.teslamotors.com/supercharger/cinderella"
+    },
+    {
+        "displayName": "Lyngdal, Norway",
+        "streetAddress": "1 Fiboveien, Lyngdal 4580",
+        "location": new google.maps.LatLng(58.15653, 7.10298),
+        "url": "http://www.teslamotors.com/supercharger/lyngdal"
     }
+
 
 ];
