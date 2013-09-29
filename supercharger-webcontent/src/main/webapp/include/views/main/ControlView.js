@@ -41,18 +41,10 @@ redshiftsoft.ControlView = function (initialRangeMeters, initialFillOpacity, ini
 };
 
 /**
- * Initialize map
+ * Initialize controls
  */
 redshiftsoft.ControlView.prototype.initializeControls = function (fillOpacity, fillColor, borderOpacity, borderColor) {
 
-    $("#range-slider").slider(
-        {
-            value: this.range.getCurrent(),
-            min: this.range.getMin(),
-            max: this.range.getMax(),
-            step: 5,
-            slide: jQuery.proxy(this.handleRangeSlide, this)
-        });
 
     $("#fill-opacity-slider").slider(
         {
@@ -82,10 +74,24 @@ redshiftsoft.ControlView.prototype.initializeControls = function (fillOpacity, f
         change: jQuery.proxy(this.handleBorderColorChange, this)
     });
 
-
-    this.updateTextRangeDisplay();
+    this.initializeRangeControl();
     this.updateTextFillOpacityDisplay(fillOpacity);
     this.updateTextBorderOpacityDisplay(borderOpacity);
+};
+
+/**
+ * Initialize range control.
+ */
+redshiftsoft.ControlView.prototype.initializeRangeControl = function () {
+    $("#range-slider").slider(
+        {
+            value: this.range.getCurrent(),
+            min: this.range.getMin(),
+            max: this.range.getMax(),
+            step: 5,
+            slide: jQuery.proxy(this.handleRangeSlide, this)
+        });
+    this.updateTextRangeDisplay();
 };
 
 
@@ -149,7 +155,7 @@ redshiftsoft.ControlView.prototype.handleDistanceUnit = function () {
     } else if (newUnit == "K") {
         this.range.setUnit(redshiftsoft.Range.Unit.kilometers);
     }
-    this.initializeControls();
+    this.initializeRangeControl();
 };
 
 /**
