@@ -34,11 +34,3 @@ table.controls th {
 table.controls td {
     padding: 5px 5px 5px 5px;
 }
-
-#supercharger-count-container {
-    float: right;
-    font-size: smaller;
-    font-weight: lighter;
-    color: gray;
-    padding-right: 10px
-}
