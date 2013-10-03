@@ -64,6 +64,12 @@ redshiftsoft.SUPER_CHARGER_LIST = [
         "location": new google.maps.LatLng(39.552680, -107.340168),
         "url": "http://www.teslamotors.com/supercharger/glenwoodsprings"
     },
+    {
+        "displayName": "Silverthorne, CO",
+        "streetAddress": "309 Rainbow Dr, Silverthorne, CO 80498",
+        "location": new google.maps.LatLng(39.631457, -106.070816),
+        "url": "http://www.teslamotors.com/supercharger/silverthorne"
+    },
     //-----------------------------------------------------------------------------------------------------------------| Connecticut
     {
         "displayName": "Milford, CT (north)",
