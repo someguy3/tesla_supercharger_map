@@ -15,6 +15,10 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <scm>
+        <developerConnection>scm:svn:https://svn.redshiftsoft.com/code/projects/Tesla_Supercharger_Map/trunk</developerConnection>
+    </scm>
+
     <modules>
         <module>supercharger-geolocation</module>
         <module>supercharger-webcontent</module>
