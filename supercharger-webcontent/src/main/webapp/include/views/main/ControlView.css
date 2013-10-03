@@ -1,0 +1,44 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Map Controls
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+#map-controls {
+    text-align: center;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ Slider styling
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.slider-value-label {
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    color: deepskyblue;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ Controls Table
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+table.controls {
+    border-collapse: collapse;
+    border: 0px solid black;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+table.controls th {
+    background: whitesmoke;
+    text-align: right;
+    padding-right: 5px;
+}
+
+table.controls td {
+    padding: 5px 5px 5px 5px;
+}
+
+#supercharger-count-container {
+    float: right;
+    font-size: smaller;
+    font-weight: lighter;
+    color: gray;
+    padding-right: 10px
+}
