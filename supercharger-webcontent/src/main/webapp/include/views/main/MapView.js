@@ -19,6 +19,8 @@ redshiftsoft.MapView = function (initialRangeMeters, initialFillOpacity, initial
     this.borderOpacity = initialBorderOpacity;
     this.borderColor = initialBorderColor;
 
+    this.superData = new redshiftsoft.SuperchargerData();
+
 };
 
 /**
@@ -52,8 +54,8 @@ redshiftsoft.MapView.prototype.initMap = function () {
  */
 redshiftsoft.MapView.prototype.drawMarkers = function () {
 
-    for (var i = 0; i < redshiftsoft.SUPER_CHARGER_LIST.length; i++) {
-        var supercharger = redshiftsoft.SUPER_CHARGER_LIST[i];
+    for (var i = 0; i < this.superData.size(); i++) {
+        var supercharger = this.superData.get(i);
 
         var marker = new google.maps.Marker({
             position: supercharger.location,
@@ -82,8 +84,8 @@ redshiftsoft.MapView.prototype.drawMarkers = function () {
  */
 redshiftsoft.MapView.prototype.drawCircles = function () {
 
-    for (var i = 0; i < redshiftsoft.SUPER_CHARGER_LIST.length; i++) {
-        var supercharger = redshiftsoft.SUPER_CHARGER_LIST[i];
+    for (var i = 0; i < this.superData.size(); i++) {
+        var supercharger = this.superData.get(i);
         var rangeCircleOptions = {
             strokeColor: this.borderColor,
             strokeOpacity: this.borderOpacity,

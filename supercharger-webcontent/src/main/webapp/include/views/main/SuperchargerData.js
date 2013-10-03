@@ -1,6 +1,23 @@
 redshiftsoft = createMyNamespace("redshiftsoft");
 
-redshiftsoft.SUPER_CHARGER_LIST = [
+/**
+ *
+ * Constructor
+ */
+redshiftsoft.SuperchargerData = function () {
+
+};
+
+redshiftsoft.SuperchargerData.prototype.size = function () {
+    return redshiftsoft.SuperchargerData.LIST.length;
+};
+
+redshiftsoft.SuperchargerData.prototype.get = function (index) {
+    return redshiftsoft.SuperchargerData.LIST[index];
+};
+
+
+redshiftsoft.SuperchargerData.LIST = [
 
     //-----------------------------------------------------------------------------------------------------------------| California
     {
