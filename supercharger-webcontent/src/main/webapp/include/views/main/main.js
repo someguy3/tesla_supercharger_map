@@ -1,5 +1,7 @@
 $(function () {
 
+    new redshiftsoft.SuperchargerCount();
+
     var INITIAL_RANGE_METERS = redshiftsoft.Range.milesToMeters(230.0);
     var INITIAL_FILL_OPACITY = 0.15;
     var INITIAL_FILL_COLOR = "#86c4ec";
