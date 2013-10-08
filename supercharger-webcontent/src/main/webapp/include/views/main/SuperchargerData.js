@@ -192,11 +192,11 @@ redshiftsoft.SuperchargerData.LIST = [
     },
     //-----------------------------------------------------------------------------------------------------------------| Texas
     {
-        "displayName": "Waco, TX",
-        "streetAddress": "701 Interstate 35, Bellmead, TX 76705",
+        "displayName": "Columbus, TX",
+        "streetAddress": "2535 Texas 71 Columbus, Texas 78934",
         "country": "USA",
-        "location": new google.maps.LatLng(31.582267, -97.109121),
-        "url": "http://www.teslamotors.com/supercharger/waco"
+        "location": new google.maps.LatLng(29.690062, -96.537725),
+        "url": "http://www.teslamotors.com/supercharger/columbus"
     },
     {
         "displayName": "San Marcos, TX",
@@ -204,6 +204,13 @@ redshiftsoft.SuperchargerData.LIST = [
         "country": "USA",
         "location": new google.maps.LatLng(29.827692, -97.979677),
         "url": "http://www.teslamotors.com/supercharger/sanmarcos"
+    },
+    {
+        "displayName": "Waco, TX",
+        "streetAddress": "701 Interstate 35, Bellmead, TX 76705",
+        "country": "USA",
+        "location": new google.maps.LatLng(31.58224, -97.10915),
+        "url": "http://www.teslamotors.com/supercharger/waco"
     },
     //-----------------------------------------------------------------------------------------------------------------| Oregon
     {
