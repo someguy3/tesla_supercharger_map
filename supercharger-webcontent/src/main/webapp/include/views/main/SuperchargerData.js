@@ -19,7 +19,7 @@ redshiftsoft.SuperchargerData.prototype.get = function (index) {
 /**
  * Returns the count of superchargers with a country in the passed list of countries.
  *
- * @param region, example value: "|US|Canada|".
+ * @param region example value: "|US|Canada|".
  * @returns {number}
  */
 redshiftsoft.SuperchargerData.prototype.getRegionCount = function (region) {
@@ -59,6 +59,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "country": "USA",
         "location": new google.maps.LatLng(34.614560, -120.188387),
         "url": "http://www.teslamotors.com/supercharger/buellton",
+        "count": true
+    },
+    {
+        "displayName": "Corning, CA",
+        "streetAddress": "950 Hwy 99 W Corning, California 96021",
+        "country": "USA",
+        "location": new google.maps.LatLng(39.926454, -122.198393),
+        "url": "http://www.teslamotors.com/supercharger/corning",
         "count": true
     },
     {
