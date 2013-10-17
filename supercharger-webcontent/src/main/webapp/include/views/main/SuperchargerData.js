@@ -38,6 +38,38 @@ redshiftsoft.SuperchargerData.LIST = [
 
     //-----------------------------------------------------------------------------------------------------------------| California
     {
+        "displayName": "Atascadero, CA",
+        "streetAddress": "6950 El Camino Real, Atascadero, CA 93422",
+        "country": "USA",
+        "location": new google.maps.LatLng(35.48656, -120.66633),
+        "url": "http://www.teslamotors.com/supercharger/atascadero",
+        "count": true
+    },
+    {
+        "displayName": "Barstow, CA",
+        "streetAddress": "2812 Lenwood Rd., Barstow, CA 92311",
+        "country": "USA",
+        "location": new google.maps.LatLng(34.849129, -117.085446),
+        "url": "http://www.teslamotors.com/supercharger/barstow",
+        "count": true
+    },
+    {
+        "displayName": "Buellton, CA",
+        "streetAddress": "555 McMurray Road, Buellton, CA 93427",
+        "country": "USA",
+        "location": new google.maps.LatLng(34.614560, -120.188387),
+        "url": "http://www.teslamotors.com/supercharger/buellton",
+        "count": true
+    },
+    {
+        "displayName": "Fremont, CA",
+        "streetAddress": "45500 Fremont Blvd, Fremont, CA 94538",
+        "country": "USA",
+        "location": new google.maps.LatLng(37.493447, -121.945654),
+        "url": "http://www.teslamotors.com/supercharger/fremont",
+        "count": true
+    },
+    {
         "displayName": "Folsom, CA",
         "streetAddress": "13000 Folsom Blvd, Folsom, CA 95630",
         "country": "USA",
@@ -54,38 +86,6 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
-        "displayName": "Atascadero, CA",
-        "streetAddress": "6950 El Camino Real, Atascadero, CA 93422",
-        "country": "USA",
-        "location": new google.maps.LatLng(35.48656, -120.66633),
-        "url": "http://www.teslamotors.com/supercharger/atascadero",
-        "count": true
-    },
-    {
-        "displayName": "Tejon Ranch, CA",
-        "streetAddress": "5602 Dennis McCarthy Dr, Lebec, CA 93243",
-        "country": "USA",
-        "location": new google.maps.LatLng(34.98734, -118.94623),
-        "url": "http://www.teslamotors.com/supercharger/tejonranch",
-        "count": true
-    },
-    {
-        "displayName": "Barstow, CA",
-        "streetAddress": "2812 Lenwood Rd., Barstow, CA 92311",
-        "country": "USA",
-        "location": new google.maps.LatLng(34.849129, -117.085446),
-        "url": "http://www.teslamotors.com/supercharger/barstow",
-        "count": true
-    },
-    {
-        "displayName": "Fremont, CA",
-        "streetAddress": "45500 Fremont Blvd, Fremont, CA 94538",
-        "country": "USA",
-        "location": new google.maps.LatLng(37.493447, -121.945654),
-        "url": "http://www.teslamotors.com/supercharger/fremont",
-        "count": true
-    },
-    {
         "displayName": "Harris Ranch, CA",
         "streetAddress": "24505 W. Dorris Ave, Coalinga, CA 93210",
         "country": "USA",
@@ -94,19 +94,19 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
-        "displayName": "Buellton, CA",
-        "streetAddress": "555 McMurray Road, Buellton, CA 93427",
-        "country": "USA",
-        "location": new google.maps.LatLng(34.614560, -120.188387),
-        "url": "http://www.teslamotors.com/supercharger/buellton",
-        "count": true
-    },
-    {
         "displayName": "Hawthorne, CA",
         "streetAddress": "1 Rocket Rd, Hawthorne, CA 90250",
         "country": "USA",
         "location": new google.maps.LatLng(33.921068, -118.330054),
         "url": "http://www.teslamotors.com/supercharger/losangeles",
+        "count": true
+    },
+    {
+        "displayName": "Tejon Ranch, CA",
+        "streetAddress": "5602 Dennis McCarthy Dr, Lebec, CA 93243",
+        "country": "USA",
+        "location": new google.maps.LatLng(34.98734, -118.94623),
+        "url": "http://www.teslamotors.com/supercharger/tejonranch",
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Colorado
