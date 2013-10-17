@@ -70,19 +70,19 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
-        "displayName": "Fremont, CA",
-        "streetAddress": "45500 Fremont Blvd, Fremont, CA 94538",
-        "country": "USA",
-        "location": new google.maps.LatLng(37.493447, -121.945654),
-        "url": "http://www.teslamotors.com/supercharger/fremont",
-        "count": true
-    },
-    {
         "displayName": "Folsom, CA",
         "streetAddress": "13000 Folsom Blvd, Folsom, CA 95630",
         "country": "USA",
         "location": new google.maps.LatLng(38.64258, -121.18806),
         "url": "http://www.teslamotors.com/supercharger/folsom",
+        "count": true
+    },
+    {
+        "displayName": "Fremont, CA",
+        "streetAddress": "45500 Fremont Blvd, Fremont, CA 94538",
+        "country": "USA",
+        "location": new google.maps.LatLng(37.493447, -121.945654),
+        "url": "http://www.teslamotors.com/supercharger/fremont",
         "count": true
     },
     {
