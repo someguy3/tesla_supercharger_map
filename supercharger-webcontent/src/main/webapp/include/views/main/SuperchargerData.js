@@ -218,6 +218,24 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/normal",
         "count": true
     },
+    //-----------------------------------------------------------------------------------------------------------------| North Carolina
+    {
+        "displayName": "Burlington, NC",
+        "streetAddress": "1080 Piper Ln Burlington, NC 27215",
+        "country": "USA",
+        "location": new google.maps.LatLng(36.070790, -79.511211),
+        "url": "http://www.teslamotors.com/supercharger/burlingtonnc",
+        "count": true
+    },
+    //-----------------------------------------------------------------------------------------------------------------| Oregon
+    {
+        "displayName": "Woodburn, OR",
+        "streetAddress": "255 N Arney Rd Woodburn, Oregon 97071",
+        "country": "USA",
+        "location": new google.maps.LatLng(45.15313, -122.881254),
+        "url": "http://www.teslamotors.com/supercharger/woodburn",
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| Texas
     {
         "displayName": "Columbus, TX",
@@ -243,16 +261,6 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/waco",
         "count": true
     },
-    //-----------------------------------------------------------------------------------------------------------------| Oregon
-    {
-        "displayName": "Woodburn, OR",
-        "streetAddress": "255 N Arney Rd Woodburn, Oregon 97071",
-        "country": "USA",
-        "location": new google.maps.LatLng(45.15313, -122.881254),
-        "url": "http://www.teslamotors.com/supercharger/woodburn",
-        "count": true
-    },
-
     //-----------------------------------------------------------------------------------------------------------------| Washington
     {
         "displayName": "Burlington, WA",
