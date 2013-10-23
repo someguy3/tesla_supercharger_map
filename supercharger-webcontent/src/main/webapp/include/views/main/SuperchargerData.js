@@ -110,6 +110,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
+        "displayName": "Mt Shasta, CA",
+        "streetAddress": "111 Morgan Way Mt. Shasta, California 96067",
+        "country": "USA",
+        "location": new google.maps.LatLng(41.310233, -122.317278),
+        "url": "http://www.teslamotors.com/supercharger/mtshasta",
+        "count": true
+    },
+    {
         "displayName": "Tejon Ranch, CA",
         "streetAddress": "5602 Dennis McCarthy Dr, Lebec, CA 93243",
         "country": "USA",
@@ -268,6 +276,15 @@ redshiftsoft.SuperchargerData.LIST = [
         "country": "USA",
         "location": new google.maps.LatLng(31.58224, -97.10915),
         "url": "http://www.teslamotors.com/supercharger/waco",
+        "count": true
+    },
+    //-----------------------------------------------------------------------------------------------------------------| Virginia
+    {
+        "displayName": "Glen Allen, VA",
+        "streetAddress": "9860 Brook Rd Glen Allen, VA",
+        "country": "USA",
+        "location": new google.maps.LatLng(37.669832, -77.461419),
+        "url": "http://www.teslamotors.com/supercharger/glenallen",
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Washington
