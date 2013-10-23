@@ -3,10 +3,15 @@
 DIR_SRC=/tmp/supercharger-webcontent-1.0.?-SNAPSHOT
 DIR_DEPLOY=/var/www/tesla_wiki/supercharger
 
-rm -rI ${DIR_DEPLOY}
+# The string check here is for extra safely.
+if [ "${DIR_DEPLOY}" != "" ]
+then
+    rm -r ${DIR_DEPLOY}/*
+fi
+
 mv ${DIR_SRC}/* ${DIR_DEPLOY}
+
 chown -R www-data:www-data ${DIR_DEPLOY}
 chmod -R go-w ${DIR_DEPLOY}
 
-
-rm -rI ${DIR_SRC}
+rm -r ${DIR_SRC}
