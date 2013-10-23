@@ -156,7 +156,8 @@ redshiftsoft.SuperchargerData.LIST = [
         "streetAddress": "Connecticut Welcome Center North Darien, CT, 06820",
         "country": "USA",
         "location": new google.maps.LatLng(41.080599, -73.461905),
-        "url": "http://www.teslamotors.com/supercharger/dariennorth"
+        "url": "http://www.teslamotors.com/supercharger/dariennorth",
+        "count": true
     },
     {
         "displayName": "Darien, CT (south)",
@@ -228,6 +229,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Oregon
+    {
+        "displayName": "Grants Pass, OR",
+        "streetAddress": "1900 NW 6th St. Grants Pass, Oregon 97526",
+        "country": "USA",
+        "location": new google.maps.LatLng(42.460883, -123.324124),
+        "url": "http://www.teslamotors.com/supercharger/grantspass",
+        "count": true
+    },
     {
         "displayName": "Woodburn, OR",
         "streetAddress": "255 N Arney Rd Woodburn, Oregon 97071",
