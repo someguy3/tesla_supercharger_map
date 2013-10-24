@@ -7,11 +7,14 @@ redshiftsoft = createMyNamespace("redshiftsoft");
 redshiftsoft.ControlView_Table = function () {
     this.superData = new redshiftsoft.SuperchargerData();
     this.draw();
+    this.superChargerTable = $("#supercharger-table");
+
+    this.superChargerTable.click(jQuery.proxy(this.handleTableClick, this));
 }
 
 redshiftsoft.ControlView_Table.prototype.draw = function () {
 
-    var tableBody = $("#supercharger-table tbody");
+    var tableBody = this.superChargerTable.find("tbody");
 
     for (var i = 0; i < this.superData.size(); i++) {
         var supercharger = this.superData.get(i);
@@ -29,6 +32,24 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
 
     }
 
-    $('#supercharger-table').dataTable();
+    this.superChargerTable.dataTable();
 
+};
+
+redshiftsoft.ControlView_Table.prototype.handleTableClick = function (event) {
+    var node = $(event.target);
+
+    /* Find a node we are interested in */
+    while (!node.is("td")) {
+        node = node.parent();
+    }
+
+    if (node.hasClass("tog")) {
+        if (node.text() == "on") {
+            node.text("off")
+        }
+        else {
+            node.text("on")
+        }
+    }
 };
