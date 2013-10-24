@@ -1,12 +1,8 @@
 table#supercharger-table {
     border-collapse: collapse;
-    height: 200px;
-    max-height: 200px;
-    margin: 0 auto;
 }
 
 table#supercharger-table tbody {
-    overflow-y: scroll;
 }
 
 table#supercharger-table th {
