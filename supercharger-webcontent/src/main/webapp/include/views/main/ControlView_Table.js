@@ -11,12 +11,12 @@ redshiftsoft.ControlView_Table = function () {
 
 redshiftsoft.ControlView_Table.prototype.draw = function () {
 
-    var table = $("#supercharger-table");
+    var tableBody = $("#supercharger-table tbody");
 
     for (var i = 0; i < this.superData.size(); i++) {
         var supercharger = this.superData.get(i);
 
-        table.append("" +
+        tableBody.append("" +
             "<tr>" +
             "<td>" + supercharger.displayName + "</td>" +
             "<td>" + supercharger.streetAddress + "</td>" +
