@@ -10,11 +10,11 @@
 
     <groupId>com.redshiftsoft.supercharger</groupId>
     <artifactId>supercharger</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
 
     <scm>
-        <developerConnection>scm:svn:https://svn.redshiftsoft.com/code/projects/Tesla_Supercharger_Map/trunk</developerConnection>
+        <developerConnection>scm:svn:https://svn.redshiftsoft.com/code/projects/Tesla_Supercharger_Map/tags/supercharger-1.0.1</developerConnection>
     </scm>
 
     <modules>
