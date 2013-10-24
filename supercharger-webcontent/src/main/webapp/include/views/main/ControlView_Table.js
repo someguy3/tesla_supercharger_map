@@ -22,6 +22,8 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
             "<td>" + supercharger.streetAddress + "</td>" +
             "<td>" + supercharger.country + "</td>" +
             "<td>" + "<a href='" + supercharger.url + "'>link</a></td>" +
+            "<td class='tog'>" + "on" + "</td>" +
+            "<td class='tog'>" + "off" + "</td>" +
             "</tr>"
         );
 

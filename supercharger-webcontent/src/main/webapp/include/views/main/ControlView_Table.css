@@ -1,5 +1,19 @@
 table#supercharger-table {
     border-collapse: collapse;
+    height: 200px;
+    max-height: 200px;
+    margin: 0 auto;
+}
+
+table#supercharger-table tbody {
+    overflow-y: scroll;
+}
+
+table#supercharger-table th {
+    background: whitesmoke;
+    padding-right: 5px;
+    padding-left: 5px;
+    border: 1px solid white;
 }
 
 table#supercharger-table td {
@@ -7,14 +21,10 @@ table#supercharger-table td {
     text-align: left;
 }
 
-table#supercharger-table th {
-    background: whitesmoke;
+table#supercharger-table td.tog {
+    text-align: center;
 }
 
 
-
 #supercharger-table-container {
-    height: 200px;
-    max-height: 200px;
-    overflow-y: scroll;
 }
