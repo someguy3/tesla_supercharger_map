@@ -36,71 +36,111 @@
                 </div>
             </div>
 
+
+            <!-- ************************************************************************
+            Range Adjustment
+            ***************************************************************************** -->
             <table class="controls">
                 <colgroup>
                     <col style="width: 10%"/>
-                    <col/>
-                    <col/>
                     <col/>
                 </colgroup>
                 <tr>
                     <th>
                         Range
                     </th>
-                    <td colspan="3">
+                    <td>
                         <div id="range-number-text" class="slider-value-label"></div>
                         <div id="range-slider"></div>
                     </td>
                 </tr>
-                <tr style="display: none" class="advanced">
-                    <th>
-                        Map Type
-                    </th>
-                    <td>
-                        <input type="radio" name="mapType" id="map-type-radio-road" checked="checked" value="ROADMAP">Road
-                        <input type="radio" name="mapType" id="map-type-radio-satellite" value="SATELLITE">Satellite
-                        <input type="radio" name="mapType" id="map-type-radio-hybrid" value="HYBRID">Hybrid
-                        <input type="radio" name="mapType" id="map-type-radio-terrain" value="TERRAIN">Terrain
-                    </td>
-                    <th>
-                        Distance Unit
-                    </th>
-                    <td style="text-align: left">
-                        <input type="radio" name="distUnit" id="unit-radio-mile" checked="checked" value="M">Mile<br/>
-                        <input type="radio" name="distUnit" id="unit-radio-kilometer" value="K">Kilometer
-                    </td>
-                </tr>
-                <tr style="display: none" class="advanced">
-                    <th>
-                        Fill Opacity
-                    </th>
-                    <td>
-                        <div id="fill-opacity-number-text" class="slider-value-label"></div>
-                        <div id="fill-opacity-slider"></div>
-                    </td>
-                    <th>
-                        Fill Color
-                    </th>
-                    <td style="text-align: left">
-                        <input type='text' id="fill-color-input"/>
-                    </td>
-                </tr>
-                <tr style="display: none" class="advanced">
-                    <th>
-                        Border Opacity
-                    </th>
-                    <td>
-                        <div id="border-opacity-number-text" class="slider-value-label"></div>
-                        <div id="border-opacity-slider"></div>
-                    </td>
-                    <th>
-                        Border Color
-                    </th>
-                    <td style="text-align: left">
-                        <input type='text' id="border-color-input"/>
-                    </td>
-                </tr>
             </table>
+
+            <!-- ************************************************************************
+            Tabs
+            ***************************************************************************** -->
+            <div id="controls-tabs" style="display: none">
+                <ul>
+                    <li><a href="#tabs-1">Rendering</a></li>
+                    <li><a href="#tabs-2">Labels</a></li>
+                </ul>
+                <div id="tabs-1">
+
+                    <table class="controls">
+                        <colgroup>
+                            <col style="width: 10%"/>
+                            <col/>
+                            <col/>
+                            <col/>
+                        </colgroup>
+                        <tr class="advanced">
+                            <th>
+                                Map Type
+                            </th>
+                            <td>
+                                <input type="radio" name="mapType" id="map-type-radio-road" checked="checked" value="ROADMAP">Road
+                                <input type="radio" name="mapType" id="map-type-radio-satellite" value="SATELLITE">Satellite
+                                <input type="radio" name="mapType" id="map-type-radio-hybrid" value="HYBRID">Hybrid
+                                <input type="radio" name="mapType" id="map-type-radio-terrain" value="TERRAIN">Terrain
+                            </td>
+                            <th>
+                                Distance Unit
+                            </th>
+                            <td style="text-align: left">
+                                <input type="radio" name="distUnit" id="unit-radio-mile" checked="checked" value="M">Mile<br/>
+                                <input type="radio" name="distUnit" id="unit-radio-kilometer" value="K">Kilometer
+                            </td>
+                        </tr>
+                        <tr class="advanced">
+                            <th>
+                                Fill Opacity
+                            </th>
+                            <td>
+                                <div id="fill-opacity-number-text" class="slider-value-label"></div>
+                                <div id="fill-opacity-slider"></div>
+                            </td>
+                            <th>
+                                Fill Color
+                            </th>
+                            <td style="text-align: left">
+                                <input type='text' id="fill-color-input"/>
+                            </td>
+                        </tr>
+                        <tr class="advanced">
+                            <th>
+                                Border Opacity
+                            </th>
+                            <td>
+                                <div id="border-opacity-number-text" class="slider-value-label"></div>
+                                <div id="border-opacity-slider"></div>
+                            </td>
+                            <th>
+                                Border Color
+                            </th>
+                            <td style="text-align: left">
+                                <input type='text' id="border-color-input"/>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div id="tabs-2">
+                    <div id="supercharger-table-container">
+                        <table id="supercharger-table">
+                            <tr>
+                                <th>Supercharger</th>
+                                <th>Street Address</th>
+                                <th>Country</th>
+                                <th>Web Site</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
         </div>
 
     </div>

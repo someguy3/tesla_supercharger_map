@@ -30,6 +30,8 @@ redshiftsoft.ControlView = function (initialRangeMeters, initialFillOpacity, ini
     this.borderColorChangeCallback = function (color) {
     };
 
+    $("#controls-tabs").tabs();
+
     $("input[name='mapType']").change(jQuery.proxy(this.handleMapType, this));
     $("input[name='distUnit']").change(jQuery.proxy(this.handleDistanceUnit, this));
 
@@ -41,7 +43,7 @@ redshiftsoft.ControlView = function (initialRangeMeters, initialFillOpacity, ini
             link.html("hide advanced options");
         }
         event.preventDefault();
-        $("tr.advanced").toggle();
+        $("#controls-tabs").toggle();
     });
 
 };
@@ -184,4 +186,3 @@ redshiftsoft.ControlView.prototype.updateTextFillOpacityDisplay = function (newV
 redshiftsoft.ControlView.prototype.updateTextBorderOpacityDisplay = function (newValue) {
     $("#border-opacity-number-text").text(newValue);
 };
-

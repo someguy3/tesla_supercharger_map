@@ -1,0 +1,20 @@
+table#supercharger-table {
+    border-collapse: collapse;
+}
+
+table#supercharger-table td {
+    border: 1px solid #ECECEC;
+    text-align: left;
+}
+
+table#supercharger-table th {
+    background: whitesmoke;
+}
+
+
+
+#supercharger-table-container {
+    height: 200px;
+    max-height: 200px;
+    overflow-y: scroll;
+}
