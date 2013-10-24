@@ -29,4 +29,6 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
 
     }
 
+    $('#supercharger-table').dataTable();
+
 };
