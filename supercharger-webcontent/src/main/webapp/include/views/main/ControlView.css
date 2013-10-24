@@ -20,7 +20,7 @@ Map Controls
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 table.controls {
     border-collapse: collapse;
-    border: 0px solid black;
+    border: 0 solid black;
     margin: 0 auto;
     max-width: 900px;
 }
