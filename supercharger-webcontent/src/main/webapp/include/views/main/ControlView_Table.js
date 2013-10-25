@@ -6,8 +6,8 @@ redshiftsoft = createMyNamespace("redshiftsoft");
  */
 redshiftsoft.ControlView_Table = function () {
     this.superData = new redshiftsoft.SuperchargerData();
-    this.draw();
     this.superChargerTable = $("#supercharger-table");
+    this.draw();
 
     this.superChargerTable.click(jQuery.proxy(this.handleTableClick, this));
 }
@@ -22,13 +22,17 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
         tableBody.append("" +
             "<tr>" +
             "<td>" + supercharger.displayName + "</td>" +
-            "<td>" + supercharger.streetAddress + "</td>" +
-            "<td>" + supercharger.country + "</td>" +
+            "<td>" + supercharger.address.street + "</td>" +
+            "<td>" + supercharger.address.city + "</td>" +
+            "<td>" + supercharger.address.state + "</td>" +
+            "<td>" + supercharger.address.zip + "</td>" +
+            "<td>" + supercharger.address.country + "</td>" +
             "<td>" + "<a href='" + supercharger.url + "'>link</a></td>" +
             "<td class='tog'>" + "on" + "</td>" +
             "<td class='tog'>" + "off" + "</td>" +
             "</tr>"
-        );
+        )
+        ;
 
     }
 
