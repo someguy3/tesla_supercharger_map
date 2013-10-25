@@ -21,8 +21,6 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
     var tableBodyMark = this.superChargerMarkTable.find("tbody");
     var tableBodyData = this.superChargerDataTable.find("tbody");
 
-    alert("0 here");
-
     for (var i = 0; i < this.superData.size(); i++) {
         var supercharger = this.superData.get(i);
 
@@ -51,7 +49,6 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
 
 
     }
-    alert("1 here");
 
     this.superChargerMarkTable.dataTable({
         "aaSorting": [
@@ -64,12 +61,22 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
         "bFilter": true,
         "bSort": true,
         "bInfo": true,
-        "bAutoWidth": true
+        "bAutoWidth": false
     });
 
-    alert("2 here");
-
-    this.superChargerDataTable.dataTable();
+    this.superChargerDataTable.dataTable({
+        "aaSorting": [
+            [2, 'desc'],
+            [1, 'asc'],
+            [0, 'asc']
+        ],
+        "bPaginate": true,
+        "bLengthChange": true,
+        "bFilter": true,
+        "bSort": true,
+        "bInfo": true,
+        "bAutoWidth": false
+    });
 
     alert("3 here");
 
