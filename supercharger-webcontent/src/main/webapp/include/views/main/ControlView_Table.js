@@ -5,21 +5,39 @@ redshiftsoft = createMyNamespace("redshiftsoft");
  * @constructor
  */
 redshiftsoft.ControlView_Table = function () {
+
+    this.superChargerMarkTable = $("#supercharger-mark-table");
+    this.superChargerDataTable = $("#supercharger-data-table");
+
     this.superData = new redshiftsoft.SuperchargerData();
-    this.superChargerTable = $("#supercharger-table");
+
     this.draw();
 
-    this.superChargerTable.click(jQuery.proxy(this.handleTableClick, this));
+    //this.superChargerMarkTable.click(jQuery.proxy(this.handleTableClick, this));
 }
 
 redshiftsoft.ControlView_Table.prototype.draw = function () {
 
-    var tableBody = this.superChargerTable.find("tbody");
+    var tableBodyMark = this.superChargerMarkTable.find("tbody");
+    var tableBodyData = this.superChargerDataTable.find("tbody");
+
+    alert("0 here");
 
     for (var i = 0; i < this.superData.size(); i++) {
         var supercharger = this.superData.get(i);
 
-        tableBody.append("" +
+        tableBodyMark.append("" +
+            "<tr>" +
+            "<td>" + supercharger.displayName + "</td>" +
+            "<td>" + supercharger.address.state + "</td>" +
+            "<td>" + supercharger.address.country + "</td>" +
+            "<td>" + "<a href='" + supercharger.url + "'>link</a></td>" +
+            "<td class='tog'>" + "on" + "</td>" +
+            "<td class='tog'>" + "off" + "</td>" +
+            "</tr>"
+        );
+
+        tableBodyData.append("" +
             "<tr>" +
             "<td>" + supercharger.displayName + "</td>" +
             "<td>" + supercharger.address.street + "</td>" +
@@ -28,15 +46,32 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
             "<td>" + supercharger.address.zip + "</td>" +
             "<td>" + supercharger.address.country + "</td>" +
             "<td>" + "<a href='" + supercharger.url + "'>link</a></td>" +
-            "<td class='tog'>" + "on" + "</td>" +
-            "<td class='tog'>" + "off" + "</td>" +
             "</tr>"
-        )
-        ;
+        );
+
 
     }
+    alert("1 here");
 
-    this.superChargerTable.dataTable();
+    this.superChargerMarkTable.dataTable({
+        "aaSorting": [
+            [2, 'desc'],
+            [1, 'asc'],
+            [0, 'asc']
+        ],
+        "bPaginate": true,
+        "bLengthChange": true,
+        "bFilter": true,
+        "bSort": true,
+        "bInfo": true,
+        "bAutoWidth": true
+    });
+
+    alert("2 here");
+
+    this.superChargerDataTable.dataTable();
+
+    alert("3 here");
 
 };
 
