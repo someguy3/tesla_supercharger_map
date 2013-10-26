@@ -221,6 +221,13 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
+        "displayName": "Springfield, OR",
+        "address": new redshiftsoft.Address("919 Kruse Way", "Springfield", "OR", "97477", "USA"),
+        "location": new google.maps.LatLng(44.082605, -123.037471),
+        "url": "http://www.teslamotors.com/supercharger/springfield",
+        "count": true
+    },
+    {
         "displayName": "Woodburn, OR",
         "address": new redshiftsoft.Address("255 N Arney Rd", "Woodburn", "OR", "97071", "USA"),
         "location": new google.maps.LatLng(45.15313, -122.881254),
