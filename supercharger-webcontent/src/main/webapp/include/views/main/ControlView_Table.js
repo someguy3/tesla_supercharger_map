@@ -56,11 +56,12 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
             [1, 'asc'],
             [0, 'asc']
         ],
-        "bPaginate": true,
-        "bLengthChange": true,
-        "bFilter": true,
+        "bPaginate": false,
+        "sScrollY": "220px",
+        "bLengthChange": false,
+        "bFilter": false,
         "bSort": true,
-        "bInfo": true,
+        "bInfo": false,
         "bAutoWidth": false
     });
 
@@ -70,15 +71,16 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
             [1, 'asc'],
             [0, 'asc']
         ],
-        "bPaginate": true,
-        "bLengthChange": true,
-        "bFilter": true,
+        "bPaginate": false,
+        "sScrollY": "220px",
+        "bLengthChange": false,   // Do not allow user to change page length
+        "bFilter": false,         // turn of filter/search for now
         "bSort": true,
-        "bInfo": true,
-        "bAutoWidth": false
+        "bInfo": false,            // Don't display info/status below the table
+        "bAutoWidth": false,
+        "bSortable": false,
+        "aTargets": [ 0, 1 ]
     });
-
-    alert("3 here");
 
 };
 
