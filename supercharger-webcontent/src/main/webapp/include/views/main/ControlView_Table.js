@@ -67,19 +67,27 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
 
     this.superChargerDataTable.dataTable({
         "aaSorting": [
-            [2, 'desc'],
-            [1, 'asc'],
-            [0, 'asc']
+            [5, 'desc'],
+            [3, 'asc'],
+            [2, 'asc'],
+            [1, 'asc']
+        ],
+        "aoColumns": [
+            { "bSortable": true},
+            { "bSortable": false},
+            { "bSortable": true},
+            { "bSortable": true},
+            { "bSortable": true},
+            { "bSortable": true},
+            { "bSortable": false }
         ],
         "bPaginate": false,
         "sScrollY": "220px",
-        "bLengthChange": false,   // Do not allow user to change page length
-        "bFilter": false,         // turn of filter/search for now
-        "bSort": true,
-        "bInfo": false,            // Don't display info/status below the table
-        "bAutoWidth": false,
-        "bSortable": false,
-        "aTargets": [ 0, 1 ]
+        "bLengthChange": false,     // Do not allow user to change page length
+        "bFilter": false,           // turn of filter/search for now
+        "bSort": true,              // Globally enable sorting
+        "bInfo": false,             // Don't display info/status below the table
+        "bAutoWidth": false
     });
 
 };
