@@ -50,10 +50,6 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
 
     }
 
-    this.superChargerMarkTable;
-
-    this.superChargerDataTable;
-
 };
 
 redshiftsoft.ControlView_Table.prototype.handleTableClick = function (event) {
