@@ -14,8 +14,6 @@ $(function () {
         INITIAL_FILL_OPACITY, INITIAL_FILL_COLOR,
         INITIAL_BORDER_OPACITY, INITIAL_BORDER_COLOR);
 
-    mapView.initMap();
-
     var controlView = new redshiftsoft.ControlView(
         INITIAL_RANGE_METERS,
         INITIAL_FILL_OPACITY, INITIAL_FILL_COLOR,

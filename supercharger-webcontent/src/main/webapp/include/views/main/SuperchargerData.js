@@ -5,7 +5,18 @@ redshiftsoft = createMyNamespace("redshiftsoft");
  * Constructor
  */
 redshiftsoft.SuperchargerData = function () {
+    if ('undefined' == typeof redshiftsoft.SuperchargerData.ID_INIT) {
+        this.initializeIds();
+    }
+};
 
+redshiftsoft.SuperchargerData.prototype.initializeIds = function () {
+    var count = 0;
+    for (var i = 0; i < redshiftsoft.SuperchargerData.LIST.length; i++) {
+        var supercharger = redshiftsoft.SuperchargerData.LIST[i];
+        supercharger.id = count++;
+    }
+    redshiftsoft.SuperchargerData.ID_INIT = true;
 };
 
 redshiftsoft.SuperchargerData.prototype.size = function () {

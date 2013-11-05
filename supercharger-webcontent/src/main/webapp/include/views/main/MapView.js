@@ -1,7 +1,5 @@
 //======================================================================================================================
-//
-//
-//
+// MapView
 //======================================================================================================================
 
 redshiftsoft = createMyNamespace("redshiftsoft");
@@ -20,6 +18,11 @@ redshiftsoft.MapView = function (initialRangeMeters, initialFillOpacity, initial
     this.borderColor = initialBorderColor;
 
     this.superData = new redshiftsoft.SuperchargerData();
+
+    this.initMap();
+
+    // handle clicks to toggle supercharger circle
+    jQuery(document).on('click', '.circle-toggle-trigger', jQuery.proxy(this.handleCircleToggle, this));
 
 };
 
@@ -71,7 +74,8 @@ redshiftsoft.MapView.prototype.drawMarkers = function () {
                 "<div class='info-window-content'>" +
                 "<div class='title'>" + myMarker.supercharger.displayName + "</div>" + "" +
                 myMarker.supercharger.address.street + "<br/>" +
-                "<a target='_blank' href='" + myMarker.supercharger.url + "'>web page</a>" + "<br/>" +
+                "<a target='_blank' href='" + myMarker.supercharger.url + "'>web page</a>" + "&nbsp;&nbsp;&nbsp;" +
+                "<a class='circle-toggle-trigger' href='" + myMarker.supercharger.id + "'>circle off</a>" + "<br/>" +
                 "</div>"
 
             var windowOptions = { content: popupContent  };
@@ -128,4 +132,22 @@ redshiftsoft.MapView.prototype.setBorderOpacity = function (newValue) {
 };
 redshiftsoft.MapView.prototype.setRadiusMeters = function (radiusMetersIn) {
     this.radiusMeters = radiusMetersIn;
+};
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Event handlers
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+redshiftsoft.MapView.prototype.handleCircleToggle = function (event) {
+    event.preventDefault();
+    var link = $(event.target);
+    var id = link.attr('href');
+    var supercharger = this.superData.get(id);
+    if (supercharger.circle.getVisible()) {
+        link.text("circle on");
+        supercharger.circle.setVisible(false);
+    } else {
+        link.text("circle off");
+        supercharger.circle.setVisible(true);
+    }
 };
