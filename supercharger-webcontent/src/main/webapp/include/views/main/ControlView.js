@@ -36,13 +36,13 @@ redshiftsoft.ControlView = function (initialRangeMeters, initialFillOpacity, ini
     $("input[name='distUnit']").change(jQuery.proxy(this.handleDistanceUnit, this));
 
     $("#advanced-options-trigger").click(function (event) {
+        event.preventDefault();
         var link = $(this);
         if (link.html().indexOf("hide") >= 0) {
             link.html("show advanced options");
         } else {
             link.html("hide advanced options");
         }
-        event.preventDefault();
         $("#controls-tabs").toggle();
     });
 
