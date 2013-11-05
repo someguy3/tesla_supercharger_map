@@ -31,7 +31,6 @@ redshiftsoft.MapView.INITIAL_LNG = -90.644;
 redshiftsoft.MapView.INITIAL_ZOOM = 5;
 
 
-
 /**
  * Initialize map
  */
@@ -64,15 +63,19 @@ redshiftsoft.MapView.prototype.drawMarkers = function () {
             animation: google.maps.Animation.DROP
         });
         marker['supercharger'] = supercharger;
+
+
         google.maps.event.addListener(marker, 'click', function () {
             var myMarker = this;
-            var infoWindow = new google.maps.InfoWindow({
-                content: "<div class='info-window-content'>" +
-                    "<div class='title'>" + myMarker.supercharger.displayName + "</div>" + "" +
-                    myMarker.supercharger.streetAddress + "<br/>" +
-                    "<a target='_blank' href='" + myMarker.supercharger.url + "'>web page</a>" + "<br/>" +
-                    "</div>"
-            });
+            var popupContent = "" +
+                "<div class='info-window-content'>" +
+                "<div class='title'>" + myMarker.supercharger.displayName + "</div>" + "" +
+                myMarker.supercharger.address.street + "<br/>" +
+                "<a target='_blank' href='" + myMarker.supercharger.url + "'>web page</a>" + "<br/>" +
+                "</div>"
+
+            var windowOptions = { content: popupContent  };
+            var infoWindow = new google.maps.InfoWindow(windowOptions);
             infoWindow.open(myMarker.map, myMarker);
         });
     }
