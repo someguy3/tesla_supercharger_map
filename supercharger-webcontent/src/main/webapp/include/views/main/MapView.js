@@ -169,7 +169,6 @@ redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
     function handleOK() {
         markerDialog.dialog("close");
         var markerName = markerInput.val();
-        alert("name=" + markerName);
         markerInput.val("");
         // add marker
         var newMarker = new google.maps.Marker({ position: event.latLng, map: mapView.googleMap });
