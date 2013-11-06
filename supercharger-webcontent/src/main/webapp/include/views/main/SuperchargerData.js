@@ -32,7 +32,7 @@ redshiftsoft.SuperchargerData.prototype.addSupercharger = function (displayName,
         "displayName": displayName,
         "address": new redshiftsoft.Address("", "", "", "", ""),
         "location": location,
-        "url": "",
+        "url": null,
         "count": false
     };
     redshiftsoft.SuperchargerData.LIST.push(charger);

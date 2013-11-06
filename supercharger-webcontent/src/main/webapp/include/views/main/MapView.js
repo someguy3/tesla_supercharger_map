@@ -50,7 +50,6 @@ redshiftsoft.MapView.prototype.initMap = function () {
     this.drawMarkers();
     this.drawCircles();
 
-    var u = this;
     google.maps.event.addListener(this.googleMap, 'rightclick', jQuery.proxy(this.handleAddMarker, this));
 };
 
@@ -82,7 +81,9 @@ redshiftsoft.MapView.prototype.addInfoWindowToMarker = function (marker, superch
         popupContent += "<div class='info-window-content'>";
         popupContent += "<div class='title'>" + supercharger.displayName + "</div>" + "";
         popupContent += supercharger.address.street + "<br/>";
-        popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>" + "&nbsp;&nbsp;&nbsp;";
+        if(supercharger.url != null) {
+            popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>" + "&nbsp;&nbsp;&nbsp;";
+        }
         popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>circle off</a>" + "<br/>";
         popupContent += "</div>";
 
