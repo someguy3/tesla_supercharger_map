@@ -27,8 +27,20 @@ redshiftsoft.SuperchargerData.prototype.get = function (index) {
     return redshiftsoft.SuperchargerData.LIST[index];
 };
 
+redshiftsoft.SuperchargerData.prototype.getById = function (id) {
+    for (var i = 0; i < redshiftsoft.SuperchargerData.LIST.length; i++) {
+        var supercharger = redshiftsoft.SuperchargerData.LIST[i];
+        if (supercharger.id == id) {
+            return supercharger;
+        }
+    }
+    return null;
+};
+
+
 redshiftsoft.SuperchargerData.prototype.addSupercharger = function (displayName, location) {
     var charger = {
+        "id": this.size() + 10000,
         "displayName": displayName,
         "address": new redshiftsoft.Address("", "", "", "", ""),
         "location": location,
@@ -57,7 +69,13 @@ redshiftsoft.SuperchargerData.prototype.getRegionCount = function (region) {
     return count;
 };
 
-
+/**
+ * Other properties that are later added to the supercharger data structure:
+ *
+ * id     -- uniquely identifies each record.
+ * circle -- a reference to the google-maps Circle object indicating range for this supercharger.
+ *
+ */
 redshiftsoft.SuperchargerData.LIST = [
 
     //-----------------------------------------------------------------------------------------------------------------| California

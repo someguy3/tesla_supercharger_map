@@ -149,7 +149,7 @@ redshiftsoft.MapView.prototype.handleCircleToggle = function (event) {
     event.preventDefault();
     var link = $(event.target);
     var id = link.attr('href');
-    var supercharger = this.superData.get(id);
+    var supercharger = this.superData.getById(id);
     if (supercharger.circle.getVisible()) {
         link.text("circle on");
         supercharger.circle.setVisible(false);
