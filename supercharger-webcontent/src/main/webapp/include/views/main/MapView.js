@@ -81,7 +81,7 @@ redshiftsoft.MapView.prototype.addInfoWindowToMarker = function (marker, superch
         popupContent += "<div class='info-window-content'>";
         popupContent += "<div class='title'>" + supercharger.displayName + "</div>" + "";
         popupContent += supercharger.address.street + "<br/>";
-        if(supercharger.url != null) {
+        if (supercharger.url != null) {
             popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>" + "&nbsp;&nbsp;&nbsp;";
         }
         popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>circle off</a>" + "<br/>";
@@ -163,18 +163,30 @@ redshiftsoft.MapView.prototype.handleCircleToggle = function (event) {
 redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
     var markerInput = $("#new-marker-name-input");
     var markerDialog = $("#new-marker-dialog");
-    markerDialog.show().dialog({ width: 400 });
-
     var mapView = this;
 
-    $("#new-marker-save-button").click(function () {
+
+    function handleOK() {
         markerDialog.dialog("close");
         var markerName = markerInput.val();
+        alert("name=" + markerName);
         markerInput.val("");
         // add marker
         var newMarker = new google.maps.Marker({ position: event.latLng, map: mapView.googleMap });
         var newCharger = mapView.superData.addSupercharger(markerName, event.latLng);
         mapView.addInfoWindowToMarker(newMarker, newCharger);
         mapView.drawCircles();
-    });
+    }
+
+    markerDialog.show().dialog(
+        {
+            width: 400,
+            buttons: [
+                {
+                    text: "OK",
+                    click: handleOK
+                }
+            ]
+        }
+    );
 }
