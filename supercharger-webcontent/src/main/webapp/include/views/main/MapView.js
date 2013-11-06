@@ -78,13 +78,13 @@ redshiftsoft.MapView.prototype.addInfoWindowToMarker = function (marker, superch
 
     google.maps.event.addListener(marker, 'click', function () {
         var myMarker = this;
-        var popupContent = "" +
-            "<div class='info-window-content'>" +
-            "<div class='title'>" + myMarker.supercharger.displayName + "</div>" + "" +
-            myMarker.supercharger.address.street + "<br/>" +
-            "<a target='_blank' href='" + myMarker.supercharger.url + "'>web page</a>" + "&nbsp;&nbsp;&nbsp;" +
-            "<a class='circle-toggle-trigger' href='" + myMarker.supercharger.id + "'>circle off</a>" + "<br/>" +
-            "</div>"
+        var popupContent = "";
+        popupContent += "<div class='info-window-content'>";
+        popupContent += "<div class='title'>" + supercharger.displayName + "</div>" + "";
+        popupContent += supercharger.address.street + "<br/>";
+        popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>" + "&nbsp;&nbsp;&nbsp;";
+        popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>circle off</a>" + "<br/>";
+        popupContent += "</div>";
 
         var windowOptions = { content: popupContent  };
         var infoWindow = new google.maps.InfoWindow(windowOptions);
