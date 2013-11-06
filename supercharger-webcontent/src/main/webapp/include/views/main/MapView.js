@@ -51,25 +51,8 @@ redshiftsoft.MapView.prototype.initMap = function () {
     this.drawCircles();
 
     var u = this;
-    google.maps.event.addListener(this.googleMap, 'rightclick', jQuery.proxy(this.addMarker, this));
+    google.maps.event.addListener(this.googleMap, 'rightclick', jQuery.proxy(this.handleAddMarker, this));
 };
-
-redshiftsoft.MapView.prototype.addMarker = function (event) {
-    var markerInput = $("#new-marker-name-input");
-    var markerDialog = $("#new-marker-dialog");
-    markerDialog.show().dialog({ width: 400 });
-
-    new google.maps.Marker({ position: event.latLng, map: this.googleMap });
-    this.superData.add(event.latLng);
-    this.drawCircles();
-
-    $("#new-marker-save-button").click(function () {
-        markerDialog.dialog("close");
-        var markerName = markerInput.val();
-        markerInput.val("");
-        alert("markerName= " + markerName);
-    });
-}
 
 /**
  * MARKERS
@@ -171,3 +154,21 @@ redshiftsoft.MapView.prototype.handleCircleToggle = function (event) {
         supercharger.circle.setVisible(true);
     }
 };
+
+
+redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
+    var markerInput = $("#new-marker-name-input");
+    var markerDialog = $("#new-marker-dialog");
+    markerDialog.show().dialog({ width: 400 });
+
+    new google.maps.Marker({ position: event.latLng, map: this.googleMap });
+    this.superData.add(event.latLng);
+    this.drawCircles();
+
+    $("#new-marker-save-button").click(function () {
+        markerDialog.dialog("close");
+        var markerName = markerInput.val();
+        markerInput.val("");
+        alert("markerName= " + markerName);
+    });
+}
