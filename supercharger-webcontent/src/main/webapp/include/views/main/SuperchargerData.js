@@ -27,6 +27,17 @@ redshiftsoft.SuperchargerData.prototype.get = function (index) {
     return redshiftsoft.SuperchargerData.LIST[index];
 };
 
+redshiftsoft.SuperchargerData.prototype.add = function (location) {
+    redshiftsoft.SuperchargerData.LIST.push({
+        "displayName": "",
+        "address": new redshiftsoft.Address("", "", "", "", ""),
+        "location": location,
+        "url": "",
+        "count": false
+    });
+};
+
+
 /**
  * Returns the count of superchargers with a country in the passed list of countries.
  *

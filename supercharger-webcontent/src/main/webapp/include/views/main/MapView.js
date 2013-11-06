@@ -49,6 +49,13 @@ redshiftsoft.MapView.prototype.initMap = function () {
     this.googleMap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
     this.drawMarkers();
     this.drawCircles();
+
+    var u = this;
+    google.maps.event.addListener(this.googleMap, 'rightclick', function (e) {
+        new google.maps.Marker({ position: e.latLng, map: u.googleMap });
+        u.superData.add(e.latLng);
+        u.drawCircles();
+    });
 };
 
 /**
