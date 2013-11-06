@@ -27,14 +27,16 @@ redshiftsoft.SuperchargerData.prototype.get = function (index) {
     return redshiftsoft.SuperchargerData.LIST[index];
 };
 
-redshiftsoft.SuperchargerData.prototype.add = function (location) {
-    redshiftsoft.SuperchargerData.LIST.push({
-        "displayName": "",
+redshiftsoft.SuperchargerData.prototype.addSupercharger = function (displayName, location) {
+    var charger = {
+        "displayName": displayName,
         "address": new redshiftsoft.Address("", "", "", "", ""),
         "location": location,
         "url": "",
         "count": false
-    });
+    };
+    redshiftsoft.SuperchargerData.LIST.push(charger);
+    return charger;
 };
 
 

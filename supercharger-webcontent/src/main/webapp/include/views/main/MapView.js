@@ -68,26 +68,29 @@ redshiftsoft.MapView.prototype.drawMarkers = function () {
             title: supercharger.displayName,
             animation: google.maps.Animation.DROP
         });
-        marker['supercharger'] = supercharger;
-
-
-        google.maps.event.addListener(marker, 'click', function () {
-            var myMarker = this;
-            var popupContent = "" +
-                "<div class='info-window-content'>" +
-                "<div class='title'>" + myMarker.supercharger.displayName + "</div>" + "" +
-                myMarker.supercharger.address.street + "<br/>" +
-                "<a target='_blank' href='" + myMarker.supercharger.url + "'>web page</a>" + "&nbsp;&nbsp;&nbsp;" +
-                "<a class='circle-toggle-trigger' href='" + myMarker.supercharger.id + "'>circle off</a>" + "<br/>" +
-                "</div>"
-
-            var windowOptions = { content: popupContent  };
-            var infoWindow = new google.maps.InfoWindow(windowOptions);
-            infoWindow.open(myMarker.map, myMarker);
-        });
+        this.addInfoWindowToMarker(marker, supercharger);
     }
-
 };
+
+redshiftsoft.MapView.prototype.addInfoWindowToMarker = function (marker, supercharger) {
+    marker['supercharger'] = supercharger;
+
+
+    google.maps.event.addListener(marker, 'click', function () {
+        var myMarker = this;
+        var popupContent = "" +
+            "<div class='info-window-content'>" +
+            "<div class='title'>" + myMarker.supercharger.displayName + "</div>" + "" +
+            myMarker.supercharger.address.street + "<br/>" +
+            "<a target='_blank' href='" + myMarker.supercharger.url + "'>web page</a>" + "&nbsp;&nbsp;&nbsp;" +
+            "<a class='circle-toggle-trigger' href='" + myMarker.supercharger.id + "'>circle off</a>" + "<br/>" +
+            "</div>"
+
+        var windowOptions = { content: popupContent  };
+        var infoWindow = new google.maps.InfoWindow(windowOptions);
+        infoWindow.open(myMarker.map, myMarker);
+    });
+}
 
 /**
  * CIRCLES
@@ -161,14 +164,16 @@ redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
     var markerDialog = $("#new-marker-dialog");
     markerDialog.show().dialog({ width: 400 });
 
-    new google.maps.Marker({ position: event.latLng, map: this.googleMap });
-    this.superData.add(event.latLng);
-    this.drawCircles();
+    var mapView = this;
 
     $("#new-marker-save-button").click(function () {
         markerDialog.dialog("close");
         var markerName = markerInput.val();
         markerInput.val("");
-        alert("markerName= " + markerName);
+        // add marker
+        var newMarker = new google.maps.Marker({ position: event.latLng, map: mapView.googleMap });
+        var newCharger = mapView.superData.addSupercharger(markerName, event.latLng);
+        mapView.addInfoWindowToMarker(newMarker, newCharger);
+        mapView.drawCircles();
     });
 }
