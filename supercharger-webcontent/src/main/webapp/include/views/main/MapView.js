@@ -51,12 +51,25 @@ redshiftsoft.MapView.prototype.initMap = function () {
     this.drawCircles();
 
     var u = this;
-    google.maps.event.addListener(this.googleMap, 'rightclick', function (e) {
-        new google.maps.Marker({ position: e.latLng, map: u.googleMap });
-        u.superData.add(e.latLng);
-        u.drawCircles();
-    });
+    google.maps.event.addListener(this.googleMap, 'rightclick', jQuery.proxy(this.addMarker, this));
 };
+
+redshiftsoft.MapView.prototype.addMarker = function (event) {
+    var markerInput = $("#new-marker-name-input");
+    var markerDialog = $("#new-marker-dialog");
+    markerDialog.show().dialog({ width: 400 });
+
+    new google.maps.Marker({ position: event.latLng, map: this.googleMap });
+    this.superData.add(event.latLng);
+    this.drawCircles();
+
+    $("#new-marker-save-button").click(function () {
+        markerDialog.dialog("close");
+        var markerName = markerInput.val();
+        markerInput.val("");
+        alert("markerName= " + markerName);
+    });
+}
 
 /**
  * MARKERS
