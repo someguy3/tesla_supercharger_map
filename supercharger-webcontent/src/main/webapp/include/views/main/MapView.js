@@ -84,7 +84,8 @@ redshiftsoft.MapView.prototype.addInfoWindowToMarker = function (marker, superch
         if (supercharger.url != null) {
             popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>" + "&nbsp;&nbsp;&nbsp;";
         }
-        popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>circle off</a>" + "<br/>";
+        var circleOnOffLabel = (supercharger.circle != null && supercharger.circle.getVisible()) ? "circle off" : "circle on";
+        popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a><br/>";
         popupContent += "</div>";
 
         var windowOptions = { content: popupContent  };
