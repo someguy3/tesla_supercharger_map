@@ -81,9 +81,10 @@ redshiftsoft.SuperchargerData.prototype.getRegionCount = function (region) {
 /**
  * Other properties that are later added to the supercharger data structure:
  *
- * id     --[Integer] uniquely identifies each record.
- * circle --[google.maps.Marker] a reference to the google-maps Circle object indicating range for this supercharger.
- * custom --[Boolean] true indicates that this is a custom marker added by the customer.
+ * id     -- [Integer] uniquely identifies each record.
+ * circle -- [google.maps.Circle] a reference to the google-maps Circle object indicating range for this supercharger.
+ * marker -- [google.maps.Marker] a reference to the google-maps Marker object assocated with this supercharger.
+ * custom -- [Boolean] true indicates that this is a custom marker added by the customer.
  *
  */
 redshiftsoft.SuperchargerData.LIST = [
