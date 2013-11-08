@@ -254,6 +254,13 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/burlingtonnc",
         "count": true
     },
+    {
+        "displayName": "Rocky Mount, NC",
+        "address": new redshiftsoft.Address("651 N. Winstead Avenue", "Rocky Mount", "NC", "27804", "USA"),
+        "location": new google.maps.LatLng(35.972874, -77.846870),
+        "url": "http://www.teslamotors.com/supercharger/rockymount",
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| Oregon
     {
         "displayName": "Grants Pass, OR",
