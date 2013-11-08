@@ -23,6 +23,8 @@ redshiftsoft.MapView = function (initialRangeMeters, initialFillOpacity, initial
 
     // handle clicks to toggle supercharger circle
     jQuery(document).on('click', '.circle-toggle-trigger', jQuery.proxy(this.handleCircleToggle, this));
+    // handle clicks to remove supercharger marker
+    jQuery(document).on('click', '.marker-toggle-trigger', jQuery.proxy(this.handleMarkerRemove, this));
 
 };
 
@@ -82,10 +84,15 @@ redshiftsoft.MapView.prototype.addInfoWindowToMarker = function (marker, superch
         popupContent += "<div class='title'>" + supercharger.displayName + "</div>" + "";
         popupContent += supercharger.address.street + "<br/>";
         if (supercharger.url != null) {
-            popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>" + "&nbsp;&nbsp;&nbsp;";
+            popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>";
+            popupContent += "&nbsp;&nbsp;&nbsp;";
         }
         var circleOnOffLabel = (supercharger.circle != null && supercharger.circle.getVisible()) ? "circle off" : "circle on";
-        popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a><br/>";
+        popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a>";
+        popupContent += "&nbsp;&nbsp;&nbsp;";
+        if (supercharger.custom) {
+            popupContent += "<a class='marker-toggle-trigger' href='" + supercharger.id + "'>remove</a><br/>";
+        }
         popupContent += "</div>";
 
         var windowOptions = { content: popupContent  };
@@ -160,6 +167,14 @@ redshiftsoft.MapView.prototype.handleCircleToggle = function (event) {
     }
 };
 
+redshiftsoft.MapView.prototype.handleMarkerRemove = function (event) {
+    event.preventDefault();
+    var link = $(event.target);
+    var id = link.attr('href');
+    var supercharger = this.superData.getById(id);
+    supercharger.circle.setVisible(false);
+    this.superData.removeById(id);
+};
 
 redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
     var markerInput = $("#new-marker-name-input");

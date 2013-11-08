@@ -1,7 +1,6 @@
 redshiftsoft = createMyNamespace("redshiftsoft");
 
 /**
- *
  * Constructor
  */
 redshiftsoft.SuperchargerData = function () {
@@ -37,6 +36,15 @@ redshiftsoft.SuperchargerData.prototype.getById = function (id) {
     return null;
 };
 
+redshiftsoft.SuperchargerData.prototype.removeById = function (id) {
+    for (var index = 0; index < redshiftsoft.SuperchargerData.LIST.length; index++) {
+        var supercharger = redshiftsoft.SuperchargerData.LIST[index];
+        if (supercharger.id == id) {
+            redshiftsoft.SuperchargerData.LIST = redshiftsoft.SuperchargerData.LIST(index, 1);
+            break;
+        }
+    }
+};
 
 redshiftsoft.SuperchargerData.prototype.addSupercharger = function (displayName, location) {
     var charger = {
@@ -45,7 +53,8 @@ redshiftsoft.SuperchargerData.prototype.addSupercharger = function (displayName,
         "address": new redshiftsoft.Address("", "", "", "", ""),
         "location": location,
         "url": null,
-        "count": false
+        "count": false,
+        "custom": true
     };
     redshiftsoft.SuperchargerData.LIST.push(charger);
     return charger;
@@ -72,8 +81,9 @@ redshiftsoft.SuperchargerData.prototype.getRegionCount = function (region) {
 /**
  * Other properties that are later added to the supercharger data structure:
  *
- * id     -- uniquely identifies each record.
- * circle -- a reference to the google-maps Circle object indicating range for this supercharger.
+ * id     --[Integer] uniquely identifies each record.
+ * circle --[google.maps.Marker] a reference to the google-maps Circle object indicating range for this supercharger.
+ * custom --[Boolean] true indicates that this is a custom marker added by the customer.
  *
  */
 redshiftsoft.SuperchargerData.LIST = [
