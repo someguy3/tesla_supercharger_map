@@ -155,6 +155,7 @@ redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
         var newCharger = mapView.superData.addSupercharger(markerName, event.latLng);
         redshiftsoft.MapView.addMarkerToSupercharger(mapView.googleMap, newCharger);
         mapView.drawCircles();
+        redshiftsoft.MapView.showInfoWindowForMarker.call(newCharger.marker);
     }
 
     markerDialog.show().dialog(
