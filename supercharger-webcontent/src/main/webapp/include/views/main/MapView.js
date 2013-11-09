@@ -56,53 +56,17 @@ redshiftsoft.MapView.prototype.initMap = function () {
 };
 
 /**
- * MARKERS
+ * DRAW MARKERS
  */
 redshiftsoft.MapView.prototype.drawMarkers = function () {
-
     for (var i = 0; i < this.superData.size(); i++) {
         var supercharger = this.superData.get(i);
-
-        var marker = new google.maps.Marker({
-            position: supercharger.location,
-            map: this.googleMap,
-            title: supercharger.displayName,
-            animation: google.maps.Animation.DROP
-        });
-        this.addInfoWindowToMarker(marker, supercharger);
+        redshiftsoft.MapView.addMarkerToSupercharger(this.googleMap, supercharger);
     }
 };
 
-redshiftsoft.MapView.prototype.addInfoWindowToMarker = function (marker, supercharger) {
-    marker['supercharger'] = supercharger;
-
-
-    google.maps.event.addListener(marker, 'click', function () {
-        var myMarker = this;
-        var popupContent = "";
-        popupContent += "<div class='info-window-content'>";
-        popupContent += "<div class='title'>" + supercharger.displayName + "</div>" + "";
-        popupContent += supercharger.address.street + "<br/>";
-        if (supercharger.url != null) {
-            popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>";
-            popupContent += "&nbsp;&nbsp;&nbsp;";
-        }
-        var circleOnOffLabel = (supercharger.circle != null && supercharger.circle.getVisible()) ? "circle off" : "circle on";
-        popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a>";
-        popupContent += "&nbsp;&nbsp;&nbsp;";
-        if (supercharger.custom) {
-            popupContent += "<a class='marker-toggle-trigger' href='" + supercharger.id + "'>remove</a><br/>";
-        }
-        popupContent += "</div>";
-
-        var windowOptions = { content: popupContent  };
-        var infoWindow = new google.maps.InfoWindow(windowOptions);
-        infoWindow.open(myMarker.map, myMarker);
-    });
-}
-
 /**
- * CIRCLES
+ *  DRAW CIRCLES
  */
 redshiftsoft.MapView.prototype.drawCircles = function () {
 
@@ -173,6 +137,7 @@ redshiftsoft.MapView.prototype.handleMarkerRemove = function (event) {
     var id = link.attr('href');
     var supercharger = this.superData.getById(id);
     supercharger.circle.setVisible(false);
+    supercharger.marker.setVisible(false);
     this.superData.removeById(id);
 };
 
@@ -187,9 +152,8 @@ redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
         var markerName = markerInput.val();
         markerInput.val("");
         // add marker
-        var newMarker = new google.maps.Marker({ position: event.latLng, map: mapView.googleMap });
         var newCharger = mapView.superData.addSupercharger(markerName, event.latLng);
-        mapView.addInfoWindowToMarker(newMarker, newCharger);
+        redshiftsoft.MapView.addMarkerToSupercharger(mapView.googleMap, newCharger);
         mapView.drawCircles();
     }
 
@@ -204,4 +168,46 @@ redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
             ]
         }
     );
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// CLASS level methods
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+redshiftsoft.MapView.addMarkerToSupercharger = function (googleMap, supercharger) {
+    var marker = new google.maps.Marker({
+        position: supercharger.location,
+        map: googleMap,
+        title: supercharger.displayName,
+        animation: google.maps.Animation.DROP
+    });
+    supercharger.marker = marker;
+    redshiftsoft.MapView.addInfoWindowToMarker(supercharger);
+}
+
+redshiftsoft.MapView.addInfoWindowToMarker = function (supercharger) {
+    google.maps.event.addListener(supercharger.marker, 'click', function () {
+        var myMarker = this;
+        var popupContent = "";
+        popupContent += "<div class='info-window-content'>";
+        popupContent += "<div class='title'>" + supercharger.displayName + "</div>" + "";
+        popupContent += supercharger.address.street + "<br/>";
+        if (supercharger.url != null) {
+            popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>";
+            popupContent += "&nbsp;&nbsp;&nbsp;";
+        }
+        var circleOnOffLabel = (supercharger.circle != null && supercharger.circle.getVisible()) ? "circle off" : "circle on";
+        popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a>";
+        popupContent += "&nbsp;&nbsp;&nbsp;";
+        if (supercharger.custom) {
+            popupContent += "<a class='marker-toggle-trigger' href='" + supercharger.id + "'>remove</a><br/>";
+        }
+        popupContent += "</div>";
+
+        var windowOptions = { content: popupContent  };
+        var infoWindow = new google.maps.InfoWindow(windowOptions);
+        infoWindow.open(myMarker.map, myMarker);
+    });
 }
