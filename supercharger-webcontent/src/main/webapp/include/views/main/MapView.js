@@ -136,8 +136,8 @@ redshiftsoft.MapView.prototype.handleMarkerRemove = function (event) {
     var link = $(event.target);
     var id = link.attr('href');
     var supercharger = this.superData.getById(id);
-    supercharger.circle.setVisible(false);
-    supercharger.marker.setVisible(false);
+    supercharger.circle.setMap(null);
+    supercharger.marker.setMap(null);
     this.superData.removeById(id);
 };
 

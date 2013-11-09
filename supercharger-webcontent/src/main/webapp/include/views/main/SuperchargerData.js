@@ -40,7 +40,7 @@ redshiftsoft.SuperchargerData.prototype.removeById = function (id) {
     for (var index = 0; index < redshiftsoft.SuperchargerData.LIST.length; index++) {
         var supercharger = redshiftsoft.SuperchargerData.LIST[index];
         if (supercharger.id == id) {
-            redshiftsoft.SuperchargerData.LIST = redshiftsoft.SuperchargerData.LIST(index, 1);
+            redshiftsoft.SuperchargerData.LIST.splice(index, 1);
             break;
         }
     }
