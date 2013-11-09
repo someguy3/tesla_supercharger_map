@@ -184,30 +184,30 @@ redshiftsoft.MapView.addMarkerToSupercharger = function (googleMap, supercharger
         animation: google.maps.Animation.DROP
     });
     supercharger.marker = marker;
-    redshiftsoft.MapView.addInfoWindowToMarker(supercharger);
+    marker.supercharger = supercharger;
+    google.maps.event.addListener(supercharger.marker, 'click', redshiftsoft.MapView.showInfoWindowForMarker);
 }
 
-redshiftsoft.MapView.addInfoWindowToMarker = function (supercharger) {
-    google.maps.event.addListener(supercharger.marker, 'click', function () {
-        var myMarker = this;
-        var popupContent = "";
-        popupContent += "<div class='info-window-content'>";
-        popupContent += "<div class='title'>" + supercharger.displayName + "</div>" + "";
-        popupContent += supercharger.address.street + "<br/>";
-        if (supercharger.url != null) {
-            popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>";
-            popupContent += "&nbsp;&nbsp;&nbsp;";
-        }
-        var circleOnOffLabel = (supercharger.circle != null && supercharger.circle.getVisible()) ? "circle off" : "circle on";
-        popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a>";
+redshiftsoft.MapView.showInfoWindowForMarker = function () {
+    var myMarker = this;
+    var supercharger = myMarker.supercharger;
+    var popupContent = "";
+    popupContent += "<div class='info-window-content'>";
+    popupContent += "<div class='title'>" + supercharger.displayName + "</div>" + "";
+    popupContent += supercharger.address.street + "<br/>";
+    if (supercharger.url != null) {
+        popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>";
         popupContent += "&nbsp;&nbsp;&nbsp;";
-        if (supercharger.custom) {
-            popupContent += "<a class='marker-toggle-trigger' href='" + supercharger.id + "'>remove</a><br/>";
-        }
-        popupContent += "</div>";
+    }
+    var circleOnOffLabel = (supercharger.circle != null && supercharger.circle.getVisible()) ? "circle off" : "circle on";
+    popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a>";
+    popupContent += "&nbsp;&nbsp;&nbsp;";
+    if (supercharger.custom) {
+        popupContent += "<a class='marker-toggle-trigger' href='" + supercharger.id + "'>remove</a><br/>";
+    }
+    popupContent += "</div>";
 
-        var windowOptions = { content: popupContent  };
-        var infoWindow = new google.maps.InfoWindow(windowOptions);
-        infoWindow.open(myMarker.map, myMarker);
-    });
+    var windowOptions = { content: popupContent  };
+    var infoWindow = new google.maps.InfoWindow(windowOptions);
+    infoWindow.open(myMarker.map, myMarker);
 }
