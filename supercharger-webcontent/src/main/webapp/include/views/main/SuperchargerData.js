@@ -167,6 +167,15 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/tejonranch",
         "count": true
     },
+    // TODO: URL IS PROBABLY NOT CORRECT.
+    {
+        "displayName": "Vacaville, CA <br/>(under construction)",
+        "address": new redshiftsoft.Address("152-160 Nut Tree Pkwy Vacaville Premium Outlets", "Vacaville", "CA", "95687", "USA"),
+        "location": new google.maps.LatLng(38.366592, -121.958156),
+        "url": "http://www.teslamotors.com/supercharger/vacaville",
+        "count": false
+    },
+
     //-----------------------------------------------------------------------------------------------------------------| Colorado
     {
         "displayName": "Glenwood Springs, CO",
