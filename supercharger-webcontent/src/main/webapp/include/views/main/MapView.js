@@ -178,12 +178,16 @@ redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
 
 
 redshiftsoft.MapView.addMarkerToSupercharger = function (googleMap, supercharger) {
-    var marker = new google.maps.Marker({
+    var markerOptions = {
         position: supercharger.location,
         map: googleMap,
         title: supercharger.displayName,
         animation: google.maps.Animation.DROP
-    });
+    };
+    if (supercharger.construction) {
+        markerOptions['icon'] = "/images/construction-cone-marker.png";
+    }
+    var marker = new google.maps.Marker(markerOptions);
     supercharger.marker = marker;
     marker.supercharger = supercharger;
     google.maps.event.addListener(supercharger.marker, 'click', redshiftsoft.MapView.showInfoWindowForMarker);
@@ -195,6 +199,9 @@ redshiftsoft.MapView.showInfoWindowForMarker = function () {
     var popupContent = "";
     popupContent += "<div class='info-window-content'>";
     popupContent += "<div class='title'>" + supercharger.displayName + "</div>" + "";
+    if (supercharger.construction) {
+        popupContent += "<div style='color: orange; font-size: smaller; font-weight: bold'>under construction</div>";
+    }
     popupContent += supercharger.address.street + "<br/>";
     if (supercharger.url != null) {
         popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>";

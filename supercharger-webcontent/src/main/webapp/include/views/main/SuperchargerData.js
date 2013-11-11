@@ -169,10 +169,11 @@ redshiftsoft.SuperchargerData.LIST = [
     },
     // TODO: URL IS PROBABLY NOT CORRECT.
     {
-        "displayName": "Vacaville, CA <br/>(under construction)",
+        "displayName": "Vacaville, CA",
         "address": new redshiftsoft.Address("152-160 Nut Tree Pkwy Vacaville Premium Outlets", "Vacaville", "CA", "95687", "USA"),
         "location": new google.maps.LatLng(38.366592, -121.958156),
         "url": "http://www.teslamotors.com/supercharger/vacaville",
+        "construction": true,
         "count": false
     },
 
