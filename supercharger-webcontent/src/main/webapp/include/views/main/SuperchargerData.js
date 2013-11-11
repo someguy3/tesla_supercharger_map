@@ -304,10 +304,19 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/woodburn",
         "count": true
     },
+    //-----------------------------------------------------------------------------------------------------------------| South Dakota
+    {
+        "displayName": "Mitchell, SD",
+        "address": new redshiftsoft.Address("1241-1571 W Havens St", "Mitchell", "SD", "57301", "USA"),
+        "location": new google.maps.LatLng(43.701139, -98.044401),
+        "url": "http://www.teslamotors.com/supercharger/mitchell",
+        "construction": true,
+        "count": false
+    },
     //-----------------------------------------------------------------------------------------------------------------| Texas
     {
         "displayName": "Columbus, TX",
-        "address": new redshiftsoft.Address("2535 Texas", "71 Columbus", "TX", "78934", "USA"),
+        "address": new redshiftsoft.Address("2535 Texas 71", "Columbus", "TX", "78934", "USA"),
         "location": new google.maps.LatLng(29.690062, -96.537725),
         "url": "http://www.teslamotors.com/supercharger/columbus",
         "count": true
