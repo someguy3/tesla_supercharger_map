@@ -89,6 +89,15 @@ redshiftsoft.SuperchargerData.prototype.getRegionCount = function (region) {
  */
 redshiftsoft.SuperchargerData.LIST = [
 
+    //-----------------------------------------------------------------------------------------------------------------| Arizona
+    {
+        "displayName": "Quartzsite, AZ",
+        "address": new redshiftsoft.Address("1451 W Main St", "Quartzsite", "AZ", "85346", "USA"),
+        "location": new google.maps.LatLng(33.661314, -114.242174),
+        "url": "http://www.teslamotors.com/supercharger/quartzsite",
+        "construction": true,
+        "count": false
+    },
     //-----------------------------------------------------------------------------------------------------------------| California
     {
         "displayName": "Atascadero, CA",
