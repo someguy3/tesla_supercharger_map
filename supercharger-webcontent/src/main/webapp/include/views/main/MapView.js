@@ -185,7 +185,7 @@ redshiftsoft.MapView.addMarkerToSupercharger = function (googleMap, supercharger
         animation: google.maps.Animation.DROP
     };
     if (supercharger.construction) {
-        markerOptions['icon'] = "/supercharger/images/construction-cone-marker.png";
+        markerOptions['icon'] = "images/construction-cone-marker.png";
     }
     var marker = new google.maps.Marker(markerOptions);
     supercharger.marker = marker;
