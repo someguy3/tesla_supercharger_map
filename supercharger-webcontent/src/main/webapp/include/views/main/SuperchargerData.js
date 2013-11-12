@@ -81,15 +81,24 @@ redshiftsoft.SuperchargerData.prototype.getRegionCount = function (region) {
 /**
  * Other properties that are later added to the supercharger data structure:
  *
- * id     -- [Integer] uniquely identifies each record.
- * circle -- [google.maps.Circle] a reference to the google-maps Circle object indicating range for this supercharger.
- * marker -- [google.maps.Marker] a reference to the google-maps Marker object associated with this supercharger.
- * custom -- [Boolean] true indicates that this is a custom marker added by the customer.
+ * id           -- [Integer] uniquely identifies each record.
+ * circle       -- [google.maps.Circle] a reference to the google-maps Circle object indicating range for this supercharger.
+ * marker       -- [google.maps.Marker] a reference to the google-maps Marker object associated with this supercharger.
+ * custom       -- [Boolean] true indicates that this is a custom marker added by the customer.
+ * construction -- [Boolean] true indicates that this location is under construction
  *
  */
 redshiftsoft.SuperchargerData.LIST = [
 
     //-----------------------------------------------------------------------------------------------------------------| Arizona
+    {
+        "displayName": "Gila Bend,  AZ",
+        "address": new redshiftsoft.Address("820 W Pima St", "Gila Bend", "AZ", "85337", "USA"),
+        "location": new google.maps.LatLng(32.943852,-112.733536),
+        "url": "http://www.teslamotors.com/supercharger/gila",
+        "construction": true,
+        "count": false
+    },
     {
         "displayName": "Quartzsite, AZ",
         "address": new redshiftsoft.Address("1451 W Main St", "Quartzsite", "AZ", "85346", "USA"),
