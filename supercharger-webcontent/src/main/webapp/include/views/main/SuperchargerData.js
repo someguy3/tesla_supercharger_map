@@ -340,6 +340,13 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
+        "displayName": "Corsicana, TX",
+        "address": new redshiftsoft.Address("2035 Interstate 45 Frontage Rd", "Corsicana", "TX", "75109", "USA"),
+        "location": new google.maps.LatLng(32.068577, -96.448229),
+        "url": "http://www.teslamotors.com/supercharger/corsicana",
+        "count": true
+    },
+    {
         "displayName": "San Marcos, TX",
         "address": new redshiftsoft.Address("3939 Interstate 35", "San Marcos", "TX", "78666", "USA"),
         "location": new google.maps.LatLng(29.827692, -97.979677),
