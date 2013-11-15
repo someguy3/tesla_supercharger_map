@@ -1,7 +1,5 @@
 redshiftsoft = createMyNamespace("redshiftsoft");
 
-redshiftsoft.MapView
-
 /**
  * Constructor
  */
