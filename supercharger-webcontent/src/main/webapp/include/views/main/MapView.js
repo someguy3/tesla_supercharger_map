@@ -21,10 +21,14 @@ redshiftsoft.MapView = function (initialRangeMeters, initialFillOpacity, initial
 
     this.initMap();
 
+    this.contextMenu = new redshiftsoft.MapViewContextMenu(this.googleMap);
+
     // handle clicks to toggle supercharger circle
     jQuery(document).on('click', '.circle-toggle-trigger', jQuery.proxy(this.handleCircleToggle, this));
     // handle clicks to remove supercharger marker
     jQuery(document).on('click', '.marker-toggle-trigger', jQuery.proxy(this.handleMarkerRemove, this));
+    // handle clicks to remove supercharger marker
+    jQuery(document).on('click', '.add-supercharger-trigger', jQuery.proxy(this.handleAddCustomMarker, this));
 
 };
 
@@ -52,7 +56,8 @@ redshiftsoft.MapView.prototype.initMap = function () {
     this.drawMarkers();
     this.drawCircles();
 
-    google.maps.event.addListener(this.googleMap, 'rightclick', jQuery.proxy(this.handleAddMarker, this));
+    google.maps.event.addListener(this.googleMap, 'rightclick', jQuery.proxy(this.handleShowContextMenu, this));
+    google.maps.event.addListener(this.googleMap, 'click', jQuery.proxy(this.handleHideContextMenu, this));
 };
 
 /**
@@ -141,7 +146,17 @@ redshiftsoft.MapView.prototype.handleMarkerRemove = function (event) {
     this.superData.removeById(id);
 };
 
-redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
+redshiftsoft.MapView.prototype.handleShowContextMenu = function (event) {
+    this.contextMenu.showContextMenu(event.latLng);
+};
+redshiftsoft.MapView.prototype.handleHideContextMenu = function (event) {
+    this.contextMenu.hide();
+};
+
+/**
+ * Add a custom marker and range circle to the map.
+ */
+redshiftsoft.MapView.prototype.handleAddCustomMarker = function (event) {
     var markerInput = $("#new-marker-name-input");
     var markerDialog = $("#new-marker-dialog");
     var mapView = this;
