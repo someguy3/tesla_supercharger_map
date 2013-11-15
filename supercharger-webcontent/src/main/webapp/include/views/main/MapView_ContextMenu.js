@@ -21,12 +21,7 @@ redshiftsoft.MapViewContextMenu.prototype.hide = function () {
 /**
  * Show context menu.
  */
-redshiftsoft.MapViewContextMenu.prototype.showContextMenu = function (currentLatLng) {
-    this.setMenuXY(currentLatLng);
-    this.contextMenuDiv.show();
-};
-
-redshiftsoft.MapViewContextMenu.prototype.setMenuXY = function (currentLatLng) {
+redshiftsoft.MapViewContextMenu.prototype.show = function (currentLatLng) {
     var mapWidth = this.mapCanvas.width();
     var mapHeight = this.mapCanvas.height();
     var menuWidth = this.contextMenuDiv.width();
@@ -46,7 +41,8 @@ redshiftsoft.MapViewContextMenu.prototype.setMenuXY = function (currentLatLng) {
 
     this.contextMenuDiv.css('left', x);
     this.contextMenuDiv.css('top', y);
-}
+    this.contextMenuDiv.show();
+};
 
 redshiftsoft.MapViewContextMenu.prototype.getCanvasXY = function (currentLatLng) {
     var scale = Math.pow(2, this.googleMap.getZoom());

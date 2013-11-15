@@ -147,7 +147,7 @@ redshiftsoft.MapView.prototype.handleMarkerRemove = function (event) {
 };
 
 redshiftsoft.MapView.prototype.handleShowContextMenu = function (event) {
-    this.contextMenu.showContextMenu(event.latLng);
+    this.contextMenu.show(event.latLng);
 };
 redshiftsoft.MapView.prototype.handleHideContextMenu = function (event) {
     this.contextMenu.hide();
