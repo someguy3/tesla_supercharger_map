@@ -94,7 +94,7 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Gila Bend,  AZ",
         "address": new redshiftsoft.Address("820 W Pima St", "Gila Bend", "AZ", "85337", "USA"),
-        "location": new google.maps.LatLng(32.943852,-112.733536),
+        "location": new google.maps.LatLng(32.943852, -112.733536),
         "url": "http://www.teslamotors.com/supercharger/gila",
         "construction": true,
         "count": false
@@ -343,6 +343,13 @@ redshiftsoft.SuperchargerData.LIST = [
         "address": new redshiftsoft.Address("2035 Interstate 45 Frontage Rd", "Corsicana", "TX", "75109", "USA"),
         "location": new google.maps.LatLng(32.068577, -96.448229),
         "url": "http://www.teslamotors.com/supercharger/corsicana",
+        "count": true
+    },
+    {
+        "displayName": "Huntsville, TX",
+        "address": new redshiftsoft.Address("148 Interstate 45", "Huntsville", "TX", "77340", "USA"),
+        "location": new google.maps.LatLng(30.716158, -95.565944),
+        "url": "http://www.teslamotors.com/supercharger/huntsville",
         "count": true
     },
     {
