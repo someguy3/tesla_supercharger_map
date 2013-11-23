@@ -79,6 +79,20 @@ redshiftsoft.SuperchargerData.prototype.getRegionCount = function (region) {
 };
 
 /**
+ * Construction count.
+ */
+redshiftsoft.SuperchargerData.prototype.getConstructionCount = function () {
+    var count = 0;
+    for (var i = 0; i < redshiftsoft.SuperchargerData.LIST.length; i++) {
+        var supercharger = redshiftsoft.SuperchargerData.LIST[i];
+        if (supercharger.construction) {
+            count++;
+        }
+    }
+    return count;
+};
+
+/**
  * Other properties that are later added to the supercharger data structure:
  *
  * id           -- [Integer] uniquely identifies each record.
@@ -184,7 +198,6 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/tejonranch",
         "count": true
     },
-    // TODO: URL IS PROBABLY NOT CORRECT.
     {
         "displayName": "Vacaville, CA",
         "address": new redshiftsoft.Address("152-160 Nut Tree Pkwy Vacaville Premium Outlets", "Vacaville", "CA", "95687", "USA"),
@@ -283,6 +296,33 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(40.508497, -88.985575),
         "url": "http://www.teslamotors.com/supercharger/normal",
         "count": true
+    },
+    //-----------------------------------------------------------------------------------------------------------------| Minnesota
+    {
+        "displayName": "Worthington, MN",
+        "address": new redshiftsoft.Address("1290 Ryan's Rd", "Worthington", "MN", "56187", "USA"),
+        "location": new google.maps.LatLng(43.634002, -95.595254),
+        "url": "http://www.teslamotors.com/supercharger/worthington",
+        "construction": true,
+        "count": false
+    },
+    //-----------------------------------------------------------------------------------------------------------------| New Mexico
+    {
+        "displayName": "Farmington, NM",
+        "address": new redshiftsoft.Address("4200 Sierra Vista Dr", "Farmington", "NM", "87402", "USA"),
+        "location": new google.maps.LatLng(36.766371, -108.144047),
+        "url": "http://www.teslamotors.com/supercharger/farmington",
+        "construction": true,
+        "count": false
+    },
+    //-----------------------------------------------------------------------------------------------------------------| New York
+    {
+        "displayName": "JFK Airport, NY",
+        "address": new redshiftsoft.Address("JFK International Airport", "New York", "NY", "11430", "USA"),
+        "location": new google.maps.LatLng(40.661758, -73.792733),
+        "url": "http://www.teslamotors.com/supercharger/jfk",
+        "construction": true,
+        "count": false
     },
     //-----------------------------------------------------------------------------------------------------------------| North Carolina
     {
@@ -389,11 +429,43 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/centralia",
         "count": true
     },
+    {
+        "displayName": "Ellensburg, WA",
+        "address": new redshiftsoft.Address("1620 Canyon Rd", "Ellensburg", "WA", "98926", "USA"),
+        "location": new google.maps.LatLng(46.9769, -120.5418666),
+        "url": "http://www.teslamotors.com/supercharger/ellensburg",
+        "construction": true,
+        "count": false
+    },
+    //-----------------------------------------------------------------------------------------------------------------| Wisconsin
+    {
+        "displayName": "Madison, WI",
+        "address": new redshiftsoft.Address("89 E Towne Mall", "Madison", "WI", "53704", "USA"),
+        "location": new google.maps.LatLng(43.126316666, -89.30698333),
+        "url": "http://www.teslamotors.com/supercharger/madison",
+        "construction": true,
+        "count": false
+    },
 
-    //-----------------------------------------------------------------------------------------------------------------| NORWAY
-    //
-    //
-    //
+    //##################################################################################################################
+    //##################################################################################################################
+    //###
+    //### Europe
+    //###
+    //##################################################################################################################
+    //##################################################################################################################
+
+    //-----------------------------------------------------------------------------------------------------------------| GERMANY
+
+    {
+        "displayName": "Jettingen-Scheppach",
+        "address": new redshiftsoft.Address("between Munich and Stuttgart", "Jettingen-Scheppach", "", "", "Germany"),
+        "location": new google.maps.LatLng(48.411685, 10.439755),
+        "url": "http://www.teslamotors.com/supercharger/jettingen",
+        "construction": true,
+        "count": false
+    },
+
     //-----------------------------------------------------------------------------------------------------------------| NORWAY
 
     {
