@@ -27,13 +27,12 @@ redshiftsoft.MapView = function (initialRangeMeters, initialFillOpacity, initial
     // handle clicks to remove supercharger marker
     jQuery(document).on('click', '.marker-toggle-trigger', jQuery.proxy(this.handleMarkerRemove, this));
 
+    //
+    // Map context menu
+    //
     this.contextMenu = new redshiftsoft.MapViewContextMenu(this.googleMap);
-
-    // handle clicks to add supercharger marker
-    this.contextMenu.on("context-menu-add-marker", jQuery.proxy(this.handleAddCustomMarker, this));
-    this.contextMenu.on("context-menu-add-to-route", function () {
-        alert("TODO: add implement to route");
-    });
+    this.contextMenu.on("context-menu-add-marker", jQuery.proxy(this.handleAddMarker, this));
+    this.contextMenu.on("context-menu-add-to-route", jQuery.proxy(this.handleAddRoute, this));
 
 };
 
@@ -156,7 +155,7 @@ redshiftsoft.MapView.prototype.handleMarkerRemove = function (event) {
 /**
  * Add a custom marker and range circle to the map.
  */
-redshiftsoft.MapView.prototype.handleAddCustomMarker = function (event) {
+redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
     var markerInput = $("#new-marker-name-input");
     var markerDialog = $("#new-marker-dialog");
     var mapView = this;
@@ -184,6 +183,10 @@ redshiftsoft.MapView.prototype.handleAddCustomMarker = function (event) {
             ]
         }
     );
+}
+
+redshiftsoft.MapView.prototype.handleAddRoute = function (event) {
+    alert("TODO: add implement to route at " + event.latLng);
 }
 
 
