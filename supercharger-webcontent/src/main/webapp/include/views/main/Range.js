@@ -9,7 +9,7 @@ redshiftsoft.Range = function (rangeMetersIn) {
 };
 
 
-redshiftsoft.Range.MILES_MIN = 15;
+redshiftsoft.Range.MILES_MIN = 0;
 redshiftsoft.Range.MILES_MAX = 305;
 redshiftsoft.Range.METERS_PER_MILE = 1609.34;
 redshiftsoft.Range.METERS_PER_KM = 1000.0;
