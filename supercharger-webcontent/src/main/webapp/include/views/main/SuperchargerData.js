@@ -297,6 +297,15 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/normal",
         "count": true
     },
+    //-----------------------------------------------------------------------------------------------------------------| Indiana
+    {
+        "displayName": "Mishawaka, IN",
+        "address": new redshiftsoft.Address("6501 Grape Rd", "Mishawaka", "IN", "46545", "USA"),
+        "location": new google.maps.LatLng(41.7174, -86.1887),
+        "url": "http://www.teslamotors.com/supercharger/mishawaka",
+        "construction": true,
+        "count": false
+    },
     //-----------------------------------------------------------------------------------------------------------------| Minnesota
     {
         "displayName": "Worthington, MN",
