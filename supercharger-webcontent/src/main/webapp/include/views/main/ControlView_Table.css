@@ -1,4 +1,4 @@
-.supercharger-table-container {
+.controls-table-container {
     display: inline-block;
     text-align: center;
 
@@ -10,13 +10,13 @@
     overflow-x: hidden;
 }
 
-.supercharger-table-container table {
+.controls-table-container table {
     border-collapse: collapse;
     margin: 0 auto;
     padding: 0;
 }
 
-.supercharger-table-container th {
+.controls-table-container th {
     text-align: left;
     background: whitesmoke;
     padding-left: 5px;
@@ -24,14 +24,14 @@
     border: 1px solid white;
 }
 
-.supercharger-table-container td {
+.controls-table-container td {
     text-align: left;
     border: 1px solid #dddddd;
     padding-left: 3px;
     padding-right: 3px;
 }
 
-.supercharger-table-container td.tog {
+.controls-table-container td.tog {
     text-align: center;
     vertical-align: middle;
 }

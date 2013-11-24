@@ -186,7 +186,27 @@ redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
 }
 
 redshiftsoft.MapView.prototype.handleAddRoute = function (event) {
-    alert("TODO: add implement to route at " + event.latLng);
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsDisplay.setMap(this.googleMap);
+    directionsDisplay.setPanel(document.getElementById('directions-panel'));
+
+    if (!this.routeStart) {
+        this.routeStart = event.latLng;
+    }
+    else {
+        this.routeEnd = event.latLng;
+        var request = {
+            origin: this.routeStart,
+            destination: this.routeEnd,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        var directionsService = new google.maps.DirectionsService();
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+            }
+        });
+    }
 }
 
 
