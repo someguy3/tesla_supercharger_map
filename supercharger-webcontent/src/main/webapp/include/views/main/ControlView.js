@@ -12,23 +12,9 @@ redshiftsoft = createMyNamespace("redshiftsoft");
 redshiftsoft.ControlView = function (initialRangeMeters, initialFillOpacity, initialFillColor, initialBorderOpacity, initialBorderColor) {
 
     this.range = new redshiftsoft.Range(initialRangeMeters);
+    this.viewDiv = $("#control-view-div");
 
     this.initializeControls(initialFillOpacity, initialFillColor, initialBorderOpacity, initialBorderColor);
-
-    this.rangeChangedCallback = function (newRadiusMeters) {
-    };
-    this.mapTypeChangedCallback = function (arg) {
-    };
-
-    this.fillOpacityChangedCallback = function (arg) {
-    };
-    this.fillColorChangeCallback = function (color) {
-    };
-
-    this.borderOpacityChangedCallback = function (arg) {
-    };
-    this.borderColorChangeCallback = function (color) {
-    };
 
     $("#controls-tabs").tabs();
 
@@ -47,6 +33,29 @@ redshiftsoft.ControlView = function (initialRangeMeters, initialFillOpacity, ini
     });
 
 };
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Event methods that delegate to jquery object for triggering/observing custom events.
+//
+// range-change-event          [newRadiusMeters]
+// map-type-change-event       [newMapType]
+// fill-opacity-change-event   [newFillOpacity]
+// fill-color-event-change     [newFillColor]
+// border-opacity-change-event [newBorderOpacity]
+// border-color-event-change   [newBorderColor]
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+redshiftsoft.ControlView.prototype.on = function (eventName, callback) {
+    this.viewDiv.on(eventName, callback);
+};
+redshiftsoft.ControlView.prototype.trigger = function (eventName, arg1) {
+    this.viewDiv.trigger(eventName, arg1);
+};
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 /**
  * Initialize controls
@@ -107,14 +116,14 @@ redshiftsoft.ControlView.prototype.initializeRangeControl = function () {
  * Handle fill color change.
  */
 redshiftsoft.ControlView.prototype.handleFillColorChange = function (newColor) {
-    this.fillColorChangeCallback("" + newColor);
+    this.trigger("fill-color-change-event", "" + newColor);
 };
 
 /**
  * Handle border color change.
  */
 redshiftsoft.ControlView.prototype.handleBorderColorChange = function (newColor) {
-    this.borderColorChangeCallback("" + newColor);
+    this.trigger("border-color-change-event", "" + newColor);
 };
 
 /**
@@ -124,25 +133,25 @@ redshiftsoft.ControlView.prototype.handleRangeSlide = function (event) {
     var newValueMiles = $("#range-slider").slider("value");
     this.range.setCurrent(newValueMiles);
     this.updateTextRangeDisplay();
-    this.rangeChangedCallback(this.range.getRangeMeters());
+    this.trigger("range-change-event", this.range.getRangeMeters());
 };
 
 /**
  * Handle fill-opacity slider change.
  */
 redshiftsoft.ControlView.prototype.handleFillOpacitySlide = function (event) {
-    var newValue = $("#fill-opacity-slider").slider("value");
-    this.updateTextFillOpacityDisplay(newValue);
-    this.fillOpacityChangedCallback(newValue);
+    var newFillOpacity = $("#fill-opacity-slider").slider("value");
+    this.updateTextFillOpacityDisplay(newFillOpacity);
+    this.trigger("fill-opacity-changed-event", newFillOpacity);
 };
 
 /**
  * Handle fill-opacity slider change.
  */
 redshiftsoft.ControlView.prototype.handleBorderOpacitySlide = function (event) {
-    var newValue = $("#border-opacity-slider").slider("value");
-    this.updateTextBorderOpacityDisplay(newValue);
-    this.borderOpacityChangedCallback(newValue);
+    var newBorderOpacity = $("#border-opacity-slider").slider("value");
+    this.updateTextBorderOpacityDisplay(newBorderOpacity);
+    this.trigger("border-opacity-changed-event", newBorderOpacity);
 };
 
 /**
@@ -150,7 +159,7 @@ redshiftsoft.ControlView.prototype.handleBorderOpacitySlide = function (event) {
  */
 redshiftsoft.ControlView.prototype.handleMapType = function () {
     var newMapType = $("input[name='mapType']:checked").val();
-    this.mapTypeChangedCallback(newMapType);
+    this.trigger("map-type-change-event", newMapType);
 };
 
 /**

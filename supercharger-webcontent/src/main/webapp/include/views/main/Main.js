@@ -22,63 +22,64 @@ $(function () {
     //
     // Callback: range change
     //
-    controlView.rangeChangedCallback = function (newRadiusMeters) {
+    controlView.on("range-change-event", function (event, newRadiusMeters) {
         jQuery.doTimeout("rangeTimerId", 200, function () {
             mapView.setRadiusMeters(newRadiusMeters);
             mapView.drawCircles();
         });
-    };
+    });
 
     //
     // Callback: mapType change
     //
-    controlView.mapTypeChangedCallback = function (newValue) {
-        if (newValue == "SATELLITE") {
+    controlView.on("map-type-change-event", function (event, newMapType) {
+        if (newMapType == "SATELLITE") {
             mapView.googleMap.setMapTypeId(google.maps.MapTypeId.SATELLITE);
-        } else if (newValue == "ROADMAP") {
+        } else if (newMapType == "ROADMAP") {
             mapView.googleMap.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-        } else if (newValue == "HYBRID") {
+        } else if (newMapType == "HYBRID") {
             mapView.googleMap.setMapTypeId(google.maps.MapTypeId.HYBRID);
         } else {
             mapView.googleMap.setMapTypeId(google.maps.MapTypeId.TERRAIN);
         }
-    };
+    });
 
     //
     // Callback: fill-opacity change
     //
-    controlView.fillOpacityChangedCallback = function (newValue) {
+    controlView.on("fill-opacity-changed-event", function (event, newFillOpacity) {
         jQuery.doTimeout("fillOpacityTimerId", 400, function () {
-            mapView.setFillOpacity(newValue);
+            mapView.setFillOpacity(newFillOpacity);
             mapView.drawCircles();
         });
-    };
+
+    });
 
     //
     // Callback: fill color change
     //
-    controlView.fillColorChangeCallback = function (newColor) {
+    controlView.on("fill-color-change-event", function (event, newColor) {
         mapView.setFillColor(newColor);
         mapView.drawCircles();
-    };
+    });
 
     //
     // Callback: fill-opacity change
     //
-    controlView.borderOpacityChangedCallback = function (newValue) {
+    controlView.on("border-opacity-changed-event", function (event, newValue) {
         jQuery.doTimeout("borderOpacityTimerId", 400, function () {
             mapView.setBorderOpacity(newValue);
             mapView.drawCircles();
         });
-    };
+    });
 
     //
     // Callback: fill color change
     //
-    controlView.borderColorChangeCallback = function (newColor) {
+    controlView.on("border-color-change-event", function (event, newColor) {
         mapView.setBorderColor(newColor);
         mapView.drawCircles();
-    };
+    });
 
 
 });
