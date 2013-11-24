@@ -19,6 +19,10 @@ redshiftsoft.MapView = function (initialRangeMeters, initialFillOpacity, initial
 
     this.superData = new redshiftsoft.SuperchargerData();
 
+    //
+    // Routing stuff
+    //
+    this.directionsService = new google.maps.DirectionsService();
     this.routeList = [];
 
     this.initMap();
@@ -203,10 +207,6 @@ redshiftsoft.MapView.prototype.handleAddRouteEvent = function (event) {
 }
 
 redshiftsoft.MapView.prototype.handleAddRoute = function (latLng) {
-    var directionsDisplay = new google.maps.DirectionsRenderer();
-    directionsDisplay.setMap(this.googleMap);
-    directionsDisplay.setPanel(document.getElementById('directions-panel'));
-
     this.routeList.push(latLng);
     var routeListLength = this.routeList.length;
 
@@ -219,10 +219,13 @@ redshiftsoft.MapView.prototype.handleAddRoute = function (latLng) {
             destination: this.routeList[routeListLength - 1],
             travelMode: google.maps.TravelMode.DRIVING
         };
-        var directionsService = new google.maps.DirectionsService();
-        directionsService.route(request, function (response, status) {
+        var directionsRenderer = new google.maps.DirectionsRenderer({});
+        directionsRenderer.setMap(this.googleMap);
+        directionsRenderer.setPanel(document.getElementById('directions-panel'));
+
+        this.directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
-                directionsDisplay.setDirections(response);
+                directionsRenderer.setDirections(response);
             }
         });
     }
