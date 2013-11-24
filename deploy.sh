@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WEB_APP='supercharger-webcontent-1.0.?-SNAPSHOT'
+WEB_APP='supercharger-webcontent-1.1.?-SNAPSHOT'
 
 scp -r supercharger-webcontent/target/${WEB_APP} keith@dev:/tmp/
 
