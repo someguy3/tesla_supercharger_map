@@ -1,6 +1,6 @@
 .supercharger-table-container {
     display: inline-block;
-    text-align: left;
+    text-align: center;
 
     height: 156px;
     min-height: 156px;
@@ -12,11 +12,12 @@
 
 .supercharger-table-container table {
     border-collapse: collapse;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
 .supercharger-table-container th {
+    text-align: left;
     background: whitesmoke;
     padding-left: 5px;
     padding-right: 5px;
@@ -24,6 +25,7 @@
 }
 
 .supercharger-table-container td {
+    text-align: left;
     border: 1px solid #dddddd;
     padding-left: 3px;
     padding-right: 3px;

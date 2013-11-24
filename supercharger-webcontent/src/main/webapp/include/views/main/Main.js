@@ -1,23 +1,54 @@
+redshiftsoft = createMyNamespace("redshiftsoft");
+
+
 /**
- * MapView setup
+ * Constructor
  */
-$(function () {
+redshiftsoft.Main = function () {
 
-    var INITIAL_RANGE_METERS = redshiftsoft.Range.milesToMeters(40.0);
-    var INITIAL_FILL_OPACITY = 0.15;
-    var INITIAL_FILL_COLOR = "#86c4ec";
+    redshiftsoft.Main.INITIAL_RANGE_METERS = redshiftsoft.Range.milesToMeters(40.0);
 
-    var INITIAL_BORDER_OPACITY = 0.6;
-    var INITIAL_BORDER_COLOR = "#181fe7";
+    this.initMapView();
+    this.initControlView();
 
-    var mapView = new redshiftsoft.MapView(INITIAL_RANGE_METERS,
-        INITIAL_FILL_OPACITY, INITIAL_FILL_COLOR,
-        INITIAL_BORDER_OPACITY, INITIAL_BORDER_COLOR);
+    new redshiftsoft.ControlView_Table();
+    new redshiftsoft.SuperchargerCount();
+}
+
+redshiftsoft.Main.INITIAL_RANGE_METERS = 0;
+redshiftsoft.Main.INITIAL_FILL_OPACITY = 0.15;
+redshiftsoft.Main.INITIAL_FILL_COLOR = "#86c4ec";
+redshiftsoft.Main.INITIAL_BORDER_OPACITY = 0.6;
+redshiftsoft.Main.INITIAL_BORDER_COLOR = "#181fe7";
+
+
+/**
+ * INIT: MapView
+ */
+redshiftsoft.Main.prototype.initMapView = function () {
+    this.mapView = new redshiftsoft.MapView(
+        redshiftsoft.Main.INITIAL_RANGE_METERS,
+        redshiftsoft.Main.INITIAL_FILL_OPACITY,
+        redshiftsoft.Main.INITIAL_FILL_COLOR,
+        redshiftsoft.Main.INITIAL_BORDER_OPACITY,
+        redshiftsoft.Main.INITIAL_BORDER_COLOR);
+
+}
+
+
+/**
+ * INIT: ControlView
+ */
+redshiftsoft.Main.prototype.initControlView = function () {
+
+    var mapView = this.mapView;
 
     var controlView = new redshiftsoft.ControlView(
-        INITIAL_RANGE_METERS,
-        INITIAL_FILL_OPACITY, INITIAL_FILL_COLOR,
-        INITIAL_BORDER_OPACITY, INITIAL_BORDER_COLOR);
+        redshiftsoft.Main.INITIAL_RANGE_METERS,
+        redshiftsoft.Main.INITIAL_FILL_OPACITY,
+        redshiftsoft.Main.INITIAL_FILL_COLOR,
+        redshiftsoft.Main.INITIAL_BORDER_OPACITY,
+        redshiftsoft.Main.INITIAL_BORDER_COLOR);
 
     //
     // Callback: range change
@@ -81,13 +112,12 @@ $(function () {
         mapView.drawCircles();
     });
 
+}
 
-});
 
 /**
- * SuperChargerCount
+ * ON DOCUMENT READY
  */
-$(function () {
-    new redshiftsoft.SuperchargerCount();
-    new redshiftsoft.ControlView_Table();
+$(document).ready(function () {
+    new redshiftsoft.Main();
 });
