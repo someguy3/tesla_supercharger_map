@@ -211,7 +211,7 @@ redshiftsoft.MapView.prototype.handleAddRoute = function (latLng) {
     var routeListLength = this.routeList.length;
 
     if (routeListLength == 1) {
-        alert("Route list contains one location.  Add additional locations to continue.")
+        alert("Route list contains one location. \n\n Add additional locations to continue.")
     }
     else {
         var request = {
@@ -219,9 +219,13 @@ redshiftsoft.MapView.prototype.handleAddRoute = function (latLng) {
             destination: this.routeList[routeListLength - 1],
             travelMode: google.maps.TravelMode.DRIVING
         };
-        var directionsRenderer = new google.maps.DirectionsRenderer({});
-        directionsRenderer.setMap(this.googleMap);
-        directionsRenderer.setPanel(document.getElementById('directions-panel'));
+        var directionsRenderer = new google.maps.DirectionsRenderer({
+            map: this.googleMap,
+            panel: document.getElementById('directions-panel'),
+            preserveViewport: true,
+            suppressMarkers: true,
+            draggable: true
+        });
 
         this.directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
