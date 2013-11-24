@@ -19,6 +19,8 @@ redshiftsoft.MapView = function (initialRangeMeters, initialFillOpacity, initial
 
     this.superData = new redshiftsoft.SuperchargerData();
 
+    this.routeList = [];
+
     this.initMap();
 
 
@@ -26,13 +28,15 @@ redshiftsoft.MapView = function (initialRangeMeters, initialFillOpacity, initial
     jQuery(document).on('click', '.circle-toggle-trigger', jQuery.proxy(this.handleCircleToggle, this));
     // handle clicks to remove supercharger marker
     jQuery(document).on('click', '.marker-toggle-trigger', jQuery.proxy(this.handleMarkerRemove, this));
+    // handle clicks to remove supercharger marker
+    jQuery(document).on('click', '.add-to-route-trigger', jQuery.proxy(this.handleAddToRoute, this));
 
     //
     // Map context menu
     //
     this.contextMenu = new redshiftsoft.MapViewContextMenu(this.googleMap);
     this.contextMenu.on("context-menu-add-marker", jQuery.proxy(this.handleAddMarker, this));
-    this.contextMenu.on("context-menu-add-to-route", jQuery.proxy(this.handleAddRoute, this));
+    this.contextMenu.on("context-menu-add-to-route", jQuery.proxy(this.handleAddRouteEvent, this));
 
 };
 
@@ -120,7 +124,7 @@ redshiftsoft.MapView.prototype.setRadiusMeters = function (radiusMetersIn) {
 };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// Event handlers
+// InfoWindow Event handlers
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 redshiftsoft.MapView.prototype.handleCircleToggle = function (event) {
@@ -146,6 +150,15 @@ redshiftsoft.MapView.prototype.handleMarkerRemove = function (event) {
     supercharger.marker.setMap(null);
     this.superData.removeById(id);
 };
+
+redshiftsoft.MapView.prototype.handleAddToRoute = function (event) {
+    event.preventDefault();
+    var link = $(event.target);
+    var id = link.attr('href');
+    var supercharger = this.superData.getById(id);
+    this.handleAddRoute(supercharger.location);
+};
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Context menu handlers.
@@ -185,19 +198,25 @@ redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
     );
 }
 
-redshiftsoft.MapView.prototype.handleAddRoute = function (event) {
+redshiftsoft.MapView.prototype.handleAddRouteEvent = function (event) {
+    this.handleAddRoute(event.latLng);
+}
+
+redshiftsoft.MapView.prototype.handleAddRoute = function (latLng) {
     var directionsDisplay = new google.maps.DirectionsRenderer();
     directionsDisplay.setMap(this.googleMap);
     directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
-    if (!this.routeStart) {
-        this.routeStart = event.latLng;
+    this.routeList.push(latLng);
+    var routeListLength = this.routeList.length;
+
+    if (routeListLength == 1) {
+        alert("Route list contains one location.  Add additional locations to continue.")
     }
     else {
-        this.routeEnd = event.latLng;
         var request = {
-            origin: this.routeStart,
-            destination: this.routeEnd,
+            origin: this.routeList[routeListLength - 2],
+            destination: this.routeList[routeListLength - 1],
             travelMode: google.maps.TravelMode.DRIVING
         };
         var directionsService = new google.maps.DirectionsService();
@@ -249,8 +268,10 @@ redshiftsoft.MapView.showInfoWindowForMarker = function () {
     popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a>";
     popupContent += "&nbsp;&nbsp;&nbsp;";
     if (supercharger.custom) {
-        popupContent += "<a class='marker-toggle-trigger' href='" + supercharger.id + "'>remove</a><br/>";
+        popupContent += "<a class='marker-toggle-trigger' href='" + supercharger.id + "'>remove</a>";
+        popupContent += "&nbsp;&nbsp;&nbsp;";
     }
+    popupContent += "<a class='add-to-route-trigger' href='" + supercharger.id + "'>add to route</a>";
     popupContent += "</div>";
 
     var windowOptions = { content: popupContent  };
