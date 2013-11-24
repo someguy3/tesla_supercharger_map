@@ -21,14 +21,19 @@ redshiftsoft.MapView = function (initialRangeMeters, initialFillOpacity, initial
 
     this.initMap();
 
-    this.contextMenu = new redshiftsoft.MapViewContextMenu(this.googleMap);
 
     // handle clicks to toggle supercharger circle
     jQuery(document).on('click', '.circle-toggle-trigger', jQuery.proxy(this.handleCircleToggle, this));
     // handle clicks to remove supercharger marker
     jQuery(document).on('click', '.marker-toggle-trigger', jQuery.proxy(this.handleMarkerRemove, this));
-    // handle clicks to remove supercharger marker
-    jQuery(document).on('click', '.add-supercharger-trigger', jQuery.proxy(this.handleAddCustomMarker, this));
+
+    this.contextMenu = new redshiftsoft.MapViewContextMenu(this.googleMap);
+
+    // handle clicks to add supercharger marker
+    this.contextMenu.on("context-menu-add-marker", jQuery.proxy(this.handleAddCustomMarker, this));
+    this.contextMenu.on("context-menu-add-to-route", function () {
+        alert("TODO: add implement to route");
+    });
 
 };
 
@@ -55,9 +60,6 @@ redshiftsoft.MapView.prototype.initMap = function () {
     this.googleMap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
     this.drawMarkers();
     this.drawCircles();
-
-    google.maps.event.addListener(this.googleMap, 'rightclick', jQuery.proxy(this.handleShowContextMenu, this));
-    google.maps.event.addListener(this.googleMap, 'click', jQuery.proxy(this.handleHideContextMenu, this));
 };
 
 /**
@@ -146,12 +148,10 @@ redshiftsoft.MapView.prototype.handleMarkerRemove = function (event) {
     this.superData.removeById(id);
 };
 
-redshiftsoft.MapView.prototype.handleShowContextMenu = function (event) {
-    this.contextMenu.show(event.latLng);
-};
-redshiftsoft.MapView.prototype.handleHideContextMenu = function (event) {
-    this.contextMenu.hide();
-};
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Context menu handlers.
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 /**
  * Add a custom marker and range circle to the map.
