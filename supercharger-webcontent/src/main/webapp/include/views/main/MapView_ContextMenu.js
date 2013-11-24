@@ -24,6 +24,14 @@ redshiftsoft.MapViewContextMenu = function (googleMap) {
 }
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Constants
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+/* Browser context menu is already disabled on google map, but not on our context menu. Draw context menu with slight
+ offset so that we don't get the browser context menu ON our context menu. */
+redshiftsoft.MapViewContextMenu.DRAW_OFFSET_PX = 5;
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Event delegate methods.
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -68,8 +76,8 @@ redshiftsoft.MapViewContextMenu.prototype.show = function (event) {
         y = y - menuHeight;
     }
 
-    this.contextMenuDiv.css('left', x);
-    this.contextMenuDiv.css('top', y);
+    this.contextMenuDiv.css('left', x + redshiftsoft.MapViewContextMenu.DRAW_OFFSET_PX);
+    this.contextMenuDiv.css('top', y + redshiftsoft.MapViewContextMenu.DRAW_OFFSET_PX);
     this.contextMenuDiv.show();
 };
 
