@@ -71,7 +71,7 @@ redshiftsoft.SuperchargerData.prototype.getRegionCount = function (region) {
     var count = 0;
     for (var i = 0; i < redshiftsoft.SuperchargerData.LIST.length; i++) {
         var supercharger = redshiftsoft.SuperchargerData.LIST[i];
-        if (supercharger.count && region.indexOf("|" + supercharger.address.country + "|") >= 0) {
+        if (!supercharger.construction && supercharger.count && region.indexOf("|" + supercharger.address.country + "|") >= 0) {
             count++;
         }
     }
@@ -111,7 +111,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(32.943852, -112.733536),
         "url": "http://www.teslamotors.com/supercharger/gila",
         "construction": true,
-        "count": false
+        "count": true
     },
     {
         "displayName": "Quartzsite, AZ",
@@ -204,7 +204,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(38.366592, -121.958156),
         "url": "http://www.teslamotors.com/supercharger/vacaville",
         "construction": true,
-        "count": false
+        "count": true
     },
 
     //-----------------------------------------------------------------------------------------------------------------| Colorado
@@ -304,7 +304,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(41.7174, -86.1887),
         "url": "http://www.teslamotors.com/supercharger/mishawaka",
         "construction": true,
-        "count": false
+        "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Minnesota
     {
@@ -313,7 +313,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(43.634002, -95.595254),
         "url": "http://www.teslamotors.com/supercharger/worthington",
         "construction": true,
-        "count": false
+        "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| New Mexico
     {
@@ -322,7 +322,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(36.766371, -108.144047),
         "url": "http://www.teslamotors.com/supercharger/farmington",
         "construction": true,
-        "count": false
+        "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| New York
     {
@@ -331,7 +331,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(40.661758, -73.792733),
         "url": "http://www.teslamotors.com/supercharger/jfk",
         "construction": true,
-        "count": false
+        "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| North Carolina
     {
@@ -377,7 +377,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(43.701139, -98.044401),
         "url": "http://www.teslamotors.com/supercharger/mitchell",
         "construction": true,
-        "count": false
+        "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Texas
     {
@@ -444,7 +444,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(46.9769, -120.5418666),
         "url": "http://www.teslamotors.com/supercharger/ellensburg",
         "construction": true,
-        "count": false
+        "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Wisconsin
     {
@@ -453,7 +453,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(43.126316666, -89.30698333),
         "url": "http://www.teslamotors.com/supercharger/madison",
         "construction": true,
-        "count": false
+        "count": true
     },
     {
         "displayName": "Mauston, WI",
@@ -461,7 +461,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(43.7955666, -90.059666666),
         "url": "http://www.teslamotors.com/supercharger/mauston",
         "construction": true,
-        "count": false
+        "count": true
     },
 
     //##################################################################################################################
@@ -480,7 +480,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(48.411685, 10.439755),
         "url": "http://www.teslamotors.com/supercharger/jettingen",
         "construction": true,
-        "count": false
+        "count": true
     },
 
     //-----------------------------------------------------------------------------------------------------------------| NORWAY
