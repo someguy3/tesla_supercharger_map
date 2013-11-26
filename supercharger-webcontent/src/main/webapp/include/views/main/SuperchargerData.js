@@ -482,7 +482,15 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
-
+    //-----------------------------------------------------------------------------------------------------------------| NETHERLANDS
+    {
+        "displayName": "Oosterhout, Netherlands",
+        "address": new redshiftsoft.Address("Beneluxweg 1 4904 SJ", "Oosterhout", "", "", "Netherlands"),
+        "location": new google.maps.LatLng(51.626423, 4.869517),
+        "url": "http://www.teslamotors.com/supercharger/oosterhout",
+        "construction": true,
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| NORWAY
 
     {
