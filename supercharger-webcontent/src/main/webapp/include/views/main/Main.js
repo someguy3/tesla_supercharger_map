@@ -6,7 +6,7 @@ redshiftsoft = createMyNamespace("redshiftsoft");
  */
 redshiftsoft.Main = function () {
 
-    redshiftsoft.Main.INITIAL_RANGE_METERS = redshiftsoft.Range.milesToMeters(40.0);
+    redshiftsoft.Main.INITIAL_RANGE_METERS = redshiftsoft.Range.milesToMeters(140.0);
 
     this.initMapView();
     this.initControlView();
