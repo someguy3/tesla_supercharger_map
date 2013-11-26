@@ -1,0 +1,3 @@
+
+
+() Should be able to right-click and get context menu inside or outside of a range circle.

@@ -94,7 +94,8 @@ redshiftsoft.MapView.prototype.drawCircles = function () {
             fillOpacity: this.fillOpacity,
             map: this.googleMap,
             center: supercharger.location,
-            radius: this.radiusMeters
+            radius: this.radiusMeters,
+            clickable: false
         };
         if (supercharger.circle == null) {
             supercharger.circle = new google.maps.Circle(rangeCircleOptions);
