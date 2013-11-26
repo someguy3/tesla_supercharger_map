@@ -350,6 +350,14 @@ redshiftsoft.SuperchargerData.LIST = [
     },
     //-----------------------------------------------------------------------------------------------------------------| Oregon
     {
+        "displayName": "Detroit Lake, OR",
+        "address": new redshiftsoft.Address("D Street", "Detroit", "OR", "97413", "USA"),
+        "location": new google.maps.LatLng(44.737017, -122.152123),
+        "url": "http://www.teslamotors.com/supercharger/detroitlake",
+        "construction": true,
+        "count": true
+    },
+    {
         "displayName": "Grants Pass, OR",
         "address": new redshiftsoft.Address("1900 NW 6th St.", "Grants Pass", "OR", "97526", "USA"),
         "location": new google.maps.LatLng(42.460883, -123.324124),
