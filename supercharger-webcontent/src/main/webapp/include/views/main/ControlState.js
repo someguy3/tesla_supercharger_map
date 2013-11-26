@@ -15,4 +15,7 @@ redshiftsoft.ControlState = function () {
 
     this.borderOpacity = 0.3;
     this.borderColor = "#181fe7";
+
+    this.showCompleted = true;
+    this.showConstruction = true;
 }

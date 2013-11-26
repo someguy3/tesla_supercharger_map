@@ -59,47 +59,65 @@ redshiftsoft.MapView.prototype.initMap = function () {
     };
 
     this.googleMap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-    this.drawMarkers();
-    this.drawCircles();
+    this.redraw(true);
 };
 
 /**
- * DRAW MARKERS
+ *  DRAW MAKERS/CIRCLES
  */
-redshiftsoft.MapView.prototype.drawMarkers = function () {
-    for (var i = 0; i < this.superData.size(); i++) {
-        var supercharger = this.superData.get(i);
-        redshiftsoft.MapView.addMarkerToSupercharger(this.googleMap, supercharger);
-    }
-};
+redshiftsoft.MapView.prototype.redraw = function (drawMarkers) {
 
-/**
- *  DRAW CIRCLES
- */
-redshiftsoft.MapView.prototype.drawCircles = function () {
+    var rangeCircleOptions = this.buildRangeCircleOptions();
 
     for (var i = 0; i < this.superData.size(); i++) {
         var supercharger = this.superData.get(i);
-        var rangeCircleOptions = {
-            strokeColor: this.controlState.borderColor,
-            strokeOpacity: this.controlState.borderOpacity,
-            strokeWeight: 1,
-            fillColor: this.controlState.fillColor,
-            fillOpacity: this.controlState.fillOpacity,
-            map: this.googleMap,
-            center: supercharger.location,
-            radius: this.controlState.range.getRangeMeters(),
-            clickable: false
-        };
-        if (supercharger.circle == null) {
-            supercharger.circle = new google.maps.Circle(rangeCircleOptions);
+
+        if (this.shouldDraw(supercharger)) {
+            if (drawMarkers) {
+                if (supercharger.marker == null) {
+                    redshiftsoft.MapView.addMarkerToSupercharger(this.googleMap, supercharger);
+                }
+            }
+
+            rangeCircleOptions.center = supercharger.location;
+            if (supercharger.circle == null) {
+                supercharger.circle = new google.maps.Circle(rangeCircleOptions);
+            }
+            else {
+                supercharger.circle.setOptions(rangeCircleOptions);
+            }
+
+        } else {
+            if (supercharger.circle != null) {
+                supercharger.circle.setMap(null);
+                supercharger.circle = null;
+            }
+            if (supercharger.marker != null) {
+                supercharger.marker.setMap(null);
+                supercharger.marker = null;
+            }
         }
-        else {
-            supercharger.circle.setOptions(rangeCircleOptions);
-        }
+
     }
 };
 
+redshiftsoft.MapView.prototype.shouldDraw = function (supercharger) {
+    return (supercharger.construction && this.controlState.showConstruction)
+        || (!supercharger.construction && this.controlState.showCompleted)
+};
+
+redshiftsoft.MapView.prototype.buildRangeCircleOptions = function () {
+    return {
+        strokeColor: this.controlState.borderColor,
+        strokeOpacity: this.controlState.borderOpacity,
+        strokeWeight: 1,
+        fillColor: this.controlState.fillColor,
+        fillOpacity: this.controlState.fillOpacity,
+        map: this.googleMap,
+        radius: this.controlState.range.getRangeMeters(),
+        clickable: false
+    };
+}
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // getters/setters
@@ -167,7 +185,7 @@ redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
         // add marker
         var newCharger = mapView.superData.addSupercharger(markerName, event.latLng);
         redshiftsoft.MapView.addMarkerToSupercharger(mapView.googleMap, newCharger);
-        mapView.drawCircles();
+        mapView.redraw(false);
         redshiftsoft.MapView.showInfoWindowForMarker.call(newCharger.marker);
     }
 

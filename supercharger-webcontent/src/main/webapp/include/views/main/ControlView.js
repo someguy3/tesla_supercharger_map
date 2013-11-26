@@ -91,6 +91,16 @@ redshiftsoft.ControlView.prototype.initializeControls = function () {
         change: jQuery.proxy(this.handleBorderColorChange, this)
     });
 
+    var controlView = this;
+    $("#status-completed-check").change(function (event) {
+        controlView.controlState.showCompleted = $(this).is(':checked');
+        controlView.trigger("station-status-change-event", controlView.controlState);
+    });
+    $("#status-construction-check").change(function (event) {
+        controlView.controlState.showConstruction = $(this).is(':checked');
+        controlView.trigger("station-status-change-event", controlView.controlState);
+    });
+
     this.initializeRangeControl();
     this.updateTextFillOpacityDisplay();
     this.updateTextBorderOpacityDisplay();
