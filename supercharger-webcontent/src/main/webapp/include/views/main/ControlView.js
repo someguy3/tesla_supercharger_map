@@ -9,12 +9,13 @@ redshiftsoft = createMyNamespace("redshiftsoft");
 /**
  * Constructor.
  */
-redshiftsoft.ControlView = function (initialRangeMeters, initialFillOpacity, initialFillColor, initialBorderOpacity, initialBorderColor) {
+redshiftsoft.ControlView = function (controlState) {
 
-    this.range = new redshiftsoft.Range(initialRangeMeters);
+    this.controlState = controlState;
+
     this.viewDiv = $("#control-view-div");
 
-    this.initializeControls(initialFillOpacity, initialFillColor, initialBorderOpacity, initialBorderColor);
+    this.initializeControls();
 
     $("#controls-tabs").tabs();
 
@@ -53,19 +54,18 @@ redshiftsoft.ControlView.prototype.trigger = function (eventName, arg1) {
 };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-//
+// Initialization
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 
 /**
  * Initialize controls
  */
-redshiftsoft.ControlView.prototype.initializeControls = function (fillOpacity, fillColor, borderOpacity, borderColor) {
+redshiftsoft.ControlView.prototype.initializeControls = function () {
 
 
     $("#fill-opacity-slider").slider(
         {
-            value: fillOpacity,
+            value: this.controlState.fillOpacity,
             min: 0.0,
             max: 1.0,
             step: .10,
@@ -74,7 +74,7 @@ redshiftsoft.ControlView.prototype.initializeControls = function (fillOpacity, f
 
     $("#border-opacity-slider").slider(
         {
-            value: borderOpacity,
+            value: this.controlState.borderOpacity,
             min: 0.0,
             max: 1.0,
             step: .10,
@@ -82,18 +82,18 @@ redshiftsoft.ControlView.prototype.initializeControls = function (fillOpacity, f
         });
 
     $("#fill-color-input").spectrum({
-        color: fillColor,
+        color: this.controlState.fillColor,
         change: jQuery.proxy(this.handleFillColorChange, this)
     });
 
     $("#border-color-input").spectrum({
-        color: borderColor,
+        color: this.controlState.borderColor,
         change: jQuery.proxy(this.handleBorderColorChange, this)
     });
 
     this.initializeRangeControl();
-    this.updateTextFillOpacityDisplay(fillOpacity);
-    this.updateTextBorderOpacityDisplay(borderOpacity);
+    this.updateTextFillOpacityDisplay();
+    this.updateTextBorderOpacityDisplay();
 };
 
 /**
@@ -102,28 +102,33 @@ redshiftsoft.ControlView.prototype.initializeControls = function (fillOpacity, f
 redshiftsoft.ControlView.prototype.initializeRangeControl = function () {
     $("#range-slider").slider(
         {
-            value: this.range.getCurrent(),
-            min: this.range.getMin(),
-            max: this.range.getMax(),
+            value: this.controlState.range.getCurrent(),
+            min: this.controlState.range.getMin(),
+            max: this.controlState.range.getMax(),
             step: 5,
             slide: jQuery.proxy(this.handleRangeSlide, this)
         });
     this.updateTextRangeDisplay();
 };
 
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Handlers for various UI component changes
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 /**
  * Handle fill color change.
  */
 redshiftsoft.ControlView.prototype.handleFillColorChange = function (newColor) {
-    this.trigger("fill-color-change-event", "" + newColor);
+    this.controlState.fillColor = "" + newColor;
+    this.trigger("fill-color-change-event", this.controlState);
 };
 
 /**
  * Handle border color change.
  */
 redshiftsoft.ControlView.prototype.handleBorderColorChange = function (newColor) {
-    this.trigger("border-color-change-event", "" + newColor);
+    this.controlState.borderColor = "" + newColor;
+    this.trigger("border-color-change-event", this.controlState);
 };
 
 /**
@@ -131,9 +136,9 @@ redshiftsoft.ControlView.prototype.handleBorderColorChange = function (newColor)
  */
 redshiftsoft.ControlView.prototype.handleRangeSlide = function (event) {
     var newValueMiles = $("#range-slider").slider("value");
-    this.range.setCurrent(newValueMiles);
+    this.controlState.range.setCurrent(newValueMiles);
     this.updateTextRangeDisplay();
-    this.trigger("range-change-event", this.range.getRangeMeters());
+    this.trigger("range-change-event", this.controlState);
 };
 
 /**
@@ -141,17 +146,19 @@ redshiftsoft.ControlView.prototype.handleRangeSlide = function (event) {
  */
 redshiftsoft.ControlView.prototype.handleFillOpacitySlide = function (event) {
     var newFillOpacity = $("#fill-opacity-slider").slider("value");
-    this.updateTextFillOpacityDisplay(newFillOpacity);
-    this.trigger("fill-opacity-changed-event", newFillOpacity);
+    this.controlState.fillOpacity = newFillOpacity;
+    this.updateTextFillOpacityDisplay();
+    this.trigger("fill-opacity-changed-event", this.controlState);
 };
 
 /**
- * Handle fill-opacity slider change.
+ * Handle border-opacity slider change.
  */
 redshiftsoft.ControlView.prototype.handleBorderOpacitySlide = function (event) {
     var newBorderOpacity = $("#border-opacity-slider").slider("value");
-    this.updateTextBorderOpacityDisplay(newBorderOpacity);
-    this.trigger("border-opacity-changed-event", newBorderOpacity);
+    this.controlState.borderOpacity = newBorderOpacity;
+    this.updateTextBorderOpacityDisplay();
+    this.trigger("border-opacity-changed-event", this.controlState);
 };
 
 /**
@@ -168,30 +175,34 @@ redshiftsoft.ControlView.prototype.handleMapType = function () {
 redshiftsoft.ControlView.prototype.handleDistanceUnit = function () {
     var newUnit = $("input[name='distUnit']:checked").val();
     if (newUnit == "M") {
-        this.range.setUnit(redshiftsoft.Range.Unit.miles);
+        this.controlState.range.setUnit(redshiftsoft.Range.Unit.miles);
     } else if (newUnit == "K") {
-        this.range.setUnit(redshiftsoft.Range.Unit.kilometers);
+        this.controlState.range.setUnit(redshiftsoft.Range.Unit.kilometers);
     }
     this.initializeRangeControl();
 };
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Display update methods.
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 /**
  * Update the range text display value.
  */
 redshiftsoft.ControlView.prototype.updateTextRangeDisplay = function () {
-    $("#range-number-text").text(this.range.getCurrent() + " " + this.range.getUnitName());
+    $("#range-number-text").text(this.controlState.range.getCurrent() + " " + this.controlState.range.getUnitName());
 };
 
 /**
  * Update the fill-opacity text display value.
  */
-redshiftsoft.ControlView.prototype.updateTextFillOpacityDisplay = function (newValue) {
-    $("#fill-opacity-number-text").text(newValue);
+redshiftsoft.ControlView.prototype.updateTextFillOpacityDisplay = function () {
+    $("#fill-opacity-number-text").text(this.controlState.fillOpacity);
 };
 
 /**
  * Update the border-opacity text display value.
  */
-redshiftsoft.ControlView.prototype.updateTextBorderOpacityDisplay = function (newValue) {
-    $("#border-opacity-number-text").text(newValue);
+redshiftsoft.ControlView.prototype.updateTextBorderOpacityDisplay = function () {
+    $("#border-opacity-number-text").text(this.controlState.borderOpacity);
 };

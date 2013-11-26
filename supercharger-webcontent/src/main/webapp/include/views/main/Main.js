@@ -6,56 +6,39 @@ redshiftsoft = createMyNamespace("redshiftsoft");
  */
 redshiftsoft.Main = function () {
 
-    redshiftsoft.Main.INITIAL_RANGE_METERS = redshiftsoft.Range.milesToMeters(140.0);
+    var initialControlState = new redshiftsoft.ControlState();
 
-    this.initMapView();
-    this.initControlView();
+    this.initMapView(initialControlState);
+    this.initControlView(initialControlState);
 
     new redshiftsoft.ControlView_Table();
     new redshiftsoft.SuperchargerCount();
 }
 
-redshiftsoft.Main.INITIAL_RANGE_METERS = 0;
-redshiftsoft.Main.INITIAL_FILL_OPACITY = 0.15;
-redshiftsoft.Main.INITIAL_FILL_COLOR = "#86c4ec";
-redshiftsoft.Main.INITIAL_BORDER_OPACITY = 0.3;
-redshiftsoft.Main.INITIAL_BORDER_COLOR = "#181fe7";
-
 
 /**
  * INIT: MapView
  */
-redshiftsoft.Main.prototype.initMapView = function () {
-    this.mapView = new redshiftsoft.MapView(
-        redshiftsoft.Main.INITIAL_RANGE_METERS,
-        redshiftsoft.Main.INITIAL_FILL_OPACITY,
-        redshiftsoft.Main.INITIAL_FILL_COLOR,
-        redshiftsoft.Main.INITIAL_BORDER_OPACITY,
-        redshiftsoft.Main.INITIAL_BORDER_COLOR);
-
+redshiftsoft.Main.prototype.initMapView = function (controlState) {
+    this.mapView = new redshiftsoft.MapView(controlState);
 }
 
 
 /**
  * INIT: ControlView
  */
-redshiftsoft.Main.prototype.initControlView = function () {
+redshiftsoft.Main.prototype.initControlView = function (controlState) {
 
     var mapView = this.mapView;
 
-    var controlView = new redshiftsoft.ControlView(
-        redshiftsoft.Main.INITIAL_RANGE_METERS,
-        redshiftsoft.Main.INITIAL_FILL_OPACITY,
-        redshiftsoft.Main.INITIAL_FILL_COLOR,
-        redshiftsoft.Main.INITIAL_BORDER_OPACITY,
-        redshiftsoft.Main.INITIAL_BORDER_COLOR);
+    var controlView = new redshiftsoft.ControlView(controlState);
 
     //
     // Callback: range change
     //
-    controlView.on("range-change-event", function (event, newRadiusMeters) {
+    controlView.on("range-change-event", function (event, controlState) {
         jQuery.doTimeout("rangeTimerId", 200, function () {
-            mapView.setRadiusMeters(newRadiusMeters);
+            mapView.setControlState(controlState);
             mapView.drawCircles();
         });
     });
@@ -78,9 +61,9 @@ redshiftsoft.Main.prototype.initControlView = function () {
     //
     // Callback: fill-opacity change
     //
-    controlView.on("fill-opacity-changed-event", function (event, newFillOpacity) {
+    controlView.on("fill-opacity-changed-event", function (event, controlState) {
         jQuery.doTimeout("fillOpacityTimerId", 400, function () {
-            mapView.setFillOpacity(newFillOpacity);
+            mapView.setControlState(controlState);
             mapView.drawCircles();
         });
 
@@ -89,17 +72,17 @@ redshiftsoft.Main.prototype.initControlView = function () {
     //
     // Callback: fill color change
     //
-    controlView.on("fill-color-change-event", function (event, newColor) {
-        mapView.setFillColor(newColor);
+    controlView.on("fill-color-change-event", function (event, controlState) {
+        mapView.setControlState(controlState);
         mapView.drawCircles();
     });
 
     //
     // Callback: fill-opacity change
     //
-    controlView.on("border-opacity-changed-event", function (event, newValue) {
+    controlView.on("border-opacity-changed-event", function (event, controlState) {
         jQuery.doTimeout("borderOpacityTimerId", 400, function () {
-            mapView.setBorderOpacity(newValue);
+            mapView.setControlState(controlState);
             mapView.drawCircles();
         });
     });
@@ -107,8 +90,8 @@ redshiftsoft.Main.prototype.initControlView = function () {
     //
     // Callback: fill color change
     //
-    controlView.on("border-color-change-event", function (event, newColor) {
-        mapView.setBorderColor(newColor);
+    controlView.on("border-color-change-event", function (event, controlState) {
+        mapView.setControlState(controlState);
         mapView.drawCircles();
     });
 
