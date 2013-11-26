@@ -387,6 +387,13 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
+    {
+        "displayName": "Rapid City, SD",
+        "address": new redshiftsoft.Address("2200 N. Maple Ave", "Rapid City", "SD", "57701", "USA"),
+        "location": new google.maps.LatLng(44.105601, -103.212569),
+        "url": "http://www.teslamotors.com/supercharger/rapidcity",
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| Texas
     {
         "displayName": "Columbus, TX",
