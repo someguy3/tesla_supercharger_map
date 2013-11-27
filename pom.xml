@@ -23,6 +23,10 @@
         <module>supercharger-webcontent</module>
     </modules>
 
+    <properties>
+        <build.timestamp>${maven.build.timestamp}</build.timestamp>
+    </properties>
+
 
     <pluginRepositories>
         <pluginRepository>
