@@ -11,7 +11,6 @@ fi
 
 mv ${DIR_SRC}/* ${DIR_DEPLOY}
 
-chown -R www-data:www-data ${DIR_DEPLOY}
-chmod -R go-w ${DIR_DEPLOY}
+chown -R keith:www-data ${DIR_DEPLOY}/*
 
 rm -r ${DIR_SRC}
