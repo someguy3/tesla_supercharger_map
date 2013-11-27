@@ -315,6 +315,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
+    //-----------------------------------------------------------------------------------------------------------------| Michigan
+    {
+        "displayName": "St. Joseph, MI",
+        "address": new redshiftsoft.Address("3260 Niles Rd", "St. Joseph", "MI", "49085", "USA"),
+        "location": new google.maps.LatLng(42.056357, -86.456352),
+        "url": "http://www.teslamotors.com/supercharger/stjoseph",
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| New Mexico
     {
         "displayName": "Farmington, NM",
