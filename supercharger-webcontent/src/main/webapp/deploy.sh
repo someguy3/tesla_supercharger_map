@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR_SRC=/tmp/supercharger-webcontent-1.1.?-SNAPSHOT
+DIR_SRC=/tmp/supercharger-webcontent-1.?.?-SNAPSHOT
 DIR_DEPLOY=/var/www/tesla_wiki/supercharger
 
 # The string check here is for extra safely.
