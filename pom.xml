@@ -20,7 +20,6 @@
     </scm>
 
     <modules>
-        <module>supercharger-geolocation</module>
         <module>supercharger-webcontent</module>
     </modules>
 
