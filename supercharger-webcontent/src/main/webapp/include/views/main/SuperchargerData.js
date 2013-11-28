@@ -105,14 +105,14 @@ redshiftsoft.SuperchargerData.prototype.getConstructionCount = function () {
 redshiftsoft.SuperchargerData.LIST = [
 
     //-----------------------------------------------------------------------------------------------------------------| Arizona
-    {
-        "displayName": "Gila Bend,  AZ",
-        "address": new redshiftsoft.Address("820 W Pima St", "Gila Bend", "AZ", "85337", "USA"),
-        "location": new google.maps.LatLng(32.943852, -112.733536),
-        "url": "http://www.teslamotors.com/supercharger/gila",
-        "construction": true,
-        "count": true
-    },
+//    {
+//        "displayName": "Gila Bend,  AZ",
+//        "address": new redshiftsoft.Address("820 W Pima St", "Gila Bend", "AZ", "85337", "USA"),
+//        "location": new google.maps.LatLng(32.943852, -112.733536),
+//        "url": "http://www.teslamotors.com/supercharger/gila",
+//        "construction": true,
+//        "count": true
+//    },
     {
         "displayName": "Quartzsite, AZ",
         "address": new redshiftsoft.Address("1451 W Main St", "Quartzsite", "AZ", "85346", "USA"),
@@ -483,6 +483,15 @@ redshiftsoft.SuperchargerData.LIST = [
         "address": new redshiftsoft.Address("640 Mc Evoy St", "Mauston", "WI", "53948", "USA"),
         "location": new google.maps.LatLng(43.7955666, -90.059666666),
         "url": "http://www.teslamotors.com/supercharger/mauston",
+        "construction": true,
+        "count": true
+    },
+    //-----------------------------------------------------------------------------------------------------------------| Wyoming
+    {
+        "displayName": "Cheyenne, WY",
+        "address": new redshiftsoft.Address("1400 Dell Range Blvd", "Cheyenne", "WY", "82009", "USA"),
+        "location": new google.maps.LatLng(41.163666, -104.80305),
+        "url": "http://www.teslamotors.com/supercharger/cheyenne",
         "construction": true,
         "count": true
     },
