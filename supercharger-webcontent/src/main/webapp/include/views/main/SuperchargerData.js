@@ -251,6 +251,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/dariensouth",
         "count": false
     },
+    {
+        "displayName": "Greenwich, CT (north)",
+        "address": new redshiftsoft.Address("Merritt Pkwy (near NY border)", "Greenwich", "CT", "06831", "USA"),
+        "location": new google.maps.LatLng(41.0414, -73.6718333),
+        "url": "http://www.teslamotors.com/supercharger/greenwich",
+        "construction": true,
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| Delaware
     {
         "displayName": "Newark, DE",
@@ -347,6 +355,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "address": new redshiftsoft.Address("1080 Piper Ln", "Burlington", "NC", "27215", "USA"),
         "location": new google.maps.LatLng(36.070790, -79.511211),
         "url": "http://www.teslamotors.com/supercharger/burlingtonnc",
+        "count": true
+    },
+    {
+        "displayName": "Lumberton, NC",
+        "address": new redshiftsoft.Address("5093 Fayetteville Road", "Lumberton", "NC", "28358", "USA"),
+        "location": new google.maps.LatLng(34.667016667, -79.002),
+        "url": "http://www.teslamotors.com/supercharger/lumberton",
+        "construction": true,
         "count": true
     },
     {
