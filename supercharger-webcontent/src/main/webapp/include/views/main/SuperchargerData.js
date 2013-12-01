@@ -539,6 +539,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
+    {
+        "displayName": "Zevenaar, Netherlands",
+        "address": new redshiftsoft.Address("Doesburgseweg 39 6902 PL", "Zevenaar", "", "", "Netherlands"),
+        "location": new google.maps.LatLng(51.94066, 6.08180),
+        "url": "http://www.teslamotorsclub.com/showthread.php/24215-Supercharger-in-Oost",
+        "construction": true,
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| NORWAY
 
     {
