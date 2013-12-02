@@ -9,10 +9,11 @@ redshiftsoft.SuperchargerCount = function () {
     var constRow = $("<tr><th class='vert'>Construction</th></tr>");
 
     var countryCountMap = this.superData.getConstructionCount();
-    for (var country in countryCountMap) {
-        headerRow.append("<th>" + country + "</th>")
-        openRow.append("<td>" + countryCountMap[country]['open'] + "</td>");
-        constRow.append("<td>" + countryCountMap[country]['construction'] + "</td>");
+    for (var countryName in countryCountMap) {
+        var countryCode = redshiftsoft.CountryCodes.fromName(countryName);
+        headerRow.append("<th title='" + countryName + "'>" + countryCode + "</th>")
+        openRow.append("<td>" + countryCountMap[countryName]['open'] + "</td>");
+        constRow.append("<td>" + countryCountMap[countryName]['construction'] + "</td>");
     }
 
     var table = $("<table></table>");

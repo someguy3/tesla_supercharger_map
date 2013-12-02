@@ -1,0 +1,41 @@
+//
+// http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm
+//
+
+redshiftsoft = createMyNamespace("redshiftsoft");
+
+redshiftsoft.CountryCodes = {};
+
+redshiftsoft.CountryCodes.CODE_TO_NAME_MAP =
+{
+    "AU": "Australia",
+    "AT": "Austria",
+    "BE": "Belgium",
+    "CN": "China",
+    "CA": "Canada",
+    "FR": "France",
+    "DE": "Germany",
+    "GB": "United Kingdom",
+    "NL": "Netherlands",
+    "NO": "Norway",
+    "ES": "Spain",
+    "US": "USA"
+};
+
+redshiftsoft.CountryCodes.NAME_TO_CODE_MAP = null;
+
+
+redshiftsoft.CountryCodes.initializeReverseMap = function () {
+    redshiftsoft.CountryCodes.NAME_TO_CODE_MAP = {};
+    for (var code in redshiftsoft.CountryCodes.CODE_TO_NAME_MAP) {
+        var country = redshiftsoft.CountryCodes.CODE_TO_NAME_MAP[code];
+        redshiftsoft.CountryCodes.NAME_TO_CODE_MAP[country] = code;
+    }
+};
+
+redshiftsoft.CountryCodes.fromName = function (countryName) {
+    if (redshiftsoft.CountryCodes.NAME_TO_CODE_MAP == null) {
+        redshiftsoft.CountryCodes.initializeReverseMap();
+    }
+    return redshiftsoft.CountryCodes.NAME_TO_CODE_MAP[countryName];
+};
