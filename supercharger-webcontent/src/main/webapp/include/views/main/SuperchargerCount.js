@@ -6,7 +6,7 @@ redshiftsoft.SuperchargerCount = function () {
 
     var headerRow = $("<tr><th class='vert'></th></tr>");
     var openRow = $("<tr><th class='vert'>Open</th></tr>");
-    var constRow = $("<tr><th class='vert'>Under Construction</th></tr>");
+    var constRow = $("<tr><th class='vert'>Construction</th></tr>");
 
     var countryCountMap = this.superData.getConstructionCount();
     for (var country in countryCountMap) {
