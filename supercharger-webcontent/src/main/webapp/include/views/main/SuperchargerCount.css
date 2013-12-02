@@ -6,7 +6,36 @@
     padding-right: 10px
 }
 
+supercharger-count-div {
+    text-align: right;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ Count table
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.supercharger-count-table {
+    border-collapse: collapse;
+}
+
+.supercharger-count-table td {
+    border: 1px solid silver;
+    text-align: right;
+}
+
+.supercharger-count-table th {
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid silver;
+}
+
+.supercharger-count-table th.vert {
+    text-align: right;
+    border: 0;
+}
+
 #advanced-options-trigger {
+    float: left;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

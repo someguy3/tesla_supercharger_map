@@ -62,34 +62,29 @@ redshiftsoft.SuperchargerData.prototype.addSupercharger = function (displayName,
 
 
 /**
- * Returns the count of superchargers with a country in the passed list of countries.
- *
- * @param region example value: "|US|Canada|".
- * @returns {number}
- */
-redshiftsoft.SuperchargerData.prototype.getRegionCount = function (region) {
-    var count = 0;
-    for (var i = 0; i < redshiftsoft.SuperchargerData.LIST.length; i++) {
-        var supercharger = redshiftsoft.SuperchargerData.LIST[i];
-        if (!supercharger.construction && supercharger.count && region.indexOf("|" + supercharger.address.country + "|") >= 0) {
-            count++;
-        }
-    }
-    return count;
-};
-
-/**
  * Construction count.
+ *
+ * { us : { open: 4, construction: 7 },
+ *   de: { open 2, construction: 1} ....
+ * }
  */
 redshiftsoft.SuperchargerData.prototype.getConstructionCount = function () {
-    var count = 0;
+    var countryCountMap = {};
     for (var i = 0; i < redshiftsoft.SuperchargerData.LIST.length; i++) {
         var supercharger = redshiftsoft.SuperchargerData.LIST[i];
-        if (supercharger.construction) {
-            count++;
+        if (!supercharger.custom && supercharger.count) {
+            var country = supercharger.address.country;
+            if (!countryCountMap[country]) {
+                countryCountMap[country] = { open: 0, construction: 0 };
+            }
+            if (supercharger.construction) {
+                countryCountMap[country]['construction']++;
+            } else {
+                countryCountMap[country]['open']++;
+            }
         }
     }
-    return count;
+    return countryCountMap;
 };
 
 /**
