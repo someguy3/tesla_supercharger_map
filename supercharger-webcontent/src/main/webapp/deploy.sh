@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR_SRC=/tmp/supercharger-webcontent-1.?.?-SNAPSHOT
-DIR_DEPLOY=/var/www/tesla_wiki/supercharger
+DIR_DEPLOY=/var/www/wiki_tesla/supercharger
 
 # The string check here is for extra safely.
 if [ "${DIR_DEPLOY}" != "" ]
