@@ -21,7 +21,7 @@ redshiftsoft.SuperchargerCount = function () {
     table.append(openRow);
     table.append(constRow);
 
-    table.appendTo("#supercharger-count-div");
+    table.appendTo("#supercharger-count-container");
 };
 
 
