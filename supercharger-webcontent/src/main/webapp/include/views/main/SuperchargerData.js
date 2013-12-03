@@ -509,7 +509,7 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Lusk, WY",
         "address": new redshiftsoft.Address("730 S. Main St", "Lusk", "WY", "82225", "USA"),
-        "location": new google.maps.LatLng(42.756635, -104.452848),
+        "location": new google.maps.LatLng(42.755899, -104.452527),
         "url": "http://www.teslamotors.com/forum/forums/supercharger-locations-existingplanned-confirmed-not-rumored-or-speculated%E2%80%A6?page=42",
         "construction": true,
         "count": true
@@ -539,7 +539,6 @@ redshiftsoft.SuperchargerData.LIST = [
         "address": new redshiftsoft.Address("Beneluxweg 1 4904 SJ", "Oosterhout", "", "", "Netherlands"),
         "location": new google.maps.LatLng(51.626423, 4.869517),
         "url": "http://www.teslamotors.com/supercharger/oosterhout",
-        "construction": true,
         "count": true
     },
     {
