@@ -246,6 +246,7 @@ redshiftsoft.MapView.addMarkerToSupercharger = function (googleMap, supercharger
         position: supercharger.location,
         map: googleMap,
         title: supercharger.displayName,
+        icon: (supercharger.custom ? '/images/dots/blue_dot_16.png' : '/images/dots/red_dot_16.png'),
         animation: google.maps.Animation.DROP
     };
     if (supercharger.construction) {
