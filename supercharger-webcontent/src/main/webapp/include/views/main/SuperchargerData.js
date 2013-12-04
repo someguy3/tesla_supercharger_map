@@ -526,13 +526,22 @@ redshiftsoft.SuperchargerData.LIST = [
     //-----------------------------------------------------------------------------------------------------------------| GERMANY
 
     {
-        "displayName": "Jettingen-Scheppach",
+        "displayName": "Jettingen-Scheppach, Germany",
         "address": new redshiftsoft.Address("between Munich and Stuttgart", "Jettingen-Scheppach", "", "", "Germany"),
         "location": new google.maps.LatLng(48.411685, 10.439755),
         "url": "http://www.teslamotors.com/supercharger/jettingen",
         "construction": true,
         "count": true
     },
+    {
+        "displayName": "Wilnsdorf, Germany",
+        "address": new redshiftsoft.Address("Elkersberg 2, D-57234", "Wilnsdorf", "", "", "Germany"),
+        "location": new google.maps.LatLng(50.817046, 8.087663),
+        "url": "http://www.teslamotorsclub.com/showthread.php/8590-Tesla-Supercharger-network/page237",
+        "construction": true,
+        "count": true
+    },
+
     //-----------------------------------------------------------------------------------------------------------------| NETHERLANDS
     {
         "displayName": "Oosterhout, Netherlands",
