@@ -449,6 +449,15 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/waco",
         "count": true
     },
+    //-----------------------------------------------------------------------------------------------------------------| Utah
+    {
+        "displayName": "Blanding, UT",
+        "address": new redshiftsoft.Address("12 N Grayson Pkwy", "Blanding", "UT", "84511", "USA"),
+        "location": new google.maps.LatLng(37.6257333333, -109.47395),
+        "url": "http://www.teslamotors.com/forum/forums/supercharger-locations-existingplanned-confirmed-not-rumored-or-speculated%E2%80%A6?page=43",
+        "construction": true,
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| Virginia
     {
         "displayName": "Glen Allen, VA",
