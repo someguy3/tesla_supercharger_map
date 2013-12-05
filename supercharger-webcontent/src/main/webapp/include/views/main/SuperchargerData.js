@@ -194,6 +194,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
+        "displayName": "San Juan Capistrano, CA",
+        "address": new redshiftsoft.Address("31971 Camino Capistrano", "San Juan Capistrano", "CA", "92675", "USA"),
+        "location": new google.maps.LatLng(33.498458, -117.6632),
+        "url": "http://www.teslamotors.com/forum/forums/san-juan-capistrano-supercharger?page=1",
+        "construction": true,
+        "count": true
+    },
+    {
         "displayName": "Vacaville, CA",
         "address": new redshiftsoft.Address("152-160 Nut Tree Pkwy Vacaville Premium Outlets", "Vacaville", "CA", "95687", "USA"),
         "location": new google.maps.LatLng(38.366592, -121.958156),
