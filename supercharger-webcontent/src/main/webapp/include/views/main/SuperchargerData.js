@@ -262,6 +262,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
+    {
+        "displayName": "Greenwich, CT (south)",
+        "address": new redshiftsoft.Address("Merritt Pkwy (near NY border)", "Greenwich", "CT", "06831", "USA"),
+        "location": new google.maps.LatLng(41.0405333333, -73.6734166667),
+        "url": "http://www.teslamotors.com/supercharger/greenwich",
+        "construction": true,
+        "count": false
+    },
     //-----------------------------------------------------------------------------------------------------------------| Delaware
     {
         "displayName": "Newark, DE",
