@@ -65,7 +65,7 @@ redshiftsoft.SuperchargerData.prototype.addSupercharger = function (displayName,
  * Construction count.
  *
  * { us : { open: 4, construction: 7 },
- *   de: { open 2, construction: 1} ....
+ *   de: { open 2, construction: 1}, ....
  * }
  */
 redshiftsoft.SuperchargerData.prototype.getConstructionCount = function () {

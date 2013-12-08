@@ -1,4 +1,4 @@
 {
     "version": "${project.version}",
-    "build-timestamp": "${build.timestamp}"
+    "buildTimestamp": "${build.timestamp}"
 }

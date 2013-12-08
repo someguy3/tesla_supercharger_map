@@ -17,7 +17,9 @@ redshiftsoft.ControlView = function (controlState) {
 
     this.initializeControls();
 
-    $("#controls-tabs").tabs();
+    $("#controls-tabs").tabs({
+        activate: jQuery.proxy(this.activateTab, this)
+    });
 
     $("input[name='mapType']").change(jQuery.proxy(this.handleMapType, this));
     $("input[name='distUnit']").change(jQuery.proxy(this.handleDistanceUnit, this));
@@ -190,6 +192,21 @@ redshiftsoft.ControlView.prototype.handleDistanceUnit = function () {
         this.controlState.range.setUnit(redshiftsoft.Range.Unit.kilometers);
     }
     this.initializeRangeControl();
+};
+
+redshiftsoft.ControlView.prototype.activateTab = function (event, ui) {
+    var newTabName = ui.newTab.find('a').attr('href');
+    if (newTabName == '#tab-about' && !ui.newTab.data('about-tab-initialized')) {
+        jQuery.getJSON("/version.json", function (data) {
+            $(newTabName).append("" +
+                "<table style='margin: 20px'>" +
+                "<tr><td><b>Last Updated</b></td><td>" + data.buildTimestamp + "</td></tr>" +
+                "<tr><td><b>Version     </b></td><td>" + data.version + "</td></tr>" +
+                "</table>"
+            );
+            ui.newTab.data('about-tab-initialized', true);
+        });
+    }
 };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
