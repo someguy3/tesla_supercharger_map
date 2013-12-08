@@ -219,6 +219,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
+        "displayName": "Grand Junction, CO",
+        "address": new redshiftsoft.Address("2420 U.S. 6", "Grand Junction", "CO", "81505", "USA"),
+        "location": new google.maps.LatLng(39.090788, -108.604408),
+        "url": "http://www.teslamotorsclub.com/showthread.php/24867-Grand-Junction-CO-Supercharger",
+        "construction": true,
+        "count": true
+    },
+    {
         "displayName": "Silverthorne, CO",
         "address": new redshiftsoft.Address("309 Rainbow Dr", "Silverthorne", "CO", "80498", "USA"),
         "location": new google.maps.LatLng(39.631457, -106.070816),
