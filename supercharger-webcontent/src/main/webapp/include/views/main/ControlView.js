@@ -197,7 +197,7 @@ redshiftsoft.ControlView.prototype.handleDistanceUnit = function () {
 redshiftsoft.ControlView.prototype.activateTab = function (event, ui) {
     var newTabName = ui.newTab.find('a').attr('href');
     if (newTabName == '#tab-about' && !ui.newTab.data('about-tab-initialized')) {
-        jQuery.getJSON("/version.json", function (data) {
+        jQuery.getJSON("version.json", function (data) {
             $(newTabName).append("" +
                 "<table style='margin: 20px'>" +
                 "<tr><td><b>Last Updated</b></td><td>" + data.buildTimestamp + "</td></tr>" +
