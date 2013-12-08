@@ -447,6 +447,13 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
+//    {
+//        "displayName": "Mitchell, SD",
+//        "address": new redshiftsoft.Address("1305 W. Havens Street", "Mitchell", "SD", "57301", "USA"),
+//        "location": new google.maps.LatLng(43.701129, -98.04449999999997),
+//        "url": "http://www.teslamotors.com/supercharger/mitchell",
+//        "count": true
+//    },
     {
         "displayName": "Rapid City, SD",
         "address": new redshiftsoft.Address("2200 N. Maple Ave", "Rapid City", "SD", "57701", "USA"),
@@ -658,7 +665,15 @@ redshiftsoft.SuperchargerData.LIST = [
         "location": new google.maps.LatLng(58.15653, 7.10298),
         "url": "http://www.teslamotors.com/supercharger/lyngdal",
         "count": true
+    },
+    //-----------------------------------------------------------------------------------------------------------------| SWITZERLAND
+    {
+        "displayName": "Estavayer-le-Lac, Switzerland",
+        "address": new redshiftsoft.Address("Autobahn Raststätte 'Autogrill'", "", "", "", "Switzerland"),
+        "location": new google.maps.LatLng(46.832227, 6.859314),
+        "url": "http://www.tff-forum.de/viewtopic.php?f=55&t=1453&start=200",
+        "construction": true,
+        "count": true
     }
-
 
 ];
