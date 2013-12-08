@@ -5,6 +5,10 @@ Map Controls
     text-align: center;
 }
 
+#control-view-div {
+    padding: 5px;
+}
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  Slider styling
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
