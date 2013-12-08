@@ -589,7 +589,14 @@ redshiftsoft.SuperchargerData.LIST = [
     //##################################################################################################################
 
     //-----------------------------------------------------------------------------------------------------------------| GERMANY
-
+    {
+        "displayName": "Autohof Aichstetten, Germany",
+        "address": new redshiftsoft.Address("88317 Aichstetten, Autohof, Am Waizenhof 10", "Aichstetten", "", "", "Germany"),
+        "location": new google.maps.LatLng(47.8804833333, 10.0397833333),
+        "url": "http://www.tff-forum.de/viewtopic.php?f=55&t=1453&start=200",
+        "construction": true,
+        "count": true
+    },
     {
         "displayName": "Jettingen-Scheppach, Germany",
         "address": new redshiftsoft.Address("between Munich and Stuttgart", "Jettingen-Scheppach", "", "", "Germany"),
