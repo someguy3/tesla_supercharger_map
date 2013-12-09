@@ -334,6 +334,14 @@ redshiftsoft.SuperchargerData.LIST = [
     },
     //-----------------------------------------------------------------------------------------------------------------| Indiana
     {
+        "displayName": "Angola, IN",
+        "address": new redshiftsoft.Address("3855 Indiana Rte 127", "Angola", "IN", "46703", "USA"),
+        "location": new google.maps.LatLng(41.698503, -85.000261),
+        "construction": true,
+        "url": "http://www.teslamotors.com/supercharger/angola",
+        "count": true
+    },
+    {
         "displayName": "Mishawaka, IN",
         "address": new redshiftsoft.Address("6501 Grape Rd", "Mishawaka", "IN", "46545", "USA"),
         "location": new google.maps.LatLng(41.7174, -86.1887),
