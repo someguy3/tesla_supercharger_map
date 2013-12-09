@@ -338,7 +338,6 @@ redshiftsoft.SuperchargerData.LIST = [
         "address": new redshiftsoft.Address("6501 Grape Rd", "Mishawaka", "IN", "46545", "USA"),
         "location": new google.maps.LatLng(41.7174, -86.1887),
         "url": "http://www.teslamotors.com/supercharger/mishawaka",
-        "construction": true,
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Minnesota
