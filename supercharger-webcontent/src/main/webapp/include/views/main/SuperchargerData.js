@@ -556,9 +556,8 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Mauston, WI",
         "address": new redshiftsoft.Address("640 Mc Evoy St", "Mauston", "WI", "53948", "USA"),
-        "location": new google.maps.LatLng(43.7955666, -90.059666666),
+        "location": new google.maps.LatLng(43.795551, -90.059358),
         "url": "http://www.teslamotors.com/supercharger/mauston",
-        "construction": true,
         "count": true
     },
     {
