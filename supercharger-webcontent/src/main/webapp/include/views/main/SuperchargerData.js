@@ -336,8 +336,7 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Angola, IN",
         "address": new redshiftsoft.Address("3855 Indiana Rte 127", "Angola", "IN", "46703", "USA"),
-        "location": new google.maps.LatLng(41.698503, -85.000261),
-        "construction": true,
+        "location": new google.maps.LatLng(41.699048, -85.000326),
         "url": "http://www.teslamotors.com/supercharger/angola",
         "count": true
     },
