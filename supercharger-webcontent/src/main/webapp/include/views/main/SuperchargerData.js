@@ -578,7 +578,7 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Cheyenne, WY",
         "address": new redshiftsoft.Address("1400 Dell Range Blvd", "Cheyenne", "WY", "82009", "USA"),
-        "location": new google.maps.LatLng(41.163666, -104.80305),
+        "location": new google.maps.LatLng(41.1610333333, -104.8050833333),
         "url": "http://www.teslamotors.com/supercharger/cheyenne",
         "construction": true,
         "count": true
