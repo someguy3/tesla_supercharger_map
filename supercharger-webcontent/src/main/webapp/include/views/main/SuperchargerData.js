@@ -351,9 +351,8 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Worthington, MN",
         "address": new redshiftsoft.Address("1290 Ryan's Rd", "Worthington", "MN", "56187", "USA"),
-        "location": new google.maps.LatLng(43.634002, -95.595254),
+        "location": new google.maps.LatLng(43.63385, -95.595647),
         "url": "http://www.teslamotors.com/supercharger/worthington",
-        "construction": true,
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Michigan
