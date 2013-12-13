@@ -610,8 +610,8 @@ redshiftsoft.SuperchargerData.LIST = [
 
     //-----------------------------------------------------------------------------------------------------------------| GERMANY
     {
-        "displayName": "Autohof Aichstetten, Germany",
-        "address": new redshiftsoft.Address("88317 Aichstetten, Autohof, Am Waizenhof 10", "Aichstetten", "", "", "Germany"),
+        "displayName": "Aichstetten, Germany",
+        "address": new redshiftsoft.Address("Am Waizenhof 10 (Autohof)", "Aichstetten", "", "88317", "Germany"),
         "location": new google.maps.LatLng(47.8804833333, 10.0397833333),
         "url": "http://www.tff-forum.de/viewtopic.php?f=55&t=1453&start=200",
         "construction": true,
@@ -627,7 +627,7 @@ redshiftsoft.SuperchargerData.LIST = [
     },
     {
         "displayName": "Jettingen-Scheppach, Germany",
-        "address": new redshiftsoft.Address("between Munich and Stuttgart", "Jettingen-Scheppach", "", "", "Germany"),
+        "address": new redshiftsoft.Address("Robert-Bosch-Str. 10 (Autohof)", "Jettingen-Scheppach", "", "89343", "Germany"),
         "location": new google.maps.LatLng(48.411685, 10.439755),
         "url": "http://www.teslamotors.com/supercharger/jettingen",
         "construction": true,
@@ -635,7 +635,7 @@ redshiftsoft.SuperchargerData.LIST = [
     },
     {
         "displayName": "Wilnsdorf, Germany",
-        "address": new redshiftsoft.Address("Elkersberg 2, D-57234", "Wilnsdorf", "", "", "Germany"),
+        "address": new redshiftsoft.Address("Elkersberg 2 (Autohof)", "Wilnsdorf", "", "57234", "Germany"),
         "location": new google.maps.LatLng(50.817046, 8.087663),
         "url": "http://www.teslamotorsclub.com/showthread.php/8590-Tesla-Supercharger-network/page237",
         "construction": true,
