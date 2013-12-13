@@ -380,6 +380,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
+    {
+        "displayName": "Gallup, NM",
+        "address": new redshiftsoft.Address("111 Twin Buttes Rd", "Gallup", "NM", "87301", "USA"),
+        "location": new google.maps.LatLng(35.505112, -108.828191),
+        "url": "http://www.teslamotorsclub.com/showthread.php/24954-Supercharger-Gallup-NM",
+        "construction": true,
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| New York
     {
         "displayName": "JFK Airport, NY",
