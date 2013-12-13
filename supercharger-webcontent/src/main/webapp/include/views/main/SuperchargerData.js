@@ -618,6 +618,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
+        "displayName": "Bad Rappenau, Germany",
+        "address": new redshiftsoft.Address("Wilhelm-Hauff-Str. 43 (Autohof)", "Bad Rappenau", "", "74906", "Germany"),
+        "location": new google.maps.LatLng(49.21051162, 9.06965177),
+        "url": "http://www.tff-forum.de/viewtopic.php?f=55&t=1453&start=290",
+        "construction": true,
+        "count": true
+    },
+    {
         "displayName": "Jettingen-Scheppach, Germany",
         "address": new redshiftsoft.Address("between Munich and Stuttgart", "Jettingen-Scheppach", "", "", "Germany"),
         "location": new google.maps.LatLng(48.411685, 10.439755),
