@@ -199,10 +199,11 @@ redshiftsoft.ControlView.prototype.activateTab = function (event, ui) {
     if (newTabName == '#tab-about' && !ui.newTab.data('about-tab-initialized')) {
         jQuery.getJSON("version.json", function (data) {
             $(newTabName).append("" +
-                "<table style='margin: 20px'>" +
-                "<tr><td><b>Last Updated</b></td><td>" + data.buildTimestamp + "</td></tr>" +
-                "<tr><td><b>Version     </b></td><td>" + data.version + "</td></tr>" +
-                "</table>"
+                "<br/>" +
+                "<b>Last Updated: </b>" + data.buildTimestamp + "<br/>" +
+                "<br/>" +
+                "Send updates/corrections to <b>map" + "@tes" + "lawiki.net</b>" +
+                "<br/>"
             );
             ui.newTab.data('about-tab-initialized', true);
         });
