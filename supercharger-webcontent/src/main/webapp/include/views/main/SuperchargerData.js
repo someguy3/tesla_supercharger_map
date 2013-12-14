@@ -629,16 +629,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "displayName": "Aichstetten, Germany",
         "address": new redshiftsoft.Address("Am Waizenhof 10 (Autohof)", "Aichstetten", "", "88317", "Germany"),
         "location": new google.maps.LatLng(47.8804833333, 10.0397833333),
-        "url": "http://www.tff-forum.de/viewtopic.php?f=55&t=1453&start=200",
-        "construction": true,
+        "url": "http://www.teslamotors.com/supercharger/aichstetten",
         "count": true
     },
     {
         "displayName": "Bad Rappenau, Germany",
-        "address": new redshiftsoft.Address("Wilhelm-Hauff-Str. 43 (Autohof)", "Bad Rappenau", "", "74906", "Germany"),
-        "location": new google.maps.LatLng(49.21051162, 9.06965177),
-        "url": "http://www.tff-forum.de/viewtopic.php?f=55&t=1453&start=290",
-        "construction": true,
+        "address": new redshiftsoft.Address("Buchäckerring 40 (Autohof)", "Bad Rappenau", "", "74906", "Germany"),
+        "location": new google.maps.LatLng(49.211936, 9.077322),
+        "url": "http://www.teslamotors.com/supercharger/badrappenau",
         "count": true
     },
     {
