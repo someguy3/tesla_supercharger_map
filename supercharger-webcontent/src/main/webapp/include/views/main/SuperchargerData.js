@@ -705,7 +705,6 @@ redshiftsoft.SuperchargerData.LIST = [
         "address": new redshiftsoft.Address("Autobahn Raststätte 'Autogrill'", "", "", "", "Switzerland"),
         "location": new google.maps.LatLng(46.832227, 6.859314),
         "url": "http://www.tff-forum.de/viewtopic.php?f=55&t=1453&start=200",
-        "construction": true,
         "count": true
     }
 
