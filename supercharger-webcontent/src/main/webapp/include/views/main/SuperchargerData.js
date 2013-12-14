@@ -630,7 +630,6 @@ redshiftsoft.SuperchargerData.LIST = [
         "address": new redshiftsoft.Address("Robert-Bosch-Str. 10 (Autohof)", "Jettingen-Scheppach", "", "89343", "Germany"),
         "location": new google.maps.LatLng(48.411685, 10.439755),
         "url": "http://www.teslamotors.com/supercharger/jettingen",
-        "construction": true,
         "count": true
     },
     {
@@ -638,7 +637,6 @@ redshiftsoft.SuperchargerData.LIST = [
         "address": new redshiftsoft.Address("Elkersberg 2 (Autohof)", "Wilnsdorf", "", "57234", "Germany"),
         "location": new google.maps.LatLng(50.817046, 8.087663),
         "url": "http://www.teslamotorsclub.com/showthread.php/8590-Tesla-Supercharger-network/page237",
-        "construction": true,
         "count": true
     },
 
