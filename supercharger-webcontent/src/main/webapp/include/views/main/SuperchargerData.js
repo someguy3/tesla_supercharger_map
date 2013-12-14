@@ -117,6 +117,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
+        "displayName": "Kingman, AZ",
+        "address": new redshiftsoft.Address("789 West Beale Street", "Kingman", "AZ", "86401", "USA"),
+        "location": new google.maps.LatLng(35.191706, -114.066081),
+        "url": "http://www.teslamotorsclub.com/showthread.php/25072-Supercharger-Kingman-AZ",
+        "construction": true,
+        "count": true
+    },
+    {
         "displayName": "Quartzsite, AZ",
         "address": new redshiftsoft.Address("1451 W Main St", "Quartzsite", "AZ", "85346", "USA"),
         "location": new google.maps.LatLng(33.661314, -114.242174),
