@@ -373,6 +373,15 @@ redshiftsoft.SuperchargerData.LIST = [
     },
     //-----------------------------------------------------------------------------------------------------------------| Minnesota
     {
+        "displayName": "Hagerstown, MD",
+        "address": new redshiftsoft.Address("495 Premium Outlets Blvd", "Hagerstown", "MD", "21740", "USA"),
+        "location": new google.maps.LatLng(39.609247, -77.732129),
+        "url": "http://www.teslamotorsclub.com/showthread.php/25085-Maryland-Superchargers?p=523453#post523453",
+        "construction": true,
+        "count": true
+    },
+    //-----------------------------------------------------------------------------------------------------------------| Minnesota
+    {
         "displayName": "Worthington, MN",
         "address": new redshiftsoft.Address("1290 Ryan's Rd", "Worthington", "MN", "56187", "USA"),
         "location": new google.maps.LatLng(43.63385, -95.595647),
@@ -425,7 +434,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "displayName": "Lumberton, NC",
         "address": new redshiftsoft.Address("5093 Fayetteville Road", "Lumberton", "NC", "28358", "USA"),
         "location": new google.maps.LatLng(34.667016667, -79.002),
-        "url": "http://www.teslamotors.com/supercharger/lumberton",
+        "url": "http://www.teslamotorsclub.com/showthread.php/24770-Supercharger-Lumberton-NC",
         "construction": true,
         "count": true
     },
