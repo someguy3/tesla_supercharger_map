@@ -62,32 +62,6 @@ redshiftsoft.SuperchargerData.prototype.addSupercharger = function (displayName,
 
 
 /**
- * Construction count.
- *
- * { us : { open: 4, construction: 7 },
- *   de: { open 2, construction: 1}, ....
- * }
- */
-redshiftsoft.SuperchargerData.prototype.getConstructionCount = function () {
-    var countryCountMap = {};
-    for (var i = 0; i < redshiftsoft.SuperchargerData.LIST.length; i++) {
-        var supercharger = redshiftsoft.SuperchargerData.LIST[i];
-        if (!supercharger.custom && supercharger.count) {
-            var country = supercharger.address.country;
-            if (!countryCountMap[country]) {
-                countryCountMap[country] = { open: 0, construction: 0 };
-            }
-            if (supercharger.construction) {
-                countryCountMap[country]['construction']++;
-            } else {
-                countryCountMap[country]['open']++;
-            }
-        }
-    }
-    return countryCountMap;
-};
-
-/**
  * Other properties that are later added to the supercharger data structure:
  *
  * id           -- [Integer] uniquely identifies each record.
