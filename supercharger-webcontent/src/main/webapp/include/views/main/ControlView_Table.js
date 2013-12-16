@@ -36,21 +36,3 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
     }
 
 };
-
-redshiftsoft.ControlView_Table.prototype.handleTableClick = function (event) {
-    var node = $(event.target);
-
-    /* Find a node we are interested in */
-    while (!node.is("td")) {
-        node = node.parent();
-    }
-
-    if (node.hasClass("tog")) {
-        if (node.text() == "on") {
-            node.text("off")
-        }
-        else {
-            node.text("on")
-        }
-    }
-};

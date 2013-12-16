@@ -7,7 +7,7 @@ function createMyNamespace() {
         name = null;
 
     // iterate on the arguments   
-    for (i = 0; i < a.length; i = i + 1) {
+    for (; i < a.length; i = i + 1) {
         tok = a[i].split(".");
 
         // iterate on the object tokens   
