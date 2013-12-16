@@ -1,8 +1,7 @@
 redshiftsoft = createMyNamespace("redshiftsoft");
 
 /**
- *
- * @constructor
+ * Constructor
  */
 redshiftsoft.ControlView_Table = function () {
 
@@ -28,6 +27,7 @@ redshiftsoft.ControlView_Table.prototype.draw = function () {
             "<td>" + supercharger.address.state + "</td>" +
             "<td>" + supercharger.address.zip + "</td>" +
             "<td>" + supercharger.address.country + "</td>" +
+            "<td class='gps'>" + supercharger.location.toUrlValue() + "</td>" +
             "<td class='tog'>" + "<a href='" + supercharger.url + "'>link</a></td>" +
             "</tr>"
         );

@@ -1,0 +1,22 @@
+
+
+---------------------------------
+Map View
+---------------------------------
+
+() Should be able to right-click and get context menu inside or outside of a range circle.
+
+
+---------------------------------
+Control View -- Raw Data
+---------------------------------
+
+() GPS coordinates should be displayed in monospace font.
+
+
+---------------------------------
+Control View -- Supercharger Counts
+---------------------------------
+
+() Country names should show up as tooltips for each country code.
+() Country columns should be sorted (left to right) by number of completed super chargers.
