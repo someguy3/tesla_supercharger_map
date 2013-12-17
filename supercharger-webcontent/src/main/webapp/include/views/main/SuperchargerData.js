@@ -278,6 +278,13 @@ redshiftsoft.SuperchargerData.LIST = [
     },
     //-----------------------------------------------------------------------------------------------------------------| Florida
     {
+        "displayName": "Fort Myers, FL",
+        "address": new redshiftsoft.Address("9903 Gulf Coast Main Street", "Fort Myers", "FL", "33913", "USA"),
+        "location": new google.maps.LatLng(26.485640, -81.787136),
+        "url": "http://www.teslamotors.com/supercharger/fortmyers",
+        "count": true
+    },
+    {
         "displayName": "Port Orange, FL",
         "address": new redshiftsoft.Address("5302 S. Williamson Blvd", "Port Orange", "FL", "32128", "USA"),
         "location": new google.maps.LatLng(29.108566, -81.034569),
@@ -289,13 +296,6 @@ redshiftsoft.SuperchargerData.LIST = [
         "address": new redshiftsoft.Address("1773 N.W. St. Lucie W. Boulevard", "Port St. Lucie", "FL", "34986", "USA"),
         "location": new google.maps.LatLng(27.313023, -80.406688),
         "url": "http://www.teslamotors.com/supercharger/portstlucie",
-        "count": true
-    },
-    {
-        "displayName": "Fort Myers, FL",
-        "address": new redshiftsoft.Address("9903 Gulf Coast Main Street", "Fort Myers", "FL", "33913", "USA"),
-        "location": new google.maps.LatLng(26.485640, -81.787136),
-        "url": "http://www.teslamotors.com/supercharger/fortmyers",
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Georgia
