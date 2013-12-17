@@ -46,9 +46,23 @@
                     <th>
                         Range
                     </th>
+                    <td style="padding-left: 13px">
+                        <div id="range-slider" style="display: inline-block; width: 300px"></div>
+                        <div id="range-number-text" class="slider-value-label" style="display: inline-block"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Status</th>
                     <td>
-                        <div id="range-number-text" class="slider-value-label"></div>
-                        <div id="range-slider"></div>
+                        <input id="status-completed-check"
+                               name="completed"
+                               checked="checked"
+                               type="checkbox"/>Completed
+                        <input id="status-construction-check"
+                               name="completed"
+                               checked="checked"
+                               type="checkbox"/>Under
+                        Construction
                     </td>
                 </tr>
             </table>
@@ -122,21 +136,6 @@
                             <td style="text-align: left">
                                 <input type='text' id="border-color-input"/>
                             </td>
-                        </tr>
-                        <tr class="advanced">
-                            <th>Status</th>
-                            <td colspan="3">
-                                <input id="status-completed-check"
-                                       name="completed"
-                                       checked="checked"
-                                       type="checkbox"/>Completed
-                                <input id="status-construction-check"
-                                       name="completed"
-                                       checked="checked"
-                                       type="checkbox"/>Under
-                                Construction
-                            </td>
-
                         </tr>
                     </table>
 

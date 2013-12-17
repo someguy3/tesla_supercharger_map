@@ -32,7 +32,8 @@ table.controls {
 table.controls th {
     background: whitesmoke;
     text-align: right;
-    padding-right: 5px;
+    padding: 5px 5px 5px 5px;
+    border: 2px solid white;
 }
 
 table.controls td {
