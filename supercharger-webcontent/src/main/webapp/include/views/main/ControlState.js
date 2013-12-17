@@ -6,7 +6,7 @@ redshiftsoft = createMyNamespace("redshiftsoft");
  */
 redshiftsoft.ControlState = function () {
 
-    var rangeMeters = redshiftsoft.Range.milesToMeters(140.0);
+    var rangeMeters = redshiftsoft.Range.milesToMeters(0.0);
 
     this.range = new redshiftsoft.Range(rangeMeters);
 
