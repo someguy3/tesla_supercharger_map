@@ -11,7 +11,7 @@ redshiftsoft.Main = function () {
     this.initMapView(initialControlState);
     this.initControlView(initialControlState);
 
-    new redshiftsoft.ControlView_Table();
+    new redshiftsoft.ControlViewTable();
     new redshiftsoft.SuperchargerCount();
 };
 

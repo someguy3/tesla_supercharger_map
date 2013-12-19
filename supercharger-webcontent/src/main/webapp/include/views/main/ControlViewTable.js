@@ -3,7 +3,7 @@ var redshiftsoft = redshiftsoft || {};
 /**
  * Constructor
  */
-redshiftsoft.ControlView_Table = function () {
+redshiftsoft.ControlViewTable = function () {
 
     this.superChargerDataTable = $("#supercharger-data-table");
 
@@ -12,7 +12,7 @@ redshiftsoft.ControlView_Table = function () {
     this.draw();
 };
 
-redshiftsoft.ControlView_Table.prototype.draw = function () {
+redshiftsoft.ControlViewTable.prototype.draw = function () {
 
     var tableBodyData = this.superChargerDataTable.find("tbody");
 
