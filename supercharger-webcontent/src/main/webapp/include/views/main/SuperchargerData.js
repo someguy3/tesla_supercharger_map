@@ -27,9 +27,10 @@ redshiftsoft.SuperchargerData.prototype.get = function (index) {
 };
 
 redshiftsoft.SuperchargerData.prototype.getById = function (id) {
+    redshiftsoft.Assert.isInteger(id, "id must be an integer");
     for (var i = 0; i < redshiftsoft.SuperchargerData.LIST.length; i++) {
         var supercharger = redshiftsoft.SuperchargerData.LIST[i];
-        if (supercharger.id == id) {
+        if (supercharger.id === id) {
             return supercharger;
         }
     }
@@ -37,9 +38,10 @@ redshiftsoft.SuperchargerData.prototype.getById = function (id) {
 };
 
 redshiftsoft.SuperchargerData.prototype.removeById = function (id) {
+    redshiftsoft.Assert.isInteger(id, "id must be an integer");
     for (var index = 0; index < redshiftsoft.SuperchargerData.LIST.length; index++) {
         var supercharger = redshiftsoft.SuperchargerData.LIST[index];
-        if (supercharger.id == id) {
+        if (supercharger.id === id) {
             redshiftsoft.SuperchargerData.LIST.splice(index, 1);
             break;
         }

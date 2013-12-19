@@ -130,7 +130,7 @@ redshiftsoft.MapView.prototype.setControlState = function (controlState) {
 redshiftsoft.MapView.prototype.handleCircleToggle = function (event) {
     event.preventDefault();
     var link = $(event.target);
-    var id = link.attr('href');
+    var id = parseInt(link.attr('href'));
     var supercharger = this.superData.getById(id);
     if (supercharger.circle.getVisible()) {
         link.text("circle on");
@@ -143,8 +143,7 @@ redshiftsoft.MapView.prototype.handleCircleToggle = function (event) {
 
 redshiftsoft.MapView.prototype.handleMarkerRemove = function (event) {
     event.preventDefault();
-    var link = $(event.target);
-    var id = link.attr('href');
+    var id = parseInt($(event.target).attr('href'));
     var supercharger = this.superData.getById(id);
     supercharger.circle.setMap(null);
     supercharger.marker.setMap(null);
@@ -154,7 +153,7 @@ redshiftsoft.MapView.prototype.handleMarkerRemove = function (event) {
 redshiftsoft.MapView.prototype.handleAddToRoute = function (event) {
     event.preventDefault();
     var link = $(event.target);
-    var id = link.attr('href');
+    var id = parseInt(link.attr('href'));
     var supercharger = this.superData.getById(id);
     this.handleAddRoute(supercharger.location);
 };
