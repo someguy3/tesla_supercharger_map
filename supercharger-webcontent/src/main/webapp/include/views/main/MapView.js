@@ -2,7 +2,7 @@
 // MapView
 //======================================================================================================================
 
-redshiftsoft = createMyNamespace("redshiftsoft");
+var redshiftsoft = createMyNamespace("redshiftsoft");
 
 /**
  * Constructor.
@@ -102,8 +102,8 @@ redshiftsoft.MapView.prototype.redraw = function (drawMarkers) {
 };
 
 redshiftsoft.MapView.prototype.shouldDraw = function (supercharger) {
-    return (supercharger.construction && this.controlState.showConstruction)
-        || (!supercharger.construction && this.controlState.showCompleted)
+    return (supercharger.construction && this.controlState.showConstruction) ||
+        (!supercharger.construction && this.controlState.showCompleted);
 };
 
 redshiftsoft.MapView.prototype.buildRangeCircleOptions = function () {
@@ -200,18 +200,18 @@ redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
             ]
         }
     );
-}
+};
 
 redshiftsoft.MapView.prototype.handleAddRouteEvent = function (event) {
     this.handleAddRoute(event.latLng);
-}
+};
 
 redshiftsoft.MapView.prototype.handleAddRoute = function (latLng) {
     this.routeList.push(latLng);
     var routeListLength = this.routeList.length;
 
-    if (routeListLength == 1) {
-        alert("Route list contains one location. \n\n Add additional locations to continue.")
+    if (routeListLength === 1) {
+        alert("Route list contains one location. \n\n Add additional locations to continue.");
     }
     else {
         var request = {
@@ -228,12 +228,12 @@ redshiftsoft.MapView.prototype.handleAddRoute = function (latLng) {
         });
 
         this.directionsService.route(request, function (response, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
+            if (status === google.maps.DirectionsStatus.OK) {
                 directionsRenderer.setDirections(response);
             }
         });
     }
-}
+};
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -253,7 +253,7 @@ redshiftsoft.MapView.addMarkerToSupercharger = function (googleMap, supercharger
         animation: google.maps.Animation.DROP
     };
     if (supercharger.construction) {
-        markerOptions['icon'] = "images/construction-cone-marker.png";
+        markerOptions.icon = "images/construction-cone-marker.png";
     }
     var marker = new google.maps.Marker(markerOptions);
     supercharger.marker = marker;
@@ -271,7 +271,7 @@ redshiftsoft.MapView.showInfoWindowForMarker = function () {
         popupContent += "<div style='color: orange; font-size: smaller; font-weight: bold'>under construction</div>";
     }
     popupContent += supercharger.address.street + "<br/>";
-    if (supercharger.url != null) {
+    if (supercharger.url !== null) {
         popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>";
         popupContent += "&nbsp;&nbsp;&nbsp;";
     }
@@ -288,4 +288,4 @@ redshiftsoft.MapView.showInfoWindowForMarker = function () {
     var windowOptions = { content: popupContent  };
     var infoWindow = new google.maps.InfoWindow(windowOptions);
     infoWindow.open(myMarker.map, myMarker);
-}
+};

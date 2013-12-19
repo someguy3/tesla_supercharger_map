@@ -1,4 +1,4 @@
-redshiftsoft = createMyNamespace("redshiftsoft");
+var redshiftsoft = createMyNamespace("redshiftsoft");
 
 redshiftsoft.SuperchargerCount = function () {
 
@@ -10,9 +10,9 @@ redshiftsoft.SuperchargerCount = function () {
 
     for (; i < countryCountArray.length; i++) {
         var countryEntry = countryCountArray[i];
-        headerRow.append("<th title='" + countryEntry['countryName'] + "'>" + countryEntry['countryCode'] + "</th>")
-        openRow.append("<td>" + countryEntry['open'] + "</td>");
-        constRow.append("<td>" + countryEntry['construction'] + "</td>");
+        headerRow.append("<th title='" + countryEntry.countryName + "'>" + countryEntry.countryCode + "</th>")
+        openRow.append("<td>" + countryEntry.open + "</td>");
+        constRow.append("<td>" + countryEntry.construction + "</td>");
     }
 
     $("<table></table>")
@@ -57,10 +57,10 @@ redshiftsoft.SuperchargerCount.prototype.getConstructionCount = function () {
                 countryArray.push(newEntry);
             }
             if (supercharger.construction) {
-                countryRefMap[countryName]['construction']++;
+                countryRefMap[countryName].construction++;
                 totalConstruction++;
             } else {
-                countryRefMap[countryName]['open']++;
+                countryRefMap[countryName].open++;
                 totalOpen++;
             }
         }
@@ -73,4 +73,4 @@ redshiftsoft.SuperchargerCount.prototype.getConstructionCount = function () {
 
 redshiftsoft.SuperchargerCount.prototype.sort = function (one, two) {
     return two.open - one.open;
-}
+};

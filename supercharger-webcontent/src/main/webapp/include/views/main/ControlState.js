@@ -1,4 +1,4 @@
-redshiftsoft = createMyNamespace("redshiftsoft");
+var redshiftsoft = createMyNamespace("redshiftsoft");
 
 
 /**
@@ -18,4 +18,4 @@ redshiftsoft.ControlState = function () {
 
     this.showCompleted = true;
     this.showConstruction = true;
-}
+};

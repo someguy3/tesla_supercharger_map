@@ -4,7 +4,7 @@
 //
 //======================================================================================================================
 
-redshiftsoft = createMyNamespace("redshiftsoft");
+var redshiftsoft = createMyNamespace("redshiftsoft");
 
 /**
  * Constructor.
@@ -70,7 +70,7 @@ redshiftsoft.ControlView.prototype.initializeControls = function () {
             value: this.controlState.fillOpacity,
             min: 0.0,
             max: 1.0,
-            step: .10,
+            step: 0.10,
             slide: jQuery.proxy(this.handleFillOpacitySlide, this)
         });
 
@@ -79,7 +79,7 @@ redshiftsoft.ControlView.prototype.initializeControls = function () {
             value: this.controlState.borderOpacity,
             min: 0.0,
             max: 1.0,
-            step: .10,
+            step: 0.10,
             slide: jQuery.proxy(this.handleBorderOpacitySlide, this)
         });
 
@@ -186,9 +186,9 @@ redshiftsoft.ControlView.prototype.handleMapType = function () {
  */
 redshiftsoft.ControlView.prototype.handleDistanceUnit = function () {
     var newUnit = $("input[name='distUnit']:checked").val();
-    if (newUnit == "M") {
+    if (newUnit === "M") {
         this.controlState.range.setUnit(redshiftsoft.Range.Unit.miles);
-    } else if (newUnit == "K") {
+    } else if (newUnit === "K") {
         this.controlState.range.setUnit(redshiftsoft.Range.Unit.kilometers);
     }
     this.initializeRangeControl();
@@ -196,7 +196,7 @@ redshiftsoft.ControlView.prototype.handleDistanceUnit = function () {
 
 redshiftsoft.ControlView.prototype.activateTab = function (event, ui) {
     var newTabName = ui.newTab.find('a').attr('href');
-    if (newTabName == '#tab-about' && !ui.newTab.data('about-tab-initialized')) {
+    if (newTabName === '#tab-about' && !ui.newTab.data('about-tab-initialized')) {
         jQuery.getJSON("version.json", function (data) {
             $(newTabName).append("" +
                 "<br/>" +

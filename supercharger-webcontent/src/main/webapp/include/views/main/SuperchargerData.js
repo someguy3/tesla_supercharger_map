@@ -1,4 +1,4 @@
-redshiftsoft = createMyNamespace("redshiftsoft");
+var redshiftsoft = createMyNamespace("redshiftsoft");
 
 /**
  * Constructor

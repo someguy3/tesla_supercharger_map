@@ -1,4 +1,4 @@
-redshiftsoft = createMyNamespace("redshiftsoft");
+var redshiftsoft = createMyNamespace("redshiftsoft");
 
 /**
  * Constructor
@@ -21,7 +21,7 @@ redshiftsoft.MapViewContextMenu = function (googleMap) {
     google.maps.event.addListener(this.googleMap, 'rightclick', jQuery.proxy(this.show, this));
     google.maps.event.addListener(this.googleMap, 'click', jQuery.proxy(this.hide, this));
 
-}
+};
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Constants
@@ -52,7 +52,7 @@ redshiftsoft.MapViewContextMenu.prototype.trigger = function (event) {
  */
 redshiftsoft.MapViewContextMenu.prototype.hide = function () {
     this.contextMenuDiv.hide();
-}
+};
 
 /**
  * Show context menu at some lat/lon.
@@ -94,7 +94,7 @@ redshiftsoft.MapViewContextMenu.prototype.getCanvasXY = function (currentLatLng)
         Math.floor((worldCoordinate.y - worldCoordinateNW.y) * scale)
     );
     return currentLatLngOffset;
-}
+};
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // class methods
@@ -108,4 +108,4 @@ redshiftsoft.MapViewContextMenu.createMenu = function (parentDiv) {
     contextMenuDiv.hide();
     $(parentDiv).append(contextMenuDiv);
     return contextMenuDiv;
-}
+};

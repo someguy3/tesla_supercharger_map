@@ -1,4 +1,4 @@
-redshiftsoft = createMyNamespace("redshiftsoft");
+var redshiftsoft = createMyNamespace("redshiftsoft");
 
 
 /**
@@ -13,7 +13,7 @@ redshiftsoft.Main = function () {
 
     new redshiftsoft.ControlView_Table();
     new redshiftsoft.SuperchargerCount();
-}
+};
 
 
 /**
@@ -21,7 +21,7 @@ redshiftsoft.Main = function () {
  */
 redshiftsoft.Main.prototype.initMapView = function (controlState) {
     this.mapView = new redshiftsoft.MapView(controlState);
-}
+};
 
 
 /**
@@ -103,7 +103,7 @@ redshiftsoft.Main.prototype.initControlView = function (controlState) {
         mapView.redraw(true);
     });
 
-}
+};
 
 
 /**

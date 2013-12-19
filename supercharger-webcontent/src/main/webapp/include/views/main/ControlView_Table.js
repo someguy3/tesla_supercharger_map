@@ -1,4 +1,4 @@
-redshiftsoft = createMyNamespace("redshiftsoft");
+var redshiftsoft = createMyNamespace("redshiftsoft");
 
 /**
  * Constructor
@@ -10,7 +10,7 @@ redshiftsoft.ControlView_Table = function () {
     this.superData = new redshiftsoft.SuperchargerData();
 
     this.draw();
-}
+};
 
 redshiftsoft.ControlView_Table.prototype.draw = function () {
 

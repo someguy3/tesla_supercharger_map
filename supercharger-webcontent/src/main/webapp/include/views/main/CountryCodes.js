@@ -2,7 +2,7 @@
 // http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm
 //
 
-redshiftsoft = createMyNamespace("redshiftsoft");
+var redshiftsoft = createMyNamespace("redshiftsoft");
 
 redshiftsoft.CountryCodes = {};
 
@@ -42,13 +42,15 @@ redshiftsoft.CountryCodes.NAME_TO_CODE_MAP = null;
 redshiftsoft.CountryCodes.initializeReverseMap = function () {
     redshiftsoft.CountryCodes.NAME_TO_CODE_MAP = {};
     for (var code in redshiftsoft.CountryCodes.CODE_TO_NAME_MAP) {
-        var country = redshiftsoft.CountryCodes.CODE_TO_NAME_MAP[code];
-        redshiftsoft.CountryCodes.NAME_TO_CODE_MAP[country] = code;
+        if (redshiftsoft.CountryCodes.CODE_TO_NAME_MAP.hasOwnProperty(code)) {
+            var country = redshiftsoft.CountryCodes.CODE_TO_NAME_MAP[code];
+            redshiftsoft.CountryCodes.NAME_TO_CODE_MAP[country] = code;
+        }
     }
 };
 
 redshiftsoft.CountryCodes.fromName = function (countryName) {
-    if (redshiftsoft.CountryCodes.NAME_TO_CODE_MAP == null) {
+    if (redshiftsoft.CountryCodes.NAME_TO_CODE_MAP === null) {
         redshiftsoft.CountryCodes.initializeReverseMap();
     }
     return redshiftsoft.CountryCodes.NAME_TO_CODE_MAP[countryName];

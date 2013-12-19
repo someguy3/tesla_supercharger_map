@@ -1,4 +1,4 @@
-redshiftsoft = createMyNamespace("redshiftsoft");
+var redshiftsoft = createMyNamespace("redshiftsoft");
 
 /**
  * Constructor.
@@ -22,14 +22,14 @@ redshiftsoft.Range.Unit = { "miles": 1, "kilometers": 2};
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 redshiftsoft.Range.prototype.getCurrent = function () {
-    if (this.unit == redshiftsoft.Range.Unit.miles) {
+    if (this.unit === redshiftsoft.Range.Unit.miles) {
         return redshiftsoft.Range.metersToMiles(this.rangeMeters);
     } else {
         return redshiftsoft.Range.metersToKilometers(this.rangeMeters);
     }
 };
 redshiftsoft.Range.prototype.setCurrent = function (newRange) {
-    if (this.unit == redshiftsoft.Range.Unit.miles) {
+    if (this.unit === redshiftsoft.Range.Unit.miles) {
         this.rangeMeters = redshiftsoft.Range.milesToMeters(newRange);
     } else {
         this.rangeMeters = redshiftsoft.Range.kilometersToMeters(newRange);
@@ -37,7 +37,7 @@ redshiftsoft.Range.prototype.setCurrent = function (newRange) {
 };
 
 redshiftsoft.Range.prototype.getMin = function () {
-    if (this.unit == redshiftsoft.Range.Unit.miles) {
+    if (this.unit === redshiftsoft.Range.Unit.miles) {
         return redshiftsoft.Range.MILES_MIN;
     } else {
         return redshiftsoft.Range.milesToKilometers(redshiftsoft.Range.MILES_MIN);
@@ -45,7 +45,7 @@ redshiftsoft.Range.prototype.getMin = function () {
 };
 
 redshiftsoft.Range.prototype.getMax = function () {
-    if (this.unit == redshiftsoft.Range.Unit.miles) {
+    if (this.unit === redshiftsoft.Range.Unit.miles) {
         return redshiftsoft.Range.MILES_MAX;
     } else {
         return redshiftsoft.Range.milesToKilometers(redshiftsoft.Range.MILES_MAX);
@@ -53,7 +53,7 @@ redshiftsoft.Range.prototype.getMax = function () {
 };
 
 redshiftsoft.Range.prototype.getUnitName = function () {
-    if (this.unit == redshiftsoft.Range.Unit.miles) {
+    if (this.unit === redshiftsoft.Range.Unit.miles) {
         return "miles";
     } else {
         return "kilometers";
@@ -70,10 +70,10 @@ redshiftsoft.Range.prototype.getRangeMeters = function () {
 };
 
 redshiftsoft.Range.prototype.setUnit = function (newUnit) {
-    if (newUnit != redshiftsoft.Range.Unit.miles && newUnit != redshiftsoft.Range.Unit.kilometers) {
+    if (newUnit !== redshiftsoft.Range.Unit.miles && newUnit !== redshiftsoft.Range.Unit.kilometers) {
         throw new Error("invalid unit=" + newUnit);
     }
-    return this.unit = newUnit;
+    this.unit = newUnit;
 };
 
 
