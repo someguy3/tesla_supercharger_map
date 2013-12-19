@@ -479,19 +479,11 @@ redshiftsoft.SuperchargerData.LIST = [
     //-----------------------------------------------------------------------------------------------------------------| South Dakota
     {
         "displayName": "Mitchell, SD",
-        "address": new redshiftsoft.Address("1241-1571 W Havens St", "Mitchell", "SD", "57301", "USA"),
-        "location": new google.maps.LatLng(43.701139, -98.044401),
+        "address": new redshiftsoft.Address("1305 W. Havens Street", "Mitchell", "SD", "57301", "USA"),
+        "location": new google.maps.LatLng(43.701129, -98.04449999999997),
         "url": "http://www.teslamotors.com/supercharger/mitchell",
-        "construction": true,
         "count": true
     },
-//    {
-//        "displayName": "Mitchell, SD",
-//        "address": new redshiftsoft.Address("1305 W. Havens Street", "Mitchell", "SD", "57301", "USA"),
-//        "location": new google.maps.LatLng(43.701129, -98.04449999999997),
-//        "url": "http://www.teslamotors.com/supercharger/mitchell",
-//        "count": true
-//    },
     {
         "displayName": "Rapid City, SD",
         "address": new redshiftsoft.Address("2200 N. Maple Ave", "Rapid City", "SD", "57701", "USA"),
