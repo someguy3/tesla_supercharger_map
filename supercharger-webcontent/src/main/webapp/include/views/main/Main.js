@@ -1,4 +1,4 @@
-var redshiftsoft = createMyNamespace("redshiftsoft");
+var redshiftsoft = redshiftsoft || {};
 
 
 /**
