@@ -117,7 +117,7 @@ redshiftsoft.MapView.prototype.buildRangeCircleOptions = function () {
         radius: this.controlState.range.getRangeMeters(),
         clickable: false
     };
-}
+};
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // getters/setters
