@@ -630,7 +630,7 @@ redshiftsoft.SuperchargerData.LIST = [
     //-----------------------------------------------------------------------------------------------------------------| GERMANY
     {
         "displayName": "Aichstetten, Germany",
-        "address": new redshiftsoft.Address("Am Waizenhof 10 (Autohof)", "Aichstetten", "", "88317", "Germany"),
+        "address": new redshiftsoft.Address("Am Waizenhof 12 (Autohof)", "Aichstetten", "", "88317", "Germany"),
         "location": new google.maps.LatLng(47.8804833333, 10.0397833333),
         "url": "http://www.teslamotors.com/supercharger/aichstetten",
         "count": true
