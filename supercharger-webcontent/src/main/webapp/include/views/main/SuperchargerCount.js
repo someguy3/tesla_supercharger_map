@@ -10,7 +10,7 @@ redshiftsoft.SuperchargerCount = function () {
 
     for (; i < countryCountArray.length; i++) {
         var countryEntry = countryCountArray[i];
-        headerRow.append("<th title='" + countryEntry.countryName + "'>" + countryEntry.countryCode + "</th>")
+        headerRow.append("<th title='" + countryEntry.countryName + "'>" + countryEntry.countryCode + "</th>");
         openRow.append("<td>" + countryEntry.open + "</td>");
         constRow.append("<td>" + countryEntry.construction + "</td>");
     }
