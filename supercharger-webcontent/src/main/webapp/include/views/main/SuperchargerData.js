@@ -621,6 +621,14 @@ redshiftsoft.SuperchargerData.LIST = [
 
     //-----------------------------------------------------------------------------------------------------------------| GERMANY
     {
+        "displayName": "St. Anton, Austria",
+        "address": new redshiftsoft.Address("73 Arlbergstrasse", "St. Anton am Arlberg", "", "6580", "Austria"),
+        "location": new google.maps.LatLng(47.130137, 10.269231),
+        "url": "http://www.teslamotors.com/supercharger/stanton",
+        "count": true
+    },
+    //-----------------------------------------------------------------------------------------------------------------| GERMANY
+    {
         "displayName": "Aichstetten, Germany",
         "address": new redshiftsoft.Address("Am Waizenhof 10 (Autohof)", "Aichstetten", "", "88317", "Germany"),
         "location": new google.maps.LatLng(47.8804833333, 10.0397833333),
