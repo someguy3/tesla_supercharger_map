@@ -398,6 +398,16 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
+    //-----------------------------------------------------------------------------------------------------------------| Nevada
+    {
+        "displayName": "Las Vegas, NV",
+        "address": new redshiftsoft.Address("701 Bridger Ave", "Las Vegas", "NV", "89101", "USA"),
+        //  36° 9.947', -115° 8.359'
+        "location": new google.maps.LatLng(36.1657833333, -115.1393166667),
+        "url": "http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV",
+        "construction": true,
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| New York
     {
         "displayName": "JFK Airport, NY",
