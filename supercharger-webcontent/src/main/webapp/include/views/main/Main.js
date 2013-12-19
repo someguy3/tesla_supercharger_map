@@ -47,11 +47,11 @@ redshiftsoft.Main.prototype.initControlView = function (controlState) {
     // Callback: mapType change
     //
     controlView.on("map-type-change-event", function (event, newMapType) {
-        if (newMapType == "SATELLITE") {
+        if (newMapType === "SATELLITE") {
             mapView.googleMap.setMapTypeId(google.maps.MapTypeId.SATELLITE);
-        } else if (newMapType == "ROADMAP") {
+        } else if (newMapType === "ROADMAP") {
             mapView.googleMap.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-        } else if (newMapType == "HYBRID") {
+        } else if (newMapType === "HYBRID") {
             mapView.googleMap.setMapTypeId(google.maps.MapTypeId.HYBRID);
         } else {
             mapView.googleMap.setMapTypeId(google.maps.MapTypeId.TERRAIN);
