@@ -653,7 +653,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "displayName": "Wilnsdorf, Germany",
         "address": new redshiftsoft.Address("Elkersberg 2 (Autohof)", "Wilnsdorf", "", "57234", "Germany"),
         "location": new google.maps.LatLng(50.817046, 8.087663),
-        "url": "http://www.teslamotorsclub.com/showthread.php/8590-Tesla-Supercharger-network/page237",
+        "url": "http://www.teslamotors.com/supercharger/wilnsdorf",
         "count": true
     },
 
@@ -669,7 +669,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "displayName": "Zevenaar, Netherlands",
         "address": new redshiftsoft.Address("Doesburgseweg 39 6902 PL", "Zevenaar", "", "", "Netherlands"),
         "location": new google.maps.LatLng(51.94066, 6.08180),
-        "url": "http://www.teslamotorsclub.com/showthread.php/24215-Supercharger-in-Oost",
+        "url": "http://www.teslamotors.com/supercharger/zevenaar",
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| NORWAY
