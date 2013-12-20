@@ -321,9 +321,8 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Highland Park, IL Service Center",
         "address": new redshiftsoft.Address("1200 Old Skokie Road", "Highland Park", "IL", "60035", "USA"),
-        "location": new google.maps.LatLng(42.1746333333, -87.8164333333),
-        "url": "http://www.teslamotorsclub.com/showthread.php/24986-Highland-Park-IL-Service-Center!",
-        "construction": true,
+        "location": new google.maps.LatLng(42.17434, -87.816626),
+        "url": "http://www.teslamotors.com/supercharger/highlandpark",
         "count": true
     },
     {
