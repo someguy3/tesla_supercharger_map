@@ -478,6 +478,15 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/woodburn",
         "count": true
     },
+    //-----------------------------------------------------------------------------------------------------------------| Pennsylvania
+    {
+        "displayName": "Somerset, PA",
+        "address": new redshiftsoft.Address("1030 North Center Avenue", "Somerset", "PA", "15501", "USA"),
+        "location": new google.maps.LatLng(40.0173833333, -79.0771166667),
+        "url": "http://www.teslamotorsclub.com/showthread.php/25319-Somerset-PA-Supercharger-(confirmed!)",
+        "construction": true,
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| South Carolina
     {
         "displayName": "Santee, SC",
