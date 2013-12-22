@@ -354,7 +354,7 @@ redshiftsoft.SuperchargerData.LIST = [
         "url": "http://www.teslamotors.com/supercharger/mishawaka",
         "count": true
     },
-    //-----------------------------------------------------------------------------------------------------------------| Minnesota
+    //-----------------------------------------------------------------------------------------------------------------| Maryland
     {
         "displayName": "Hagerstown, MD",
         "address": new redshiftsoft.Address("495 Premium Outlets Blvd", "Hagerstown", "MD", "21740", "USA"),
@@ -364,6 +364,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Minnesota
+    {
+        "displayName": "Albert Lea, MN",
+        "address": new redshiftsoft.Address("America Inn Lodge, 811 East Plaza Street", "Albert Lea", "MN", "56007", "USA"),
+        "location": new google.maps.LatLng(43.68605, -93.3573),
+        "url": "http://www.teslamotorsclub.com/showthread.php/25097-Minnesota-Supercharging-Discussion-amp-Tracking",
+        "construction": true,
+        "count": true
+    },
     {
         "displayName": "Worthington, MN",
         "address": new redshiftsoft.Address("1290 Ryan's Rd", "Worthington", "MN", "56187", "USA"),
