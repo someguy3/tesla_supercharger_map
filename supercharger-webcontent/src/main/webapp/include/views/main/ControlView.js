@@ -21,7 +21,6 @@ redshiftsoft.ControlView = function (controlState) {
         activate: jQuery.proxy(this.activateTab, this)
     });
 
-    $("input[name='mapType']").change(jQuery.proxy(this.handleMapType, this));
     $("input[name='distUnit']").change(jQuery.proxy(this.handleDistanceUnit, this));
 
     $("#advanced-options-trigger").click(function (event) {
@@ -41,7 +40,6 @@ redshiftsoft.ControlView = function (controlState) {
 // Event methods that delegate to jquery object for triggering/observing custom events.
 //
 // range-change-event          [newRadiusMeters]
-// map-type-change-event       [newMapType]
 // fill-opacity-change-event   [newFillOpacity]
 // fill-color-event-change     [newFillColor]
 // border-opacity-change-event [newBorderOpacity]
@@ -171,14 +169,6 @@ redshiftsoft.ControlView.prototype.handleBorderOpacitySlide = function (event) {
     this.controlState.borderOpacity = newBorderOpacity;
     this.updateTextBorderOpacityDisplay();
     this.trigger("border-opacity-changed-event", this.controlState);
-};
-
-/**
- * Handle changes to map type.
- */
-redshiftsoft.ControlView.prototype.handleMapType = function () {
-    var newMapType = $("input[name='mapType']:checked").val();
-    this.trigger("map-type-change-event", newMapType);
 };
 
 /**

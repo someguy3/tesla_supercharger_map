@@ -50,7 +50,11 @@ redshiftsoft.MapView.prototype.initMap = function () {
     var mapOptions = {
         center: new google.maps.LatLng(redshiftsoft.MapView.INITIAL_LAT, redshiftsoft.MapView.INITIAL_LNG),
         zoom: redshiftsoft.MapView.INITIAL_ZOOM,
-        mapTypeControl: false,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.SATELLITE, google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID, google.maps.MapTypeId.TERRAIN],
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+        },
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
