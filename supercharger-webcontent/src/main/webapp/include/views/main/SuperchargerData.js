@@ -618,6 +618,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
+    {
+        "displayName": "Pleasant Prairie, WI",
+        "address": new redshiftsoft.Address("11211 120th Avenue, WI ", "Pleasant Prairie", "WI", "53158", "USA"),
+        "location": new google.maps.LatLng(42.5187, -87.9504666667),
+        "url": "http://www.teslamotors.com/forum/forums/supercharger-locations-existingplanned-confirmed-not-rumored-or-speculated%E2%80%A6?page=50",
+        "construction": true,
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| Wyoming
     {
         "displayName": "Cheyenne, WY",
