@@ -569,6 +569,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
+    {
+        "displayName": "Moab, UT",
+        "address": new redshiftsoft.Address("16 South Main St.", "Moab", "UT", "84511", "USA"),
+        "location": new google.maps.LatLng(38.5731167, -109.55245),
+        "url": "http://www.teslamotorsclub.com/showthread.php/8590-Tesla-Supercharger-network/page287?p=532503&viewfull=1#post532503",
+        "construction": true,
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| Virginia
     {
         "displayName": "Glen Allen, VA",
