@@ -510,6 +510,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
+        "displayName": "Murdo, SD",
+        "address": new redshiftsoft.Address("302 W 5th St", "Murdo", "SD", "57559", "USA"),
+        "location": new google.maps.LatLng(43.886975, -100.716626),
+        "url": "http://www.teslamotorsclub.com/showthread.php/8590-Tesla-Supercharger-network/page286?p=532185&viewfull=1#post532185",
+        "construction": true,
+        "count": true
+    },
+    {
         "displayName": "Rapid City, SD",
         "address": new redshiftsoft.Address("2200 N. Maple Ave", "Rapid City", "SD", "57701", "USA"),
         "location": new google.maps.LatLng(44.105601, -103.212569),
