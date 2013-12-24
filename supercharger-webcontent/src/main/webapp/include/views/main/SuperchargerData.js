@@ -417,10 +417,9 @@ redshiftsoft.SuperchargerData.LIST = [
     //-----------------------------------------------------------------------------------------------------------------| New York
     {
         "displayName": "JFK Airport, NY",
-        "address": new redshiftsoft.Address("JFK International Airport", "New York", "NY", "11430", "USA"),
-        "location": new google.maps.LatLng(40.661758, -73.792733),
+        "address": new redshiftsoft.Address("150th Ave and 147th St", "Queens", "NY", "11430", "USA"),
+        "location": new google.maps.LatLng(40.66319, -73.793192),
         "url": "http://www.teslamotors.com/supercharger/jfk",
-        "construction": true,
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| North Carolina
