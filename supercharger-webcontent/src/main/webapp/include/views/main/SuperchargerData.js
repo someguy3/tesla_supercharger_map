@@ -587,9 +587,8 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Ellensburg, WA",
         "address": new redshiftsoft.Address("1620 Canyon Rd", "Ellensburg", "WA", "98926", "USA"),
-        "location": new google.maps.LatLng(46.9769, -120.5418666),
+        "location": new google.maps.LatLng(46.976918, -120.54162),
         "url": "http://www.teslamotors.com/supercharger/ellensburg",
-        "construction": true,
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Wisconsin
