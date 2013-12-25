@@ -454,6 +454,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
+    {
+        "displayName": "Maumee, OH",
+        "address": new redshiftsoft.Address("1333 Conant Street", "Maumee", "OH", "43537", "USA"),
+        "location": new google.maps.LatLng(41.57835, -83.66465),
+        "url": "http://www.teslamotorsclub.com/showthread.php/25482-Supercharger-Maumee-OH",
+        "construction": true,
+        "count": true
+    },
     //-----------------------------------------------------------------------------------------------------------------| Oregon
     {
         "displayName": "Detroit Lake, OR",
