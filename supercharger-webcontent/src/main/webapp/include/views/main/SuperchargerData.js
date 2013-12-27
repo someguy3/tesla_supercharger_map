@@ -504,9 +504,8 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Santee, SC",
         "address": new redshiftsoft.Address("114 Bradford Blvd.", "Santee", "SC", "29142", "USA"),
-        "location": new google.maps.LatLng(33.48591, -80.475736),
-        "url": "http://www.teslamotorsclub.com/showthread.php/25065-Supercharger-Santee-SC",
-        "construction": true,
+        "location": new google.maps.LatLng(33.485858, -80.475763),
+        "url": "http://www.teslamotors.com/supercharger/santee",
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| South Dakota
