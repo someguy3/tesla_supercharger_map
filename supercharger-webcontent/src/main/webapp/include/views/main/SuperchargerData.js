@@ -519,9 +519,8 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Murdo, SD",
         "address": new redshiftsoft.Address("302 W 5th St", "Murdo", "SD", "57559", "USA"),
-        "location": new google.maps.LatLng(43.886975, -100.716626),
-        "url": "http://www.teslamotorsclub.com/showthread.php/8590-Tesla-Supercharger-network/page286?p=532185&viewfull=1#post532185",
-        "construction": true,
+        "location": new google.maps.LatLng(43.886915, -100.716887),
+        "url": "http://www.teslamotors.com/supercharger/murdo",
         "count": true
     },
     {
@@ -618,7 +617,7 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Madison, WI",
         "address": new redshiftsoft.Address("89 E Towne Mall", "Madison", "WI", "53704", "USA"),
-        "location": new google.maps.LatLng(43.126316666, -89.30698333),
+        "location": new google.maps.LatLng(43.12669, -89.306896),
         "url": "http://www.teslamotors.com/supercharger/madison",
         "construction": true,
         "count": true
