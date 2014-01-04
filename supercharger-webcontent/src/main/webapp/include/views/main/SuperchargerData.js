@@ -304,7 +304,6 @@ redshiftsoft.SuperchargerData.LIST = [
         "address": new redshiftsoft.Address("2700 State Road 16, Suite 200", "St. Augustine", "FL", "32092", "USA"),
         "location": new google.maps.LatLng(29.9207352, -81.416337),
         "url": "http://www.teslamotorsclub.com/showthread.php/25177-St-Augustine-Supercharger",
-        "construction": true,
         "count": true
     },
 
