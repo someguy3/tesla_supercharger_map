@@ -85,6 +85,14 @@ redshiftsoft.SuperchargerData.LIST = [
 //        "count": true
 //    },
     {
+        "displayName": "Buckeye, AZ",
+        "address": new redshiftsoft.Address("444 S Watson RD", "Buckeye", "AZ", "85326", "USA"),
+        "location": new google.maps.LatLng(33.443242, -112.557378),
+        "url": "http://www.teslamotorsclub.com/showthread.php/25317-Supercharger-Buckeye-AZ",
+        "construction": true,
+        "count": true
+    },
+    {
         "displayName": "Flagstaff, AZ",
         "address": new redshiftsoft.Address("2650 S Beulah Blvd", "Flagstaff", "AZ", "86001", "USA"),
         "location": new google.maps.LatLng(35.174272, -111.66328),
