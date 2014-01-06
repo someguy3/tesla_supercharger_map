@@ -511,7 +511,7 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "East Greenwich, RI",
         "address": new redshiftsoft.Address("1000 Division St", "East Greenwich", "RI", "02818", "USA"),
-        "location": new google.maps.LatLng(41.661996, -71.496709),
+        "location": new google.maps.LatLng(41.66055, -71.49715),
         "url": "http://www.teslamotorsclub.com/showthread.php/11734-East-Coast-Supercharging-network/page23?p=538740&viewfull=1#post538740",
         "construction": true,
         "count": true
