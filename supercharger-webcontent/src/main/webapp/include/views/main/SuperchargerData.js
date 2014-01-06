@@ -637,11 +637,10 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
-        "displayName": "Onalaska, WI",
-        "address": new redshiftsoft.Address("2833 Midwest Dr", "Onalaska", "WI", "54650", "USA"),
-        "location": new google.maps.LatLng(43.87924, -91.188563),
-        "url": "http://www.teslamotorsclub.com/showthread.php/24337-Wisconsin-Supercharger-Discussion-amp-Tracking/page9?p=518504&viewfull=1#post518504",
-        "construction": true,
+        "displayName": "La Crosse, WI",
+        "address": new redshiftsoft.Address("2845 Midwest Dr", "Onalaska", "WI", "54650", "USA"),
+        "location": new google.maps.LatLng(43.879042, -91.188428),
+        "url": "http://www.teslamotors.com/supercharger/lacrosse",
         "count": true
     },
     {
