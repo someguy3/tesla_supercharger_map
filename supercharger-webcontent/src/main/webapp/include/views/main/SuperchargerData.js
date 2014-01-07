@@ -406,16 +406,14 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Gallup, NM",
         "address": new redshiftsoft.Address("111 Twin Buttes Rd", "Gallup", "NM", "87301", "USA"),
-        "location": new google.maps.LatLng(35.505112, -108.828191),
-        "url": "http://www.teslamotorsclub.com/showthread.php/24954-Supercharger-Gallup-NM",
-        "construction": true,
+        "location": new google.maps.LatLng(35.505278, -108.828094),
+        "url": "http://www.teslamotors.com/supercharger/gallup",
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Nevada
     {
         "displayName": "Las Vegas, NV",
         "address": new redshiftsoft.Address("701 Bridger Ave", "Las Vegas", "NV", "89101", "USA"),
-        //  36° 9.947', -115° 8.359'
         "location": new google.maps.LatLng(36.1657833333, -115.1393166667),
         "url": "http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV",
         "construction": true,
