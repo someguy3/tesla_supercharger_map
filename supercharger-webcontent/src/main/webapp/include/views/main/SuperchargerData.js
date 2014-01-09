@@ -636,17 +636,17 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
-        "displayName": "Mauston, WI",
-        "address": new redshiftsoft.Address("640 Mc Evoy St", "Mauston", "WI", "53948", "USA"),
-        "location": new google.maps.LatLng(43.795551, -90.059358),
-        "url": "http://www.teslamotors.com/supercharger/mauston",
-        "count": true
-    },
-    {
         "displayName": "La Crosse, WI",
         "address": new redshiftsoft.Address("2845 Midwest Dr", "Onalaska", "WI", "54650", "USA"),
         "location": new google.maps.LatLng(43.879042, -91.188428),
         "url": "http://www.teslamotors.com/supercharger/lacrosse",
+        "count": true
+    },
+    {
+        "displayName": "Mauston, WI",
+        "address": new redshiftsoft.Address("640 Mc Evoy St", "Mauston", "WI", "53948", "USA"),
+        "location": new google.maps.LatLng(43.795551, -90.059358),
+        "url": "http://www.teslamotors.com/supercharger/mauston",
         "count": true
     },
     {
