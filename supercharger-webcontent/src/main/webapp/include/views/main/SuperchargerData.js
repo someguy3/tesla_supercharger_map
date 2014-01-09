@@ -628,10 +628,10 @@ redshiftsoft.SuperchargerData.LIST = [
     },
     //-----------------------------------------------------------------------------------------------------------------| Wisconsin
     {
-        "displayName": "Madison, WI",
-        "address": new redshiftsoft.Address("89 E Towne Mall", "Madison", "WI", "53704", "USA"),
-        "location": new google.maps.LatLng(43.12669, -89.306896),
-        "url": "http://www.teslamotors.com/supercharger/madison",
+        "displayName": "Eau Claire, WI",
+        "address": new redshiftsoft.Address("4639 Keystone Crossing", "Eau Claire", "WI", "54701", "USA"),
+        "location": new google.maps.LatLng(44.7709, -91.4370833333),
+        "url": "http://www.teslamotorsclub.com/showthread.php/24337-Wisconsin-Supercharger-Discussion-amp-Tracking/page31",
         "construction": true,
         "count": true
     },
