@@ -76,14 +76,6 @@ redshiftsoft.SuperchargerData.prototype.addSupercharger = function (displayName,
 redshiftsoft.SuperchargerData.LIST = [
 
     //-----------------------------------------------------------------------------------------------------------------| Arizona
-//    {
-//        "displayName": "Gila Bend,  AZ",
-//        "address": new redshiftsoft.Address("820 W Pima St", "Gila Bend", "AZ", "85337", "USA"),
-//        "location": new google.maps.LatLng(32.943852, -112.733536),
-//        "url": "http://www.teslamotors.com/supercharger/gila",
-//        "construction": true,
-//        "count": true
-//    },
     {
         "displayName": "Buckeye, AZ",
         "address": new redshiftsoft.Address("444 S Watson RD", "Buckeye", "AZ", "85326", "USA"),
@@ -100,6 +92,22 @@ redshiftsoft.SuperchargerData.LIST = [
         "construction": true,
         "count": true
     },
+//    {
+//        "displayName": "Gila Bend,  AZ",
+//        "address": new redshiftsoft.Address("820 W Pima St", "Gila Bend", "AZ", "85337", "USA"),
+//        "location": new google.maps.LatLng(32.943852, -112.733536),
+//        "url": "http://www.teslamotors.com/supercharger/gila",
+//        "construction": true,
+//        "count": true
+//    },
+//    {
+//        "displayName": "Holbrook, AZ",
+//        "address": new redshiftsoft.Address("1635 Navajo Blvd", "Holbrook", "AZ", "86025", "USA"),
+//        "location": new google.maps.LatLng(1,1),
+//        "url": "http://www.teslamotorsclub.com/showthread.php/25375-Supercharger-Holbrook-AZ",
+//        "construction": true,
+//        "count": true
+//    },
     {
         "displayName": "Kingman, AZ",
         "address": new redshiftsoft.Address("789 West Beale Street", "Kingman", "AZ", "86401", "USA"),
