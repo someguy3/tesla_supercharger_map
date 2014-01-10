@@ -505,6 +505,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     //-----------------------------------------------------------------------------------------------------------------| Pennsylvania
+//    {
+//        "displayName": "Cranberry, PA",
+//        "address": new redshiftsoft.Address("1308 Freedom Rd", "Cranberry", "PA", "16066", "USA"),
+//        "location": new google.maps.LatLng(40.0173833333, -79.0771166667),
+//        "url": "http://www.teslamotorsclub.com/showthread.php/25840-Cranberry-PA-Supercharger-Location-(NW-of-Pittsburgh)",
+//        "construction": true,
+//        "count": true
+//    },
     {
         "displayName": "Somerset, PA",
         "address": new redshiftsoft.Address("1030 North Center Avenue", "Somerset", "PA", "15501", "USA"),
