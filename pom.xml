@@ -9,7 +9,7 @@
     </parent>
 
     <groupId>com.redshiftsoft.supercharger</groupId>
-    <artifactId>supercharger</artifactId>
+    <artifactId>tesla_supercharger_map</artifactId>
     <version>1.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
