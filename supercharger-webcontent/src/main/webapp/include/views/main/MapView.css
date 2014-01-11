@@ -3,7 +3,7 @@ Canvas
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 #map-canvas {
     height: 100%;
-    min-height: 850px; /* for IE10, otherwise has zero height */
+    min-height: 450px; /* for IE10, otherwise has zero height */
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - -

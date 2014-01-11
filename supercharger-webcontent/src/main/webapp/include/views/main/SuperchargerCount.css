@@ -1,10 +1,9 @@
 #supercharger-count-container {
-    float: right;
-    font-size: .8em;
-    font-weight: lighter;
     color: gray;
     padding-right: 0;
-    text-align: right;
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 3em;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -13,18 +12,20 @@
 
 .supercharger-count-table {
     border-collapse: collapse;
+    margin: auto;
 }
 
 .supercharger-count-table td {
     border: 1px solid silver;
     text-align: right;
+    padding: 2px;
 }
 
 .supercharger-count-table th {
     text-align: center;
     font-weight: bold;
     border: 1px solid silver;
-    padding: 1px 5px 1px 5px;
+    padding: 2px 5px 2px 5px;
 }
 
 .supercharger-count-table th.vert {

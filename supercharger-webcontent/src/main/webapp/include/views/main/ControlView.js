@@ -13,26 +13,11 @@ redshiftsoft.ControlView = function (controlState) {
 
     this.controlState = controlState;
 
-    this.viewDiv = $("#control-view-div");
+    this.viewDiv = $("#rendering-controls-table");
 
     this.initializeControls();
 
-    $("#controls-tabs").tabs({
-        activate: jQuery.proxy(this.activateTab, this)
-    });
-
     $("input[name='distUnit']").change(jQuery.proxy(this.handleDistanceUnit, this));
-
-    $("#advanced-options-trigger").click(function (event) {
-        event.preventDefault();
-        var link = $(this);
-        if (link.html().indexOf("hide") >= 0) {
-            link.html("show advanced options");
-        } else {
-            link.html("hide advanced options");
-        }
-        $("#controls-tabs").toggle();
-    });
 
 };
 
@@ -49,8 +34,8 @@ redshiftsoft.ControlView = function (controlState) {
 redshiftsoft.ControlView.prototype.on = function (eventName, callback) {
     this.viewDiv.on(eventName, callback);
 };
-redshiftsoft.ControlView.prototype.trigger = function (eventName, arg1) {
-    this.viewDiv.trigger(eventName, arg1);
+redshiftsoft.ControlView.prototype.trigger = function (eventName, customData) {
+    this.viewDiv.trigger(eventName, customData);
 };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -182,22 +167,6 @@ redshiftsoft.ControlView.prototype.handleDistanceUnit = function () {
         this.controlState.range.setUnit(redshiftsoft.Range.Unit.kilometers);
     }
     this.initializeRangeControl();
-};
-
-redshiftsoft.ControlView.prototype.activateTab = function (event, ui) {
-    var newTabName = ui.newTab.find('a').attr('href');
-    if (newTabName === '#tab-about' && !ui.newTab.data('about-tab-initialized')) {
-        jQuery.getJSON("version.json", function (data) {
-            $(newTabName).append("" +
-                "<br/>" +
-                "<b>Last Updated: </b>" + data.buildTimestamp + "<br/>" +
-                "<br/>" +
-                "Send updates/corrections to <b>map" + "@tes" + "lawiki.net</b>" +
-                "<br/>"
-            );
-            ui.newTab.data('about-tab-initialized', true);
-        });
-    }
 };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

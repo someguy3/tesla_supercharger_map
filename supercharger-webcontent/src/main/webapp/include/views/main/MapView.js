@@ -6,17 +6,10 @@ var redshiftsoft = redshiftsoft || {};
 redshiftsoft.MapView = function (controlState) {
 
     this.controlState = controlState;
-
     this.superData = new redshiftsoft.SuperchargerData();
-
-    //
-    // Routing stuff
-    //
-    this.directionsService = new google.maps.DirectionsService();
-    this.routeList = [];
+    this.viewDiv = $("#map-canvas");
 
     this.initMap();
-
 
     // handle clicks to toggle supercharger circle
     jQuery(document).on('click', '.circle-toggle-trigger', jQuery.proxy(this.handleCircleToggle, this));
@@ -41,6 +34,19 @@ redshiftsoft.MapView.INITIAL_LAT = 38.0;
 redshiftsoft.MapView.INITIAL_LNG = -90.644;
 redshiftsoft.MapView.INITIAL_ZOOM = 5;
 
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Event methods that delegate to jquery object for triggering/observing custom events.
+//
+// map-event-route-added          [{}]
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+redshiftsoft.MapView.prototype.on = function (eventName, callback) {
+    this.viewDiv.on(eventName, callback);
+};
+redshiftsoft.MapView.prototype.trigger = function (eventName, extraData) {
+    this.viewDiv.trigger(eventName, extraData);
+};
+
 
 /**
  * Initialize map
@@ -58,7 +64,7 @@ redshiftsoft.MapView.prototype.initMap = function () {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    this.googleMap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    this.googleMap = new google.maps.Map(this.viewDiv.get(0), mapOptions);
     this.redraw(true);
 };
 
@@ -132,15 +138,14 @@ redshiftsoft.MapView.prototype.setControlState = function (controlState) {
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 redshiftsoft.MapView.prototype.handleCircleToggle = function (event) {
-    event.preventDefault();
-    var link = $(event.target);
-    var id = parseInt(link.attr('href'));
+    var eventDetail = redshiftsoft.eventDetail(event);
+    var id = parseInt(eventDetail.actionName);
     var supercharger = this.superData.getById(id);
     if (supercharger.circle.getVisible()) {
-        link.text("circle on");
+        eventDetail.link.text("circle on");
         supercharger.circle.setVisible(false);
     } else {
-        link.text("circle off");
+        eventDetail.link.text("circle off");
         supercharger.circle.setVisible(true);
     }
 };
@@ -155,11 +160,10 @@ redshiftsoft.MapView.prototype.handleMarkerRemove = function (event) {
 };
 
 redshiftsoft.MapView.prototype.handleAddToRoute = function (event) {
-    event.preventDefault();
-    var link = $(event.target);
-    var id = parseInt(link.attr('href'));
+    var eventDetail = redshiftsoft.eventDetail(event);
+    var id = parseInt(eventDetail.actionName);
     var supercharger = this.superData.getById(id);
-    this.handleAddRoute(supercharger.location);
+    this.trigger("map-event-route-added", { latLng: supercharger.location, googleMap: this.googleMap });
 };
 
 
@@ -200,40 +204,6 @@ redshiftsoft.MapView.prototype.handleAddMarker = function (event) {
         }
     );
 };
-
-redshiftsoft.MapView.prototype.handleAddRouteEvent = function (event) {
-    this.handleAddRoute(event.latLng);
-};
-
-redshiftsoft.MapView.prototype.handleAddRoute = function (latLng) {
-    this.routeList.push(latLng);
-    var routeListLength = this.routeList.length;
-
-    if (routeListLength === 1) {
-        alert("Route list contains one location. \n\n Add additional locations to continue.");
-    }
-    else {
-        var request = {
-            origin: this.routeList[routeListLength - 2],
-            destination: this.routeList[routeListLength - 1],
-            travelMode: google.maps.TravelMode.DRIVING
-        };
-        var directionsRenderer = new google.maps.DirectionsRenderer({
-            map: this.googleMap,
-            panel: document.getElementById('directions-panel'),
-            preserveViewport: true,
-            suppressMarkers: true,
-            draggable: true
-        });
-
-        this.directionsService.route(request, function (response, status) {
-            if (status === google.maps.DirectionsStatus.OK) {
-                directionsRenderer.setDirections(response);
-            }
-        });
-    }
-};
-
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // CLASS level methods

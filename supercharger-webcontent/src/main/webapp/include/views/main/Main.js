@@ -2,9 +2,14 @@ var redshiftsoft = redshiftsoft || {};
 
 
 /**
- * Constructor
+ *
+ * @constructor
  */
 redshiftsoft.Main = function () {
+
+    this.routing = new redshiftsoft.Routing();
+
+    new redshiftsoft.NavBar();
 
     var initialControlState = new redshiftsoft.ControlState();
 
@@ -21,6 +26,7 @@ redshiftsoft.Main = function () {
  */
 redshiftsoft.Main.prototype.initMapView = function (controlState) {
     this.mapView = new redshiftsoft.MapView(controlState);
+    this.mapView.on("map-event-route-added", jQuery.proxy(this.routing.handleAddRouteEvent, this.routing));
 };
 
 

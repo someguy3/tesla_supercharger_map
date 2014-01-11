@@ -1,15 +1,16 @@
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Html/Body
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-html {
-    height: 100%;
+* {
     padding: 0;
     margin: 0;
 }
 
+html {
+    height: 100%;
+}
+
 body {
-    padding: 0;
-    margin: 0;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     height: 100%;
 }
@@ -18,20 +19,17 @@ body {
 Layout
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-.wrapper {
+.layout-wrapper {
     display: table;
     height: 100%;
     width: 100%;
 }
-.header {
+.layout-header {
     display: table-row;
 }
 
-.content {
+.layout-content {
     display: table-row;
     height: 100%;
-}
-.footer {
-    display: table-row;
 }
 

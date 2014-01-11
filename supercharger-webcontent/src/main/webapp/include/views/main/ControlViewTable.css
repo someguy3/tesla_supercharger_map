@@ -1,22 +1,10 @@
-.controls-table-container {
-    display: inline-block;
-    text-align: center;
-
-    height: 156px;
-    min-height: 156px;
-    width: 100%;
-
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-.controls-table-container table {
+#supercharger-data-table table {
     border-collapse: collapse;
     margin: 0 auto;
     padding: 0;
 }
 
-.controls-table-container th {
+#supercharger-data-table th {
     text-align: left;
     background: whitesmoke;
     padding-left: 5px;
@@ -24,14 +12,14 @@
     border: 1px solid white;
 }
 
-.controls-table-container td {
+#supercharger-data-table td {
     text-align: left;
     border: 1px solid #dddddd;
     padding-left: 3px;
     padding-right: 3px;
 }
 
-.controls-table-container td.tog {
+#supercharger-data-table td.tog {
     text-align: center;
     vertical-align: middle;
 }
