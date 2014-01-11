@@ -658,6 +658,14 @@ redshiftsoft.SuperchargerData.LIST = [
         "count": true
     },
     {
+        "displayName": "Madison, WI",
+        "address": new redshiftsoft.Address("89 E Towne Mall", "Madison", "WI", "53704", "USA"),
+        "location": new google.maps.LatLng(43.12669, -89.306896),
+        "url": "http://www.teslamotorsclub.com/showthread.php/21123-Madison-WI-Supercharger",
+        "construction": true,
+        "count": true
+    },
+    {
         "displayName": "Mauston, WI",
         "address": new redshiftsoft.Address("640 Mc Evoy St", "Mauston", "WI", "53948", "USA"),
         "location": new google.maps.LatLng(43.795551, -90.059358),
