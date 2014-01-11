@@ -88,8 +88,8 @@ redshiftsoft.SuperchargerData.LIST = [
         "displayName": "Flagstaff, AZ",
         "address": new redshiftsoft.Address("2650 S Beulah Blvd", "Flagstaff", "AZ", "86001", "USA"),
         "location": new google.maps.LatLng(35.174272, -111.66328),
-        "url": "http://www.teslamotorsclub.com/showthread.php/24922-Supercharger-Flagstaff-AZ",
-        "construction": true,
+        "url": "http://www.teslamotors.com/supercharger/flagstaff",
+        "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24922-Supercharger-Flagstaff-AZ",
         "count": true
     },
 //    {
