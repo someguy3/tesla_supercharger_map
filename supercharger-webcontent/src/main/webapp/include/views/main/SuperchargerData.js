@@ -228,9 +228,9 @@ redshiftsoft.SuperchargerData.LIST = [
     {
         "displayName": "Grand Junction, CO",
         "address": new redshiftsoft.Address("2420 U.S. 6", "Grand Junction", "CO", "81505", "USA"),
-        "location": new google.maps.LatLng(39.090788, -108.604408),
-        "url": "http://www.teslamotorsclub.com/showthread.php/24867-Grand-Junction-CO-Supercharger",
-        "construction": true,
+        "location": new google.maps.LatLng(39.090758, -108.604325),
+        "url": "http://www.teslamotors.com/supercharger/grandjunction",
+        "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24867-Grand-Junction-CO-Supercharger",
         "count": true
     },
     {
