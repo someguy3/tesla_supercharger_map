@@ -408,7 +408,6 @@ redshiftsoft.SuperchargerData.LIST = [
         "address": new redshiftsoft.Address("4200 Sierra Vista Dr", "Farmington", "NM", "87402", "USA"),
         "location": new google.maps.LatLng(36.766371, -108.144047),
         "url": "http://www.teslamotors.com/supercharger/farmington",
-        "construction": true,
         "count": true
     },
     {
