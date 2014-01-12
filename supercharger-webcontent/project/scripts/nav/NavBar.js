@@ -1,6 +1,6 @@
 define(
-    ['jquery', 'nav/NavBarMapAction', 'util/Events', 'nav/NavBarToAboutPage' ],
-    function ($, NavBarMapAction, Events, NavBarToAboutPage) {
+    ['jquery', 'nav/NavBarMapAction', 'util/Events', 'nav/NavBarToAboutPage', 'nav/NavBarToChangesPage' ],
+    function ($, NavBarMapAction, Events, NavBarToAboutPage, NavBarToChangesPage) {
 
 
         /**
@@ -34,6 +34,9 @@ define(
 
             if ("about" === this.currentPage) {
                 new NavBarToAboutPage().populateAboutPage();
+            }
+            if ("changes" === this.currentPage) {
+                new NavBarToChangesPage().load();
             }
         };
 
