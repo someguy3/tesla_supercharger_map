@@ -1,4 +1,6 @@
-define(['lib/jquery'], function ($) {
+define(['jquery'], function ($) {
+
+    var jQuery = $;
 
     /**
      *

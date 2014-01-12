@@ -1,8 +1,8 @@
 define("model/Range.js", function (Range) {
 
-
     /**
-     * Constructor
+     *
+     * @constructor
      */
     var ControlState = function () {
 

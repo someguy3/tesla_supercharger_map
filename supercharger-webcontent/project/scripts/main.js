@@ -5,7 +5,7 @@ requirejs.config({
     },
     shim: {
         'lib/bootstrap': {
-            deps: ["jquery"]  ,
+            deps: ["jquery"],
             exports: "$.fn.popover"
         }
     }
@@ -16,9 +16,10 @@ requirejs.config({
 requirejs(
     [
         'jquery', 'jqueryui', 'lib/bootstrap',
-        'routing/Routing', 'map/MapView', 'map/ControlView'
+        'nav/NavBar',
+        'routing/Routing', 'map/ControlState', 'map/MapView', 'map/ControlView'
     ],
-    function ($, jQueryUI, bootstrap, MapView) {
+    function ($, jQueryUI, bootstrap, NavBar, Routing, ControlState, MapView) {
 
         /**
          *
@@ -26,17 +27,17 @@ requirejs(
          */
         var Main = function () {
 
-            this.routing = new redshiftsoft.Routing();
+            this.routing = new Routing();
 
-            new redshiftsoft.NavBar();
+            new NavBar();
 
-            var initialControlState = new redshiftsoft.ControlState();
+            var initialControlState = new ControlState();
 
             this.initMapView(initialControlState);
             this.initControlView(initialControlState);
 
-            new redshiftsoft.ControlViewTable();
-            new redshiftsoft.SuperchargerCount();
+            new ControlViewTable();
+            new SuperchargerCount();
         };
 
 
@@ -120,7 +121,7 @@ requirejs(
          * ON DOCUMENT READY
          */
         $(document).ready(function () {
-            //new Main();
+            new Main();
         });
 
 
