@@ -4,17 +4,40 @@ define(['jquery'], function ($) {
      * @constructor
      */
     var NavBarToChangesPage = function () {
+        this.changesPage = $("#page-changes");
+
+        this.changesTable = $("<table class='table table-striped'></table>");
+        //this.changesTableBody = $("<tbody></tbody>");
+        //this.changesTable.append(this.changesTableBody);
+
+        this.changesPage.append(this.changesTable);
     }
 
     NavBarToChangesPage.prototype.load = function () {
-        var changesPage = $("#page-changes");
-        if (!changesPage.data('changes-tab-initialized')) {
-            jQuery.get("changelog.txt", "", function (data) {
-                changesPage.append(data);
-                changesPage.data('changes-tab-initialized', true);
+        if (!this.changesPage.data('changes-tab-initialized')) {
+            var v = this;
+            jQuery.get("changelog.txt", "", function (textBlock) {
+                v.handleTextBlock(textBlock);
+                v.changesPage.data('changes-tab-initialized', true);
             }, "html");
         }
     };
+
+    NavBarToChangesPage.prototype.handleTextBlock = function (textBlock) {
+        var linesArray = textBlock.split("\n");
+        this.handleLines(linesArray);
+    }
+
+    NavBarToChangesPage.prototype.handleLines = function (linesArray) {
+        var v = this;
+        jQuery.each(linesArray, function (index, line) {
+            if (line.trim().length > 0) {
+                var parts = line.trim().split("||");
+                v.changesTable.append("<tr><td>" + parts[0] + "</td><td>" + parts[1] + "</td></tr>");
+            }
+        });
+    }
+
 
     return NavBarToChangesPage;
 });
