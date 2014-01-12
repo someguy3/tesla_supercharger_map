@@ -5,7 +5,7 @@ define(['jquery'], function ($) {
      */
     var NavBarToChangesPage = function () {
         this.changesPage = $("#page-changes");
-        this.changesTable = $("<table id='changes-table' class='table table-striped table-condensed table-hover'></table>");
+        this.changesTable = $("<table id='changes-table' class='table table-condensed table-hover'></table>");
         this.changesPage.append(this.changesTable);
     }
 
@@ -29,7 +29,8 @@ define(['jquery'], function ($) {
         jQuery.each(linesArray, function (index, line) {
             if (line.trim().length > 0) {
                 var parts = line.trim().split("||");
-                v.changesTable.append("<tr><td>" + parts[0] + "</td><td>" + parts[1] + "</td></tr>");
+                var cssClass = (/live:/.test(parts[1])) ? 'success' : '';
+                v.changesTable.append("<tr class='" + cssClass + "'><td>" + parts[0] + "</td><td>" + parts[1] + "</td></tr>");
             }
         });
     }

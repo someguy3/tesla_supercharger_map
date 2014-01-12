@@ -25,7 +25,7 @@ Thu Dec 19 20:25:22 2013 || supercharger live: Vacaville, CA
 Thu Dec 19 20:22:40 2013 || supercharger live: Lusk, WY
 Thu Dec 19 17:24:22 2013 || supercharger added: Las Vegas, NV
 Thu Dec 19 16:56:27 2013 || supercharger added: St. Anton, Austria
-Wed Dec 18 18:48:39 2013 || Mitchell, SD (now live)
+Wed Dec 18 18:48:39 2013 || supercharger live: Mitchell, SD
 Mon Dec 16 19:54:41 2013 || supercharger added: St Augustine, FL
 Mon Dec 16 19:02:49 2013 || supercharger added: Santee, SC
 Sat Dec 14 18:09:11 2013 || supercharger added: Hagerstown, MD
