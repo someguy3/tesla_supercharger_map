@@ -1,4 +1,4 @@
-define(['jquery', 'lib/spectrum'], function (jQuery) {
+define(['jquery', 'model/Range', 'lib/spectrum'], function (jQuery, Range) {
 
 
     /**
@@ -11,9 +11,6 @@ define(['jquery', 'lib/spectrum'], function (jQuery) {
         this.viewDiv = $("#rendering-controls-table");
 
         this.initializeControls();
-
-        $("input[name='distUnit']").change(jQuery.proxy(this.handleDistanceUnit, this));
-        $("#zoom-to-location-button").click(jQuery.proxy(this.handleZoomToLocation, this));
     };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -83,8 +80,26 @@ define(['jquery', 'lib/spectrum'], function (jQuery) {
         });
 
         this.initializeRangeControl();
+        this.initializeZoomToLocationInput();
+        this.initializeDistUnitControl();
+
         this.updateTextFillOpacityDisplay();
         this.updateTextBorderOpacityDisplay();
+    };
+
+    ControlView.prototype.initializeDistUnitControl = function () {
+        $("input[name='distUnit']").change(jQuery.proxy(this.handleDistanceUnit, this));
+    };
+
+    ControlView.prototype.initializeZoomToLocationInput = function () {
+        var controlView = this;
+        $("#zoom-to-location-button").click(jQuery.proxy(this.handleZoomToLocation, this));
+        $("#zoom-to-location-input").on('keypress', function (event) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                controlView.handleZoomToLocation(event);
+            }
+        });
     };
 
     /**
@@ -158,9 +173,9 @@ define(['jquery', 'lib/spectrum'], function (jQuery) {
     ControlView.prototype.handleDistanceUnit = function () {
         var newUnit = $("input[name='distUnit']:checked").val();
         if (newUnit === "M") {
-            this.controlState.range.setUnit(redshiftsoft.Range.Unit.miles);
+            this.controlState.range.setUnit(Range.Unit.miles);
         } else if (newUnit === "K") {
-            this.controlState.range.setUnit(redshiftsoft.Range.Unit.kilometers);
+            this.controlState.range.setUnit(Range.Unit.kilometers);
         }
         this.initializeRangeControl();
     };
