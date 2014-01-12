@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-nodejs r.js -o build.css.js
+nodejs r.js -o build.js

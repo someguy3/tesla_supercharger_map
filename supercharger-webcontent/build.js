@@ -1,11 +1,14 @@
 ({
-    baseUrl: 'project/scripts',
-    name: 'main',
-    out: 'main-built.js',
-    include: 'requireLib',
+    appDir: "project",
+    baseUrl: "scripts",
+    dir: "project-built",
     paths: {
-        requireLib: 'require',
         jquery: 'empty:',
         jqueryui: 'empty:'
-    }
+    },
+    modules: [
+        {
+            name: "main"
+        }
+    ]
 })
