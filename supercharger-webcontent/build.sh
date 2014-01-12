@@ -3,9 +3,6 @@
 DIR_PROJECT='project'
 DIR_BUILT='project-built'
 
-mkdir ${BUILD_DIR}
-
-
 # CSS
 nodejs r.js -o cssIn=${DIR_PROJECT}/css/main.css out=${DIR_BUILT}/css/main.css
 
