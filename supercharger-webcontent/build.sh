@@ -37,4 +37,4 @@ sed -i "s/\${project.version}/${PROJECT_VERSION}/g" ${DIR_BUILT}/version.json
 # change log
 #
 # TODO:
-# git log --grep=live --grep='ADD SUPER' --pretty=format:'%cd || %s' --date=local
+# git log --grep=live --grep='ADD SUPER' --pretty=format:'%cd || %s' --date=local --since 'Sun Jan 12 15:48:53 2014 -0600'
