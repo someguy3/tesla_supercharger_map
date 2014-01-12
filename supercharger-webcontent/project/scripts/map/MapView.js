@@ -1,6 +1,6 @@
 define(
-    ['jquery', 'data/SuperchargerData', 'map/MapViewContextMenu'],
-    function (jQuery, SuperchargerData, MapViewContextMenu) {
+    ['jquery', 'data/SuperchargerData', 'map/MapViewContextMenu', 'util/Events'],
+    function (jQuery, SuperchargerData, MapViewContextMenu, Events) {
 
 
         /**
@@ -141,7 +141,7 @@ define(
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
         MapView.prototype.handleCircleToggle = function (event) {
-            var eventDetail = redshiftsoft.eventDetail(event);
+            var eventDetail = Events.eventDetail(event);
             var id = parseInt(eventDetail.actionName);
             var supercharger = this.superData.getById(id);
             if (supercharger.circle.getVisible()) {
@@ -163,7 +163,7 @@ define(
         };
 
         MapView.prototype.handleAddToRoute = function (event) {
-            var eventDetail = redshiftsoft.eventDetail(event);
+            var eventDetail = Events.eventDetail(event);
             var id = parseInt(eventDetail.actionName);
             var supercharger = this.superData.getById(id);
             this.trigger("map-event-route-added", { latLng: supercharger.location, googleMap: this.googleMap });

@@ -1,4 +1,4 @@
-define(['jquery', 'nav/NavBarMapAction'], function ($, NavBarMapAction) {
+define(['jquery', 'nav/NavBarMapAction', 'util/Events'], function ($, NavBarMapAction, Events) {
 
 
     /**
@@ -16,7 +16,7 @@ define(['jquery', 'nav/NavBarMapAction'], function ($, NavBarMapAction) {
     };
 
     NavBar.prototype.handlePageChange = function (event) {
-        var eventDetail = eventDetail(event);
+        var eventDetail = Events.eventDetail(event);
 
         this.hidePage();
         this.currentPage = eventDetail.actionName;

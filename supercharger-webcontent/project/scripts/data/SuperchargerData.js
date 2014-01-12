@@ -1,4 +1,4 @@
-define(['jquery', 'model/Address'], function ($, Address) {
+define(['jquery', 'model/Address', 'util/Asserts'], function ($, Address, Asserts) {
 
     /**
      * Constructor
@@ -27,7 +27,7 @@ define(['jquery', 'model/Address'], function ($, Address) {
     };
 
     SuperchargerData.prototype.getById = function (id) {
-        Assert.isInteger(id, "id must be an integer");
+        Asserts.isInteger(id, "id must be an integer");
         for (var i = 0; i < SuperchargerData.LIST.length; i++) {
             var supercharger = SuperchargerData.LIST[i];
             if (supercharger.id === id) {
@@ -38,7 +38,7 @@ define(['jquery', 'model/Address'], function ($, Address) {
     };
 
     SuperchargerData.prototype.removeById = function (id) {
-        Assert.isInteger(id, "id must be an integer");
+        Asserts.isInteger(id, "id must be an integer");
         for (var index = 0; index < SuperchargerData.LIST.length; index++) {
             var supercharger = SuperchargerData.LIST[index];
             if (supercharger.id === id) {

@@ -38,8 +38,8 @@ define(['jquery', 'data/CountryCodes', 'data/SuperchargerData'], function ($, Co
      * REFERENCE MAP:
      *
      * { us : arrayRef,
- *   de: arrayRef
- * }
+     *   de: arrayRef
+     * }
      */
     SuperchargerCount.prototype.getConstructionCount = function () {
         var i = 0,

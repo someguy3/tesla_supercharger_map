@@ -1,4 +1,4 @@
-define(['jquery'], function ($) {
+define(['jquery', 'util/Events'], function ($, Events) {
 
     /**
      *
@@ -10,7 +10,7 @@ define(['jquery'], function ($) {
 
 
     NavBarMapAction.prototype.handleAction = function (event) {
-        var eventDetail = eventDetail(event);
+        var eventDetail = Events.eventDetail(event);
 
         eventDetail.link.find(".glyphicon").toggleClass("glyphicon-check");
         eventDetail.link.find(".glyphicon").toggleClass("glyphicon-unchecked");
