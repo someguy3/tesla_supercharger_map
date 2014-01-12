@@ -1,0 +1,63 @@
+Sat Jan 11 02:18:43 2014||Somerset, PA (live)
+Sat Jan 11 02:11:40 2014||Farmington, NM (live)
+Sat Jan 11 02:09:42 2014||Flagstaff, AZ (live)
+Sat Jan 11 02:01:45 2014||Grand Junction, CO (live)
+Thu Jan 9 05:57:13 2014||ADD SUPERCHARGER:  Eau Claire, WI
+Tue Jan 7 23:43:59 2014||Gallup, NM (live)
+Tue Jan 7 00:58:14 2014||East Greenwich, RI (live)
+Mon Jan 6 03:37:04 2014||ADD SUPERCHARGER:  East Greenwich, RI
+Mon Jan 6 02:49:24 2014||La Crosse, WI (live)
+Mon Jan 6 02:39:08 2014||ADD SUPERCHARGER:  Buckeye, AZ
+Sat Jan 4 03:49:42 2014||St Augustine, FL (live)
+Tue Dec 31 23:17:17 2013||Murdo, SD (live)
+Fri Dec 27 23:41:22 2013||Santee, SC (live)
+Wed Dec 25 01:37:24 2013||ADD SUPERCHARGER: Maumee, OH
+Tue Dec 24 17:32:40 2013||ADD SUPERCHARGER: Moab, UT
+Tue Dec 24 17:21:17 2013||ADD SUPERCHARGER: Murdo, SD
+Tue Dec 24 02:54:01 2013||Ellensburg, WA (live)
+Tue Dec 24 02:47:01 2013||Detroit Lake, OR (live)
+Tue Dec 24 02:43:19 2013||JFK Airport, NY (live)
+Mon Dec 23 01:30:40 2013||ADD SUPERCHARGER:  Pleasant Prairie, WI
+Sun Dec 22 20:02:52 2013||ADD SUPERCHARGER:  Albert Lea, MN
+Fri Dec 20 23:14:56 2013||Highland Park, IL (live)
+Fri Dec 20 22:54:52 2013||ADD SUPERCHARGER:  Somerset, PA
+Fri Dec 20 02:25:22 2013||Vacaville, CA (live)
+Fri Dec 20 02:22:40 2013||Lusk, WY (live)
+Thu Dec 19 23:24:22 2013||ADD SUPERCHARGER: Las Vegas, NV
+Thu Dec 19 22:56:27 2013||ADD SUPERCHARGER: St. Anton, Austria
+Thu Dec 19 00:48:39 2013||Mitchell, SD (now live)
+Tue Dec 17 01:54:41 2013||ADD SUPERCHARGER: St Augustine, FL
+Tue Dec 17 01:02:49 2013||ADD SUPERCHARGER: Santee, SC
+Sun Dec 15 00:09:11 2013||ADD SUPERCHARGER: Hagerstown, MD
+Sat Dec 14 00:54:14 2013||ADD SUPERCHARGER: Highland Park, IL
+Sat Dec 14 00:21:02 2013||ADD SUPERCHARGER: Kingman, AZ
+Fri Dec 13 00:45:59 2013||ADD SUPERCHARGER: Bad Rappenau, Germany
+Fri Dec 13 00:42:26 2013||ADD SUPERCHARGER: Gallup, NM
+Thu Dec 12 00:30:36 2013||ADD SUPERCHARGER: Flagstaff, AZ
+Thu Dec 12 00:22:27 2013||Worthington, MN (live)
+Tue Dec 10 00:29:48 2013||Angola, IN (live)
+Tue Dec 10 00:24:04 2013||Mauston, WI (live)
+Mon Dec 9 14:03:06 2013||ADD SUPERCHARGER: Angola, IN
+Sun Dec 8 21:20:23 2013||ADD SUPERCHARGER: Autohof Aichstetten, Germany
+Sun Dec 8 21:11:21 2013||ADD SUPERCHARGER: Estavayer-le-Lac, Switzerland
+Sun Dec 8 20:47:11 2013||ADD SUPERCHARGER: Onalaska, WI
+Sun Dec 8 01:18:28 2013||ADD SUPERCHARGER: Grand Junction, CO
+Sun Dec 8 01:12:41 2013||ADD SUPERCHARGER: Macedonia, OH
+Sat Dec 7 02:36:32 2013||ADD SUPERCHARGER: Savannah, GA
+Fri Dec 6 03:46:09 2013||ADD SUPERCHARGER: Greenwich, CT (south)
+Thu Dec 5 00:41:19 2013||ADD SUPERCHARGER: San Juan Capistrano, CA
+Wed Dec 4 04:09:12 2013||ADD SUPERCHARGER: Blanding, UT
+Wed Dec 4 03:35:32 2013||ADD SUPERCHARGER: Wilnsdorf, Germany
+Tue Dec 3 02:04:27 2013||ADD SUPERCHARGER: Lusk, WY
+Sun Dec 1 23:51:55 2013||ADD SUPERCHARGER: Zevenaar, Netherlands
+Fri Nov 29 17:58:03 2013||ADD SUPERCHARGER: Lumberton, NC
+Thu Nov 28 05:23:17 2013||ADD SUPERCHARGER: Cheyenne, WY (removed Gila Bend, AZ)
+Wed Nov 27 03:18:20 2013||ADD SUPERCHARGER: St. Joseph, MI
+Tue Nov 26 03:05:16 2013||ADD SUPERCHARGER: Rapid City, SD
+Tue Nov 26 02:39:50 2013||ADD SUPERCHARGER: Detroit Lake, OR
+Tue Nov 26 02:28:49 2013||ADD SUPERCHARGER: Oosterhout, Netherlands
+Sun Nov 24 19:38:55 2013||ADD SUPERCHARGER: Mauston, WI
+Sun Nov 24 19:23:43 2013||ADD SUPERCHARGER: Mishawaka, IN
+Thu Nov 21 02:36:26 2013||ADD SUPERCHARGER: Huntsville
+Fri Nov 15 01:37:59 2013||ADD SUPERCHARGER: Quartzsite, AZ (NOT under construction)
+Thu Nov 14 00:09:58 2013||ADD SUPERCHARGER: Corsicana
