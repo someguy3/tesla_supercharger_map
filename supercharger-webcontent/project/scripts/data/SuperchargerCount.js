@@ -1,7 +1,7 @@
 define(['jquery', 'data/CountryCodes', 'data/SuperchargerData'], function ($, CountryCodes, SuperchargerData) {
 
 
-    SuperchargerCount = function () {
+    var SuperchargerCount = function () {
 
         var i = 0,
             headerRow = $("<tr><th class='vert'></th></tr>"),
@@ -76,5 +76,6 @@ define(['jquery', 'data/CountryCodes', 'data/SuperchargerData'], function ($, Co
         return two.open - one.open;
     };
 
+    return SuperchargerCount;
 
 });

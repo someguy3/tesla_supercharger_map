@@ -23,10 +23,7 @@ requirejs(
         'nav/NavBar', 'routing/Routing',
         'map/ControlState', 'map/MapView', 'map/ControlView', 'map/ControlViewTable'
     ],
-    function ($, jQueryUI, bootstrap,
-              SuperchargerCount,
-              NavBar, Routing,
-              ControlState, MapView, ControlView, ControlViewTable) {
+    function ($, jQueryUI, bootstrap, SuperchargerCount, NavBar, Routing, ControlState, MapView, ControlView, ControlViewTable) {
 
         /**
          *
