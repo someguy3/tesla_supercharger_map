@@ -1,14 +1,9 @@
 ({
-    appDir: "project",
-    baseUrl: "scripts",
-    dir: "project-built",
+    baseUrl: "project/scripts",
     paths: {
         jquery: 'empty:',
         jqueryui: 'empty:'
     },
-    modules: [
-        {
-            name: "main"
-        }
-    ]
+    name: "main",
+    out: "project-built/scripts/main.js"
 })
