@@ -19,10 +19,14 @@ requirejs.config({
 requirejs(
     [
         'jquery', 'jqueryui', 'lib/bootstrap',
+        'data/SuperchargerCount',
         'nav/NavBar', 'routing/Routing',
-        'map/ControlState', 'map/MapView', 'map/ControlView'
+        'map/ControlState', 'map/MapView', 'map/ControlView', 'map/ControlViewTable'
     ],
-    function ($, jQueryUI, bootstrap, NavBar, Routing, ControlState, MapView, ControlView) {
+    function ($, jQueryUI, bootstrap,
+              SuperchargerCount,
+              NavBar, Routing,
+              ControlState, MapView, ControlView, ControlViewTable) {
 
         /**
          *
