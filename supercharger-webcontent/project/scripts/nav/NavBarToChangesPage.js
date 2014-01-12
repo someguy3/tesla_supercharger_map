@@ -5,11 +5,7 @@ define(['jquery'], function ($) {
      */
     var NavBarToChangesPage = function () {
         this.changesPage = $("#page-changes");
-
         this.changesTable = $("<table class='table table-striped'></table>");
-        //this.changesTableBody = $("<tbody></tbody>");
-        //this.changesTable.append(this.changesTableBody);
-
         this.changesPage.append(this.changesTable);
     }
 
