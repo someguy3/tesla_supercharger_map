@@ -13,7 +13,7 @@ define(['jquery', 'lib/spectrum'], function (jQuery) {
         this.initializeControls();
 
         $("input[name='distUnit']").change(jQuery.proxy(this.handleDistanceUnit, this));
-
+        $("#zoom-to-location-button").click(jQuery.proxy(this.handleZoomToLocation, this));
     };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -24,6 +24,7 @@ define(['jquery', 'lib/spectrum'], function (jQuery) {
 // fill-color-event-change     [newFillColor]
 // border-opacity-change-event [newBorderOpacity]
 // border-color-event-change   [newBorderColor]
+// control-event-zoom-location [newLocation]
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     ControlView.prototype.on = function (eventName, callback) {
@@ -163,6 +164,16 @@ define(['jquery', 'lib/spectrum'], function (jQuery) {
         }
         this.initializeRangeControl();
     };
+
+    /**
+     * Handle changes to distance unit.
+     */
+    ControlView.prototype.handleZoomToLocation = function (event) {
+        event.preventDefault();
+        var locationText = $("#zoom-to-location-input").val();
+        this.trigger("control-event-zoom-location", locationText);
+    };
+
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Display update methods.

@@ -118,6 +118,13 @@ requirejs(
                 mapView.redraw(true);
             });
 
+            //
+            // Callback: zoom to location
+            //
+            controlView.on("control-event-zoom-location", function (event, locationText) {
+                mapView.zoomToLocation(locationText);
+            });
+
         };
 
 

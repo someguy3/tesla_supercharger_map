@@ -129,6 +129,26 @@ define(
         };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Geo-coding
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        MapView.prototype.zoomToLocation = function (locationText) {
+            var geocodeService = new google.maps.Geocoder();
+            var request = { address: locationText};
+            var googleMap = this.googleMap;
+            geocodeService.geocode(request, function (resultArray, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    var firstResult = resultArray[0];
+                    var geometry = firstResult.geometry;
+                    googleMap.setCenter(geometry.location);
+                    googleMap.fitBounds(geometry.bounds);
+                } else {
+                    alert("status: " + status);
+                }
+            });
+        };
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // getters/setters
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
