@@ -1,28 +1,28 @@
-Fri Jan 10 20:18:43 2014 || Somerset, PA (live)
-Fri Jan 10 20:11:40 2014 || Farmington, NM (live)
-Fri Jan 10 20:09:42 2014 || Flagstaff, AZ (live)
-Fri Jan 10 20:01:45 2014 || Grand Junction, CO (live)
+Fri Jan 10 20:18:43 2014 || supercharger live: Somerset, PA
+Fri Jan 10 20:11:40 2014 || supercharger live: Farmington, NM
+Fri Jan 10 20:09:42 2014 || supercharger live: Flagstaff, AZ
+Fri Jan 10 20:01:45 2014 || supercharger live: Grand Junction, CO
 Wed Jan 8 23:59:36 2014 || supercharger added: Eau Claire, WI
-Tue Jan 7 17:43:59 2014 || Gallup, NM (live)
-Mon Jan 6 18:58:14 2014 || East Greenwich, RI (live)
+Tue Jan 7 17:43:59 2014 || supercharger live: Gallup, NM
+Mon Jan 6 18:58:14 2014 || supercharger live: East Greenwich, RI
 Sun Jan 5 21:37:04 2014 || supercharger added: East Greenwich, RI
-Sun Jan 5 20:49:24 2014 || La Crosse, WI (live)
+Sun Jan 5 20:49:24 2014 || supercharger live: La Crosse, WI
 Sun Jan 5 20:39:08 2014 || supercharger added: Buckeye, AZ
-Fri Jan 3 21:49:42 2014 || St Augustine, FL (live)
-Tue Dec 31 17:17:17 2013 || Murdo, SD (live)
-Fri Dec 27 17:41:22 2013 || Santee, SC (live)
+Fri Jan 3 21:49:42 2014 || supercharger live: St Augustine, FL
+Tue Dec 31 17:17:17 2013 || supercharger live: Murdo, SD
+Fri Dec 27 17:41:22 2013 || supercharger live: Santee, SC
 Tue Dec 24 19:37:24 2013 || supercharger added: Maumee, OH
 Tue Dec 24 11:32:40 2013 || supercharger added: Moab, UT
 Tue Dec 24 11:21:17 2013 || supercharger added: Murdo, SD
-Mon Dec 23 20:54:01 2013 || Ellensburg, WA (live)
-Mon Dec 23 20:47:01 2013 || Detroit Lake, OR (live)
-Mon Dec 23 20:43:19 2013 || JFK Airport, NY (live)
+Mon Dec 23 20:54:01 2013 || supercharger live: Ellensburg, WA
+Mon Dec 23 20:47:01 2013 || supercharger live: Detroit Lake, OR
+Mon Dec 23 20:43:19 2013 || supercharger live: JFK Airport, NY
 Sun Dec 22 19:30:40 2013 || supercharger added: Pleasant Prairie, WI
 Sun Dec 22 14:02:52 2013 || supercharger added: Albert Lea, MN
-Fri Dec 20 17:14:56 2013 || Highland Park, IL (live)
+Fri Dec 20 17:14:56 2013 || supercharger live: Highland Park, IL
 Fri Dec 20 16:54:52 2013 || supercharger added: Somerset, PA
-Thu Dec 19 20:25:22 2013 || Vacaville, CA (live)
-Thu Dec 19 20:22:40 2013 || Lusk, WY (live)
+Thu Dec 19 20:25:22 2013 || supercharger live: Vacaville, CA
+Thu Dec 19 20:22:40 2013 || supercharger live: Lusk, WY
 Thu Dec 19 17:24:22 2013 || supercharger added: Las Vegas, NV
 Thu Dec 19 16:56:27 2013 || supercharger added: St. Anton, Austria
 Wed Dec 18 18:48:39 2013 || Mitchell, SD (now live)
@@ -34,9 +34,9 @@ Fri Dec 13 18:21:02 2013 || supercharger added: Kingman, AZ
 Thu Dec 12 18:45:59 2013 || supercharger added: Bad Rappenau, Germany
 Thu Dec 12 18:42:26 2013 || supercharger added: Gallup, NM
 Wed Dec 11 18:30:36 2013 || supercharger added: Flagstaff, AZ
-Wed Dec 11 18:22:27 2013 || Worthington, MN (live)
-Mon Dec 9 18:29:48 2013 || Angola, IN (live)
-Mon Dec 9 18:24:04 2013 || Mauston, WI (live)
+Wed Dec 11 18:22:27 2013 || supercharger live: Worthington, MN
+Mon Dec 9 18:29:48 2013 || supercharger live: Angola, IN
+Mon Dec 9 18:24:04 2013 || supercharger live: Mauston, WI
 Mon Dec 9 08:03:06 2013 || supercharger added: Angola, IN
 Sun Dec 8 15:20:23 2013 || supercharger added: Autohof Aichstetten, Germany
 Sun Dec 8 15:11:21 2013 || supercharger added: Estavayer-le-Lac, Switzerland
