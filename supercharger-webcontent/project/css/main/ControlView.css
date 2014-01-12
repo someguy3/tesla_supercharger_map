@@ -1,15 +1,4 @@
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Map Controls
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-#map-controls {
-    text-align: center;
-}
-
-#control-view-div {
-    padding: 5px;
-}
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  Slider styling
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .slider-value-label {
@@ -17,25 +6,4 @@ Map Controls
     font-weight: bold;
     font-size: larger;
     color: deepskyblue;
-}
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- Controls Table
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-table.controls {
-    border-collapse: collapse;
-    border: 0 solid black;
-    margin: 0 auto;
-    max-width: 900px;
-}
-
-table.controls th {
-    background: whitesmoke;
-    text-align: right;
-    padding: 5px 5px 5px 5px;
-    border: 2px solid white;
-}
-
-table.controls td {
-    padding: 5px 5px 5px 5px;
 }
