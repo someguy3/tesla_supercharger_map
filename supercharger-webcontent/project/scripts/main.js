@@ -21,7 +21,7 @@ requirejs(
         'jquery', 'jqueryui', 'lib/bootstrap',
         'data/SuperchargerCount',
         'nav/NavBar', 'routing/Routing',
-        'map/ControlState', 'map/MapView', 'map/ControlView', 'map/ControlViewTable'
+        'map/ControlState', 'map/MapView', 'map/ControlView', 'map/ControlViewTable', 'lib/GoogleAnalytics'
     ],
     function ($, jQueryUI, bootstrap, SuperchargerCount, NavBar, Routing, ControlState, MapView, ControlView, ControlViewTable) {
 
