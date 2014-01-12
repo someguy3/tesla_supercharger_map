@@ -7,3 +7,8 @@
     font-size: larger;
     color: deepskyblue;
 }
+
+label.control {
+    font-size: larger;
+    margin-right: 1em;
+}
