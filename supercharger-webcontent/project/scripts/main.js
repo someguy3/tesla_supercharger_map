@@ -7,6 +7,9 @@ requirejs.config({
         'lib/bootstrap': {
             deps: ["jquery"],
             exports: "$.fn.popover"
+        },
+        'lib/spectrum': {
+            deps: ["jquery"]
         }
     }
 });

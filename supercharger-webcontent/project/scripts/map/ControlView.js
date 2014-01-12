@@ -1,4 +1,4 @@
-define(['jquery'], function (jQuery) {
+define(['jquery', 'lib/spectrum'], function (jQuery) {
 
 
     /**
