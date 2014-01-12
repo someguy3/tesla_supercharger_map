@@ -1,15 +1,11 @@
 define(function () {
 
     /**
-     * Constructor.
+     * @constructor
      */
     var Range = function (rangeMetersIn) {
         this.rangeMeters = rangeMetersIn;
         this.unit = Range.Unit.miles;
-    };
-
-    Range.create = function (rangeMetersIn) {
-        return new Range(rangeMetersIn);
     };
 
     Range.MILES_MIN = 0;

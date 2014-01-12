@@ -1,4 +1,4 @@
-define("model/Range.js", function (Range) {
+define(['model/Range'], function (Range) {
 
     /**
      *
@@ -8,7 +8,7 @@ define("model/Range.js", function (Range) {
 
         var rangeMeters = Range.milesToMeters(0.0);
 
-        this.range = Range.create(rangeMeters);
+        this.range = new Range(rangeMeters);
 
         this.fillOpacity = 0.15;
         this.fillColor = "#86c4ec";
