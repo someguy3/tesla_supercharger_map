@@ -1,4 +1,4 @@
-Fri Jan 12, 2014 || deployed version 2.0
+Sun Jan 12, 2014 || deployed version 2.0
 Fri Jan 10, 2014 || supercharger live: Somerset, PA
 Fri Jan 10, 2014 || supercharger live: Farmington, NM
 Fri Jan 10, 2014 || supercharger live: Flagstaff, AZ
