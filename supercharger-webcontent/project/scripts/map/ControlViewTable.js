@@ -28,6 +28,7 @@ define(['jquery', 'data/SuperchargerData' ], function (jQuery, SuperchargerData)
                 "<td>" + supercharger.address.zip + "</td>" +
                 "<td>" + supercharger.address.country + "</td>" +
                 "<td class='gps'>" + supercharger.location.toUrlValue() + "</td>" +
+                "<td>" + (supercharger.construction ? "Construction" : "Open") + "</td>" +
                 "<td class='tog'>" + "<a href='" + supercharger.url + "'>link</a></td>" +
                 "</tr>"
             );
