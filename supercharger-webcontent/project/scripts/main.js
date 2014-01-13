@@ -51,8 +51,18 @@ requirejs(
          * INIT: MapView
          */
         Main.prototype.initMapView = function (controlState) {
+
             this.mapView = new MapView(controlState);
             this.mapView.on("map-event-route-added", jQuery.proxy(this.routing.handleAddRouteEvent, this.routing));
+
+            var mapView = this.mapView;
+
+            this.navBar.onDropDownEvent(" nav-dropdown-event-circles-on", function (event) {
+                mapView.setAllRangeCircleVisibility(true);
+            });
+            this.navBar.onDropDownEvent(" nav-dropdown-event-circles-off", function (event) {
+                mapView.setAllRangeCircleVisibility(false);
+            });
         };
 
 

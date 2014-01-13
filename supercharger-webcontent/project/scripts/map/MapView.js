@@ -50,6 +50,9 @@ define(
             this.viewDiv.trigger(eventName, extraData);
         };
 
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Initialization
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
         /**
          * Initialize map
@@ -70,6 +73,10 @@ define(
             this.googleMap = new google.maps.Map(this.viewDiv.get(0), mapOptions);
             this.redraw(true);
         };
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Drawing
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
         /**
          *  DRAW MAKERS/CIRCLES
@@ -227,6 +234,17 @@ define(
                     ]
                 }
             );
+        };
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Other controls
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        MapView.prototype.setAllRangeCircleVisibility = function (isViaible) {
+            for (var i = 0; i < this.superData.size(); i++) {
+                var supercharger = this.superData.get(i);
+                supercharger.circle.setVisible(isViaible);
+            }
         };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -12,6 +12,8 @@ define(['jquery', 'util/Events'], function ($, Events) {
     // Events
     //
     // nav-dropdown-event-dist-unit
+    // nav-dropdown-event-circles-on
+    // nav-dropdown-event-circles-off
     //
     //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -42,6 +44,12 @@ define(['jquery', 'util/Events'], function ($, Events) {
         else if (eventDetail.actionName === "use-kilometers") {
             var newUnit = eventDetail.link.find(".glyphicon").hasClass("glyphicon-check") ? 'K' : 'M';
             this.trigger("nav-dropdown-event-dist-unit", newUnit);
+        }
+        else if (eventDetail.actionName === "range-circles-all-off") {
+            this.trigger("nav-dropdown-event-circles-off");
+        }
+        else if (eventDetail.actionName === "range-circles-all-on") {
+            this.trigger("nav-dropdown-event-circles-on");
         }
     };
 
