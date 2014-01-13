@@ -26,7 +26,7 @@ define(
             //
             this.contextMenu = new MapViewContextMenu(this.googleMap);
             this.contextMenu.on("context-menu-add-marker", jQuery.proxy(this.handleAddMarker, this));
-            this.contextMenu.on("context-menu-add-to-route", jQuery.proxy(this.handleAddRouteEvent, this));
+            this.contextMenu.on("context-menu-add-to-route", jQuery.proxy(this.handleAddToRouteContextMenu, this));
 
         };
 
@@ -202,6 +202,10 @@ define(
 // Context menu handlers.
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+
+        MapView.prototype.handleAddToRouteContextMenu = function (event) {
+            this.trigger("map-event-route-added", { latLng: event.latLng, googleMap: this.googleMap });
+        };
 
         /**
          * Add a custom marker and range circle to the map.
