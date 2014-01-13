@@ -13,6 +13,9 @@ requirejs.config({
         },
         'lib/jquery.doTimeout': {
             deps: ["jquery"]
+        },
+        'lib/stupidtable': {
+            deps: ["jquery"]
         }
     }
 });
@@ -56,7 +59,7 @@ requirejs(
             var controlView = this.controlView;
 
             this.navBar.onDropDownEvent(" nav-dropdown-event-circles-on", function () {
-                if(controlView.controlState.range.getCurrent() == 0) {
+                if (controlView.controlState.range.getCurrent() == 0) {
                     controlView.updateRangeSliderValue(50);
                     mapView.redraw(false);
                 }
@@ -73,7 +76,7 @@ requirejs(
 
         }
 
-            /**
+        /**
          * INIT: MapView
          */
         Main.prototype.initMapViewListeners = function () {
