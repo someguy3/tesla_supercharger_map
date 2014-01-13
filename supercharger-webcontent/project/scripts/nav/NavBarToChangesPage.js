@@ -5,8 +5,7 @@ define(['jquery'], function ($) {
      */
     var NavBarToChangesPage = function () {
         this.changesPage = $("#page-changes");
-        this.changesTable = $("<table id='changes-table' class='table table-condensed table-hover'></table>");
-        this.changesPage.append(this.changesTable);
+        this.changesTable = $("#changes-table");
     }
 
     NavBarToChangesPage.prototype.load = function () {

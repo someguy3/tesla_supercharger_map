@@ -1,6 +1,6 @@
-#supercharger-data-table table {
+#supercharger-data-table {
     border-collapse: collapse;
-    margin: 0 auto;
+    margin: auto;
     padding: 0;
 }
 
