@@ -38,6 +38,16 @@ define(['jquery', 'data/SuperchargerData', 'lib/stupidtable' ], function (jQuery
 
     ControlViewTable.prototype.sort = function () {
         var table = $("#supercharger-data-table").stupidtable({});
+
+        table.on("aftertablesort", function (event, data) {
+            var th = $(this).find("th");
+            th.find(".arrow").remove();
+            var dir = $.fn.stupidtable.dir;
+
+            var arrow = data.direction === dir.ASC ? "&uarr;" : "&darr;";
+            th.eq(data.column).append('<span class="arrow">&nbsp;' + arrow +'</span>');
+        });
+
     }
 
 

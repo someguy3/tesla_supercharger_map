@@ -7,8 +7,7 @@
 #supercharger-data-table th {
     text-align: left;
     background: whitesmoke;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 5px;
     border: 1px solid white;
 }
 
