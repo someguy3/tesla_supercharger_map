@@ -56,6 +56,10 @@ requirejs(
             var controlView = this.controlView;
 
             this.navBar.onDropDownEvent(" nav-dropdown-event-circles-on", function () {
+                if(controlView.controlState.range.getCurrent() == 0) {
+                    controlView.updateRangeSliderValue(50);
+                    mapView.redraw(false);
+                }
                 mapView.setAllRangeCircleVisibility(true);
             });
 

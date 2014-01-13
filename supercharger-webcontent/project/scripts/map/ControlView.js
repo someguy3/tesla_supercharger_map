@@ -136,8 +136,8 @@ define(['jquery', 'model/Range', 'lib/spectrum'], function (jQuery, Range) {
      * Handle range slider change.
      */
     ControlView.prototype.handleRangeSlide = function (event) {
-        var newValueMiles = $("#range-slider").slider("value");
-        this.controlState.range.setCurrent(newValueMiles);
+        var newValue = $("#range-slider").slider("value");
+        this.controlState.range.setCurrent(newValue);
         this.updateTextRangeDisplay();
         this.trigger("range-change-event", this.controlState);
     };
@@ -207,6 +207,15 @@ define(['jquery', 'model/Range', 'lib/spectrum'], function (jQuery, Range) {
      */
     ControlView.prototype.updateTextBorderOpacityDisplay = function () {
         $("#border-opacity-number-text").text(this.controlState.borderOpacity);
+    };
+
+    /**
+     * Update the range slider value (new value interpreted in whatever current units are).
+     */
+    ControlView.prototype.updateRangeSliderValue = function (newValue) {
+        this.controlState.range.setCurrent(newValue);
+        this.updateTextRangeDisplay();
+        $("#range-slider").slider("value", newValue);
     };
 
     return ControlView;
