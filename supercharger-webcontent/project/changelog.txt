@@ -1,63 +1,64 @@
-Fri Jan 10 20:18:43 2014 || supercharger live: Somerset, PA
-Fri Jan 10 20:11:40 2014 || supercharger live: Farmington, NM
-Fri Jan 10 20:09:42 2014 || supercharger live: Flagstaff, AZ
-Fri Jan 10 20:01:45 2014 || supercharger live: Grand Junction, CO
-Wed Jan 8 23:59:36 2014 || supercharger added: Eau Claire, WI
-Tue Jan 7 17:43:59 2014 || supercharger live: Gallup, NM
-Mon Jan 6 18:58:14 2014 || supercharger live: East Greenwich, RI
-Sun Jan 5 21:37:04 2014 || supercharger added: East Greenwich, RI
-Sun Jan 5 20:49:24 2014 || supercharger live: La Crosse, WI
-Sun Jan 5 20:39:08 2014 || supercharger added: Buckeye, AZ
-Fri Jan 3 21:49:42 2014 || supercharger live: St Augustine, FL
-Tue Dec 31 17:17:17 2013 || supercharger live: Murdo, SD
-Fri Dec 27 17:41:22 2013 || supercharger live: Santee, SC
-Tue Dec 24 19:37:24 2013 || supercharger added: Maumee, OH
-Tue Dec 24 11:32:40 2013 || supercharger added: Moab, UT
-Tue Dec 24 11:21:17 2013 || supercharger added: Murdo, SD
-Mon Dec 23 20:54:01 2013 || supercharger live: Ellensburg, WA
-Mon Dec 23 20:47:01 2013 || supercharger live: Detroit Lake, OR
-Mon Dec 23 20:43:19 2013 || supercharger live: JFK Airport, NY
-Sun Dec 22 19:30:40 2013 || supercharger added: Pleasant Prairie, WI
-Sun Dec 22 14:02:52 2013 || supercharger added: Albert Lea, MN
-Fri Dec 20 17:14:56 2013 || supercharger live: Highland Park, IL
-Fri Dec 20 16:54:52 2013 || supercharger added: Somerset, PA
-Thu Dec 19 20:25:22 2013 || supercharger live: Vacaville, CA
-Thu Dec 19 20:22:40 2013 || supercharger live: Lusk, WY
-Thu Dec 19 17:24:22 2013 || supercharger added: Las Vegas, NV
-Thu Dec 19 16:56:27 2013 || supercharger added: St. Anton, Austria
-Wed Dec 18 18:48:39 2013 || supercharger live: Mitchell, SD
-Mon Dec 16 19:54:41 2013 || supercharger added: St Augustine, FL
-Mon Dec 16 19:02:49 2013 || supercharger added: Santee, SC
-Sat Dec 14 18:09:11 2013 || supercharger added: Hagerstown, MD
-Fri Dec 13 18:54:14 2013 || supercharger added: Highland Park, IL
-Fri Dec 13 18:21:02 2013 || supercharger added: Kingman, AZ
-Thu Dec 12 18:45:59 2013 || supercharger added: Bad Rappenau, Germany
-Thu Dec 12 18:42:26 2013 || supercharger added: Gallup, NM
-Wed Dec 11 18:30:36 2013 || supercharger added: Flagstaff, AZ
-Wed Dec 11 18:22:27 2013 || supercharger live: Worthington, MN
-Mon Dec 9 18:29:48 2013 || supercharger live: Angola, IN
-Mon Dec 9 18:24:04 2013 || supercharger live: Mauston, WI
-Mon Dec 9 08:03:06 2013 || supercharger added: Angola, IN
-Sun Dec 8 15:20:23 2013 || supercharger added: Autohof Aichstetten, Germany
-Sun Dec 8 15:11:21 2013 || supercharger added: Estavayer-le-Lac, Switzerland
-Sun Dec 8 14:47:11 2013 || supercharger added: Onalaska, WI
-Sat Dec 7 19:18:28 2013 || supercharger added: Grand Junction, CO
-Sat Dec 7 19:12:41 2013 || supercharger added: Macedonia, OH
-Fri Dec 6 20:36:32 2013 || supercharger added: Savannah, GA
-Thu Dec 5 21:46:09 2013 || supercharger added: Greenwich, CT (south)
-Wed Dec 4 18:41:19 2013 || supercharger added: San Juan Capistrano, CA
-Tue Dec 3 22:09:12 2013 || supercharger added: Blanding, UT
-Tue Dec 3 21:35:32 2013 || supercharger added: Wilnsdorf, Germany
-Mon Dec 2 20:04:27 2013 || supercharger added: Lusk, WY
-Sun Dec 1 17:51:55 2013 || supercharger added: Zevenaar, Netherlands
-Fri Nov 29 11:58:03 2013 || supercharger added: Lumberton, NC
-Wed Nov 27 23:23:17 2013 || supercharger added: Cheyenne, WY (removed Gila Bend, AZ)
-Tue Nov 26 21:18:20 2013 || supercharger added: St. Joseph, MI
-Mon Nov 25 21:05:16 2013 || supercharger added: Rapid City, SD
-Mon Nov 25 20:39:50 2013 || supercharger added: Detroit Lake, OR
-Mon Nov 25 20:28:49 2013 || supercharger added: Oosterhout, Netherlands
-Sun Nov 24 13:38:55 2013 || supercharger added: Mauston, WI
-Sun Nov 24 13:23:43 2013 || supercharger added: Mishawaka, IN
-Wed Nov 20 20:36:26 2013 || supercharger added: Huntsville
-Thu Nov 14 19:37:59 2013 || supercharger added: Quartzsite, AZ (NOT under construction)
-Wed Nov 13 18:09:58 2013 || supercharger added: Corsicana
+Fri Jan 12, 2014 || deployed version 2.0
+Fri Jan 10, 2014 || supercharger live: Somerset, PA
+Fri Jan 10, 2014 || supercharger live: Farmington, NM
+Fri Jan 10, 2014 || supercharger live: Flagstaff, AZ
+Fri Jan 10, 2014 || supercharger live: Grand Junction, CO
+Wed Jan 8, 2014 || supercharger added: Eau Claire, WI
+Tue Jan 7, 2014 || supercharger live: Gallup, NM
+Mon Jan 6, 2014 || supercharger live: East Greenwich, RI
+Sun Jan 5, 2014 || supercharger added: East Greenwich, RI
+Sun Jan 5, 2014 || supercharger live: La Crosse, WI
+Sun Jan 5, 2014 || supercharger added: Buckeye, AZ
+Fri Jan 3, 2014 || supercharger live: St Augustine, FL
+Tue Dec 31, 2013 || supercharger live: Murdo, SD
+Fri Dec 27, 2013 || supercharger live: Santee, SC
+Tue Dec 24, 2013 || supercharger added: Maumee, OH
+Tue Dec 24, 2013 || supercharger added: Moab, UT
+Tue Dec 24, 2013 || supercharger added: Murdo, SD
+Mon Dec 23, 2013 || supercharger live: Ellensburg, WA
+Mon Dec 23, 2013 || supercharger live: Detroit Lake, OR
+Mon Dec 23, 2013 || supercharger live: JFK Airport, NY
+Sun Dec 22, 2013 || supercharger added: Pleasant Prairie, WI
+Sun Dec 22, 2013 || supercharger added: Albert Lea, MN
+Fri Dec 20, 2013 || supercharger live: Highland Park, IL
+Fri Dec 20, 2013 || supercharger added: Somerset, PA
+Thu Dec 19, 2013 || supercharger live: Vacaville, CA
+Thu Dec 19, 2013 || supercharger live: Lusk, WY
+Thu Dec 19, 2013 || supercharger added: Las Vegas, NV
+Thu Dec 19, 2013 || supercharger added: St. Anton, Austria
+Wed Dec 18, 2013 || supercharger live: Mitchell, SD
+Mon Dec 16, 2013 || supercharger added: St Augustine, FL
+Mon Dec 16, 2013 || supercharger added: Santee, SC
+Sat Dec 14, 2013 || supercharger added: Hagerstown, MD
+Fri Dec 13, 2013 || supercharger added: Highland Park, IL
+Fri Dec 13, 2013 || supercharger added: Kingman, AZ
+Thu Dec 12, 2013 || supercharger added: Bad Rappenau, Germany
+Thu Dec 12, 2013 || supercharger added: Gallup, NM
+Wed Dec 11, 2013 || supercharger added: Flagstaff, AZ
+Wed Dec 11, 2013 || supercharger live: Worthington, MN
+Mon Dec 9, 2013 || supercharger live: Angola, IN
+Mon Dec 9, 2013 || supercharger live: Mauston, WI
+Mon Dec 9, 2013 || supercharger added: Angola, IN
+Sun Dec 8, 2013 || supercharger added: Autohof Aichstetten, Germany
+Sun Dec 8, 2013 || supercharger added: Estavayer-le-Lac, Switzerland
+Sun Dec 8, 2013 || supercharger added: Onalaska, WI
+Sat Dec 7, 2013 || supercharger added: Grand Junction, CO
+Sat Dec 7, 2013 || supercharger added: Macedonia, OH
+Fri Dec 6, 2013 || supercharger added: Savannah, GA
+Thu Dec 5, 2013 || supercharger added: Greenwich, CT (south)
+Wed Dec 4, 2013 || supercharger added: San Juan Capistrano, CA
+Tue Dec 3, 2013 || supercharger added: Blanding, UT
+Tue Dec 3, 2013 || supercharger added: Wilnsdorf, Germany
+Mon Dec 2, 2013 || supercharger added: Lusk, WY
+Sun Dec 1, 2013 || supercharger added: Zevenaar, Netherlands
+Fri Nov 29, 2013 || supercharger added: Lumberton, NC
+Wed Nov 27, 2013 || supercharger added: Cheyenne, WY (removed Gila Bend, AZ)
+Tue Nov 26, 2013 || supercharger added: St. Joseph, MI
+Mon Nov 25, 2013 || supercharger added: Rapid City, SD
+Mon Nov 25, 2013 || supercharger added: Detroit Lake, OR
+Mon Nov 25, 2013 || supercharger added: Oosterhout, Netherlands
+Sun Nov 24, 2013 || supercharger added: Mauston, WI
+Sun Nov 24, 2013 || supercharger added: Mishawaka, IN
+Wed Nov 20, 2013 || supercharger added: Huntsville
+Thu Nov 14, 2013 || supercharger added: Quartzsite, AZ (NOT under construction)
+Wed Nov 13, 2013 || supercharger added: Corsicana
