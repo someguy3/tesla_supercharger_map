@@ -3,7 +3,7 @@ define(['jquery', 'data/SuperchargerData', 'lib/stupidtable' ], function (jQuery
     /**
      * Constructor
      */
-    var ControlViewTable = function () {
+    var DataViewTable = function () {
 
         this.superChargerDataTable = $("#supercharger-data-table");
 
@@ -13,7 +13,7 @@ define(['jquery', 'data/SuperchargerData', 'lib/stupidtable' ], function (jQuery
         this.sort();
     };
 
-    ControlViewTable.prototype.draw = function () {
+    DataViewTable.prototype.draw = function () {
 
         var tableBodyData = this.superChargerDataTable.find("tbody");
 
@@ -36,7 +36,7 @@ define(['jquery', 'data/SuperchargerData', 'lib/stupidtable' ], function (jQuery
         }
     };
 
-    ControlViewTable.prototype.sort = function () {
+    DataViewTable.prototype.sort = function () {
         var table = $("#supercharger-data-table").stupidtable({});
 
         table.on("aftertablesort", function (event, data) {
@@ -51,6 +51,6 @@ define(['jquery', 'data/SuperchargerData', 'lib/stupidtable' ], function (jQuery
     }
 
 
-    return ControlViewTable;
+    return DataViewTable;
 
 });
