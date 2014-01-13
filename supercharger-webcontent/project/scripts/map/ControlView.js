@@ -81,14 +81,9 @@ define(['jquery', 'model/Range', 'lib/spectrum'], function (jQuery, Range) {
 
         this.initializeRangeControl();
         this.initializeZoomToLocationInput();
-        this.initializeDistUnitControl();
 
         this.updateTextFillOpacityDisplay();
         this.updateTextBorderOpacityDisplay();
-    };
-
-    ControlView.prototype.initializeDistUnitControl = function () {
-        $("input[name='distUnit']").change(jQuery.proxy(this.handleDistanceUnit, this));
     };
 
     ControlView.prototype.initializeZoomToLocationInput = function () {
@@ -170,8 +165,7 @@ define(['jquery', 'model/Range', 'lib/spectrum'], function (jQuery, Range) {
     /**
      * Handle changes to distance unit.
      */
-    ControlView.prototype.handleDistanceUnit = function () {
-        var newUnit = $("input[name='distUnit']:checked").val();
+    ControlView.prototype.handleDistanceUnit = function (newUnit) {
         if (newUnit === "M") {
             this.controlState.range.setUnit(Range.Unit.miles);
         } else if (newUnit === "K") {

@@ -1,20 +1,24 @@
 define(
-    ['jquery', 'nav/NavBarMapAction', 'util/Events', 'nav/NavBarToAboutPage', 'nav/NavBarToChangesPage' ],
-    function ($, NavBarMapAction, Events, NavBarToAboutPage, NavBarToChangesPage) {
+    ['jquery', 'nav/NavBarDropdown', 'util/Events', 'nav/NavBarToAboutPage', 'nav/NavBarToChangesPage' ],
+    function ($, NavBarDropdown, Events, NavBarToAboutPage, NavBarToChangesPage) {
 
 
         /**
          * Constructor
          */
         var NavBar = function () {
-            this.navBarMapActionHandler = new NavBarMapAction();
+            this.navBarDropdown = new NavBarDropdown();
             this.currentPage = "map";
             this.initListeners();
         };
 
         NavBar.prototype.initListeners = function () {
             $("#navbar-menu-item-list").find("a").click(jQuery.proxy(this.handlePageChange, this));
-            $("#navbar-dropdown-menu-item-list").find("a").click(jQuery.proxy(this.navBarMapActionHandler.handleAction, this.navBarMapActionHandler));
+            $("#navbar-dropdown-menu-item-list").find("a").click(jQuery.proxy(this.navBarDropdown.handleAction, this.navBarDropdown));
+        };
+
+        NavBar.prototype.onDropDownEvent = function (eventName, callback) {
+            this.navBarDropdown.on(eventName, callback);
         };
 
         NavBar.prototype.handlePageChange = function (event) {

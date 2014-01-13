@@ -34,7 +34,7 @@
                         <ul class="dropdown-menu" id="navbar-dropdown-menu-item-list">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#use-kilometers"><span class="glyphicon glyphicon-unchecked"></span>&nbsp;Use Kilometers</a></li>
                             <li class="divider"></li>
                             <li class="dropdown-header">Map Controls</li>
                             <li><a href="#range"><span class="glyphicon glyphicon-check"></span>&nbsp;Range Adjuster</a></li>
@@ -90,24 +90,13 @@
             <div class="row" id="control-row-rendering" style="display: none">
                 <div class="col-md-12">
 
-                    <table id="rendering-controls-table">
+                    <table id="rendering-controls-table" style="margin: auto">
                         <colgroup>
                             <col/>
                             <col/>
                             <col/>
                             <col/>
                         </colgroup>
-                        <tr>
-                            <th>
-                                <label class="control">Distance Unit</label>
-                            </th>
-                            <td style="text-align: left">
-                                <input type="radio" name="distUnit" id="unit-radio-mile" checked="checked" value="M">Mile<br/>
-                                <input type="radio" name="distUnit" id="unit-radio-kilometer" value="K">Kilometer
-                            </td>
-                            <th></th>
-                            <td></td>
-                        </tr>
                         <tr>
                             <th>
                                 <label class="control">Fill Color</label>

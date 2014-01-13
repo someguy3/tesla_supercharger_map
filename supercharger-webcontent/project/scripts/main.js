@@ -35,8 +35,7 @@ requirejs(
         var Main = function () {
 
             this.routing = new Routing();
-
-            new NavBar();
+            this.navBar = new NavBar();
 
             var initialControlState = new ControlState();
 
@@ -63,10 +62,8 @@ requirejs(
         Main.prototype.initControlView = function (controlState) {
 
             var mapView = this.mapView;
-
             var controlView = new ControlView(controlState);
 
-            //
             // Callback: range change
             //
             controlView.on("range-change-event", function (event, controlState) {
@@ -76,7 +73,6 @@ requirejs(
                 });
             });
 
-            //
             // Callback: fill-opacity change
             //
             controlView.on("fill-opacity-changed-event", function (event, controlState) {
@@ -87,7 +83,6 @@ requirejs(
 
             });
 
-            //
             // Callback: fill color change
             //
             controlView.on("fill-color-change-event", function (event, controlState) {
@@ -95,7 +90,6 @@ requirejs(
                 mapView.redraw(false);
             });
 
-            //
             // Callback: fill-opacity change
             //
             controlView.on("border-opacity-changed-event", function (event, controlState) {
@@ -105,7 +99,6 @@ requirejs(
                 });
             });
 
-            //
             // Callback: fill color change
             //
             controlView.on("border-color-change-event", function (event, controlState) {
@@ -113,7 +106,6 @@ requirejs(
                 mapView.redraw(false);
             });
 
-            //
             // Callback: station status change
             //
             controlView.on("station-status-change-event", function (event, controlState) {
@@ -121,11 +113,16 @@ requirejs(
                 mapView.redraw(true);
             });
 
-            //
             // Callback: zoom to location
             //
             controlView.on("control-event-zoom-location", function (event, locationText) {
                 mapView.zoomToLocation(locationText);
+            });
+
+            // Callback: dist unit changed
+            //
+            this.navBar.onDropDownEvent("nav-dropdown-event-dist-unit", function (event, newUnit) {
+                controlView.handleDistanceUnit(newUnit);
             });
 
         };
