@@ -55,11 +55,11 @@ requirejs(
             var mapView = this.mapView;
             var controlView = this.controlView;
 
-            this.navBar.onDropDownEvent(" nav-dropdown-event-circles-on", function (event) {
+            this.navBar.onDropDownEvent(" nav-dropdown-event-circles-on", function () {
                 mapView.setAllRangeCircleVisibility(true);
             });
 
-            this.navBar.onDropDownEvent(" nav-dropdown-event-circles-off", function (event) {
+            this.navBar.onDropDownEvent(" nav-dropdown-event-circles-off", function () {
                 mapView.setAllRangeCircleVisibility(false);
             });
 
