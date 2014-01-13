@@ -34,7 +34,7 @@ define(
          * Constants
          */
         MapView.INITIAL_LAT = 38.0;
-        MapView.INITIAL_LNG = -90.644;
+        MapView.INITIAL_LNG = -96.5;
         MapView.INITIAL_ZOOM = 5;
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
