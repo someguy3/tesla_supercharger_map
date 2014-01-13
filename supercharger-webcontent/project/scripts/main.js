@@ -34,45 +34,56 @@ requirejs(
          */
         var Main = function () {
 
+            var controlState = new ControlState();
+
             this.routing = new Routing();
             this.navBar = new NavBar();
 
-            var initialControlState = new ControlState();
+            this.mapView = new MapView(controlState);
+            this.controlView = new ControlView(controlState);
 
-            this.initMapView(initialControlState);
-            this.initControlView(initialControlState);
+            this.initMapViewListeners();
+            this.initControlViewListeners();
+            this.initNavBarListeners();
 
             new ControlViewTable();
             new SuperchargerCount();
         };
 
 
-        /**
-         * INIT: MapView
-         */
-        Main.prototype.initMapView = function (controlState) {
-
-            this.mapView = new MapView(controlState);
-            this.mapView.on("map-event-route-added", jQuery.proxy(this.routing.handleAddRouteEvent, this.routing));
-
+        Main.prototype.initNavBarListeners = function () {
             var mapView = this.mapView;
+            var controlView = this.controlView;
 
             this.navBar.onDropDownEvent(" nav-dropdown-event-circles-on", function (event) {
                 mapView.setAllRangeCircleVisibility(true);
             });
+
             this.navBar.onDropDownEvent(" nav-dropdown-event-circles-off", function (event) {
                 mapView.setAllRangeCircleVisibility(false);
             });
+
+            this.navBar.onDropDownEvent("nav-dropdown-event-dist-unit", function (event, newUnit) {
+                controlView.handleDistanceUnit(newUnit);
+            });
+
+        }
+
+            /**
+         * INIT: MapView
+         */
+        Main.prototype.initMapViewListeners = function () {
+            this.mapView.on("map-event-route-added", jQuery.proxy(this.routing.handleAddRouteEvent, this.routing));
         };
 
 
         /**
          * INIT: ControlView
          */
-        Main.prototype.initControlView = function (controlState) {
+        Main.prototype.initControlViewListeners = function () {
 
             var mapView = this.mapView;
-            var controlView = new ControlView(controlState);
+            var controlView = this.controlView;
 
             // Callback: range change
             //
@@ -127,12 +138,6 @@ requirejs(
             //
             controlView.on("control-event-zoom-location", function (event, locationText) {
                 mapView.zoomToLocation(locationText);
-            });
-
-            // Callback: dist unit changed
-            //
-            this.navBar.onDropDownEvent("nav-dropdown-event-dist-unit", function (event, newUnit) {
-                controlView.handleDistanceUnit(newUnit);
             });
 
         };
