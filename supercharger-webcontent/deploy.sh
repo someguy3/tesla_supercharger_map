@@ -6,7 +6,7 @@
 WEB_APP_DIR='project'
 REMOTE_HOST=dev.redshiftsoft.com
 SSH_USER=keith
-DIR_DEPLOY=/var/www/wiki_tesla/supercharger2
+DIR_DEPLOY=/var/www/wiki_tesla/supercharger
 
 # The string check here is for extra safely.
 if [ "${DIR_DEPLOY}" != "" ]
