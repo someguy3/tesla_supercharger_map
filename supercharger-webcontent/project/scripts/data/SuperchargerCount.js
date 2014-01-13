@@ -67,7 +67,7 @@ define(['jquery', 'data/CountryCodes', 'data/SuperchargerData'], function ($, Co
             }
         }
         countryArray.sort(this.sort);
-        countryArray.push({ countryName: 'Total', countryCode: 'T', open: totalOpen, construction: totalConstruction });
+        countryArray.push({ countryName: 'Total', countryCode: 'Total', open: totalOpen, construction: totalConstruction });
         return countryArray;
     };
 
