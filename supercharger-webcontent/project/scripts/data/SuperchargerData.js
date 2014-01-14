@@ -1,4 +1,4 @@
-define(['jquery', 'model/Address', 'util/Asserts'], function ($, Address, Asserts) {
+define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
 
     /**
      * Constructor

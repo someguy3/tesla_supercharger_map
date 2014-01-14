@@ -1,6 +1,6 @@
 define(
-    ['jquery', 'nav/NavBarDropdown', 'util/Events', 'nav/NavBarToAboutPage', 'nav/NavBarToChangesPage' ],
-    function ($, NavBarDropdown, Events, NavBarToAboutPage, NavBarToChangesPage) {
+    ['nav/NavBarDropdown', 'util/Events', 'nav/NavBarToAboutPage', 'nav/NavBarToChangesPage' ],
+    function (NavBarDropdown, Events, NavBarToAboutPage, NavBarToChangesPage) {
 
 
         /**

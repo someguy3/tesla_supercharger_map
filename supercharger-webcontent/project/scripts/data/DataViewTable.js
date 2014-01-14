@@ -1,4 +1,4 @@
-define(['jquery', 'data/SuperchargerData', 'lib/stupidtable' ], function (jQuery, SuperchargerData) {
+define(['data/SuperchargerData', 'lib/stupidtable' ], function (SuperchargerData) {
 
     /**
      * Constructor

@@ -1,4 +1,4 @@
-define(['jquery', 'util/Events'], function ($, Events) {
+define(['util/Events'], function (Events) {
 
     /**
      *

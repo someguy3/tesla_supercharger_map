@@ -1,4 +1,4 @@
-define(['jquery', 'data/CountryCodes', 'data/SuperchargerData'], function ($, CountryCodes, SuperchargerData) {
+define(['data/CountryCodes', 'data/SuperchargerData'], function (CountryCodes, SuperchargerData) {
 
 
     var SuperchargerCount = function () {

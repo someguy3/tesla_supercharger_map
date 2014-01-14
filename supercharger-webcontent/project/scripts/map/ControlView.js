@@ -1,4 +1,4 @@
-define(['jquery', 'model/Range', 'lib/spectrum'], function (jQuery, Range) {
+define(['model/Range', 'lib/spectrum'], function (Range) {
 
 
     /**

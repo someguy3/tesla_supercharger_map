@@ -1,6 +1,6 @@
 define(
-    ['jquery', 'data/SuperchargerData', 'map/MapViewContextMenu', 'util/Events'],
-    function (jQuery, SuperchargerData, MapViewContextMenu, Events) {
+    ['data/SuperchargerData', 'map/MapViewContextMenu', 'util/Events'],
+    function (SuperchargerData, MapViewContextMenu, Events) {
 
 
         /**

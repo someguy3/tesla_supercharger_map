@@ -1,35 +1,15 @@
-requirejs.config({
-    paths: {
-        "jquery": "http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min",
-        "jqueryui": "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min"
-    },
-    shim: {
-        'lib/bootstrap': {
-            deps: ["jquery"],
-            exports: "$.fn.popover"
-        },
-        'lib/spectrum': {
-            deps: ["jquery"]
-        },
-        'lib/jquery.doTimeout': {
-            deps: ["jquery"]
-        },
-        'lib/stupidtable': {
-            deps: ["jquery"]
-        }
-    }
-});
+requirejs.config({});
 
 
 // Start the main app logic.
 requirejs(
     [
-        'jquery', 'jqueryui', 'lib/bootstrap',
+        'lib/bootstrap',
         'data/SuperchargerCount',
         'nav/NavBar', 'routing/Routing',
         'map/ControlState', 'map/MapView', 'map/ControlView', 'data/DataViewTable', 'lib/jquery.doTimeout', 'lib/GoogleAnalytics'
     ],
-    function ($, jQueryUI, bootstrap, SuperchargerCount, NavBar, Routing, ControlState, MapView, ControlView, DataViewTable) {
+    function (bootstrap, SuperchargerCount, NavBar, Routing, ControlState, MapView, ControlView, DataViewTable) {
 
         /**
          *
