@@ -10,5 +10,6 @@
 
 label.control {
     font-size: larger;
-    margin-right: 1em;
+    margin-right: .6em;
+    margin-left: 1em;
 }
