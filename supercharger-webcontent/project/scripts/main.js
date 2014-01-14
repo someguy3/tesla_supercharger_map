@@ -7,7 +7,7 @@ requirejs(
         'lib/bootstrap',
         'data/SuperchargerCount',
         'nav/NavBar', 'routing/Routing',
-        'map/ControlState', 'map/MapView', 'map/ControlView', 'data/DataViewTable', 'lib/jquery.doTimeout', 'lib/GoogleAnalytics'
+        'map/ControlState', 'map/MapView', 'map/ControlView', 'data/DataViewTable', 'lib/jquery.doTimeout'
     ],
     function (bootstrap, SuperchargerCount, NavBar, Routing, ControlState, MapView, ControlView, DataViewTable) {
 
