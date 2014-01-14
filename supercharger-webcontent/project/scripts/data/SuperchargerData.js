@@ -598,9 +598,9 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
         {
             "displayName": "Blanding, UT",
             "address": new Address("12 N Grayson Pkwy", "Blanding", "UT", "84511", "USA"),
-            "location": new google.maps.LatLng(37.6257333333, -109.47395),
-            "url": "http://www.teslamotors.com/forum/forums/supercharger-locations-existingplanned-confirmed-not-rumored-or-speculated%E2%80%A6?page=43",
-            "construction": true,
+            "location": new google.maps.LatLng(37.6255534, -109.47384199999999),
+            "url" : "http://www.teslamotors.com/supercharger/blanding",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/21121-Utah-Super-Charger-Locations",
             "count": true
         },
         {
