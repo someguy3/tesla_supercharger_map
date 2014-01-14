@@ -468,10 +468,10 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
         },
         {
             "displayName": "Maumee, OH",
-            "address": new Address("1333 Conant Street", "Maumee", "OH", "43537", "USA"),
+            "address": new Address("1391 Conant Street", "Maumee", "OH", "43537", "USA"),
             "location": new google.maps.LatLng(41.57835, -83.66465),
-            "url": "http://www.teslamotorsclub.com/showthread.php/25482-Supercharger-Maumee-OH",
-            "construction": true,
+            "url": "http://www.teslamotors.com/supercharger/maumee",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25482-Supercharger-Maumee-OH",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Oregon
