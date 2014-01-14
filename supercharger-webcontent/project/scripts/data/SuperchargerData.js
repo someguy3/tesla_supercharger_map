@@ -661,8 +661,8 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "displayName": "Madison, WI",
             "address": new Address("89 E Towne Mall", "Madison", "WI", "53704", "USA"),
             "location": new google.maps.LatLng(43.12669, -89.306896),
-            "url": "http://www.teslamotorsclub.com/showthread.php/21123-Madison-WI-Supercharger",
-            "construction": true,
+            "url": "http://www.teslamotors.com/supercharger/madison",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/21123-Madison-WI-Supercharger",
             "count": true
         },
         {
