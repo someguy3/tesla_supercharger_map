@@ -247,7 +247,9 @@ define(
         MapView.prototype.setAllRangeCircleVisibility = function (isViaible) {
             for (var i = 0; i < this.superData.size(); i++) {
                 var supercharger = this.superData.get(i);
-                supercharger.circle.setVisible(isViaible);
+                if (supercharger.circle != null) {
+                    supercharger.circle.setVisible(isViaible);
+                }
             }
         };
 
