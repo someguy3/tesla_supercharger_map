@@ -99,6 +99,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(35.174272, -111.66328),
             "url": "http://www.teslamotors.com/supercharger/flagstaff",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24922-Supercharger-Flagstaff-AZ",
+            "dateLive" : "2013-01-10",
             "count": true
         },
 //    {
@@ -240,6 +241,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(39.090758, -108.604325),
             "url": "http://www.teslamotors.com/supercharger/grandjunction",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24867-Grand-Junction-CO-Supercharger",
+            "dateLive" : "2013-01-10",
             "count": true
         },
         {
@@ -417,6 +419,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("4200 Sierra Vista Dr", "Farmington", "NM", "87402", "USA"),
             "location": new google.maps.LatLng(36.766371, -108.144047),
             "url": "http://www.teslamotors.com/supercharger/farmington",
+            "dateLive" : "2013-01-10",
             "count": true
         },
         {
@@ -481,6 +484,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(41.57835, -83.66465),
             "url": "http://www.teslamotors.com/supercharger/maumee",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25482-Supercharger-Maumee-OH",
+            "dateLive" : "2013-01-13",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Oregon
@@ -527,6 +531,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(40.0173833333, -79.0771166667),
             "url": "http://www.teslamotors.com/supercharger/somerset",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25319-Somerset-PA-Supercharger-(confirmed!)",
+            "dateLive" : "2013-01-10",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Rhode Island
@@ -610,6 +615,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(37.6255534, -109.47384199999999),
             "url" : "http://www.teslamotors.com/supercharger/blanding",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/21121-Utah-Super-Charger-Locations",
+            "dateLive" : "2013-01-13",
             "count": true
         },
         {
@@ -672,6 +678,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(43.12669, -89.306896),
             "url": "http://www.teslamotors.com/supercharger/madison",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/21123-Madison-WI-Supercharger",
+            "dateLive" : "2013-01-13",
             "count": true
         },
         {
