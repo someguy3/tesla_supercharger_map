@@ -370,7 +370,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "location": new google.maps.LatLng(32.135507, -81.212767),
             "url": "http://www.teslamotors.com/supercharger/savannah",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/22256-Savannah-GA-SuperCharger",
-            "dateLive": "2013-01-15",
+            "dateLive": "2014-01-15",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Illinois
@@ -432,7 +432,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "location": new google.maps.LatLng(43.68606, -93.357721),
             "url": "http://www.teslamotors.com/supercharger/albertlea",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25097-Minnesota-Supercharging-Discussion-amp-Tracking",
-            "dateLive": "2013-01-15",
+            "dateLive": "2014-01-15",
             "count": true
         },
         {
