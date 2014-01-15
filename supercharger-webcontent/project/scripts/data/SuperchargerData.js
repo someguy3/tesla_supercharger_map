@@ -366,11 +366,11 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
         //-----------------------------------------------------------------------------------------------------------------| Georgia
         {
             "displayName": "Savannah, GA",
-            "address": new Address("400 Airways Avenue (GPS is guess)", "Savannah", "GA", "31408", "USA"),
-            "location": new google.maps.LatLng(32.1355333333, -81.2139333333),
-            "url": "http://www.teslamotorsclub.com/showthread.php/22256-Savannah-GA-SuperCharger",
-            "construction": true,
-            "dateLive": "",
+            "address": new Address("400 Airways Avenue", "Savannah", "GA", "31408", "USA"),
+            "location": new google.maps.LatLng(32.135507, -81.212767),
+            "url": "http://www.teslamotors.com/supercharger/savannah",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/22256-Savannah-GA-SuperCharger",
+            "dateLive": "2013-01-15",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Illinois
