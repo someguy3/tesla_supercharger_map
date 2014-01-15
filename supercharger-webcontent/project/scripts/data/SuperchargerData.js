@@ -64,13 +64,22 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
 
 
     /**
+     * Properties:
+     *
+     * displayName  -- [String]
+     * address      -- [Address]
+     * location     -- [google.maps.LatLng]
+     * url          -- [String] url for tesla web site
+     * urlDiscuss   -- [String] url for discussion forum
+     * construction -- [Boolean] true indicates that this location is under construction
+     * count        -- [Boolean]
+     *
      * Other properties that are later added to the supercharger data structure:
      *
      * id           -- [Integer] uniquely identifies each record.
      * circle       -- [google.maps.Circle] a reference to the google-maps Circle object indicating range for this supercharger.
      * marker       -- [google.maps.Marker] a reference to the google-maps Marker object associated with this supercharger.
      * custom       -- [Boolean] true indicates that this is a custom marker added by the customer.
-     * construction -- [Boolean] true indicates that this location is under construction
      *
      */
     SuperchargerData.LIST = [
