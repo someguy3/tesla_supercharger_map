@@ -1,10 +1,10 @@
-define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
+define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Asserts, Objects) {
 
     /**
      * Constructor
      */
     var SuperchargerData = function () {
-        if ('undefined' == typeof SuperchargerData.ID_INIT) {
+        if (Objects.isNullOrUndefined(SuperchargerData.ID_INIT)) {
             this.initializeIds();
         }
     };
@@ -90,6 +90,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("444 S Watson RD", "Buckeye", "AZ", "85326", "USA"),
             "location": new google.maps.LatLng(33.443242, -112.557378),
             "url": "http://www.teslamotorsclub.com/showthread.php/25317-Supercharger-Buckeye-AZ",
+            "dateLive": "",
             "construction": true,
             "count": true
         },

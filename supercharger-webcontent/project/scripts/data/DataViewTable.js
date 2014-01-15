@@ -1,4 +1,4 @@
-define(['data/SuperchargerData', 'lib/stupidtable' ], function (SuperchargerData) {
+define(['data/SuperchargerData', 'util/Objects', 'lib/stupidtable' ], function (SuperchargerData, Objects) {
 
     /**
      * Constructor
@@ -30,6 +30,7 @@ define(['data/SuperchargerData', 'lib/stupidtable' ], function (SuperchargerData
                 "<td>" + supercharger.address.country + "</td>" +
                 "<td class='gps'>" + supercharger.location.toUrlValue() + "</td>" +
                 "<td>" + (supercharger.construction ? "Construction" : "Open") + "</td>" +
+                "<td>" + Objects.nullSafeToString(supercharger.dateLive) + "</td>" +
                 "<td class='tog'>" + "<a href='" + supercharger.url + "'>link</a></td>" +
                 "</tr>"
             );
