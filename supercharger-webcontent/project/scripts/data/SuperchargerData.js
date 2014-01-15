@@ -99,7 +99,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(35.174272, -111.66328),
             "url": "http://www.teslamotors.com/supercharger/flagstaff",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24922-Supercharger-Flagstaff-AZ",
-            "dateLive" : "2013-01-10",
+            "dateLive" : "2014-01-10",
             "count": true
         },
 //    {
@@ -224,6 +224,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("321 Nut Tree RD", "Vacaville", "CA", "95687", "USA"),
             "location": new google.maps.LatLng(38.366645, -121.958136),
             "url": "http://www.teslamotors.com/supercharger/vacaville",
+            "dateLive" : "2013-12-19",
             "count": true
         },
 
@@ -241,7 +242,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(39.090758, -108.604325),
             "url": "http://www.teslamotors.com/supercharger/grandjunction",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24867-Grand-Junction-CO-Supercharger",
-            "dateLive" : "2013-01-10",
+            "dateLive" : "2014-01-10",
             "count": true
         },
         {
@@ -331,6 +332,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("2700 State Road 16, Suite 200", "St. Augustine", "FL", "32092", "USA"),
             "location": new google.maps.LatLng(29.9207352, -81.416337),
             "url": "http://www.teslamotorsclub.com/showthread.php/25177-St-Augustine-Supercharger",
+            "dateLive" : "2014-01-03",
             "count": true
         },
 
@@ -349,6 +351,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("1200 Old Skokie Road", "Highland Park", "IL", "60035", "USA"),
             "location": new google.maps.LatLng(42.17434, -87.816626),
             "url": "http://www.teslamotors.com/supercharger/highlandpark",
+            "dateLive" : "2013-12-20",
             "count": true
         },
         {
@@ -371,6 +374,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("3855 Indiana Rte 127", "Angola", "IN", "46703", "USA"),
             "location": new google.maps.LatLng(41.699048, -85.000326),
             "url": "http://www.teslamotors.com/supercharger/angola",
+            "dateLive" : "2013-12-09",
             "count": true
         },
         {
@@ -403,6 +407,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("1290 Ryan's Rd", "Worthington", "MN", "56187", "USA"),
             "location": new google.maps.LatLng(43.63385, -95.595647),
             "url": "http://www.teslamotors.com/supercharger/worthington",
+            "dateLive" : "2013-12-11",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Michigan
@@ -419,7 +424,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("4200 Sierra Vista Dr", "Farmington", "NM", "87402", "USA"),
             "location": new google.maps.LatLng(36.766371, -108.144047),
             "url": "http://www.teslamotors.com/supercharger/farmington",
-            "dateLive" : "2013-01-10",
+            "dateLive" : "2014-01-10",
             "count": true
         },
         {
@@ -427,6 +432,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("111 Twin Buttes Rd", "Gallup", "NM", "87301", "USA"),
             "location": new google.maps.LatLng(35.505278, -108.828094),
             "url": "http://www.teslamotors.com/supercharger/gallup",
+            "dateLive" : "2014-01-07",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Nevada
@@ -444,6 +450,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("150th Ave and 147th St", "Queens", "NY", "11430", "USA"),
             "location": new google.maps.LatLng(40.66319, -73.793192),
             "url": "http://www.teslamotors.com/supercharger/jfk",
+            "dateLive" : "2013-12-23",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| North Carolina
@@ -484,7 +491,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(41.57835, -83.66465),
             "url": "http://www.teslamotors.com/supercharger/maumee",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25482-Supercharger-Maumee-OH",
-            "dateLive" : "2013-01-13",
+            "dateLive" : "2014-01-13",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Oregon
@@ -493,6 +500,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("210 D Street", "Detroit", "OR", "97342", "USA"),
             "location": new google.maps.LatLng(44.737025, -122.152108),
             "url": "http://www.teslamotors.com/supercharger/detroitlake",
+            "dateLive" : "2013-12-23",
             "count": true
         },
         {
@@ -531,7 +539,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(40.0173833333, -79.0771166667),
             "url": "http://www.teslamotors.com/supercharger/somerset",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25319-Somerset-PA-Supercharger-(confirmed!)",
-            "dateLive" : "2013-01-10",
+            "dateLive" : "2014-01-10",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Rhode Island
@@ -540,6 +548,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("1000 Division St", "East Greenwich", "RI", "02818", "USA"),
             "location": new google.maps.LatLng(41.660517, -71.497242),
             "url": "http://www.teslamotors.com/supercharger/eastgreenwich",
+            "dateLive" : "2014-01-06",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| South Carolina
@@ -548,6 +557,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("114 Bradford Blvd.", "Santee", "SC", "29142", "USA"),
             "location": new google.maps.LatLng(33.485858, -80.475763),
             "url": "http://www.teslamotors.com/supercharger/santee",
+            "dateLive" : "2013-12-27",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| South Dakota
@@ -556,6 +566,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("1305 W. Havens Street", "Mitchell", "SD", "57301", "USA"),
             "location": new google.maps.LatLng(43.701129, -98.04449999999997),
             "url": "http://www.teslamotors.com/supercharger/mitchell",
+            "dateLive" : "2013-12-18",
             "count": true
         },
         {
@@ -563,6 +574,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("302 W 5th St", "Murdo", "SD", "57559", "USA"),
             "location": new google.maps.LatLng(43.886915, -100.716887),
             "url": "http://www.teslamotors.com/supercharger/murdo",
+            "dateLive" : "2013-12-31",
             "count": true
         },
         {
@@ -615,7 +627,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(37.6255534, -109.47384199999999),
             "url" : "http://www.teslamotors.com/supercharger/blanding",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/21121-Utah-Super-Charger-Locations",
-            "dateLive" : "2013-01-13",
+            "dateLive" : "2014-01-13",
             "count": true
         },
         {
@@ -654,6 +666,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("1620 Canyon Rd", "Ellensburg", "WA", "98926", "USA"),
             "location": new google.maps.LatLng(46.976918, -120.54162),
             "url": "http://www.teslamotors.com/supercharger/ellensburg",
+            "dateLive" : "2013-12-23",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Wisconsin
@@ -670,6 +683,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("2845 Midwest Dr", "Onalaska", "WI", "54650", "USA"),
             "location": new google.maps.LatLng(43.879042, -91.188428),
             "url": "http://www.teslamotors.com/supercharger/lacrosse",
+            "dateLive" : "2014-01-05",
             "count": true
         },
         {
@@ -678,7 +692,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "location": new google.maps.LatLng(43.12669, -89.306896),
             "url": "http://www.teslamotors.com/supercharger/madison",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/21123-Madison-WI-Supercharger",
-            "dateLive" : "2013-01-13",
+            "dateLive" : "2014-01-13",
             "count": true
         },
         {
@@ -686,6 +700,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("640 Mc Evoy St", "Mauston", "WI", "53948", "USA"),
             "location": new google.maps.LatLng(43.795551, -90.059358),
             "url": "http://www.teslamotors.com/supercharger/mauston",
+            "dateLive" : "2013-12-09",
             "count": true
         },
         {
@@ -710,6 +725,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("730 S. Main St", "Lusk", "WY", "82225", "USA"),
             "location": new google.maps.LatLng(42.75625, -104.45267),
             "url": "http://www.teslamotors.com/supercharger/lusk",
+            "dateLive" : "2013-12-19",
             "count": true
         },
 
