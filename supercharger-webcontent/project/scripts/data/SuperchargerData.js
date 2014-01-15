@@ -274,7 +274,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("1 CT Turnpike N", "Milford", "CT", "06460", "USA"),
             "location": new google.maps.LatLng(41.245814, -73.008988),
             "url": "http://www.teslamotors.com/supercharger/milfordnorth",
-            "dateLive": "",
+            "dateLive": "2012-12-16",
             "count": true
         },
         {
@@ -282,7 +282,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("1 CT Turnpike N", "Milford", "CT", "06460", "USA"),
             "location": new google.maps.LatLng(41.246232, -73.010529),
             "url": "http://www.teslamotors.com/supercharger/milfordsouth",
-            "dateLive": "",
+            "dateLive": "2012-12-16",
             "count": false
         },
         {
@@ -325,7 +325,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("530 JFK Memorial Highway", "Newark", "DE", "19725", "USA"),
             "location": new google.maps.LatLng(39.662313, -75.691980),
             "url": "http://www.teslamotors.com/supercharger/newark",
-            "dateLive": "",
+            "dateLive": "2012-12-21",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Florida
@@ -334,6 +334,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("9903 Gulf Coast Main Street", "Fort Myers", "FL", "33913", "USA"),
             "location": new google.maps.LatLng(26.485640, -81.787136),
             "url": "http://www.teslamotors.com/supercharger/fortmyers",
+            "dateLive": "2013-07-25",
             "count": true
         },
         {
@@ -341,7 +342,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("5302 S. Williamson Blvd", "Port Orange", "FL", "32128", "USA"),
             "location": new google.maps.LatLng(29.108566, -81.034569),
             "url": "http://www.teslamotors.com/supercharger/portorange",
-            "dateLive": "",
+            "dateLive": "2013-09-13",
             "count": true
         },
         {
@@ -349,7 +350,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("1773 N.W. St. Lucie W. Boulevard", "Port St. Lucie", "FL", "34986", "USA"),
             "location": new google.maps.LatLng(27.313023, -80.406688),
             "url": "http://www.teslamotors.com/supercharger/portstlucie",
-            "dateLive": "",
+            "dateLive": "2013-07-24",
             "count": true
         },
         {
@@ -385,7 +386,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("7200 Harrison Ave", "Rockford", "IL", "61112", "USA"),
             "location": new google.maps.LatLng(42.243896, -88.978877),
             "url": "http://www.teslamotors.com/supercharger/rockford",
-            "dateLive": "",
+            "dateLive": "2013-09-12",
             "count": true
         },
         {
@@ -393,7 +394,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("Uptown Station Parking Deck 11 Uptown Circle", "Normal", "IL", "61761", "USA"),
             "location": new google.maps.LatLng(40.508497, -88.985575),
             "url": "http://www.teslamotors.com/supercharger/normal",
-            "dateLive": "",
+            "dateLive": "2013-06-26",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Indiana
@@ -410,7 +411,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("6501 Grape Rd", "Mishawaka", "IN", "46545", "USA"),
             "location": new google.maps.LatLng(41.7174, -86.1887),
             "url": "http://www.teslamotors.com/supercharger/mishawaka",
-            "dateLive": "",
+            "dateLive": "2013-12-11",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Maryland
@@ -447,7 +448,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("3260 Niles Rd", "St. Joseph", "MI", "49085", "USA"),
             "location": new google.maps.LatLng(42.056357, -86.456352),
             "url": "http://www.teslamotors.com/supercharger/stjoseph",
-            "dateLive": "",
+            "dateLive": "2013-11-26",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| New Mexico
@@ -492,7 +493,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("1080 Piper Ln", "Burlington", "NC", "27215", "USA"),
             "location": new google.maps.LatLng(36.070790, -79.511211),
             "url": "http://www.teslamotors.com/supercharger/burlingtonnc",
-            "dateLive": "",
+            "dateLive": "2013-10-16",
             "count": true
         },
         {
@@ -509,7 +510,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("651 N. Winstead Avenue", "Rocky Mount", "NC", "27804", "USA"),
             "location": new google.maps.LatLng(35.972874, -77.846870),
             "url": "http://www.teslamotors.com/supercharger/rockymount",
-            "dateLive": "",
+            "dateLive": "2013-11-08",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Ohio
@@ -545,7 +546,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("1900 NW 6th St.", "Grants Pass", "OR", "97526", "USA"),
             "location": new google.maps.LatLng(42.460883, -123.324124),
             "url": "http://www.teslamotors.com/supercharger/grantspass",
-            "dateLive": "",
+            "dateLive": "2013-10-22",
             "count": true
         },
         {
@@ -553,7 +554,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("919 Kruse Way", "Springfield", "OR", "97477", "USA"),
             "location": new google.maps.LatLng(44.082605, -123.037471),
             "url": "http://www.teslamotors.com/supercharger/springfield",
-            "dateLive": "",
+            "dateLive": "2013-11-02",
             "count": true
         },
         {
@@ -561,7 +562,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("255 N Arney Rd", "Woodburn", "OR", "97071", "USA"),
             "location": new google.maps.LatLng(45.15313, -122.881254),
             "url": "http://www.teslamotors.com/supercharger/woodburn",
-            "dateLive": "",
+            "dateLive": "2013-08-28",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Pennsylvania
@@ -622,7 +623,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("2200 N. Maple Ave", "Rapid City", "SD", "57701", "USA"),
             "location": new google.maps.LatLng(44.105601, -103.212569),
             "url": "http://www.teslamotors.com/supercharger/rapidcity",
-            "dateLive": "",
+            "dateLive": "2013-11-25",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Texas
@@ -631,7 +632,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("2535 Texas 71", "Columbus", "TX", "78934", "USA"),
             "location": new google.maps.LatLng(29.690062, -96.537725),
             "url": "http://www.teslamotors.com/supercharger/columbus",
-            "dateLive": "",
+            "dateLive": "2013-10-07",
             "count": true
         },
         {
@@ -639,7 +640,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("2035 Interstate 45 Frontage Rd", "Corsicana", "TX", "75109", "USA"),
             "location": new google.maps.LatLng(32.068577, -96.448229),
             "url": "http://www.teslamotors.com/supercharger/corsicana",
-            "dateLive": "",
+            "dateLive": "2013-11-15",
             "count": true
         },
         {
@@ -647,7 +648,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("148 Interstate 45", "Huntsville", "TX", "77340", "USA"),
             "location": new google.maps.LatLng(30.716158, -95.565944),
             "url": "http://www.teslamotors.com/supercharger/huntsville",
-            "dateLive": "",
+            "dateLive": "2013-11-20",
             "count": true
         },
         {
@@ -655,7 +656,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("3939 Interstate 35", "San Marcos", "TX", "78666", "USA"),
             "location": new google.maps.LatLng(29.827692, -97.979677),
             "url": "http://www.teslamotors.com/supercharger/sanmarcos",
-            "dateLive": "",
+            "dateLive": "2013-08-20",
             "count": true
         },
         {
@@ -663,7 +664,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("701 Interstate 35", "Bellmead", "TX", "76705", "USA"),
             "location": new google.maps.LatLng(31.58224, -97.10915),
             "url": "http://www.teslamotors.com/supercharger/waco",
-            "dateLive": "",
+            "dateLive": "2013-09-07",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Utah
@@ -691,7 +692,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("9860 Brook Rd", "Glen Allen", "VA", "23059", "USA"),
             "location": new google.maps.LatLng(37.669832, -77.461419),
             "url": "http://www.teslamotors.com/supercharger/glenallen",
-            "dateLive": "",
+            "dateLive": "2013-10-24",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Washington
@@ -700,7 +701,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("9384 Old Highway 99", "North Burlington", "WA", "98233", "USA"),
             "location": new google.maps.LatLng(48.509772, -122.338625),
             "url": "http://www.teslamotors.com/supercharger/burlington",
-            "dateLive": "",
+            "dateLive": "2013-07-13",
             "count": true
         },
         {
@@ -708,6 +709,7 @@ define(['model/Address', 'util/Asserts'], function (Address, Asserts) {
             "address": new Address("1200 Lum Rd", "Centralia", "WA", "98531", "USA"),
             "location": new google.maps.LatLng(46.729732, -122.977454),
             "url": "http://www.teslamotors.com/supercharger/centralia",
+            "dateLive": "2013-07-17",
             "count": true
         },
         {
