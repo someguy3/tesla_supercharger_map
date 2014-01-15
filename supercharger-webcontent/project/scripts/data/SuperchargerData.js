@@ -428,11 +428,11 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
         //-----------------------------------------------------------------------------------------------------------------| Minnesota
         {
             "displayName": "Albert Lea, MN",
-            "address": new Address("America Inn Lodge, 811 East Plaza Street", "Albert Lea", "MN", "56007", "USA"),
-            "location": new google.maps.LatLng(43.68605, -93.3573),
-            "url": "http://www.teslamotorsclub.com/showthread.php/25097-Minnesota-Supercharging-Discussion-amp-Tracking",
-            "dateLive": "",
-            "construction": true,
+            "address": new Address("811 East Plaza St", "Albert Lea", "MN", "56007", "USA"),
+            "location": new google.maps.LatLng(43.68606, -93.357721),
+            "url": "http://www.teslamotors.com/supercharger/albertlea",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25097-Minnesota-Supercharging-Discussion-amp-Tracking",
+            "dateLive": "2013-01-15",
             "count": true
         },
         {
