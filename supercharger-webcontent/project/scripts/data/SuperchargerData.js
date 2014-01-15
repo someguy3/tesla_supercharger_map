@@ -798,7 +798,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "address": new Address("73 Arlbergstrasse", "St. Anton am Arlberg", "", "6580", "Austria"),
             "location": new google.maps.LatLng(47.130137, 10.269231),
             "url": "http://www.teslamotors.com/supercharger/stanton",
-            "dateLive": "",
+            "dateLive": "2013-12-19",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| GERMANY
@@ -841,7 +841,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "address": new Address("Beneluxweg 1", "Oosterhout", "", "4904 SJ", "Netherlands"),
             "location": new google.maps.LatLng(51.626423, 4.869517),
             "url": "http://www.teslamotors.com/supercharger/oosterhout",
-            "dateLive": "",
+            "dateLive": "2013-12-06",
             "count": true
         },
         {
@@ -849,7 +849,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "address": new Address("Doesburgseweg 39", "Zevenaar", "", "6902 PL", "Netherlands"),
             "location": new google.maps.LatLng(51.94066, 6.08180),
             "url": "http://www.teslamotors.com/supercharger/zevenaar",
-            "dateLive": "",
+            "dateLive": "2013-12-06",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| NORWAY
