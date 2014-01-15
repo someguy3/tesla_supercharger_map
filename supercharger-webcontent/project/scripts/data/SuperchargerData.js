@@ -807,7 +807,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "address": new Address("Am Waizenhof 12 (Autohof)", "Aichstetten", "", "88317", "Germany"),
             "location": new google.maps.LatLng(47.8804833333, 10.0397833333),
             "url": "http://www.teslamotors.com/supercharger/aichstetten",
-            "dateLive": "",
+            "dateLive": "2013-12-14",
             "count": true
         },
         {
@@ -815,7 +815,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "address": new Address("Buchäckerring 40 (Autohof)", "Bad Rappenau", "", "74906", "Germany"),
             "location": new google.maps.LatLng(49.211936, 9.077322),
             "url": "http://www.teslamotors.com/supercharger/badrappenau",
-            "dateLive": "",
+            "dateLive": "2013-12-14",
             "count": true
         },
         {
@@ -823,7 +823,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "address": new Address("Robert-Bosch-Str. 10 (Autohof)", "Jettingen-Scheppach", "", "89343", "Germany"),
             "location": new google.maps.LatLng(48.411685, 10.439755),
             "url": "http://www.teslamotors.com/supercharger/jettingen",
-            "dateLive": "",
+            "dateLive": "2013-12-13",
             "count": true
         },
         {
@@ -831,7 +831,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "address": new Address("Elkersberg 2 (Autohof)", "Wilnsdorf", "", "57234", "Germany"),
             "location": new google.maps.LatLng(50.817046, 8.087663),
             "url": "http://www.teslamotors.com/supercharger/wilnsdorf",
-            "dateLive": "",
+            "dateLive": "2013-12-13",
             "count": true
         },
 
