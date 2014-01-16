@@ -111,14 +111,15 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
 //        "construction": true,
 //        "count": true
 //    },
-//    {
-//        "displayName": "Holbrook, AZ",
-//        "address": new Address("1635 Navajo Blvd", "Holbrook", "AZ", "86025", "USA"),
-//        "location": new google.maps.LatLng(1,1),
-//        "url": "http://www.teslamotorsclub.com/showthread.php/25375-Supercharger-Holbrook-AZ",
-//        "construction": true,
-//        "count": true
-//    },
+        {
+            "displayName": "Holbrook, AZ",
+            "address": new Address("2096 Navajo Blvd", "Holbrook", "AZ", "86025", "USA"),
+            "location": new google.maps.LatLng(34.922962, -110.145558),
+            "url": "http://www.teslamotors.com/supercharger/holbrook",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25375-Supercharger-Holbrook-AZ",
+            "dateLive": "2013-01-15",
+            "count": true
+        },
         {
             "displayName": "Kingman, AZ",
             "address": new Address("789 West Beale Street", "Kingman", "AZ", "86401", "USA"),
