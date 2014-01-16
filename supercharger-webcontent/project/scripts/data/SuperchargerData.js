@@ -117,7 +117,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "location": new google.maps.LatLng(34.922962, -110.145558),
             "url": "http://www.teslamotors.com/supercharger/holbrook",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25375-Supercharger-Holbrook-AZ",
-            "dateLive": "2013-01-15",
+            "dateLive": "2014-01-15",
             "count": true
         },
         {
@@ -530,7 +530,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "address": new Address("8210 Macedonia Commons Blvd", "Macedonia", "OH", "44056", "USA"),
             "location": new google.maps.LatLng(41.313663, -81.517018),
             "url": "http://www.teslamotors.com/supercharger/macedonia",
-            "dateLive": "2013-01-15",
+            "dateLive": "2014-01-15",
             "count": true
         },
         {
