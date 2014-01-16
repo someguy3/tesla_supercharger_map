@@ -527,10 +527,9 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
         {
             "displayName": "Macedonia, OH",
             "address": new Address("8210 Macedonia Commons Blvd", "Macedonia", "OH", "44056", "USA"),
-            "location": new google.maps.LatLng(41.3136333333, -81.517),
-            "url": "http://www.teslamotorsclub.com/showthread.php/8590-Tesla-Supercharger-network/page250?p=518388#post518388",
-            "dateLive": "",
-            "construction": true,
+            "location": new google.maps.LatLng(41.313663, -81.517018),
+            "url": "http://www.teslamotors.com/supercharger/macedonia",
+            "dateLive": "2013-01-15",
             "count": true
         },
         {
