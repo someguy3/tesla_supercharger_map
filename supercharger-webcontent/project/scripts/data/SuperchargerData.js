@@ -491,7 +491,7 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
         {
             "displayName": "Syosset, NY",
             "address": new Address("7 Aeriel Way", "Syosset", "NY", "11791", "USA"),
-            "location": new google.maps.LatLng(40.797762,-73.515435),
+            "location": new google.maps.LatLng(40.797762, -73.515435),
             "url": "http://www.teslamotorsclub.com/showthread.php/26175-Supercharger-Syosset-NY",
             "dateLive": "",
             "construction": true,
@@ -576,14 +576,14 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Pennsylvania
-//    {
-//        "displayName": "Cranberry, PA",
-//        "address": new Address("1308 Freedom Rd", "Cranberry", "PA", "16066", "USA"),
-//        "location": new google.maps.LatLng(40.0173833333, -79.0771166667),
-//        "url": "http://www.teslamotorsclub.com/showthread.php/25840-Cranberry-PA-Supercharger-Location-(NW-of-Pittsburgh)",
-//        "construction": true,
-//        "count": true
-//    },
+        {
+            "displayName": "Cranberry, PA",
+            "address": new Address("1308 Freedom Rd", "Cranberry", "PA", "16066", "USA"),
+            "location": new google.maps.LatLng(40.683982, -80.10839),
+            "url": "http://www.teslamotorsclub.com/showthread.php/25840-Cranberry-PA-Supercharger-Location-(NW-of-Pittsburgh)",
+            "construction": true,
+            "count": true
+        },
         {
             "displayName": "Somerset, PA",
             "address": new Address("1030 North Center Avenue", "Somerset", "PA", "15501", "USA"),
