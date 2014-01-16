@@ -488,6 +488,15 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
             "dateLive": "2013-12-23",
             "count": true
         },
+        {
+            "displayName": "Syosset, NY",
+            "address": new Address("7 Aeriel Way", "Syosset", "NY", "11791", "USA"),
+            "location": new google.maps.LatLng(40.797762,-73.515435),
+            "url": "http://www.teslamotorsclub.com/showthread.php/26175-Supercharger-Syosset-NY",
+            "dateLive": "",
+            "construction": true,
+            "count": true
+        },
         //-----------------------------------------------------------------------------------------------------------------| North Carolina
         {
             "displayName": "Burlington, NC",
