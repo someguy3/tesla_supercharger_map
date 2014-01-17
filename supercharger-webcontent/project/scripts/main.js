@@ -5,11 +5,11 @@ requirejs.config({});
 requirejs(
     [
         'lib/bootstrap',
-        'data/SuperchargerCount',
+        'data/SuperchargerCarousel',
         'nav/NavBar', 'routing/Routing',
         'map/ControlState', 'map/MapView', 'map/ControlView', 'data/DataViewTable', 'lib/jquery.doTimeout'
     ],
-    function (bootstrap, SuperchargerCount, NavBar, Routing, ControlState, MapView, ControlView, DataViewTable) {
+    function (bootstrap, SuperchargerCarousel, NavBar, Routing, ControlState, MapView, ControlView, DataViewTable) {
 
         /**
          *
@@ -30,7 +30,7 @@ requirejs(
             this.initNavBarListeners();
 
             new DataViewTable();
-            new SuperchargerCount();
+            new SuperchargerCarousel();
         };
 
 

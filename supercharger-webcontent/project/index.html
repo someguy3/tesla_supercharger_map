@@ -79,6 +79,25 @@ Navigation Bar
                 <button id="zoom-to-location-button" type="button" class="btn btn-default">Go</button>
             </form>
 
+            <div id="carousel-container">
+                <table id="carousel-table">
+                    <tbody>
+                    <tr>
+                        <td class="country-name"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="control up"><span class="glyphicon glyphicon-chevron-up"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="country-name"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="control down"><span class="glyphicon glyphicon-chevron-down"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <ul class="nav navbar-nav navbar-right" id="navbar-menu-item-list">
                 <li class="active"><a id="page-link-map" href="#map">Map</a></li>
                 <li><a id="page-link-data" href="#data">Data</a></li>
@@ -190,9 +209,6 @@ Navigation Bar
     PAGE: data
     = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
     <div class="page" id="page-data" style="display:none">
-
-        <div id="supercharger-count-container">
-        </div>
 
         <table id="supercharger-data-table">
             <thead>
