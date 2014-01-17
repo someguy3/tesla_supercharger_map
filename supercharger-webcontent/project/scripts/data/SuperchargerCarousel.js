@@ -1,4 +1,4 @@
-define(['data/CountryCodes', 'data/SuperchargerData'], function (CountryCodes, SuperchargerData) {
+define(['data/ConstructionCount'], function (ConstructionCount) {
 
 
     /**
@@ -7,7 +7,7 @@ define(['data/CountryCodes', 'data/SuperchargerData'], function (CountryCodes, S
      */
     var SuperchargerCarousel = function () {
         this.currentIndex = 0;
-        this.countryCountArray = this.getConstructionCount();
+        this.countryCountArray = ConstructionCount.getConstructionCount();
         this.table = $("#carousel-table");
 
         this.table.find("td.up").click(jQuery.proxy(this.handleUp, this));
@@ -54,57 +54,6 @@ define(['data/CountryCodes', 'data/SuperchargerData'], function (CountryCodes, S
         }
     }
 
-
-    /**
-     * Construction count.
-     *
-     * RETURNED ARRAY:
-     *
-     *  [
-     *   { countryName: 'USA',    countryCode: 'us', open: 3, construction: 7  },
-     *   { countryName: 'Germany',countryCode: 'de', open: 3, construction: 7  }
-     *  ]
-     *
-     * REFERENCE MAP:
-     *
-     * { us : arrayRef,
-     *   de: arrayRef
-     * }
-     */
-    SuperchargerCarousel.prototype.getConstructionCount = function () {
-        var i = 0,
-            countryRefMap = {},
-            countryArray = [],
-            totalOpen = 0,
-            totalConstruction = 0;
-
-        for (; i < SuperchargerData.LIST.length; i++) {
-            var supercharger = SuperchargerData.LIST[i];
-            if (!supercharger.custom && supercharger.count) {
-                var countryName = supercharger.address.country;
-                if (!countryRefMap[countryName]) {
-                    var newEntry = { countryName: countryName, countryCode: CountryCodes.fromName(countryName), open: 0, construction: 0 };
-                    countryRefMap[countryName] = newEntry;
-                    countryArray.push(newEntry);
-                }
-                if (supercharger.construction) {
-                    countryRefMap[countryName].construction++;
-                    totalConstruction++;
-                } else {
-                    countryRefMap[countryName].open++;
-                    totalOpen++;
-                }
-            }
-        }
-        countryArray.push({ countryName: 'Total', countryCode: 'Total', open: totalOpen, construction: totalConstruction });
-        countryArray.sort(this.sort);
-        return countryArray;
-    };
-
-
-    SuperchargerCarousel.prototype.sort = function (one, two) {
-        return two.open - one.open;
-    };
 
     return SuperchargerCarousel;
 
