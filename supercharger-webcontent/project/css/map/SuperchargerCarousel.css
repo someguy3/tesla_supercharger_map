@@ -12,6 +12,10 @@
     margin: 0 auto;
 }
 
+#carousel-table tr.emphasize {
+    font-weight: bold;
+}
+
 #carousel-table td {
     padding: 2px 4px 2px 4px;
     min-width: 26px;

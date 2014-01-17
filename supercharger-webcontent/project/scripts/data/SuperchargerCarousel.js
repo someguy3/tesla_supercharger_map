@@ -47,6 +47,11 @@ define(['data/CountryCodes', 'data/SuperchargerData'], function (CountryCodes, S
         row.find("td").eq(0).text(countryEntry.countryName);
         row.find("td").eq(1).text(countryEntry.open);
         row.find("td").eq(2).text(countryEntry.construction);
+        if(countryEntry.countryName == "Total") {
+            row.addClass("emphasize");
+        } else {
+            row.removeClass("emphasize");
+        }
     }
 
 
