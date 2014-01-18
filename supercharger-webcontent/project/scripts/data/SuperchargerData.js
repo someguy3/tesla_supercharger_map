@@ -1,7 +1,6 @@
 define(
     ['model/Address', 'util/Asserts', 'util/Objects', 'util/Dates'],
-    function (Address, Asserts, Objects, Dates
-        ) {
+    function (Address, Asserts, Objects, Dates) {
 
     /**
      * Constructor

@@ -1,21 +1,21 @@
 define([], function () {
 
-    var Strings = {};
+    var Objects = {};
 
     /**
      *
      */
-    Strings.nullSafeToString = function (object) {
-        return Strings.isNullOrUndefined(object) ? "" : object.toString();
+    Objects.nullSafeToString = function (object) {
+        return Objects.isNullOrUndefined(object) ? "" : object.toString();
     };
 
     /**
      *
      */
-    Strings.isNullOrUndefined = function (object) {
+    Objects.isNullOrUndefined = function (object) {
         return ((object === null) || (typeof object === 'undefined'));
     }
 
-    return Strings;
+    return Objects;
 
 });

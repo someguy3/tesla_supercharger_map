@@ -1,4 +1,4 @@
-define([], function () {
+define(['util/Strings'], function (Strings) {
 
     var Dates = {};
 
@@ -20,18 +20,9 @@ define([], function () {
         var year = (1900 + date.getYear());
         var month = (date.getMonth() + 1);
         var day = date.getDate();
-        return year + "-" + Dates.padLeft(month, "0", 2) + "-" + Dates.padLeft(day, "0", 2);
+        return year + "-" + Strings.padLeft(month, "0", 2) + "-" + Strings.padLeft(day, "0", 2);
 
     };
-
-    Dates.padLeft = function (string, padString, length) {
-        var result = '' + string;
-        while (result.length < length) {
-            result = padString + result;
-        }
-        return result;
-    }
-
 
     return Dates;
 
