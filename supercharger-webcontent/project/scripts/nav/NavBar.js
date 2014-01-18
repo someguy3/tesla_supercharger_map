@@ -1,6 +1,6 @@
 define(
-    ['nav/NavBarDropdown', 'util/Events', 'nav/NavBarToAboutPage', 'nav/NavBarToChangesPage', "charts/Charts" ],
-    function (NavBarDropdown, Events, NavBarToAboutPage, NavBarToChangesPage, Charts) {
+    ['nav/NavBarDropdown', 'util/Events', 'nav/NavBarToAboutPage', 'nav/NavBarToChangesPage', "charts/ChartsPage" ],
+    function (NavBarDropdown, Events, NavBarToAboutPage, NavBarToChangesPage, ChartsPage) {
 
 
         /**
@@ -45,7 +45,7 @@ define(
                 new NavBarToChangesPage().load();
             }
             if ("charts" === this.currentPage) {
-                new Charts().drawChart();
+                new ChartsPage().loadPage();
             }
         };
 

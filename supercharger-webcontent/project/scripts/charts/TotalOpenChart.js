@@ -8,7 +8,7 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
 
     };
 
-    Charts.prototype.drawChart = function () {
+    Charts.prototype.draw = function () {
 
         var livePerDateUS = [];
         var livePerDateNotUS = [];
