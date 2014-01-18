@@ -1,4 +1,4 @@
-define(['charts/TotalOpenChart'], function (TotalOpenChart) {
+define(['page/charts/TotalOpenChart'], function (TotalOpenChart) {
 
     /**
      *
