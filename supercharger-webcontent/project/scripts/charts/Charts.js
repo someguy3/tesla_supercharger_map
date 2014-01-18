@@ -1,6 +1,9 @@
 define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (SuperchargerData, Objects) {
 
-
+    /**
+     *
+     * @constructor
+     */
     var Charts = function () {
 
     };
