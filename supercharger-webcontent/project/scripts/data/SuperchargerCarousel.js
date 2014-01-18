@@ -10,8 +10,11 @@ define(['data/ConstructionCount'], function (ConstructionCount) {
         this.countryCountArray = ConstructionCount.getConstructionCount();
         this.table = $("#carousel-table");
 
-        this.table.find("td.up").click(jQuery.proxy(this.handleUp, this));
-        this.table.find("td.down").click(jQuery.proxy(this.handleDown, this));
+        this.cellUp = this.table.find("td.up");
+        this.cellDown = this.table.find("td.down");
+
+        this.cellUp.click(jQuery.proxy(this.handleUp, this));
+        this.cellDown.click(jQuery.proxy(this.handleDown, this));
 
         this.updateView();
     };
@@ -41,6 +44,8 @@ define(['data/ConstructionCount'], function (ConstructionCount) {
 
         this.updateTableRow(row1, countryEntry1);
         this.updateTableRow(row2, countryEntry2);
+
+        this.updateTableControls();
     }
 
     SuperchargerCarousel.prototype.updateTableRow = function (row, countryEntry) {
@@ -52,6 +57,20 @@ define(['data/ConstructionCount'], function (ConstructionCount) {
         } else {
             row.removeClass("emphasize");
         }
+    }
+
+    SuperchargerCarousel.prototype.updateTableControls = function () {
+        if (this.currentIndex == 0) {
+            this.cellUp.find("span").hide();
+        } else {
+            this.cellUp.find("span").show();
+        }
+        if (this.currentIndex == this.countryCountArray.length - 2) {
+            this.cellDown.find("span").hide();
+        } else {
+            this.cellDown.find("span").show();
+        }
+
     }
 
 
