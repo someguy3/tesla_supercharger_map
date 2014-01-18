@@ -510,10 +510,10 @@ define(['model/Address', 'util/Asserts', 'util/Objects'], function (Address, Ass
         {
             "displayName": "Lumberton, NC",
             "address": new Address("5093 Fayetteville Road", "Lumberton", "NC", "28358", "USA"),
-            "location": new google.maps.LatLng(34.667016667, -79.002),
-            "url": "http://www.teslamotorsclub.com/showthread.php/24770-Supercharger-Lumberton-NC",
-            "dateLive": "",
-            "construction": true,
+            "location": new google.maps.LatLng(34.667629, -79.002343),
+            "url": "http://www.teslamotors.com/supercharger/lumberton",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24770-Supercharger-Lumberton-NC",
+            "dateLive": "2014-01-17",
             "count": true
         },
         {
