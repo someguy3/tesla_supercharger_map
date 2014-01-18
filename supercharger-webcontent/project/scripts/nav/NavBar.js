@@ -1,6 +1,6 @@
 define(
-    ['nav/NavBarDropdown', 'util/Events', 'nav/NavBarToAboutPage', 'nav/NavBarToChangesPage', "charts/ChartsPage" ],
-    function (NavBarDropdown, Events, NavBarToAboutPage, NavBarToChangesPage, ChartsPage) {
+    ['nav/NavBarDropdown', 'util/Events', 'page/about/AboutPage', 'page/changes/ChangesPage', "charts/ChartsPage" ],
+    function (NavBarDropdown, Events, AboutPage, ChangesPage, ChartsPage) {
 
 
         /**
@@ -39,10 +39,10 @@ define(
             }
 
             if ("about" === this.currentPage) {
-                new NavBarToAboutPage().populateAboutPage();
+                new AboutPage().loadPage();
             }
             if ("changes" === this.currentPage) {
-                new NavBarToChangesPage().load();
+                new ChangesPage().loadPage();
             }
             if ("charts" === this.currentPage) {
                 new ChartsPage().loadPage();

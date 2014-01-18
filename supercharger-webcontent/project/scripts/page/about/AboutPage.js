@@ -6,7 +6,7 @@ define([], function () {
     var NavBarToAboutPage = function () {
     }
 
-    NavBarToAboutPage.prototype.populateAboutPage = function () {
+    NavBarToAboutPage.prototype.loadPage = function () {
         var pageAbout = $("#page-about");
         if (!pageAbout.data('about-tab-initialized')) {
             jQuery.getJSON("version.json", function (data) {
