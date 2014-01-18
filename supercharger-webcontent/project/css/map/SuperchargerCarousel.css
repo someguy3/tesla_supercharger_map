@@ -34,11 +34,16 @@
     outline: none;
 }
 
-#carousel-table td.control span {
+#carousel-table td.control div {
     font-size: 1.3em;
 
     -webkit-user-select: none; /* webkit (safari, chrome) browsers */
     -moz-user-select: none; /* mozilla browsers */
     -khtml-user-select: none; /* webkit (konqueror) browsers */
     -ms-user-select: none; /* IE10+ */
+}
+
+.icon-grey-link {
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
 }

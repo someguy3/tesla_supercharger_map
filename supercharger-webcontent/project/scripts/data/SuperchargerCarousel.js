@@ -61,14 +61,14 @@ define(['data/ConstructionCount'], function (ConstructionCount) {
 
     SuperchargerCarousel.prototype.updateTableControls = function () {
         if (this.currentIndex == 0) {
-            this.cellUp.find("span").hide();
+            this.cellUp.find("div").addClass("icon-grey-link");
         } else {
-            this.cellUp.find("span").show();
+            this.cellUp.find("div").removeClass("icon-grey-link");
         }
         if (this.currentIndex == this.countryCountArray.length - 2) {
-            this.cellDown.find("span").hide();
+            this.cellDown.find("div").addClass("icon-grey-link");
         } else {
-            this.cellDown.find("span").show();
+            this.cellDown.find("div").removeClass("icon-grey-link");
         }
 
     }
