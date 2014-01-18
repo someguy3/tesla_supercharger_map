@@ -10,7 +10,7 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
         var livePerDateUS = [];
         var livePerDateNotUS = [];
 
-        var list = SuperchargerData.LIST.sort(SuperchargerData.sort);
+        var list = SuperchargerData.LIST.sort(SuperchargerData.sortByOpenedDate);
 
         var countUSA = 0;
         var countNotUSA = 0;
