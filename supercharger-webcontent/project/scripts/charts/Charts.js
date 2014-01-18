@@ -7,12 +7,6 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
 
     Charts.prototype.drawChart = function () {
 
-//        Highcharts.setOptions({
-//            global: {
-//                useUTC: false
-//            }
-//        });
-
         var livePerDateUS = [];
         var livePerDateNotUS = [];
 
@@ -21,6 +15,10 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
         var countUSA = 0;
         var countNotUSA = 0;
 
+        function doesArrayContainUTCDate(array, dateUTC) {
+            return array.length > 0 && array[array.length - 1][0] == dateUTC;
+        }
+
         $.each(list, function (index, supercharger) {
             if (!Objects.isNullOrUndefined(supercharger.dateOpened) && supercharger.count) {
                 var date = supercharger.dateOpened;
@@ -28,12 +26,12 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
 
                 if (supercharger.address.isUSA()) {
                     countUSA++;
-                    if (livePerDateUS.length === 0 || livePerDateUS[livePerDateUS.length - 1][0] != dateUTC) {
+                    if (!doesArrayContainUTCDate(livePerDateUS, dateUTC)) {
                         livePerDateUS.push([dateUTC, countUSA]);
                     }
                 } else {
                     countNotUSA++;
-                    if (livePerDateNotUS.length === 0 || livePerDateNotUS[livePerDateNotUS.length - 1][0] != dateUTC) {
+                    if (!doesArrayContainUTCDate(livePerDateNotUS, dateUTC)) {
                         livePerDateNotUS.push([dateUTC, countNotUSA]);
                     }
 
