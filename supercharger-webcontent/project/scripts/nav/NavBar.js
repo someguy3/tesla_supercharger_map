@@ -31,9 +31,11 @@ define(
             if ("map" === this.currentPage) {
                 $("#navbar-map-dropdown").show();
                 $("#navbar-map-search").show();
+                $("#carousel-container").show();
             } else {
                 $("#navbar-map-dropdown").hide();
                 $("#navbar-map-search").hide();
+                $("#carousel-container").hide();
             }
 
             if ("about" === this.currentPage) {
