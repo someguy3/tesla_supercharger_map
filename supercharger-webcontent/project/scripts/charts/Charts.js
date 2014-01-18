@@ -33,11 +33,17 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
                 zoomType: 'x',
                 type: 'spline'
             },
+            credits: {
+                enabled: false
+            },
             title: {
                 text: 'Superchargers Over Time'
             },
             subtitle: {
                 text: null
+            },
+            legend: {
+                enabled: true
             },
             xAxis: {
                 type: 'datetime',
@@ -62,56 +68,14 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
             series: [
                 {
                     name: null,
-                    data: livePerDateArray
+                    data: livePerDateArray,
+                    lineWidth: 1,
+                    marker: {
+                        radius: 2
+                    }
                 }
             ]
         });
-
-
-//        $("#chart-supercharger-over-time").highcharts({
-//            chart: {
-//                zoomType: 'x',
-//                type: 'line'
-//            },
-//            credits: {
-//                enabled: false
-//            },
-//            colors: ['red', 'black', 'orange'],
-//            title: {
-//                text: "Open Superchargers Over Time"
-//            },
-//            rangeSelector: {},
-//            tooltip: {
-//                shared: true
-//            },
-//            legend: {
-//                enabled: true
-//            },
-//            plotOptions: {},
-//            xAxis: {
-//                type: 'datetime',
-//                dateTimeLabelFormats: { // don't display the dummy year
-//                    month: '%e. %b',
-//                    year: '%b'
-//                }
-//            },
-//            yAxis: {
-//                title: {
-//                    text: 'Supercharger Count'
-//                },
-//                min: 0
-//            },
-//            series: [
-//                {
-//                    name: 'Date',
-//                    data: livePerDateArray,
-//                    lineWidth: 1,
-//                    marker: {
-//                        radius: 2
-//                    }
-//                }
-//            ]
-//        });
 
 
     };
