@@ -1,4 +1,4 @@
-define(['data/SuperchargerData', 'util/Objects', 'lib/stupidtable' ], function (SuperchargerData, Objects) {
+define(['data/SuperchargerData', 'util/Dates', 'lib/stupidtable' ], function (SuperchargerData, Dates) {
 
     /**
      * Constructor
@@ -30,7 +30,7 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/stupidtable' ], function (
                 "<td>" + supercharger.address.country + "</td>" +
                 "<td class='gps'>" + supercharger.location.toUrlValue() + "</td>" +
                 "<td>" + (supercharger.construction ? "Construction" : "Open") + "</td>" +
-                "<td>" + Objects.nullSafeToString(supercharger.dateLive) + "</td>" +
+                "<td>" + Dates.toString(supercharger.dateOpened) + "</td>" +
                 "<td class='tog'>" + "<a href='" + supercharger.url + "'>link</a></td>" +
                 "</tr>"
             );
@@ -46,7 +46,7 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/stupidtable' ], function (
             var dir = $.fn.stupidtable.dir;
 
             var arrow = data.direction === dir.ASC ? "&uarr;" : "&darr;";
-            th.eq(data.column).append('<span class="arrow">&nbsp;' + arrow +'</span>');
+            th.eq(data.column).append('<span class="arrow">&nbsp;' + arrow + '</span>');
         });
 
     }
