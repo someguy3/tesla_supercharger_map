@@ -7,11 +7,11 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
 
     Charts.prototype.drawChart = function () {
 
-        Highcharts.setOptions({
-            global: {
-                useUTC: false
-            }
-        });
+//        Highcharts.setOptions({
+//            global: {
+//                useUTC: false
+//            }
+//        });
 
         var livePerDateArray = [];
 
@@ -22,54 +22,96 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
             if (!Objects.isNullOrUndefined(val.dateOpened)) {
                 count++;
                 var date = val.dateOpened;
-                livePerDateArray.push([date, count]);
+                $("body").append("date: " + date + "<br/>");
+                livePerDateArray.push([Date.UTC(1900 + date.getYear(), date.getMonth(), date.getDate()), count]);
             }
         });
+
 
         $("#chart-supercharger-over-time").highcharts({
             chart: {
                 zoomType: 'x',
-                type: 'line'
+                type: 'spline'
             },
-            credits: {
-                enabled: false
-            },
-            colors: ['red', 'black', 'orange'],
             title: {
-                text: "Open Superchargers Over Time"
+                text: 'Superchargers Over Time'
             },
-            rangeSelector: {},
-            tooltip: {
-                shared: true
+            subtitle: {
+                text: null
             },
-            legend: {
-                enabled: true
-            },
-            plotOptions: {},
             xAxis: {
                 type: 'datetime',
                 dateTimeLabelFormats: { // don't display the dummy year
-                    month: '%e. %b',
+                    month: '%e. %b %Y',
                     year: '%b'
                 }
             },
             yAxis: {
                 title: {
-                    text: 'Supercharger Count'
+                    text: 'Count'
                 },
                 min: 0
             },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        Highcharts.dateFormat('%e. %b', this.x) + ': ' + this.y;
+                }
+            },
+
             series: [
                 {
-                    name: 'Date',
-                    data: livePerDateArray,
-                    lineWidth: 1,
-                    marker: {
-                        radius: 2
-                    }
+                    name: null,
+                    data: livePerDateArray
                 }
             ]
         });
+
+
+//        $("#chart-supercharger-over-time").highcharts({
+//            chart: {
+//                zoomType: 'x',
+//                type: 'line'
+//            },
+//            credits: {
+//                enabled: false
+//            },
+//            colors: ['red', 'black', 'orange'],
+//            title: {
+//                text: "Open Superchargers Over Time"
+//            },
+//            rangeSelector: {},
+//            tooltip: {
+//                shared: true
+//            },
+//            legend: {
+//                enabled: true
+//            },
+//            plotOptions: {},
+//            xAxis: {
+//                type: 'datetime',
+//                dateTimeLabelFormats: { // don't display the dummy year
+//                    month: '%e. %b',
+//                    year: '%b'
+//                }
+//            },
+//            yAxis: {
+//                title: {
+//                    text: 'Supercharger Count'
+//                },
+//                min: 0
+//            },
+//            series: [
+//                {
+//                    name: 'Date',
+//                    data: livePerDateArray,
+//                    lineWidth: 1,
+//                    marker: {
+//                        radius: 2
+//                    }
+//                }
+//            ]
+//        });
 
 
     };
