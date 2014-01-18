@@ -64,6 +64,27 @@ define(
         return charger;
     };
 
+    SuperchargerData.sort = function (one, two) {
+        var oneNull = Objects.isNullOrUndefined(one.dateOpened);
+        var twoNull = Objects.isNullOrUndefined(two.dateOpened);
+        if (oneNull && twoNull) {
+            return 0;
+        }
+        if (oneNull) {
+            return -1;
+        }
+        if (twoNull) {
+            return 1;
+        }
+        if (one.dateOpened < two.dateOpened) {
+            return -1;
+        }
+        if (one.dateOpened > two.dateOpened) {
+            return 1;
+        }
+        return 0;
+    };
+
 
     /**
      * Properties:

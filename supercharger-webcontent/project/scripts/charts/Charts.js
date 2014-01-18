@@ -1,4 +1,4 @@
-define(['data/SuperchargerData', 'lib/highcharts'], function (SuperchargerData) {
+define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (SuperchargerData, Objects) {
 
 
     var Charts = function () {
@@ -13,11 +13,17 @@ define(['data/SuperchargerData', 'lib/highcharts'], function (SuperchargerData) 
             }
         });
 
-        var tempInsideData = [];
+        var livePerDateArray = [];
 
-        $.each(SuperchargerData.LIST, function (index, val) {
+        var list = SuperchargerData.LIST.sort(SuperchargerData.sort);
 
-            //tempInsideData.push([date, val.tempInside]);
+        var count = 0;
+        $.each(list, function (index, val) {
+            if (!Objects.isNullOrUndefined(val.dateOpened)) {
+                count++;
+                var date = val.dateOpened;
+                livePerDateArray.push([date, count]);
+            }
         });
 
         $("#chart-supercharger-over-time").highcharts({
@@ -30,7 +36,7 @@ define(['data/SuperchargerData', 'lib/highcharts'], function (SuperchargerData) 
             },
             colors: ['red', 'black', 'orange'],
             title: {
-                text: null
+                text: "Open Superchargers Over Time"
             },
             rangeSelector: {},
             tooltip: {
@@ -42,26 +48,24 @@ define(['data/SuperchargerData', 'lib/highcharts'], function (SuperchargerData) 
             plotOptions: {},
             xAxis: {
                 type: 'datetime',
-                title: {
-                    text: null
+                dateTimeLabelFormats: { // don't display the dummy year
+                    month: '%e. %b',
+                    year: '%b'
                 }
             },
-            yAxis: [
-                {
-                    title: {
-                        text: 'Supercharger Count'
-                    },
-                    tickInterval: 2
-                }
-            ],
+            yAxis: {
+                title: {
+                    text: 'Supercharger Count'
+                },
+                min: 0
+            },
             series: [
                 {
                     name: 'Date',
-                    data: tempInsideData,
-                    yAxis: 0,
+                    data: livePerDateArray,
                     lineWidth: 1,
                     marker: {
-                        radius: 1
+                        radius: 2
                     }
                 }
             ]
