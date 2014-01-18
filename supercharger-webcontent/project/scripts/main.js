@@ -6,7 +6,7 @@ requirejs(
     [
         'lib/bootstrap',
         'page/data/SuperchargerCarousel',
-        'nav/NavBar', 'routing/Routing',
+        'nav/NavBar', 'page/map/Routing',
         'page/map/ControlState', 'page/map/MapView', 'page/map/ControlView', 'page/data/DataViewTable', 'lib/jquery.doTimeout'
     ],
     function (bootstrap, SuperchargerCarousel, NavBar, Routing, ControlState, MapView, ControlView, DataViewTable) {
