@@ -13,17 +13,31 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
 //            }
 //        });
 
-        var livePerDateArray = [];
+        var livePerDateUS = [];
+        var livePerDateNotUS = [];
 
         var list = SuperchargerData.LIST.sort(SuperchargerData.sort);
 
-        var count = 0;
-        $.each(list, function (index, val) {
-            if (!Objects.isNullOrUndefined(val.dateOpened)) {
-                count++;
-                var date = val.dateOpened;
-                $("body").append("date: " + date + "<br/>");
-                livePerDateArray.push([Date.UTC(1900 + date.getYear(), date.getMonth(), date.getDate()), count]);
+        var countUSA = 0;
+        var countNotUSA = 0;
+
+        $.each(list, function (index, supercharger) {
+            if (!Objects.isNullOrUndefined(supercharger.dateOpened) && supercharger.count) {
+                var date = supercharger.dateOpened;
+                var dateUTC = Date.UTC(1900 + date.getYear(), date.getMonth(), date.getDate());
+
+                if (supercharger.address.isUSA()) {
+                    countUSA++;
+                    if (livePerDateUS.length === 0 || livePerDateUS[livePerDateUS.length - 1][0] != dateUTC) {
+                        livePerDateUS.push([dateUTC, countUSA]);
+                    }
+                } else {
+                    countNotUSA++;
+                    if (livePerDateNotUS.length === 0 || livePerDateNotUS[livePerDateNotUS.length - 1][0] != dateUTC) {
+                        livePerDateNotUS.push([dateUTC, countNotUSA]);
+                    }
+
+                }
             }
         });
 
@@ -48,7 +62,7 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
             xAxis: {
                 type: 'datetime',
                 dateTimeLabelFormats: { // don't display the dummy year
-                    month: '%e. %b %Y',
+                    month: '%b %e %Y',
                     year: '%b'
                 }
             },
@@ -61,19 +75,28 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
             tooltip: {
                 formatter: function () {
                     return '<b>' + this.series.name + '</b><br/>' +
-                        Highcharts.dateFormat('%e. %b', this.x) + ': ' + this.y;
+                        Highcharts.dateFormat('%b %e %Y', this.x) + ', count=' + this.y;
                 }
             },
 
             series: [
                 {
-                    name: null,
-                    data: livePerDateArray,
+                    name: "US",
+                    data: livePerDateUS,
                     lineWidth: 1,
                     marker: {
-                        radius: 2
+                        radius: 3
+                    }
+                },
+                {
+                    name: "Outside US",
+                    data: livePerDateNotUS,
+                    lineWidth: 1,
+                    marker: {
+                        radius: 3
                     }
                 }
+
             ]
         });
 

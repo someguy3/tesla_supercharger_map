@@ -12,6 +12,11 @@ define(function () {
             this.country = country;
         };
 
+        Address.prototype.isUSA = function () {
+            return this.country === "USA";
+        }
+
+
         return Address;
 
     }
