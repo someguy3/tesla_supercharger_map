@@ -1,4 +1,4 @@
-define(['data/CountryCodes', 'data/SuperchargerData'], function (CountryCodes, SuperchargerData) {
+define(['page/data/CountryCodes', 'page/data/SuperchargerData'], function (CountryCodes, SuperchargerData) {
 
     /**
      *

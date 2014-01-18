@@ -1,4 +1,4 @@
-define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (SuperchargerData, Objects) {
+define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (SuperchargerData, Objects) {
 
     /**
      *

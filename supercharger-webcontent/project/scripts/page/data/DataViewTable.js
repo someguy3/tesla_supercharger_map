@@ -1,4 +1,4 @@
-define(['data/SuperchargerData', 'util/Dates', 'lib/stupidtable' ], function (SuperchargerData, Dates) {
+define(['page/data/SuperchargerData', 'util/Dates', 'lib/stupidtable' ], function (SuperchargerData, Dates) {
 
     /**
      * Constructor

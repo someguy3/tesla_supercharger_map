@@ -5,9 +5,9 @@ requirejs.config({});
 requirejs(
     [
         'lib/bootstrap',
-        'data/SuperchargerCarousel',
+        'page/data/SuperchargerCarousel',
         'nav/NavBar', 'routing/Routing',
-        'map/ControlState', 'map/MapView', 'map/ControlView', 'data/DataViewTable', 'lib/jquery.doTimeout'
+        'map/ControlState', 'map/MapView', 'map/ControlView', 'page/data/DataViewTable', 'lib/jquery.doTimeout'
     ],
     function (bootstrap, SuperchargerCarousel, NavBar, Routing, ControlState, MapView, ControlView, DataViewTable) {
 

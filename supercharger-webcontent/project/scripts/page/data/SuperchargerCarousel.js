@@ -1,4 +1,4 @@
-define(['data/ConstructionCount'], function (ConstructionCount) {
+define(['page/data/ConstructionCount'], function (ConstructionCount) {
 
 
     /**
