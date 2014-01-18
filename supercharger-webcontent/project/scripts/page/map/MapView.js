@@ -1,5 +1,5 @@
 define(
-    ['page/data/SuperchargerData', 'map/MapViewContextMenu', 'util/Events'],
+    ['page/data/SuperchargerData', 'page/map/MapViewContextMenu', 'util/Events'],
     function (SuperchargerData, MapViewContextMenu, Events) {
 
 
