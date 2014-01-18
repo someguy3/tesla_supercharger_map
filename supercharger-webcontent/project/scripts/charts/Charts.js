@@ -43,6 +43,26 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
         });
 
 
+        var plotLinesArray = [];
+        var currentYear = new Date().getFullYear();
+        for (var year = 2013; year <= currentYear; year++) {
+            plotLinesArray.push(
+                {
+                    value: Date.UTC(year, 0, 1),
+                    color: '#87CEEB',
+                    width: 2,
+                    label: {
+                        text: year,
+                        align: 'left',
+                        style: {
+                            color: 'gray'
+                        }
+                    }
+                }
+            );
+        }
+
+
         $("#chart-supercharger-over-time").highcharts({
             chart: {
                 zoomType: 'x',
@@ -52,7 +72,7 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
                 enabled: false
             },
             title: {
-                text: 'Superchargers Over Time'
+                text: 'Open Superchargers Over Time'
             },
             subtitle: {
                 text: null
@@ -65,7 +85,8 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
                 dateTimeLabelFormats: { // don't display the dummy year
                     month: '%b %e %Y',
                     year: '%b'
-                }
+                },
+                plotLines: plotLinesArray
             },
             yAxis: {
                 title: {
@@ -76,7 +97,8 @@ define(['data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (Su
             tooltip: {
                 formatter: function () {
                     return '<b>' + this.series.name + '</b><br/>' +
-                        Highcharts.dateFormat('%b %e %Y', this.x) + ', count=' + this.y;
+                        Highcharts.dateFormat('%b %e %Y', this.x) + '<br/>' +
+                        "superchargers: " + this.y;
                 }
             },
 
