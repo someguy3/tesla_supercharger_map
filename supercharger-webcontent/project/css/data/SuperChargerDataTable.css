@@ -11,8 +11,8 @@
     border: 1px solid white;
 }
 
-#supercharger-data-table th[data-sort]{
-    cursor:pointer;
+#supercharger-data-table th[data-sort] {
+    cursor: pointer;
 }
 
 #supercharger-data-table td {
@@ -29,4 +29,5 @@
 
 #supercharger-data-table td.gps {
     font-family: monospace;
+    font-size: .85em;
 }
