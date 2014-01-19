@@ -46,32 +46,32 @@ define(['page/data/ConstructionCount'], function (ConstructionCount) {
         this.updateTableRow(row2, countryEntry2);
 
         this.updateTableControls();
-    }
+    };
 
     SuperchargerCarousel.prototype.updateTableRow = function (row, countryEntry) {
         row.find("td").eq(1).text(countryEntry.open);
         row.find("td").eq(2).text(countryEntry.construction);
         row.find("td").eq(3).text(countryEntry.countryName);
-        if (countryEntry.countryName == "Total") {
+        if (countryEntry.countryName === "Total") {
             row.addClass("emphasize");
         } else {
             row.removeClass("emphasize");
         }
-    }
+    };
 
     SuperchargerCarousel.prototype.updateTableControls = function () {
-        if (this.currentIndex == 0) {
+        if (this.currentIndex === 0) {
             this.cellUp.find("div").addClass("icon-grey-link");
         } else {
             this.cellUp.find("div").removeClass("icon-grey-link");
         }
-        if (this.currentIndex == this.countryCountArray.length - 2) {
+        if (this.currentIndex === this.countryCountArray.length - 2) {
             this.cellDown.find("div").addClass("icon-grey-link");
         } else {
             this.cellDown.find("div").removeClass("icon-grey-link");
         }
 
-    }
+    };
 
 
     return SuperchargerCarousel;

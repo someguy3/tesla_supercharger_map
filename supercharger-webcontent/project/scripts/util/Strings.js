@@ -11,7 +11,7 @@ define([], function () {
             result = padString + result;
         }
         return result;
-    }
+    };
 
 
     return Strings;

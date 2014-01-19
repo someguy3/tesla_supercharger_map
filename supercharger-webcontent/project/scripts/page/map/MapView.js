@@ -276,7 +276,7 @@ define(
             supercharger.marker = marker;
             marker.supercharger = supercharger;
             google.maps.event.addListener(supercharger.marker, 'click', MapView.showInfoWindowForMarker);
-        }
+        };
 
         MapView.showInfoWindowForMarker = function () {
             var myMarker = this;

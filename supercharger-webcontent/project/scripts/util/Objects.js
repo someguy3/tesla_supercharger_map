@@ -14,7 +14,7 @@ define([], function () {
      */
     Objects.isNullOrUndefined = function (object) {
         return ((object === null) || (typeof object === 'undefined'));
-    }
+    };
 
     return Objects;
 

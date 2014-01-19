@@ -37,7 +37,7 @@ define(
             this.currentPage = newPageName;
             this.showCurrentPage();
 
-            if ("map" == this.currentPage) {
+            if ("map" === this.currentPage) {
                 this.mapPage.onPageShow();
             } else {
                 this.mapPage.onPageHide();

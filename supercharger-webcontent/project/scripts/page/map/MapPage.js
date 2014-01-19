@@ -25,7 +25,7 @@ define(
             $("#navbar-map-dropdown").show();
             $("#navbar-map-search").show();
             $("#carousel-container").show();
-        }
+        };
 
         MapPage.prototype.onPageHide = function () {
             $("#navbar-map-dropdown").hide();
@@ -47,14 +47,14 @@ define(
             this.initNavBarListeners();
 
             new SuperchargerCarousel();
-        }
+        };
 
         MapPage.prototype.initNavBarListeners = function () {
             var mapView = this.mapView;
             var controlView = this.controlView;
 
             this.navBarDropDown.on("nav-dropdown-event-circles-on", function () {
-                if (controlView.controlState.range.getCurrent() == 0) {
+                if (controlView.controlState.range.getCurrent() === 0) {
                     controlView.updateRangeSliderValue(50);
                     mapView.redraw(false);
                 }
@@ -69,7 +69,7 @@ define(
                 controlView.handleDistanceUnit(newUnit);
             });
 
-        }
+        };
 
         /**
          * INIT: MapView

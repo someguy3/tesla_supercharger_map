@@ -5,7 +5,7 @@ define(['page/data/CountryCodes', 'page/data/SuperchargerData'], function (Count
      * @constructor
      */
     var ConstructionCount = function () {
-    }
+    };
 
     /**
      * Construction count.

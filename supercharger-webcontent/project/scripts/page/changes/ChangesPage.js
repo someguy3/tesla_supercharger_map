@@ -6,7 +6,7 @@ define([], function () {
     var ChangesPage = function () {
         this.changesPage = $("#page-changes");
         this.changesTable = $("#changes-table");
-    }
+    };
 
     ChangesPage.INIT_PROP = "page-initialized";
 
@@ -20,7 +20,7 @@ define([], function () {
         var linesArray = textBlock.split("\n");
         this.handleLines(linesArray);
         this.changesPage.data(ChangesPage.INIT_PROP, true);
-    }
+    };
 
     ChangesPage.prototype.handleLines = function (linesArray) {
         var v = this;
@@ -31,7 +31,7 @@ define([], function () {
                 v.changesTable.append("<tr class='" + cssClass + "'><td>" + parts[0] + "</td><td>" + parts[1] + "</td></tr>");
             }
         });
-    }
+    };
 
 
     return ChangesPage;

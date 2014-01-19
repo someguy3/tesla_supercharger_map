@@ -19,7 +19,7 @@ define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], functio
         var countNotUSA = 0;
 
         function removePreviousIfSameDate(array, dateUTC) {
-            if (array.length > 0 && array[array.length - 1][0] == dateUTC) {
+            if (array.length > 0 && array[array.length - 1][0] === dateUTC) {
                 array.pop();
             }
         }

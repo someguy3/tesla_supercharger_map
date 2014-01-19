@@ -6,7 +6,7 @@ define([], function () {
     var AboutPage = function () {
         this.page = $("#page-about");
         this.versionContainer = $("#page-about-version-container");
-    }
+    };
 
     AboutPage.INIT_PROP = 'page-initialized';
 

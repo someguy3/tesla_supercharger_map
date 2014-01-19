@@ -7,7 +7,7 @@ define(['util/Strings'], function (Strings) {
      */
     Dates.fromString = function (string) {
         var parts = string.split('-');
-        if (parts.length == 3) {
+        if (parts.length === 3) {
             return new Date(parts[0], parts[1] - 1, parts[2]);
         }
         return null;

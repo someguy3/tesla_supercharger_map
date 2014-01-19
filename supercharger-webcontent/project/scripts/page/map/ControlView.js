@@ -90,7 +90,7 @@ define(['model/Range', 'lib/spectrum'], function (Range) {
         var controlView = this;
         $("#zoom-to-location-button").click(jQuery.proxy(this.handleZoomToLocation, this));
         $("#zoom-to-location-input").on('keypress', function (event) {
-            if (event.keyCode == 13) {
+            if (event.keyCode === 13) {
                 event.preventDefault();
                 controlView.handleZoomToLocation(event);
             }

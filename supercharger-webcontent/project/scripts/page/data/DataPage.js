@@ -5,7 +5,7 @@ define(['page/data/DataViewTable'], function (DataViewTable) {
      */
     var DataPage = function () {
         this.page = $("#page-data");
-    }
+    };
 
     DataPage.INIT_PROP = 'page-initialized';
 

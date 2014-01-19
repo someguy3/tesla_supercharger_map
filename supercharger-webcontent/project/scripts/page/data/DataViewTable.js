@@ -49,7 +49,7 @@ define(['page/data/SuperchargerData', 'util/Dates', 'lib/stupidtable' ], functio
             th.eq(data.column).append('<span class="arrow">&nbsp;' + arrow + '</span>');
         });
 
-    }
+    };
 
 
     return DataViewTable;

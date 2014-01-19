@@ -127,14 +127,6 @@ define(
             "dateOpened": Dates.fromString("2014-01-10"),
             "count": true
         },
-//    {
-//        "displayName": "Gila Bend,  AZ",
-//        "address": new Address("820 W Pima St", "Gila Bend", "AZ", "85337", "USA"),
-//        "location": new google.maps.LatLng(32.943852, -112.733536),
-//        "url": "http://www.teslamotors.com/supercharger/gila",
-//        "construction": true,
-//        "count": true
-//    },
         {
             "displayName": "Holbrook, AZ",
             "address": new Address("2096 Navajo Blvd", "Holbrook", "AZ", "86025", "USA"),
