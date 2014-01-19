@@ -33,9 +33,9 @@ define(
         };
 
         NavBar.prototype.changePage = function (newPageName) {
-            this.hidePage();
+            this.hideCurrentPage();
             this.currentPage = newPageName;
-            this.showPage();
+            this.showCurrentPage();
 
             if ("map" == this.currentPage) {
                 this.mapPage.onPageShow();
@@ -56,12 +56,12 @@ define(
             }
         };
 
-        NavBar.prototype.hidePage = function () {
+        NavBar.prototype.hideCurrentPage = function () {
             $("#page-" + this.currentPage).hide();
             $("#page-link-" + this.currentPage).closest("li").removeClass("active");
         };
 
-        NavBar.prototype.showPage = function () {
+        NavBar.prototype.showCurrentPage = function () {
             $("#page-" + this.currentPage).show();
             $("#page-link-" + this.currentPage).closest("li").addClass("active");
         };
