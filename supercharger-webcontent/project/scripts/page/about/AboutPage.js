@@ -4,14 +4,14 @@ define([], function () {
      * @constructor
      */
     var AboutPage = function () {
-        this.pageAbount = $("#page-about");
+        this.page = $("#page-about");
         this.versionContainer = $("#page-about-version-container");
     }
 
     AboutPage.INIT_PROP = 'about-tab-initialized';
 
     AboutPage.prototype.loadPage = function () {
-        if (!this.pageAbount.data(AboutPage.INIT_PROP)) {
+        if (!this.page.data(AboutPage.INIT_PROP)) {
             this.loadVersionInfo();
         }
     };
@@ -28,7 +28,7 @@ define([], function () {
             "Send updates/corrections to <b>map" + "@tes" + "lawiki.net</b>" +
             "<br/>"
         );
-        this.pageAbount.data(AboutPage.INIT_PROP, true);
+        this.page.data(AboutPage.INIT_PROP, true);
     };
 
     return AboutPage;
