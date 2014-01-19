@@ -27,10 +27,6 @@ define(
             $("#navbar-dropdown-menu-item-list").find("a").click(jQuery.proxy(this.navBarDropdown.handleAction, this.navBarDropdown));
         };
 
-        NavBar.prototype.onDropDownEvent = function (eventName, callback) {
-            this.navBarDropdown.on(eventName, callback);
-        };
-
         NavBar.prototype.handlePageChange = function (event) {
             var eventDetail = Events.eventDetail(event);
             this.changePage(eventDetail.actionName);
