@@ -1,7 +1,7 @@
 define(
     [
         'lib/bootstrap',
-        'page/data/SuperchargerCarousel',
+        'page/map/SuperchargerCarousel',
         'nav/NavBarDropdown', 'page/map/Routing',
         'page/map/ControlState', 'page/map/MapView', 'page/map/ControlView', 'lib/jquery.doTimeout'
     ],
