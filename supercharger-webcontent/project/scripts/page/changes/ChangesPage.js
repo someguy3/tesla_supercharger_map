@@ -3,27 +3,26 @@ define([], function () {
      *
      * @constructor
      */
-    var NavBarToChangesPage = function () {
+    var ChangesPage = function () {
         this.changesPage = $("#page-changes");
         this.changesTable = $("#changes-table");
     }
 
-    NavBarToChangesPage.prototype.onPageShow = function () {
-        if (!this.changesPage.data('changes-tab-initialized')) {
-            var v = this;
-            jQuery.get("changelog.txt", "", function (textBlock) {
-                v.handleTextBlock(textBlock);
-                v.changesPage.data('changes-tab-initialized', true);
-            }, "html");
+    ChangesPage.INIT_PROP = "page-initialized";
+
+    ChangesPage.prototype.onPageShow = function () {
+        if (!this.changesPage.data(ChangesPage.INIT_PROP)) {
+            jQuery.get("changelog.txt", "", jQuery.proxy(this.handleTextBlock, this), "html");
         }
     };
 
-    NavBarToChangesPage.prototype.handleTextBlock = function (textBlock) {
+    ChangesPage.prototype.handleTextBlock = function (textBlock) {
         var linesArray = textBlock.split("\n");
         this.handleLines(linesArray);
+        this.changesPage.data(ChangesPage.INIT_PROP, true);
     }
 
-    NavBarToChangesPage.prototype.handleLines = function (linesArray) {
+    ChangesPage.prototype.handleLines = function (linesArray) {
         var v = this;
         jQuery.each(linesArray, function (index, line) {
             if (line.trim().length > 0) {
@@ -35,5 +34,5 @@ define([], function () {
     }
 
 
-    return NavBarToChangesPage;
+    return ChangesPage;
 });
