@@ -517,9 +517,9 @@ define(
             "displayName": "Syosset, NY",
             "address": new Address("7 Aeriel Way", "Syosset", "NY", "11791", "USA"),
             "location": new google.maps.LatLng(40.797762, -73.515435),
-            "url": "http://www.teslamotorsclub.com/showthread.php/26175-Supercharger-Syosset-NY",
-            "dateOpened": Dates.fromString(""),
-            "construction": true,
+            "url": "http://www.teslamotors.com/service/syosset",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/26175-Supercharger-Syosset-NY",
+            "dateOpened": Dates.fromString("2014-01-18"),
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| North Carolina
