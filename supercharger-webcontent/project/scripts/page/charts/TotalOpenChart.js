@@ -18,8 +18,10 @@ define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], functio
         var countUSA = 0;
         var countNotUSA = 0;
 
-        function doesArrayContainUTCDate(array, dateUTC) {
-            return array.length > 0 && array[array.length - 1][0] == dateUTC;
+        function removePreviousIfSameDate(array, dateUTC) {
+            if (array.length > 0 && array[array.length - 1][0] == dateUTC) {
+                array.pop();
+            }
         }
 
         $.each(list, function (index, supercharger) {
@@ -29,14 +31,14 @@ define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], functio
 
                 if (supercharger.address.isUSA()) {
                     countUSA++;
-                    if (!doesArrayContainUTCDate(livePerDateUS, dateUTC)) {
-                        livePerDateUS.push([dateUTC, countUSA]);
-                    }
+                    removePreviousIfSameDate(livePerDateUS, dateUTC);
+                    livePerDateUS.push([dateUTC, countUSA]);
+
                 } else {
                     countNotUSA++;
-                    if (!doesArrayContainUTCDate(livePerDateNotUS, dateUTC)) {
-                        livePerDateNotUS.push([dateUTC, countNotUSA]);
-                    }
+                    removePreviousIfSameDate(livePerDateNotUS, dateUTC);
+                    livePerDateNotUS.push([dateUTC, countNotUSA]);
+
 
                 }
             }
