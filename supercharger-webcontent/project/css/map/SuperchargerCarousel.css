@@ -34,6 +34,10 @@
     outline: none;
 }
 
+#carousel-table td.construction {
+    color: orange;
+}
+
 #carousel-table td.control div {
     font-size: 1.3em;
 
@@ -44,6 +48,6 @@
 }
 
 .icon-grey-link {
-    opacity:0.4;
-    filter:alpha(opacity=40); /* For IE8 and earlier */
+    opacity: 0.2;
+    filter: alpha(opacity=20); /* For IE8 and earlier */
 }
