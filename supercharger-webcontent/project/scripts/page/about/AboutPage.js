@@ -22,9 +22,9 @@ define([], function () {
 
     AboutPage.prototype.handleVersionInfo = function (data) {
         this.versionContainer.append("" +
-            "<br/>" +
+            "" +
+            "<b>Version: </b>" + data.version + "<br/>" +
             "<b>Last Updated: </b>" + data.buildTimestamp + "<br/>" +
-            "<br/>" +
             "Send updates/corrections to <b>map" + "@tes" + "lawiki.net</b>" +
             "<br/>"
         );

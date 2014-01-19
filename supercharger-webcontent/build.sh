@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_VERSION=2.0.0
+PROJECT_VERSION='2.0'
 BUILD_TIMESTAMP=`date +'%b %d, %I:%M %p %Z'`
 DIR_PROJECT='project'
 DIR_BUILT='project-built'
