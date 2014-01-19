@@ -23,11 +23,11 @@ define(
         };
 
         NavBar.prototype.initListeners = function () {
-            $("#navbar-menu-item-list").find("a").click(jQuery.proxy(this.handlePageChange, this));
+            $("#navbar-menu-item-list").find("a").click(jQuery.proxy(this.handlePageChangeClick, this));
             $("#navbar-dropdown-menu-item-list").find("a").click(jQuery.proxy(this.navBarDropdown.handleAction, this.navBarDropdown));
         };
 
-        NavBar.prototype.handlePageChange = function (event) {
+        NavBar.prototype.handlePageChangeClick = function (event) {
             var eventDetail = Events.eventDetail(event);
             this.changePage(eventDetail.actionName);
         };
