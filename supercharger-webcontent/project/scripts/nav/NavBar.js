@@ -1,6 +1,9 @@
 define(
-    ['nav/NavBarDropdown', 'util/Events', 'page/about/AboutPage', 'page/changes/ChangesPage', "page/charts/ChartsPage", 'page/data/DataPage' ],
-    function (NavBarDropdown, Events, AboutPage, ChangesPage, ChartsPage, DataPage) {
+    [
+        'nav/NavBarDropdown', 'util/Events',
+        'page/data/DataPage', "page/charts/ChartsPage", 'page/changes/ChangesPage', 'page/about/AboutPage'
+    ],
+    function (NavBarDropdown, Events, DataPage, ChartsPage, ChangesPage, AboutPage) {
 
 
         /**
@@ -38,17 +41,17 @@ define(
                 $("#carousel-container").hide();
             }
 
-            if ("about" === this.currentPage) {
-                new AboutPage().loadPage();
-            }
-            if ("changes" === this.currentPage) {
-                new ChangesPage().loadPage();
+            if ("data" === this.currentPage) {
+                new DataPage().loadPage();
             }
             if ("charts" === this.currentPage) {
                 new ChartsPage().loadPage();
             }
-            if ("data" === this.currentPage) {
-                new DataPage().loadPage();
+            if ("changes" === this.currentPage) {
+                new ChangesPage().loadPage();
+            }
+            if ("about" === this.currentPage) {
+                new AboutPage().loadPage();
             }
         };
 
