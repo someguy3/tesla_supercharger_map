@@ -49,12 +49,12 @@ define(['page/data/CountryCodes', 'page/data/SuperchargerData'], function (Count
             }
         }
         countryArray.push({ countryName: 'Total', countryCode: 'Total', open: totalOpen, construction: totalConstruction });
-        countryArray.sort(ConstructionCount.sort);
+        countryArray.sort(ConstructionCount.sortByOpenCount);
         return countryArray;
     };
 
 
-    ConstructionCount.sort = function (one, two) {
+    ConstructionCount.sortByOpenCount = function (one, two) {
         return two.open - one.open;
     };
 
