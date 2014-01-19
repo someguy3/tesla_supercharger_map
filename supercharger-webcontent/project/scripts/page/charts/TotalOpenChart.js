@@ -27,7 +27,7 @@ define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], functio
         $.each(list, function (index, supercharger) {
             if (!Objects.isNullOrUndefined(supercharger.dateOpened) && supercharger.count) {
                 var date = supercharger.dateOpened;
-                var dateUTC = Date.UTC(1900 + date.getYear(), date.getMonth(), date.getDate());
+                var dateUTC = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
 
                 if (supercharger.address.isUSA()) {
                     countUSA++;

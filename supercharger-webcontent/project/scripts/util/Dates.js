@@ -17,7 +17,7 @@ define(['util/Strings'], function (Strings) {
         if (date == null) {
             return "";
         }
-        var year = (1900 + date.getYear());
+        var year = date.getFullYear();
         var month = (date.getMonth() + 1);
         var day = date.getDate();
         return year + "-" + Strings.padLeft(month, "0", 2) + "-" + Strings.padLeft(day, "0", 2);
