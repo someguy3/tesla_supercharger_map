@@ -1,4 +1,4 @@
-define(['util/Strings'], function (Strings) {
+define(['util/Strings', 'util/Objects'], function (Strings, Objects) {
 
     var Dates = {};
 
@@ -13,15 +13,14 @@ define(['util/Strings'], function (Strings) {
         return null;
     };
 
+    /**
+     * Converts a date object to a string with format YYYY-MM-DD
+     */
     Dates.toString = function (date) {
-        if (date == null) {
+        if (Objects.isNullOrUndefined(date)) {
             return "";
         }
-        var year = date.getFullYear();
-        var month = (date.getMonth() + 1);
-        var day = date.getDate();
-        return year + "-" + Strings.padLeft(month, "0", 2) + "-" + Strings.padLeft(day, "0", 2);
-
+        return date.getFullYear() + "-" + Strings.padLeft((date.getMonth() + 1), "0", 2) + "-" + Strings.padLeft(date.getDate(), "0", 2);
     };
 
     return Dates;
