@@ -2,21 +2,33 @@ define(
     [
         'lib/bootstrap',
         'page/data/SuperchargerCarousel',
-        'nav/NavBar', 'page/map/Routing',
+        'nav/NavBarDropdown', 'page/map/Routing',
         'page/map/ControlState', 'page/map/MapView', 'page/map/ControlView', 'lib/jquery.doTimeout'
     ],
-    function (bootstrap, SuperchargerCarousel, NavBar, Routing, ControlState, MapView, ControlView) {
+    function (bootstrap, SuperchargerCarousel, NavBarDropDown, Routing, ControlState, MapView, ControlView) {
 
         /**
          *
          * @constructor
          */
         var MapPage = function () {
+            this.page = $("#page-map");
+        };
 
+        MapPage.INIT_PROP = "page-initialized";
+
+        MapPage.prototype.loadPage = function () {
+            if (!this.page.data(MapPage.INIT_PROP)) {
+                this.initialize();
+                this.page.data(MapPage.INIT_PROP, true);
+            }
+        }
+
+        MapPage.prototype.initialize = function () {
             var controlState = new ControlState();
 
             this.routing = new Routing();
-            this.navBar = new NavBar();
+            this.navBarDropDown = new NavBarDropDown();
 
             this.mapView = new MapView(controlState);
             this.controlView = new ControlView(controlState);
@@ -26,17 +38,13 @@ define(
             this.initNavBarListeners();
 
             new SuperchargerCarousel();
-        };
-
-        MapPage.prototype.loadPage = function () {
-
         }
 
         MapPage.prototype.initNavBarListeners = function () {
             var mapView = this.mapView;
             var controlView = this.controlView;
 
-            this.navBar.onDropDownEvent(" nav-dropdown-event-circles-on", function () {
+            this.navBarDropDown.on("nav-dropdown-event-circles-on", function () {
                 if (controlView.controlState.range.getCurrent() == 0) {
                     controlView.updateRangeSliderValue(50);
                     mapView.redraw(false);
@@ -44,11 +52,11 @@ define(
                 mapView.setAllRangeCircleVisibility(true);
             });
 
-            this.navBar.onDropDownEvent(" nav-dropdown-event-circles-off", function () {
+            this.navBarDropDown.on("nav-dropdown-event-circles-off", function () {
                 mapView.setAllRangeCircleVisibility(false);
             });
 
-            this.navBar.onDropDownEvent("nav-dropdown-event-dist-unit", function (event, newUnit) {
+            this.navBarDropDown.on("nav-dropdown-event-dist-unit", function (event, newUnit) {
                 controlView.handleDistanceUnit(newUnit);
             });
 

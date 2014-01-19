@@ -8,7 +8,7 @@ define([], function () {
         this.versionContainer = $("#page-about-version-container");
     }
 
-    AboutPage.INIT_PROP = 'about-tab-initialized';
+    AboutPage.INIT_PROP = 'page-initialized';
 
     AboutPage.prototype.loadPage = function () {
         if (!this.page.data(AboutPage.INIT_PROP)) {

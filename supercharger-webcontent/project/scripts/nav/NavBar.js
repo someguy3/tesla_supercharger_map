@@ -1,9 +1,9 @@
 define(
     [
         'nav/NavBarDropdown', 'util/Events',
-        'page/data/DataPage', "page/charts/ChartsPage", 'page/changes/ChangesPage', 'page/about/AboutPage'
+        'page/map/MapPage', 'page/data/DataPage', "page/charts/ChartsPage", 'page/changes/ChangesPage', 'page/about/AboutPage'
     ],
-    function (NavBarDropdown, Events, DataPage, ChartsPage, ChangesPage, AboutPage) {
+    function (NavBarDropdown, Events, MapPage, DataPage, ChartsPage, ChangesPage, AboutPage) {
 
 
         /**
@@ -26,12 +26,16 @@ define(
 
         NavBar.prototype.handlePageChange = function (event) {
             var eventDetail = Events.eventDetail(event);
+            this.changePage(eventDetail.actionName);
+        };
 
+        NavBar.prototype.changePage = function (newPageName) {
             this.hidePage();
-            this.currentPage = eventDetail.actionName;
+            this.currentPage = newPageName;
             this.showPage();
 
-            if ("map" === this.currentPage) {
+            if ("map" == this.currentPage) {
+                new MapPage().loadPage();
                 $("#navbar-map-dropdown").show();
                 $("#navbar-map-search").show();
                 $("#carousel-container").show();
@@ -40,7 +44,6 @@ define(
                 $("#navbar-map-search").hide();
                 $("#carousel-container").hide();
             }
-
             if ("data" === this.currentPage) {
                 new DataPage().loadPage();
             }

@@ -2,14 +2,14 @@ requirejs.config({});
 
 
 // Start the main app logic.
-requirejs([ 'page/map/MapPage' ], function (MapPage) {
+requirejs([ 'nav/NavBar' ], function (NavBar) {
 
     /**
      * ON DOCUMENT READY
      */
     $(document).ready(function () {
-        var mapPage = new MapPage();
-        mapPage.loadPage();
+        var navBar = new NavBar();
+        navBar.changePage("map");
     });
 
 });
