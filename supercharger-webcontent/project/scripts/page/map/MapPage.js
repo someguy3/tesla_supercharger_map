@@ -39,14 +39,13 @@ define(
             this.routing = new Routing();
             this.navBarDropDown = new NavBarDropDown();
 
+            this.superChargerCarousel = new SuperchargerCarousel();
             this.mapView = new MapView(controlState);
             this.controlView = new ControlView(controlState);
 
             this.initMapViewListeners();
             this.initControlViewListeners();
             this.initNavBarListeners();
-
-            new SuperchargerCarousel();
         };
 
         MapPage.prototype.initNavBarListeners = function () {
