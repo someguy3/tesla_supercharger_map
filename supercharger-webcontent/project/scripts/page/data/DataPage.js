@@ -11,7 +11,7 @@ define(['page/data/DataViewTable'], function (DataViewTable) {
 
     DataPage.prototype.onPageShow = function () {
         if (!this.page.data(DataPage.INIT_PROP)) {
-            new DataViewTable();
+            new DataViewTable().createTable();
             this.page.data(DataPage.INIT_PROP, true);
         }
     };

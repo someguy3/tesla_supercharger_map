@@ -4,21 +4,22 @@ define(['page/data/SuperchargerData', 'util/Dates', 'lib/stupidtable' ], functio
      * Constructor
      */
     var DataViewTable = function () {
-
         this.superChargerDataTable = $("#supercharger-data-table");
-
-        this.superData = new SuperchargerData();
-
-        this.draw();
-        this.sort();
     };
 
-    DataViewTable.prototype.draw = function () {
+    DataViewTable.prototype.createTable = function () {
+        this.appendTableContent();
+        this.setupTableSortPlugin();
+    };
+
+    DataViewTable.prototype.appendTableContent = function () {
 
         var tableBodyData = this.superChargerDataTable.find("tbody");
 
-        for (var i = 0; i < this.superData.size(); i++) {
-            var supercharger = this.superData.get(i);
+        var superData = new SuperchargerData();
+
+        for (var i = 0; i < superData.size(); i++) {
+            var supercharger = superData.get(i);
 
             tableBodyData.append("" +
                 "<tr>" +
@@ -37,7 +38,7 @@ define(['page/data/SuperchargerData', 'util/Dates', 'lib/stupidtable' ], functio
         }
     };
 
-    DataViewTable.prototype.sort = function () {
+    DataViewTable.prototype.setupTableSortPlugin = function () {
         var table = $("#supercharger-data-table").stupidtable({});
 
         table.on("aftertablesort", function (event, data) {
