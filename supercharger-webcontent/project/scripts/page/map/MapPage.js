@@ -17,12 +17,21 @@ define(
 
         MapPage.INIT_PROP = "page-initialized";
 
-        MapPage.prototype.loadPage = function () {
+        MapPage.prototype.onPageShow = function () {
             if (!this.page.data(MapPage.INIT_PROP)) {
                 this.initialize();
                 this.page.data(MapPage.INIT_PROP, true);
             }
+            $("#navbar-map-dropdown").show();
+            $("#navbar-map-search").show();
+            $("#carousel-container").show();
         }
+
+        MapPage.prototype.onPageHide = function () {
+            $("#navbar-map-dropdown").hide();
+            $("#navbar-map-search").hide();
+            $("#carousel-container").hide();
+        };
 
         MapPage.prototype.initialize = function () {
             var controlState = new ControlState();

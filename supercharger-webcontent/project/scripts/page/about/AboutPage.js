@@ -10,7 +10,7 @@ define([], function () {
 
     AboutPage.INIT_PROP = 'page-initialized';
 
-    AboutPage.prototype.loadPage = function () {
+    AboutPage.prototype.onPageShow = function () {
         if (!this.page.data(AboutPage.INIT_PROP)) {
             this.loadVersionInfo();
         }

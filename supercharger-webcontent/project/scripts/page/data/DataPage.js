@@ -9,7 +9,7 @@ define(['page/data/DataViewTable'], function (DataViewTable) {
 
     DataPage.INIT_PROP = 'page-initialized';
 
-    DataPage.prototype.loadPage = function () {
+    DataPage.prototype.onPageShow = function () {
         if (!this.page.data(DataPage.INIT_PROP)) {
             new DataViewTable();
             this.page.data(DataPage.INIT_PROP, true);

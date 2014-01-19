@@ -42,26 +42,21 @@ define(
             this.showPage();
 
             if ("map" == this.currentPage) {
-                this.mapPage.loadPage();
-                $("#navbar-map-dropdown").show();
-                $("#navbar-map-search").show();
-                $("#carousel-container").show();
+                this.mapPage.onPageShow();
             } else {
-                $("#navbar-map-dropdown").hide();
-                $("#navbar-map-search").hide();
-                $("#carousel-container").hide();
+                this.mapPage.onPageHide();
             }
             if ("data" === this.currentPage) {
-                this.dataPage.loadPage();
+                this.dataPage.onPageShow();
             }
             if ("charts" === this.currentPage) {
-                this.chartsPage.loadPage();
+                this.chartsPage.onPageShow();
             }
             if ("changes" === this.currentPage) {
-                this.changesPage.loadPage();
+                this.changesPage.onPageShow();
             }
             if ("about" === this.currentPage) {
-                this.aboutPage.loadPage();
+                this.aboutPage.onPageShow();
             }
         };
 

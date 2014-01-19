@@ -8,7 +8,7 @@ define([], function () {
         this.changesTable = $("#changes-table");
     }
 
-    NavBarToChangesPage.prototype.loadPage = function () {
+    NavBarToChangesPage.prototype.onPageShow = function () {
         if (!this.changesPage.data('changes-tab-initialized')) {
             var v = this;
             jQuery.get("changelog.txt", "", function (textBlock) {

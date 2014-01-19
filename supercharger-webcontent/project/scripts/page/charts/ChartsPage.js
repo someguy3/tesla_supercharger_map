@@ -8,7 +8,7 @@ define(['page/charts/TotalOpenChart'], function (TotalOpenChart) {
 
     };
 
-    ChartsPage.prototype.loadPage = function () {
+    ChartsPage.prototype.onPageShow = function () {
         new TotalOpenChart().draw();
     };
 
