@@ -12,6 +12,13 @@ define(
         var NavBar = function () {
             this.navBarDropdown = new NavBarDropdown();
             this.currentPage = "map";
+
+            this.mapPage = new MapPage();
+            this.dataPage = new DataPage();
+            this.chartsPage = new ChartsPage();
+            this.changesPage = new ChangesPage();
+            this.aboutPage = new AboutPage();
+
             this.initListeners();
         };
 
@@ -35,7 +42,7 @@ define(
             this.showPage();
 
             if ("map" == this.currentPage) {
-                new MapPage().loadPage();
+                this.mapPage.loadPage();
                 $("#navbar-map-dropdown").show();
                 $("#navbar-map-search").show();
                 $("#carousel-container").show();
@@ -45,16 +52,16 @@ define(
                 $("#carousel-container").hide();
             }
             if ("data" === this.currentPage) {
-                new DataPage().loadPage();
+                this.dataPage.loadPage();
             }
             if ("charts" === this.currentPage) {
-                new ChartsPage().loadPage();
+                this.chartsPage.loadPage();
             }
             if ("changes" === this.currentPage) {
-                new ChangesPage().loadPage();
+                this.changesPage.loadPage();
             }
             if ("about" === this.currentPage) {
-                new AboutPage().loadPage();
+                this.aboutPage.loadPage();
             }
         };
 
