@@ -1,4 +1,4 @@
-define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (SuperchargerData, Objects) {
+define(['site/Sites', 'util/Objects', 'lib/highcharts'], function (Sites, Objects) {
 
     /**
      *
@@ -13,8 +13,6 @@ define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], functio
         var livePerDateUS = [];
         var livePerDateNotUS = [];
 
-        var list = SuperchargerData.LIST.sort(SuperchargerData.sortByOpenedDate);
-
         var countUSA = 0;
         var countNotUSA = 0;
 
@@ -24,26 +22,23 @@ define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], functio
             }
         }
 
-        $.each(list, function (index, supercharger) {
-            if (!Objects.isNullOrUndefined(supercharger.dateOpened) && supercharger.count) {
-                var date = supercharger.dateOpened;
-                var dateUTC = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+        Sites.iterate(function (supercharger) {
+            var date = supercharger.dateOpened;
+            var dateUTC = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
 
-                if (supercharger.address.isUSA()) {
-                    countUSA++;
-                    removePreviousIfSameDate(livePerDateUS, dateUTC);
-                    livePerDateUS.push([dateUTC, countUSA]);
+            if (supercharger.address.isUSA()) {
+                countUSA++;
+                removePreviousIfSameDate(livePerDateUS, dateUTC);
+                livePerDateUS.push([dateUTC, countUSA]);
 
-                } else {
-                    countNotUSA++;
-                    removePreviousIfSameDate(livePerDateNotUS, dateUTC);
-                    livePerDateNotUS.push([dateUTC, countNotUSA]);
+            } else {
+                countNotUSA++;
+                removePreviousIfSameDate(livePerDateNotUS, dateUTC);
+                livePerDateNotUS.push([dateUTC, countNotUSA]);
 
 
-                }
             }
-        });
-
+        }, Sites.FUN_PRED_OPEN_AND_COUNTED, Sites.FUN_SORT_BY_OPEN_DATE);
 
         var plotLinesArray = [];
         var currentYear = new Date().getFullYear();
