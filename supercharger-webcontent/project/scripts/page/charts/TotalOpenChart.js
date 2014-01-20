@@ -42,24 +42,7 @@ define(['site/Sites', 'site/SiteIterator', 'lib/highcharts'], function (Sites, S
                 }
             });
 
-        var plotLinesArray = [];
-        var currentYear = new Date().getFullYear();
-        for (var year = 2013; year <= currentYear; year++) {
-            plotLinesArray.push(
-                {
-                    value: Date.UTC(year, 0, 1),
-                    color: '#87CEEB',
-                    width: 2,
-                    label: {
-                        text: year,
-                        align: 'left',
-                        style: {
-                            color: 'gray'
-                        }
-                    }
-                }
-            );
-        }
+        var plotLinesArray = this.buildVerticalYearPlotLines();
 
 
         $("#chart-supercharger-over-time").highcharts({
@@ -123,6 +106,28 @@ define(['site/Sites', 'site/SiteIterator', 'lib/highcharts'], function (Sites, S
         });
 
 
+    };
+
+    TotalOpenChart.prototype.buildVerticalYearPlotLines = function () {
+        var plotLinesArray = [];
+        var currentYear = new Date().getFullYear();
+        for (var year = 2013; year <= currentYear; year++) {
+            plotLinesArray.push(
+                {
+                    value: Date.UTC(year, 0, 1),
+                    color: '#87CEEB',
+                    width: 2,
+                    label: {
+                        text: year,
+                        align: 'left',
+                        style: {
+                            color: 'gray'
+                        }
+                    }
+                }
+            );
+        }
+        return plotLinesArray;
     };
 
     return TotalOpenChart;
