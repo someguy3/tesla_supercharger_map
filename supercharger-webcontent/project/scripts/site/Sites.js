@@ -10,10 +10,6 @@ define(['site/SiteList', 'site/SiteSorting', 'site/SitePredicates'], function (S
 
     //initializeIds();
 
-
-    Sites.FUN_SORT_BY_OPEN_DATE = SiteSorting.sortByOpenedDate;
-    Sites.FUN_PRED_OPEN_AND_COUNTED = SitePredicates.openAndCounted;
-
     Sites.iterate = function (applyFunction, predicateFunction, orderFunction) {
         var LENGTH = Sites.LIST.length;
         var i = 0;

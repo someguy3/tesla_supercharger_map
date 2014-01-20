@@ -1,4 +1,4 @@
-define(['page/data/CountryCodes', 'page/data/SuperchargerData'], function (CountryCodes, SuperchargerData) {
+define(['page/data/CountryCodes', 'site/SiteIterator'], function (CountryCodes, SiteIterator) {
 
     /**
      *
@@ -30,9 +30,10 @@ define(['page/data/CountryCodes', 'page/data/SuperchargerData'], function (Count
             totalOpen = 0,
             totalConstruction = 0;
 
-        for (; i < SuperchargerData.LIST.length; i++) {
-            var supercharger = SuperchargerData.LIST[i];
-            if (!supercharger.custom && supercharger.count) {
+        new SiteIterator()
+            .withPredicate(SiteIterator.PRED_NOT_CUSTOM)
+            .withPredicate(SiteIterator.PRED_IS_COUNTED)
+            .iterate(function (supercharger) {
                 var countryName = supercharger.address.country;
                 if (!countryRefMap[countryName]) {
                     var newEntry = { countryName: countryName, countryCode: CountryCodes.fromName(countryName), open: 0, construction: 0 };
@@ -47,7 +48,8 @@ define(['page/data/CountryCodes', 'page/data/SuperchargerData'], function (Count
                     totalOpen++;
                 }
             }
-        }
+        );
+
         countryArray.push({ countryName: 'Total', countryCode: 'Total', open: totalOpen, construction: totalConstruction });
         countryArray.sort(ConstructionCount.sortByOpenCount);
         return countryArray;

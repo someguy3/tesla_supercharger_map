@@ -11,6 +11,10 @@ define(['util/Objects'], function (Objects) {
         return site.count;
     };
 
+    SitePredicates.notCustom = function (site) {
+        return !site.custom;
+    };
+
     SitePredicates.openAndCounted = function (site) {
         return SitePredicates.open(site) && SitePredicates.counted(site);
     };

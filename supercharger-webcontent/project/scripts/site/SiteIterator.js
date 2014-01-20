@@ -1,14 +1,20 @@
-define(['util/Objects'], function (Objects) {
+define(['util/Objects', 'site/SiteList', 'site/SitePredicates', 'site/SiteSorting'], function (Objects, SiteList, SitePredicates, SiteSorting) {
 
     /**
      *
      * @constructor
      */
-    var SiteIterator = function (siteArray) {
+    var SiteIterator = function () {
         this.predicates = [];
         this.sortFunction = null;
-        this.array = siteArray;
     };
+
+    SiteIterator.FUN_SORT_BY_OPEN_DATE = SiteSorting.sortByOpenedDate;
+
+    SiteIterator.PRED_IS_OPEN = SitePredicates.open;
+    SiteIterator.PRED_IS_COUNTED = SitePredicates.counted;
+    SiteIterator.PRED_NOT_CUSTOM = SitePredicates.notCustom;
+
 
     SiteIterator.prototype.withPredicate = function (predicateFunction) {
         this.predicates.push(predicateFunction);
@@ -22,15 +28,15 @@ define(['util/Objects'], function (Objects) {
 
 
     SiteIterator.prototype.iterate = function (applyFunction) {
-        var LENGTH = this.array.length,
+        var LENGTH = SiteList.length,
             i = 0;
 
         if (this.sortFunction !== null) {
-            this.array.sort(this.sortFunction);
+            SiteList.sort(this.sortFunction);
         }
 
         for (; i < LENGTH; i++) {
-            var site = this.array[i];
+            var site = SiteList[i];
             if (this.predicates.length === 0 || this.predicatesApply(site)) {
                 applyFunction(site);
             }
@@ -38,10 +44,8 @@ define(['util/Objects'], function (Objects) {
     };
 
     SiteIterator.prototype.predicatesApply = function (site) {
-        var i = 0,
-            predicate = null,
-            result = true;
-        for (i = 0; i < this.predicates.length; i++) {
+        var i = 0;
+        for (; i < this.predicates.length; i++) {
             if (!this.predicates[i](site)) {
                 return false;
             }

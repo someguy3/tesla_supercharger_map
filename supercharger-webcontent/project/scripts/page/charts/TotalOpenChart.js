@@ -1,4 +1,4 @@
-define(['site/Sites', 'util/Objects', 'lib/highcharts'], function (Sites, Objects) {
+define(['site/Sites', 'site/SiteIterator', 'lib/highcharts'], function (Sites, SiteIterator) {
 
     /**
      *
@@ -22,23 +22,25 @@ define(['site/Sites', 'util/Objects', 'lib/highcharts'], function (Sites, Object
             }
         }
 
-        Sites.iterate(function (supercharger) {
-            var date = supercharger.dateOpened;
-            var dateUTC = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+        new SiteIterator()
+            .withPredicate(SiteIterator.PRED_IS_OPEN)
+            .withPredicate(SiteIterator.PRED_IS_COUNTED)
+            .withSort(SiteIterator.FUN_SORT_BY_OPEN_DATE)
+            .iterate(function (supercharger) {
+                var date = supercharger.dateOpened;
+                var dateUTC = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
 
-            if (supercharger.address.isUSA()) {
-                countUSA++;
-                removePreviousIfSameDate(livePerDateUS, dateUTC);
-                livePerDateUS.push([dateUTC, countUSA]);
+                if (supercharger.address.isUSA()) {
+                    countUSA++;
+                    removePreviousIfSameDate(livePerDateUS, dateUTC);
+                    livePerDateUS.push([dateUTC, countUSA]);
 
-            } else {
-                countNotUSA++;
-                removePreviousIfSameDate(livePerDateNotUS, dateUTC);
-                livePerDateNotUS.push([dateUTC, countNotUSA]);
-
-
-            }
-        }, Sites.FUN_PRED_OPEN_AND_COUNTED, Sites.FUN_SORT_BY_OPEN_DATE);
+                } else {
+                    countNotUSA++;
+                    removePreviousIfSameDate(livePerDateNotUS, dateUTC);
+                    livePerDateNotUS.push([dateUTC, countNotUSA]);
+                }
+            });
 
         var plotLinesArray = [];
         var currentYear = new Date().getFullYear();
