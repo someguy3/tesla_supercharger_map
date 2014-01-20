@@ -19,6 +19,10 @@ define(['util/Objects'], function (Objects) {
         return SitePredicates.open(site) && SitePredicates.counted(site);
     };
 
+    SitePredicates.hasCircle = function (site) {
+        return !Objects.isNullOrUndefined(site.circle);
+    };
+
 
     return SitePredicates;
 

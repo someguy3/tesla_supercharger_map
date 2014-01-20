@@ -14,6 +14,7 @@ define(['util/Objects', 'site/SiteList', 'site/SitePredicates', 'site/SiteSortin
     SiteIterator.PRED_IS_OPEN = SitePredicates.open;
     SiteIterator.PRED_IS_COUNTED = SitePredicates.counted;
     SiteIterator.PRED_NOT_CUSTOM = SitePredicates.notCustom;
+    SiteIterator.PRED_HAS_CIRCLE = SitePredicates.hasCircle;
 
 
     SiteIterator.prototype.withPredicate = function (predicateFunction) {

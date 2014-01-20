@@ -1,6 +1,6 @@
 define(
-    ['page/data/SuperchargerData', 'page/map/MapViewContextMenu', 'util/Events'],
-    function (SuperchargerData, MapViewContextMenu, Events) {
+    ['site/SiteIterator', 'page/map/MapViewContextMenu', 'util/Events'],
+    function (SiteIterator, MapViewContextMenu, Events) {
 
 
         /**
@@ -9,7 +9,6 @@ define(
         var MapView = function (controlState) {
 
             this.controlState = controlState;
-            this.superData = new SuperchargerData();
             this.viewDiv = $("#map-canvas");
 
             this.initMap();
@@ -84,37 +83,39 @@ define(
         MapView.prototype.redraw = function (drawMarkers) {
 
             var rangeCircleOptions = this.buildRangeCircleOptions();
+            var mapView = this;
 
-            for (var i = 0; i < this.superData.size(); i++) {
-                var supercharger = this.superData.get(i);
+            new SiteIterator().iterate(
+                function (supercharger) {
+                    if (mapView.shouldDraw(supercharger)) {
+                        if (drawMarkers) {
+                            if (supercharger.marker == null) {
+                                MapView.addMarkerToSupercharger(mapView.googleMap, supercharger);
+                            }
+                        }
 
-                if (this.shouldDraw(supercharger)) {
-                    if (drawMarkers) {
-                        if (supercharger.marker == null) {
-                            MapView.addMarkerToSupercharger(this.googleMap, supercharger);
+                        rangeCircleOptions.center = supercharger.location;
+                        if (supercharger.circle == null) {
+                            supercharger.circle = new google.maps.Circle(rangeCircleOptions);
+                        }
+                        else {
+                            supercharger.circle.setOptions(rangeCircleOptions);
+                        }
+
+                    } else {
+                        if (supercharger.circle != null) {
+                            supercharger.circle.setMap(null);
+                            supercharger.circle = null;
+                        }
+                        if (supercharger.marker != null) {
+                            supercharger.marker.setMap(null);
+                            supercharger.marker = null;
                         }
                     }
 
-                    rangeCircleOptions.center = supercharger.location;
-                    if (supercharger.circle == null) {
-                        supercharger.circle = new google.maps.Circle(rangeCircleOptions);
-                    }
-                    else {
-                        supercharger.circle.setOptions(rangeCircleOptions);
-                    }
-
-                } else {
-                    if (supercharger.circle != null) {
-                        supercharger.circle.setMap(null);
-                        supercharger.circle = null;
-                    }
-                    if (supercharger.marker != null) {
-                        supercharger.marker.setMap(null);
-                        supercharger.marker = null;
-                    }
                 }
+            );
 
-            }
         };
 
         MapView.prototype.shouldDraw = function (supercharger) {
@@ -244,13 +245,14 @@ define(
 // Other controls
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        MapView.prototype.setAllRangeCircleVisibility = function (isViaible) {
-            for (var i = 0; i < this.superData.size(); i++) {
-                var supercharger = this.superData.get(i);
-                if (supercharger.circle != null) {
-                    supercharger.circle.setVisible(isViaible);
+        MapView.prototype.setAllRangeCircleVisibility = function (isVisible) {
+            new SiteIterator()
+                .withPredicate(SiteIterator.PRED_HAS_CIRCLE)
+                .iterate(
+                function (supercharger) {
+                    supercharger.circle.setVisible(isVisible);
                 }
-            }
+            );
         };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
