@@ -1,19 +1,17 @@
-define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], function (SuperchargerData, Objects) {
+define(['site/Sites', 'site/SiteIterator', 'lib/highcharts'], function (Sites, SiteIterator) {
 
     /**
      *
      * @constructor
      */
-    var Charts = function () {
+    var TotalOpenChart = function () {
 
     };
 
-    Charts.prototype.draw = function () {
+    TotalOpenChart.prototype.draw = function () {
 
         var livePerDateUS = [];
         var livePerDateNotUS = [];
-
-        var list = SuperchargerData.LIST.sort(SuperchargerData.sortByOpenedDate);
 
         var countUSA = 0;
         var countNotUSA = 0;
@@ -24,8 +22,11 @@ define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], functio
             }
         }
 
-        $.each(list, function (index, supercharger) {
-            if (!Objects.isNullOrUndefined(supercharger.dateOpened) && supercharger.count) {
+        new SiteIterator()
+            .withPredicate(SiteIterator.PRED_IS_OPEN)
+            .withPredicate(SiteIterator.PRED_IS_COUNTED)
+            .withSort(SiteIterator.FUN_SORT_BY_OPEN_DATE)
+            .iterate(function (supercharger) {
                 var date = supercharger.dateOpened;
                 var dateUTC = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
 
@@ -38,31 +39,10 @@ define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], functio
                     countNotUSA++;
                     removePreviousIfSameDate(livePerDateNotUS, dateUTC);
                     livePerDateNotUS.push([dateUTC, countNotUSA]);
-
-
                 }
-            }
-        });
+            });
 
-
-        var plotLinesArray = [];
-        var currentYear = new Date().getFullYear();
-        for (var year = 2013; year <= currentYear; year++) {
-            plotLinesArray.push(
-                {
-                    value: Date.UTC(year, 0, 1),
-                    color: '#87CEEB',
-                    width: 2,
-                    label: {
-                        text: year,
-                        align: 'left',
-                        style: {
-                            color: 'gray'
-                        }
-                    }
-                }
-            );
-        }
+        var plotLinesArray = this.buildVerticalYearPlotLines();
 
 
         $("#chart-supercharger-over-time").highcharts({
@@ -128,7 +108,29 @@ define(['page/data/SuperchargerData', 'util/Objects', 'lib/highcharts'], functio
 
     };
 
-    return Charts;
+    TotalOpenChart.prototype.buildVerticalYearPlotLines = function () {
+        var plotLinesArray = [];
+        var currentYear = new Date().getFullYear();
+        for (var year = 2013; year <= currentYear; year++) {
+            plotLinesArray.push(
+                {
+                    value: Date.UTC(year, 0, 1),
+                    color: '#87CEEB',
+                    width: 2,
+                    label: {
+                        text: year,
+                        align: 'left',
+                        style: {
+                            color: 'gray'
+                        }
+                    }
+                }
+            );
+        }
+        return plotLinesArray;
+    };
+
+    return TotalOpenChart;
 
 
 });

@@ -1,6 +1,6 @@
 define(
-    ['page/data/SuperchargerData', 'page/map/MapViewContextMenu', 'util/Events'],
-    function (SuperchargerData, MapViewContextMenu, Events) {
+    ['site/SiteIterator', 'site/Sites', 'page/map/MapViewContextMenu', 'util/Events'],
+    function (SiteIterator, Sites, MapViewContextMenu, Events) {
 
 
         /**
@@ -9,7 +9,6 @@ define(
         var MapView = function (controlState) {
 
             this.controlState = controlState;
-            this.superData = new SuperchargerData();
             this.viewDiv = $("#map-canvas");
 
             this.initMap();
@@ -84,37 +83,39 @@ define(
         MapView.prototype.redraw = function (drawMarkers) {
 
             var rangeCircleOptions = this.buildRangeCircleOptions();
+            var mapView = this;
 
-            for (var i = 0; i < this.superData.size(); i++) {
-                var supercharger = this.superData.get(i);
+            new SiteIterator().iterate(
+                function (supercharger) {
+                    if (mapView.shouldDraw(supercharger)) {
+                        if (drawMarkers) {
+                            if (supercharger.marker == null) {
+                                MapView.addMarkerToSupercharger(mapView.googleMap, supercharger);
+                            }
+                        }
 
-                if (this.shouldDraw(supercharger)) {
-                    if (drawMarkers) {
-                        if (supercharger.marker == null) {
-                            MapView.addMarkerToSupercharger(this.googleMap, supercharger);
+                        rangeCircleOptions.center = supercharger.location;
+                        if (supercharger.circle == null) {
+                            supercharger.circle = new google.maps.Circle(rangeCircleOptions);
+                        }
+                        else {
+                            supercharger.circle.setOptions(rangeCircleOptions);
+                        }
+
+                    } else {
+                        if (supercharger.circle != null) {
+                            supercharger.circle.setMap(null);
+                            supercharger.circle = null;
+                        }
+                        if (supercharger.marker != null) {
+                            supercharger.marker.setMap(null);
+                            supercharger.marker = null;
                         }
                     }
 
-                    rangeCircleOptions.center = supercharger.location;
-                    if (supercharger.circle == null) {
-                        supercharger.circle = new google.maps.Circle(rangeCircleOptions);
-                    }
-                    else {
-                        supercharger.circle.setOptions(rangeCircleOptions);
-                    }
-
-                } else {
-                    if (supercharger.circle != null) {
-                        supercharger.circle.setMap(null);
-                        supercharger.circle = null;
-                    }
-                    if (supercharger.marker != null) {
-                        supercharger.marker.setMap(null);
-                        supercharger.marker = null;
-                    }
                 }
+            );
 
-            }
         };
 
         MapView.prototype.shouldDraw = function (supercharger) {
@@ -171,7 +172,7 @@ define(
         MapView.prototype.handleCircleToggle = function (event) {
             var eventDetail = Events.eventDetail(event);
             var id = parseInt(eventDetail.actionName);
-            var supercharger = this.superData.getById(id);
+            var supercharger = Sites.getById(id);
             if (supercharger.circle.getVisible()) {
                 eventDetail.link.text("circle on");
                 supercharger.circle.setVisible(false);
@@ -184,16 +185,16 @@ define(
         MapView.prototype.handleMarkerRemove = function (event) {
             event.preventDefault();
             var id = parseInt($(event.target).attr('href'));
-            var supercharger = this.superData.getById(id);
+            var supercharger = Sites.getById(id);
             supercharger.circle.setMap(null);
             supercharger.marker.setMap(null);
-            this.superData.removeById(id);
+            Sites.removeById(id);
         };
 
         MapView.prototype.handleAddToRoute = function (event) {
             var eventDetail = Events.eventDetail(event);
             var id = parseInt(eventDetail.actionName);
-            var supercharger = this.superData.getById(id);
+            var supercharger = Sites.getById(id);
             this.trigger("map-event-route-added", { latLng: supercharger.location, googleMap: this.googleMap });
         };
 
@@ -221,7 +222,7 @@ define(
                 var markerName = markerInput.val();
                 markerInput.val("");
                 // add marker
-                var newCharger = mapView.superData.addSupercharger(markerName, event.latLng);
+                var newCharger = Sites.addSupercharger(markerName, event.latLng);
                 MapView.addMarkerToSupercharger(mapView.googleMap, newCharger);
                 mapView.redraw(false);
                 MapView.showInfoWindowForMarker.call(newCharger.marker);
@@ -244,13 +245,14 @@ define(
 // Other controls
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        MapView.prototype.setAllRangeCircleVisibility = function (isViaible) {
-            for (var i = 0; i < this.superData.size(); i++) {
-                var supercharger = this.superData.get(i);
-                if (supercharger.circle != null) {
-                    supercharger.circle.setVisible(isViaible);
+        MapView.prototype.setAllRangeCircleVisibility = function (isVisible) {
+            new SiteIterator()
+                .withPredicate(SiteIterator.PRED_HAS_CIRCLE)
+                .iterate(
+                function (supercharger) {
+                    supercharger.circle.setVisible(isVisible);
                 }
-            }
+            );
         };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

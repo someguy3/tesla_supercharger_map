@@ -1,90 +1,4 @@
-define(
-    ['model/Address', 'util/Asserts', 'util/Objects', 'util/Dates'],
-    function (Address, Asserts, Objects, Dates) {
-
-    /**
-     * Constructor
-     */
-    var SuperchargerData = function () {
-        if (Objects.isNullOrUndefined(SuperchargerData.ID_INIT)) {
-            this.initializeIds();
-        }
-    };
-
-    SuperchargerData.prototype.initializeIds = function () {
-        var count = 0;
-        for (var i = 0; i < SuperchargerData.LIST.length; i++) {
-            var supercharger = SuperchargerData.LIST[i];
-            supercharger.id = count++;
-        }
-        SuperchargerData.ID_INIT = true;
-    };
-
-    SuperchargerData.prototype.size = function () {
-        return SuperchargerData.LIST.length;
-    };
-
-    SuperchargerData.prototype.get = function (index) {
-        return SuperchargerData.LIST[index];
-    };
-
-    SuperchargerData.prototype.getById = function (id) {
-        Asserts.isInteger(id, "id must be an integer");
-        for (var i = 0; i < SuperchargerData.LIST.length; i++) {
-            var supercharger = SuperchargerData.LIST[i];
-            if (supercharger.id === id) {
-                return supercharger;
-            }
-        }
-        return null;
-    };
-
-    SuperchargerData.prototype.removeById = function (id) {
-        Asserts.isInteger(id, "id must be an integer");
-        for (var index = 0; index < SuperchargerData.LIST.length; index++) {
-            var supercharger = SuperchargerData.LIST[index];
-            if (supercharger.id === id) {
-                SuperchargerData.LIST.splice(index, 1);
-                break;
-            }
-        }
-    };
-
-    SuperchargerData.prototype.addSupercharger = function (displayName, location) {
-        var charger = {
-            "id": this.size() + 10000,
-            "displayName": displayName,
-            "address": new Address("", "", "", "", ""),
-            "location": location,
-            "url": null,
-            "count": false,
-            "custom": true
-        };
-        SuperchargerData.LIST.push(charger);
-        return charger;
-    };
-
-    SuperchargerData.sortByOpenedDate = function (one, two) {
-        var oneNull = Objects.isNullOrUndefined(one.dateOpened);
-        var twoNull = Objects.isNullOrUndefined(two.dateOpened);
-        if (oneNull && twoNull) {
-            return 0;
-        }
-        if (oneNull) {
-            return -1;
-        }
-        if (twoNull) {
-            return 1;
-        }
-        if (one.dateOpened < two.dateOpened) {
-            return -1;
-        }
-        if (one.dateOpened > two.dateOpened) {
-            return 1;
-        }
-        return 0;
-    };
-
+define(['util/Dates', 'model/Address'], function (Dates, Address) {
 
     /**
      * Properties:
@@ -106,7 +20,7 @@ define(
      * custom       -- [Boolean] true indicates that this is a custom marker added by the customer.
      *
      */
-    SuperchargerData.LIST = [
+    var SiteList = [
 
         //-----------------------------------------------------------------------------------------------------------------| Arizona
         {
@@ -151,6 +65,15 @@ define(
             "location": new google.maps.LatLng(33.661314, -114.242174),
             "url": "http://www.teslamotors.com/supercharger/quartzsite",
             "dateOpened": Dates.fromString("2013-11-14"),
+            "count": true
+        },
+        {
+            "displayName": "Yuma, AZ",
+            "address": new Address("310 N Madison Ave", "Yuma", "AZ", "85364", "USA"),
+            "location": new google.maps.LatLng(32.7276, -114.6189833),
+            "url": "http://www.teslamotorsclub.com/showthread.php/15088-Yuma-AZ-Supercharger#10",
+            "dateOpened": Dates.fromString(""),
+            "construction" : "true",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| California
@@ -939,5 +862,8 @@ define(
 
     ];
 
-    return SuperchargerData;
+
+    return SiteList;
+
+
 });

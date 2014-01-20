@@ -1,4 +1,4 @@
-define(['page/data/SuperchargerData', 'util/Dates', 'lib/stupidtable' ], function (SuperchargerData, Dates) {
+define(['site/SiteIterator', 'util/Dates', 'lib/stupidtable' ], function (SiteIterator, Dates) {
 
     /**
      * Constructor
@@ -16,26 +16,25 @@ define(['page/data/SuperchargerData', 'util/Dates', 'lib/stupidtable' ], functio
 
         var tableBodyData = this.superChargerDataTable.find("tbody");
 
-        var superData = new SuperchargerData();
+        new SiteIterator().iterate(
+            function (supercharger) {
+                tableBodyData.append("" +
+                    "<tr>" +
+                    "<td>" + supercharger.displayName + "</td>" +
+                    "<td>" + supercharger.address.street + "</td>" +
+                    "<td>" + supercharger.address.city + "</td>" +
+                    "<td>" + supercharger.address.state + "</td>" +
+                    "<td>" + supercharger.address.zip + "</td>" +
+                    "<td>" + supercharger.address.country + "</td>" +
+                    "<td class='gps'>" + supercharger.location.toUrlValue() + "</td>" +
+                    "<td>" + (supercharger.construction ? "Construction" : "Open") + "</td>" +
+                    "<td>" + Dates.toString(supercharger.dateOpened) + "</td>" +
+                    "<td class='tog'>" + "<a href='" + supercharger.url + "'>link</a></td>" +
+                    "</tr>"
+                );
+            }
+        );
 
-        for (var i = 0; i < superData.size(); i++) {
-            var supercharger = superData.get(i);
-
-            tableBodyData.append("" +
-                "<tr>" +
-                "<td>" + supercharger.displayName + "</td>" +
-                "<td>" + supercharger.address.street + "</td>" +
-                "<td>" + supercharger.address.city + "</td>" +
-                "<td>" + supercharger.address.state + "</td>" +
-                "<td>" + supercharger.address.zip + "</td>" +
-                "<td>" + supercharger.address.country + "</td>" +
-                "<td class='gps'>" + supercharger.location.toUrlValue() + "</td>" +
-                "<td>" + (supercharger.construction ? "Construction" : "Open") + "</td>" +
-                "<td>" + Dates.toString(supercharger.dateOpened) + "</td>" +
-                "<td class='tog'>" + "<a href='" + supercharger.url + "'>link</a></td>" +
-                "</tr>"
-            );
-        }
     };
 
     DataViewTable.prototype.setupTableSortPlugin = function () {
