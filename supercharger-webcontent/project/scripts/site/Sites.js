@@ -1,9 +1,5 @@
 define(['util/Asserts', 'model/Address', 'site/SiteList'], function (Asserts, Address, SiteList) {
 
-    /**
-     *
-     * @constructor
-     */
     var Sites = {};
 
     Sites.LIST = SiteList;
