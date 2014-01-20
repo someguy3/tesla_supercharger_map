@@ -1,9 +1,9 @@
 define(
     [
-        'nav/NavBarDropdown', 'util/Events',
+        'util/Events', 'nav/NavBarDropdown',
         'page/map/MapPage', 'page/data/DataPage', "page/charts/ChartsPage", 'page/changes/ChangesPage', 'page/about/AboutPage'
     ],
-    function (NavBarDropdown, Events, MapPage, DataPage, ChartsPage, ChangesPage, AboutPage) {
+    function (Events, NavBarDropdown, MapPage, DataPage, ChartsPage, ChangesPage, AboutPage) {
 
 
         /**
