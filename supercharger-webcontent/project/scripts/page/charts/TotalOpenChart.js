@@ -4,11 +4,11 @@ define(['site/Sites', 'site/SiteIterator', 'lib/highcharts'], function (Sites, S
      *
      * @constructor
      */
-    var Charts = function () {
+    var TotalOpenChart = function () {
 
     };
 
-    Charts.prototype.draw = function () {
+    TotalOpenChart.prototype.draw = function () {
 
         var livePerDateUS = [];
         var livePerDateNotUS = [];
@@ -125,7 +125,7 @@ define(['site/Sites', 'site/SiteIterator', 'lib/highcharts'], function (Sites, S
 
     };
 
-    return Charts;
+    return TotalOpenChart;
 
 
 });
