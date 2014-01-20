@@ -1,6 +1,6 @@
 define(
-    ['site/SiteIterator', 'page/map/MapViewContextMenu', 'util/Events'],
-    function (SiteIterator, MapViewContextMenu, Events) {
+    ['site/SiteIterator', 'site/Sites', 'page/map/MapViewContextMenu', 'util/Events'],
+    function (SiteIterator, Sites, MapViewContextMenu, Events) {
 
 
         /**
@@ -172,7 +172,7 @@ define(
         MapView.prototype.handleCircleToggle = function (event) {
             var eventDetail = Events.eventDetail(event);
             var id = parseInt(eventDetail.actionName);
-            var supercharger = this.superData.getById(id);
+            var supercharger = Sites.getById(id);
             if (supercharger.circle.getVisible()) {
                 eventDetail.link.text("circle on");
                 supercharger.circle.setVisible(false);
@@ -185,16 +185,16 @@ define(
         MapView.prototype.handleMarkerRemove = function (event) {
             event.preventDefault();
             var id = parseInt($(event.target).attr('href'));
-            var supercharger = this.superData.getById(id);
+            var supercharger = Sites.getById(id);
             supercharger.circle.setMap(null);
             supercharger.marker.setMap(null);
-            this.superData.removeById(id);
+            Sites.removeById(id);
         };
 
         MapView.prototype.handleAddToRoute = function (event) {
             var eventDetail = Events.eventDetail(event);
             var id = parseInt(eventDetail.actionName);
-            var supercharger = this.superData.getById(id);
+            var supercharger = Sites.getById(id);
             this.trigger("map-event-route-added", { latLng: supercharger.location, googleMap: this.googleMap });
         };
 
@@ -222,7 +222,7 @@ define(
                 var markerName = markerInput.val();
                 markerInput.val("");
                 // add marker
-                var newCharger = mapView.superData.addSupercharger(markerName, event.latLng);
+                var newCharger = Sites.addSupercharger(markerName, event.latLng);
                 MapView.addMarkerToSupercharger(mapView.googleMap, newCharger);
                 mapView.redraw(false);
                 MapView.showInfoWindowForMarker.call(newCharger.marker);

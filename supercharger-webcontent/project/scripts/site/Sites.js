@@ -1,4 +1,4 @@
-define(['site/SiteList', 'site/SiteSorting', 'site/SitePredicates'], function (SiteList, SiteSorting, SitePredicates) {
+define(['util/Asserts', 'model/Address', 'site/SiteList'], function (Asserts, Address, SiteList) {
 
     /**
      *
@@ -8,30 +8,49 @@ define(['site/SiteList', 'site/SiteSorting', 'site/SitePredicates'], function (S
 
     Sites.LIST = SiteList;
 
-    //initializeIds();
+    initializeIds();
 
-    Sites.iterate = function (applyFunction, predicateFunction, orderFunction) {
-        var LENGTH = Sites.LIST.length;
-        var i = 0;
-
-        if (orderFunction !== null) {
-            Sites.LIST.sort(orderFunction);
+    Sites.getById = function (id) {
+        Asserts.isInteger(id, "id must be an integer");
+        for (var i = 0; i < Sites.LIST.length; i++) {
+            var supercharger = Sites.LIST[i];
+            if (supercharger.id === id) {
+                return supercharger;
+            }
         }
+        return null;
+    };
 
-        for (i = 0; i < LENGTH; i++) {
-            var site = Sites.LIST[i];
-            if (predicateFunction === null || predicateFunction(site)) {
-                applyFunction(site);
+    Sites.removeById = function (id) {
+        Asserts.isInteger(id, "id must be an integer");
+        for (var index = 0; index < Sites.LIST.length; index++) {
+            var supercharger = Sites.LIST[index];
+            if (supercharger.id === id) {
+                Sites.LIST.splice(index, 1);
+                break;
             }
         }
     };
 
+    Sites.addSupercharger = function (displayName, location) {
+        var charger = {
+            "id": this.size() + 10000,
+            "displayName": displayName,
+            "address": new Address("", "", "", "", ""),
+            "location": location,
+            "url": null,
+            "count": false,
+            "custom": true
+        };
+        Sites.LIST.push(charger);
+        return charger;
+    };
 
     function initializeIds() {
         var count = 0;
-        var SIZE = this.sites.length;
+        var SIZE = Sites.LIST.length;
         for (var i = 0; i < SIZE; i++) {
-            var supercharger = this.sites[i];
+            var supercharger = Sites.LIST[i];
             supercharger.id = count++;
         }
     }
