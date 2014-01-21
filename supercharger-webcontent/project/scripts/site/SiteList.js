@@ -73,7 +73,7 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "location": new google.maps.LatLng(32.7276, -114.6189833),
             "url": "http://www.teslamotorsclub.com/showthread.php/15088-Yuma-AZ-Supercharger#10",
             "dateOpened": Dates.fromString(""),
-            "construction" : "true",
+            "construction": "true",
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| California
@@ -717,10 +717,9 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
         {
             "displayName": "Cheyenne, WY",
             "address": new Address("1400 Dell Range Blvd", "Cheyenne", "WY", "82009", "USA"),
-            "location": new google.maps.LatLng(41.1610333333, -104.8050833333),
+            "location": new google.maps.LatLng(41.161085, -104.804955),
             "url": "http://www.teslamotors.com/supercharger/cheyenne",
-            "construction": true,
-            "dateOpened": Dates.fromString(""),
+            "dateOpened": Dates.fromString("2014-01-20"),
             "count": true
         },
         {
