@@ -102,13 +102,15 @@ define([], function () {
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     MapViewContextMenu.createMenu = function (parentDiv) {
-        var contextMenuDiv = $("<div></div>");
-        contextMenuDiv.addClass('map-context-menu');
-        contextMenuDiv.append('<div class="context-menu-add-marker">Add custom marker...<\/div>');
-        contextMenuDiv.append('<div class="context-menu-add-to-route">Add to route...</div>');
-        contextMenuDiv.hide();
-        $(parentDiv).append(contextMenuDiv);
-        return contextMenuDiv;
+        var contextMenuList = $(
+            "<ul class='dropdown-menu' id='navbar-dropdown-menu-item-list'>" +
+                "   <li><a href='' class='context-menu-add-marker'>Add custom marker...</a></li>" +
+                "   <li><a href='' class='context-menu-add-to-route'>Add to route...</a></li> " +
+                "</ul>"
+        );
+        contextMenuList.hide();
+        $(parentDiv).append(contextMenuList);
+        return contextMenuList;
     };
 
     return MapViewContextMenu;
