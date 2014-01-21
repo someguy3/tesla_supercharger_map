@@ -1,6 +1,6 @@
 define(
-    ['site/SiteIterator', 'site/Sites', 'page/map/MapViewContextMenu', 'util/Events'],
-    function (SiteIterator, Sites, MapViewContextMenu, Events) {
+    ['util/Events', 'util/Objects', 'site/SiteIterator', 'site/Sites', 'page/map/MapViewContextMenu'],
+    function (Events, Objects, SiteIterator, Sites, MapViewContextMenu) {
 
 
         /**
@@ -89,13 +89,13 @@ define(
                 function (supercharger) {
                     if (mapView.shouldDraw(supercharger)) {
                         if (drawMarkers) {
-                            if (supercharger.marker == null) {
+                            if (Objects.isNullOrUndef(supercharger.marker)) {
                                 MapView.addMarkerToSupercharger(mapView.googleMap, supercharger);
                             }
                         }
 
                         rangeCircleOptions.center = supercharger.location;
-                        if (supercharger.circle == null) {
+                        if (Objects.isNullOrUndef(supercharger.circle)) {
                             supercharger.circle = new google.maps.Circle(rangeCircleOptions);
                         }
                         else {
@@ -103,11 +103,11 @@ define(
                         }
 
                     } else {
-                        if (supercharger.circle != null) {
+                        if (Objects.isNotNullOrUndef(supercharger.circle)) {
                             supercharger.circle.setMap(null);
                             supercharger.circle = null;
                         }
-                        if (supercharger.marker != null) {
+                        if (Objects.isNotNullOrUndef(supercharger.marker)) {
                             supercharger.marker.setMap(null);
                             supercharger.marker = null;
                         }
@@ -309,7 +309,7 @@ define(
             //
             // Circle On/Off
             //
-            var circleOnOffLabel = (supercharger.circle != null && supercharger.circle.getVisible()) ? "circle off" : "circle on";
+            var circleOnOffLabel = (Objects.isNotNullOrUndef(supercharger.circle) && supercharger.circle.getVisible()) ? "circle off" : "circle on";
             popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a>";
             popupContent += "&nbsp;&nbsp;&nbsp;";
             //

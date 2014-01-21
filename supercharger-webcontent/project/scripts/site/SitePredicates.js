@@ -4,7 +4,7 @@ define(['util/Objects'], function (Objects) {
     var SitePredicates = {};
 
     SitePredicates.open = function (site) {
-        return !Objects.isNullOrUndefined(site.dateOpened);
+        return Objects.isNotNullOrUndef(site.dateOpened);
     };
 
     SitePredicates.counted = function (site) {
@@ -20,7 +20,7 @@ define(['util/Objects'], function (Objects) {
     };
 
     SitePredicates.hasCircle = function (site) {
-        return !Objects.isNullOrUndefined(site.circle);
+        return Objects.isNotNullOrUndef(site.circle);
     };
 
 

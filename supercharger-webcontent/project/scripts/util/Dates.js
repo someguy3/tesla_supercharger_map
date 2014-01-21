@@ -17,7 +17,7 @@ define(['util/Strings', 'util/Objects'], function (Strings, Objects) {
      * Converts a date object to a string with format YYYY-MM-DD
      */
     Dates.toString = function (date) {
-        if (Objects.isNullOrUndefined(date)) {
+        if (Objects.isNullOrUndef(date)) {
             return "";
         }
         return date.getFullYear() + "-" + Strings.padLeft((date.getMonth() + 1), "0", 2) + "-" + Strings.padLeft(date.getDate(), "0", 2);

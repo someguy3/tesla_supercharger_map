@@ -4,8 +4,8 @@ define(['util/Objects'], function (Objects) {
     var SiteSorting = {};
 
     SiteSorting.sortByOpenedDate = function (siteOne, siteTwo) {
-        var oneNull = Objects.isNullOrUndefined(siteOne.dateOpened);
-        var twoNull = Objects.isNullOrUndefined(siteTwo.dateOpened);
+        var oneNull = Objects.isNullOrUndef(siteOne.dateOpened);
+        var twoNull = Objects.isNullOrUndef(siteTwo.dateOpened);
         if (oneNull && twoNull) {
             return 0;
         }
