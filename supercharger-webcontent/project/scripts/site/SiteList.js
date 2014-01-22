@@ -246,18 +246,16 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "displayName": "Greenwich, CT (north)",
             "address": new Address("Merritt Pkwy (near NY border)", "Greenwich", "CT", "06831", "USA"),
             "location": new google.maps.LatLng(41.0414, -73.6718333),
-            "url": "http://www.teslamotors.com/supercharger/greenwich",
-            "construction": true,
-            "dateOpened": Dates.fromString(""),
+            "url": "http://www.teslamotors.com/supercharger/greenwichnorth",
+            "dateOpened": Dates.fromString("2014-01-22"),
             "count": true
         },
         {
             "displayName": "Greenwich, CT (south)",
             "address": new Address("Merritt Pkwy (near NY border)", "Greenwich", "CT", "06831", "USA"),
             "location": new google.maps.LatLng(41.0405333333, -73.6734166667),
-            "url": "http://www.teslamotors.com/supercharger/greenwich",
-            "construction": true,
-            "dateOpened": Dates.fromString(""),
+            "url": "http://www.teslamotors.com/supercharger/greenwichsouth",
+            "dateOpened": Dates.fromString("2014-01-22"),
             "count": false
         },
         //-----------------------------------------------------------------------------------------------------------------| Delaware
