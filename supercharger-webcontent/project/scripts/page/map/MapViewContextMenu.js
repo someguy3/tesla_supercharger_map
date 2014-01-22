@@ -53,7 +53,7 @@ define([], function () {
 
     MapViewContextMenu.prototype.mousedown = function (event) {
         var contextMenu = this;
-        $(this).doTimeout('detect-long-click', 1000, function () {
+        $(this).doTimeout('detect-long-click', 3000, function () {
             contextMenu.show(event);
         });
         return true;
