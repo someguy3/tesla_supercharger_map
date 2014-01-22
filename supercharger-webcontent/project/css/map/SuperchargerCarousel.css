@@ -2,7 +2,7 @@
     display: inline-block;
     vertical-align: middle;
     font-size: .9em;
-    margin-left: 3em;
+    margin-left: 1.6em;
 }
 
 /* ----------------------------------------- */
@@ -39,8 +39,8 @@
 }
 
 #carousel-table td.control div {
-    font-size: 2.0em;
-    margin-right: 1em;
+    font-size: 1.6em;
+    margin-right: .5em;
 
     -webkit-user-select: none; /* webkit (safari, chrome) browsers */
     -moz-user-select: none; /* mozilla browsers */
