@@ -49,9 +49,10 @@ define(['page/data/ConstructionCount'], function (ConstructionCount) {
     };
 
     SuperchargerCarousel.prototype.updateTableRow = function (row, countryEntry) {
-        row.find("td").eq(1).text(countryEntry.open);
-        row.find("td").eq(2).text(countryEntry.construction);
-        row.find("td").eq(3).text(countryEntry.countryName);
+        var nonControlCells = row.find("td[rowspan!=2]");
+        nonControlCells.eq(0).text(countryEntry.open);
+        nonControlCells.eq(1).text(countryEntry.construction);
+        nonControlCells.eq(2).text(countryEntry.countryName);
         if (countryEntry.countryName === "Total") {
             row.addClass("emphasize");
         } else {
