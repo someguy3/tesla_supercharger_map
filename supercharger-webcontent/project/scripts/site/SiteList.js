@@ -627,10 +627,10 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
         {
             "displayName": "Moab, UT",
             "address": new Address("16 South Main St.", "Moab", "UT", "84511", "USA"),
-            "location": new google.maps.LatLng(38.5731167, -109.55245),
-            "url": "http://www.teslamotorsclub.com/showthread.php/8590-Tesla-Supercharger-network/page287?p=532503&viewfull=1#post532503",
-            "construction": true,
-            "dateOpened": Dates.fromString(""),
+            "location": new google.maps.LatLng(38.573122, -109.552368),
+            "url": "http://www.teslamotors.com/supercharger/moab",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/8590-Tesla-Supercharger-network/page287?p=532503&viewfull=1#post532503",
+            "dateOpened": Dates.fromString("2014-01-22"),
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Virginia
