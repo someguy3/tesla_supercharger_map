@@ -40,6 +40,7 @@
 
 #carousel-table td.control div {
     font-size: 2.0em;
+    margin-right: 1em;
 
     -webkit-user-select: none; /* webkit (safari, chrome) browsers */
     -moz-user-select: none; /* mozilla browsers */
