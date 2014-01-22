@@ -8,6 +8,7 @@ define([], function () {
         this.mapCanvas = $('#map-canvas');
         this.googleMap = googleMap;
         this.contextMenuDiv = MapViewContextMenu.createMenu(this.googleMap.getDiv());
+        this.showStartTime = 0;
 
         var menu = this;
         this.contextMenuDiv.on("click", function (event) {
@@ -21,6 +22,9 @@ define([], function () {
 
         google.maps.event.addListener(this.googleMap, 'rightclick', jQuery.proxy(this.show, this));
         google.maps.event.addListener(this.googleMap, 'click', jQuery.proxy(this.hide, this));
+
+        google.maps.event.addListener(this.googleMap, 'mousedown', jQuery.proxy(this.mousedown, this));
+        google.maps.event.addListener(this.googleMap, 'mouseup', jQuery.proxy(this.mouseup, this));
 
     };
 
@@ -44,15 +48,34 @@ define([], function () {
     };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-//
+// Detect long-click (on tables, phones, etc)
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    MapViewContextMenu.prototype.mousedown = function (event) {
+        var contextMenu = this;
+        $(this).doTimeout('detect-long-click', 1000, function () {
+            contextMenu.show(event);
+        });
+        return true;
+    };
+
+    MapViewContextMenu.prototype.mouseup = function (event) {
+        $(this).doTimeout('detect-long-click');
+    };
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     /**
      * Hide context menu.
      */
     MapViewContextMenu.prototype.hide = function () {
-        this.contextMenuDiv.hide();
+        var elapsedTime = new Date().getTime() - this.showStartTime;
+        if (elapsedTime > 900) {
+            this.contextMenuDiv.hide();
+            this.showStartTime = 0;
+        }
     };
 
     /**
@@ -80,6 +103,7 @@ define([], function () {
         this.contextMenuDiv.css('left', x + MapViewContextMenu.DRAW_OFFSET_PX);
         this.contextMenuDiv.css('top', y + MapViewContextMenu.DRAW_OFFSET_PX);
         this.contextMenuDiv.show();
+        this.showStartTime = new Date().getTime();
     };
 
     MapViewContextMenu.prototype.getCanvasXY = function (currentLatLng) {
