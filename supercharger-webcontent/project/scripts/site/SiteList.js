@@ -53,10 +53,10 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
         {
             "displayName": "Kingman, AZ",
             "address": new Address("789 West Beale Street", "Kingman", "AZ", "86401", "USA"),
-            "location": new google.maps.LatLng(35.191706, -114.066081),
-            "url": "http://www.teslamotorsclub.com/showthread.php/25072-Supercharger-Kingman-AZ",
-            "construction": true,
-            "dateOpened": Dates.fromString(""),
+            "location": new google.maps.LatLng(35.191331,-114.065592),
+            "url": "http://www.teslamotors.com/supercharger/kingman",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25072-Supercharger-Kingman-AZ",
+            "dateOpened": Dates.fromString("2014-01-22"),
             "count": true
         },
         {
