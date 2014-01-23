@@ -6,6 +6,12 @@
     font-weight: bold;
     font-size: larger;
     color: deepskyblue;
+    margin: 0 .5em 0 .5em;
+}
+
+#range-slider {
+    display: inline-block;
+    width: 270px
 }
 
 label.control {
