@@ -2,6 +2,7 @@
  Slider styling
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .slider-value-label {
+    display: inline-block;
     text-align: center;
     font-weight: bold;
     font-size: larger;
@@ -9,7 +10,7 @@
     margin: 0 .5em 0 .5em;
 }
 
-#range-slider {
+.slider-control {
     display: inline-block;
     width: 270px
 }
