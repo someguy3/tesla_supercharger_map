@@ -355,6 +355,15 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
         },
         //-----------------------------------------------------------------------------------------------------------------| Maryland
         {
+            "displayName": "Bethesda, MD",
+            "address": new Address("7101 Democracy Blvd", "Bethesda", "MD", "20817", "USA"),
+            "location": new google.maps.LatLng(39.0250333, -77.1480333),
+            "url": "http://www.teslamotorsclub.com/forumdisplay.php/77-Charging-Standards-and-Infrastructure",
+            "dateOpened": Dates.fromString(""),
+            "construction": true,
+            "count": true
+        },
+        {
             "displayName": "Hagerstown, MD",
             "address": new Address("495 Premium Outlets Blvd", "Hagerstown", "MD", "21740", "USA"),
             "location": new google.maps.LatLng(39.609247, -77.732129),
