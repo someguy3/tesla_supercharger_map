@@ -53,10 +53,10 @@ define(['model/Range', 'lib/spectrum'], function (Range) {
     ControlView.prototype.initRangeUnitControls = function () {
         var control = this;
         $("#range-unit-mi-label").click(function () {
-            control.handleDistanceUnit("M");
+            control.handleDistanceUnit("mi");
         });
         $("#range-unit-km-label").click(function () {
-            control.handleDistanceUnit("K");
+            control.handleDistanceUnit("km");
         });
     };
 
@@ -184,9 +184,9 @@ define(['model/Range', 'lib/spectrum'], function (Range) {
      * Handle changes to distance unit.
      */
     ControlView.prototype.handleDistanceUnit = function (newUnit) {
-        if (newUnit === "M") {
+        if (newUnit === "mi") {
             this.controlState.range.setUnit(Range.Unit.miles);
-        } else if (newUnit === "K") {
+        } else if (newUnit === "km") {
             this.controlState.range.setUnit(Range.Unit.kilometers);
         }
         this.initRangeControl();
