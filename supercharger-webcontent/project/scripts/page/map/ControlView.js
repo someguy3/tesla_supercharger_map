@@ -39,8 +39,27 @@ define(['model/Range', 'lib/spectrum'], function (Range) {
      * Initialize controls
      */
     ControlView.prototype.initializeControls = function () {
+        this.initializeZoomToLocationInput();
+        this.initializeRangeControl();
+        this.initializeStatusCheckboxes();
+        this.initializeRangeUnitControls();
+        this.initializeColorSliders();
+        this.initializeColorInputs();
+        this.updateTextFillOpacityDisplay();
+        this.updateTextBorderOpacityDisplay();
+    };
 
+    ControlView.prototype.initializeRangeUnitControls = function () {
+        var control = this;
+        $("#range-unit-mi-label").click(function () {
+            control.handleDistanceUnit("M");
+        });
+        $("#range-unit-km-label").click(function () {
+            control.handleDistanceUnit("K");
+        });
+    };
 
+    ControlView.prototype.initializeColorSliders = function () {
         $("#fill-opacity-slider").slider(
             {
                 value: this.controlState.fillOpacity,
@@ -58,7 +77,9 @@ define(['model/Range', 'lib/spectrum'], function (Range) {
                 step: 0.10,
                 slide: jQuery.proxy(this.handleBorderOpacitySlide, this)
             });
+    };
 
+    ControlView.prototype.initializeColorInputs = function () {
         $("#fill-color-input").spectrum({
             color: this.controlState.fillColor,
             change: jQuery.proxy(this.handleFillColorChange, this)
@@ -68,22 +89,6 @@ define(['model/Range', 'lib/spectrum'], function (Range) {
             color: this.controlState.borderColor,
             change: jQuery.proxy(this.handleBorderColorChange, this)
         });
-
-        var controlView = this;
-        $("#status-completed-check").change(function (event) {
-            controlView.controlState.showCompleted = $(this).is(':checked');
-            controlView.trigger("station-status-change-event", controlView.controlState);
-        });
-        $("#status-construction-check").change(function (event) {
-            controlView.controlState.showConstruction = $(this).is(':checked');
-            controlView.trigger("station-status-change-event", controlView.controlState);
-        });
-
-        this.initializeRangeControl();
-        this.initializeZoomToLocationInput();
-
-        this.updateTextFillOpacityDisplay();
-        this.updateTextBorderOpacityDisplay();
     };
 
     ControlView.prototype.initializeZoomToLocationInput = function () {
@@ -94,6 +99,18 @@ define(['model/Range', 'lib/spectrum'], function (Range) {
                 event.preventDefault();
                 controlView.handleZoomToLocation(event);
             }
+        });
+    };
+
+    ControlView.prototype.initializeStatusCheckboxes = function () {
+        var controlView = this;
+        $("#status-completed-check").change(function (event) {
+            controlView.controlState.showCompleted = $(this).is(':checked');
+            controlView.trigger("station-status-change-event", controlView.controlState);
+        });
+        $("#status-construction-check").change(function (event) {
+            controlView.controlState.showConstruction = $(this).is(':checked');
+            controlView.trigger("station-status-change-event", controlView.controlState);
         });
     };
 
@@ -175,7 +192,7 @@ define(['model/Range', 'lib/spectrum'], function (Range) {
     };
 
     /**
-     * Handle changes to distance unit.
+     * Handle zoom to location.
      */
     ControlView.prototype.handleZoomToLocation = function (event) {
         event.preventDefault();
@@ -192,7 +209,7 @@ define(['model/Range', 'lib/spectrum'], function (Range) {
      * Update the range text display value.
      */
     ControlView.prototype.updateTextRangeDisplay = function () {
-        $("#range-number-text").text(this.controlState.range.getCurrent() + " " + this.controlState.range.getUnitName());
+        $("#range-number-text").text(this.controlState.range.getCurrent());
     };
 
     /**

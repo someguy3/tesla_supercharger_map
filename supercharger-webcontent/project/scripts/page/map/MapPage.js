@@ -63,11 +63,6 @@ define(
             this.navBarDropDown.on("nav-dropdown-event-circles-off", function () {
                 mapView.setAllRangeCircleVisibility(false);
             });
-
-            this.navBarDropDown.on("nav-dropdown-event-dist-unit", function (event, newUnit) {
-                controlView.handleDistanceUnit(newUnit);
-            });
-
         };
 
         /**

@@ -41,10 +41,6 @@ define(['util/Events'], function (Events) {
         else if (eventDetail.actionName === "rendering") {
             this.handleRenderingAction();
         }
-        else if (eventDetail.actionName === "use-kilometers") {
-            var newUnit = eventDetail.link.find(".glyphicon").hasClass("glyphicon-check") ? 'K' : 'M';
-            this.trigger("nav-dropdown-event-dist-unit", newUnit);
-        }
         else if (eventDetail.actionName === "range-circles-all-off") {
             this.trigger("nav-dropdown-event-circles-off");
         }
