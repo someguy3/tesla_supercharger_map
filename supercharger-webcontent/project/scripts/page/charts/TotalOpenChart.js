@@ -64,7 +64,7 @@ define(['site/Sites', 'site/SiteIterator', 'lib/highcharts'], function (Sites, S
             },
             xAxis: {
                 type: 'datetime',
-                dateTimeLabelFormats: { // don't display the dummy year
+                dateTimeLabelFormats: {
                     month: '%b %e %Y',
                     year: '%b'
                 },
