@@ -28,7 +28,7 @@ define(['util/Objects', 'site/SiteIterator', 'util/Dates', 'lib/stupidtable' ], 
                     "<td>" + supercharger.address.state + "</td>" +
                     "<td>" + supercharger.address.zip + "</td>" +
                     "<td>" + supercharger.address.country + "</td>" +
-                    "<td class='gps'>" + supercharger.location.toUrlValue() + "</td>" +
+                    "<td class='gps'>" + supercharger.location.toUrlValue().replace(",",", ") + "</td>" +
                     "<td>" + (supercharger.construction ? "Construction" : "Open") + "</td>" +
                     "<td>" + Dates.toString(supercharger.dateOpened) + "</td>" +
                     "<td class='link'>" + asLink(supercharger.url, "SC") + "</td>" +

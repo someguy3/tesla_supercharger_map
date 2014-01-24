@@ -6,9 +6,6 @@
 
 #supercharger-data-table th {
     text-align: left;
-    background: whitesmoke;
-    padding: 5px;
-    border: 1px solid white;
 }
 
 #supercharger-data-table th[data-sort] {
@@ -17,9 +14,6 @@
 
 #supercharger-data-table td {
     text-align: left;
-    border: 1px solid #dddddd;
-    padding-left: 3px;
-    padding-right: 3px;
 }
 
 #supercharger-data-table td.link {
@@ -29,5 +23,5 @@
 
 #supercharger-data-table td.gps {
     font-family: monospace;
-    font-size: .85em;
+    font-size: .75em;
 }
