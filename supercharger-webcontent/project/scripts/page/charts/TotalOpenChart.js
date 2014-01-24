@@ -115,8 +115,8 @@ define(['site/Sites', 'site/SiteIterator', 'lib/highcharts'], function (Sites, S
             plotLinesArray.push(
                 {
                     value: Date.UTC(year, 0, 1),
-                    color: '#87CEEB',
-                    width: 2,
+                    color: 'black',
+                    width: 1,
                     label: {
                         text: year,
                         align: 'left',
