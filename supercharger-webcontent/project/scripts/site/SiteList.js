@@ -191,6 +191,7 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "address": new Address("321 Nut Tree RD", "Vacaville", "CA", "95687", "USA"),
             "location": new google.maps.LatLng(38.366645, -121.958136),
             "url": "http://www.teslamotors.com/supercharger/vacaville",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24773-Supercharger-Vacaville-CA",
             "dateOpened": Dates.fromString("2013-12-19"),
             "count": true
         },
@@ -319,7 +320,7 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "address": new Address("400 Airways Avenue", "Savannah", "GA", "31408", "USA"),
             "location": new google.maps.LatLng(32.135507, -81.212767),
             "url": "http://www.teslamotors.com/supercharger/savannah",
-            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/22256-Savannah-GA-SuperCharger",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24771-Supercharger-Savannah-GA",
             "dateOpened": Dates.fromString("2014-01-15"),
             "count": true
         },
@@ -570,6 +571,7 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "address": new Address("114 Bradford Blvd.", "Santee", "SC", "29142", "USA"),
             "location": new google.maps.LatLng(33.485858, -80.475763),
             "url": "http://www.teslamotors.com/supercharger/santee",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25065-Supercharger-Santee-SC",
             "dateOpened": Dates.fromString("2013-12-27"),
             "count": true
         },
