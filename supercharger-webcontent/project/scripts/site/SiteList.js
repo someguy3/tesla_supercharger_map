@@ -73,6 +73,7 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "address": new Address("155 N Tegner Tt", "Wickenburg", "AZ", "85390", "USA"),
             "location": new google.maps.LatLng(33.9702333, -112.73165),
             "url": "http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ",
             "dateOpened": Dates.fromString(""),
             "construction": "true",
             "count": true
