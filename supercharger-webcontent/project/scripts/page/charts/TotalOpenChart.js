@@ -65,7 +65,7 @@ define(['site/Sites', 'site/SiteIterator', 'lib/highcharts'], function (Sites, S
             xAxis: {
                 type: 'datetime',
                 dateTimeLabelFormats: {
-                    month: '%b %e %Y',
+                    month: '%b %e',
                     year: '%b'
                 },
                 plotLines: plotLinesArray
@@ -121,7 +121,9 @@ define(['site/Sites', 'site/SiteIterator', 'lib/highcharts'], function (Sites, S
                         text: year,
                         align: 'left',
                         style: {
-                            color: 'gray'
+                            color: 'gray',
+                            fontSize: '1.7em'
+
                         }
                     }
                 }
