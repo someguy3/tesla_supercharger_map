@@ -68,6 +68,15 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "count": true
         },
         {
+            "displayName": "Wickenburg, AZ",
+            "address": new Address("155 N Tegner Tt", "Wickenburg", "AZ", "85390", "USA"),
+            "location": new google.maps.LatLng(33.9702333, -112.73165),
+            "url": "http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ",
+            "dateOpened": Dates.fromString(""),
+            "construction": "true",
+            "count": true
+        },
+        {
             "displayName": "Yuma, AZ",
             "address": new Address("310 N Madison Ave", "Yuma", "AZ", "85364", "USA"),
             "location": new google.maps.LatLng(32.7276, -114.6189833),
