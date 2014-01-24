@@ -28,6 +28,7 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "address": new Address("444 S Watson RD", "Buckeye", "AZ", "85326", "USA"),
             "location": new google.maps.LatLng(33.443242, -112.557378),
             "url": "http://www.teslamotorsclub.com/showthread.php/25317-Supercharger-Buckeye-AZ",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25317-Supercharger-Buckeye-AZ",
             "dateOpened": Dates.fromString(""),
             "construction": true,
             "count": true
@@ -80,7 +81,8 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "displayName": "Yuma, AZ",
             "address": new Address("310 N Madison Ave", "Yuma", "AZ", "85364", "USA"),
             "location": new google.maps.LatLng(32.7276, -114.6189833),
-            "url": "http://www.teslamotorsclub.com/showthread.php/15088-Yuma-AZ-Supercharger#10",
+            "url": "http://www.teslamotorsclub.com/showthread.php/26337-Supercharger-Yuma-AZ",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/26337-Supercharger-Yuma-AZ",
             "dateOpened": Dates.fromString(""),
             "construction": "true",
             "count": true
@@ -178,7 +180,8 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "displayName": "San Juan Capistrano, CA",
             "address": new Address("31971 Camino Capistrano", "San Juan Capistrano", "CA", "92675", "USA"),
             "location": new google.maps.LatLng(33.498458, -117.6632),
-            "url": "http://www.teslamotors.com/forum/forums/san-juan-capistrano-supercharger?page=1",
+            "url": "http://www.teslamotorsclub.com/showthread.php/24984-Supercharger-San-Juan-Capistrano-CA",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24984-Supercharger-San-Juan-Capistrano-CA",
             "construction": true,
             "dateOpened": Dates.fromString(""),
             "count": true
@@ -367,7 +370,8 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "displayName": "Bethesda, MD",
             "address": new Address("7101 Democracy Blvd", "Bethesda", "MD", "20817", "USA"),
             "location": new google.maps.LatLng(39.0250333, -77.1480333),
-            "url": "http://www.teslamotorsclub.com/forumdisplay.php/77-Charging-Standards-and-Infrastructure",
+            "url": "http://www.teslamotorsclub.com/showthread.php/26484-Supercharger-Bethesda-MD",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/26484-Supercharger-Bethesda-MD",
             "dateOpened": Dates.fromString(""),
             "construction": true,
             "count": true
@@ -422,6 +426,7 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "address": new Address("111 Twin Buttes Rd", "Gallup", "NM", "87301", "USA"),
             "location": new google.maps.LatLng(35.505278, -108.828094),
             "url": "http://www.teslamotors.com/supercharger/gallup",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24954-Supercharger-Gallup-NM",
             "dateOpened": Dates.fromString("2014-01-07"),
             "count": true
         },
@@ -431,6 +436,7 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "address": new Address("701 Bridger Ave", "Las Vegas", "NV", "89101", "USA"),
             "location": new google.maps.LatLng(36.1657833333, -115.1393166667),
             "url": "http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV",
             "dateOpened": Dates.fromString(""),
             "construction": true,
             "count": true
@@ -485,6 +491,7 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "address": new Address("8210 Macedonia Commons Blvd", "Macedonia", "OH", "44056", "USA"),
             "location": new google.maps.LatLng(41.313663, -81.517018),
             "url": "http://www.teslamotors.com/supercharger/macedonia",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24872-Supercharger-Macedonia-OH",
             "dateOpened": Dates.fromString("2014-01-15"),
             "count": true
         },
@@ -647,7 +654,7 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "address": new Address("16 South Main St.", "Moab", "UT", "84511", "USA"),
             "location": new google.maps.LatLng(38.573122, -109.552368),
             "url": "http://www.teslamotors.com/supercharger/moab",
-            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/8590-Tesla-Supercharger-network/page287?p=532503&viewfull=1#post532503",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/21121-Utah-Super-Charger-Locations",
             "dateOpened": Dates.fromString("2014-01-22"),
             "count": true
         },
