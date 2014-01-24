@@ -53,7 +53,7 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
         {
             "displayName": "Kingman, AZ",
             "address": new Address("789 West Beale Street", "Kingman", "AZ", "86401", "USA"),
-            "location": new google.maps.LatLng(35.191331,-114.065592),
+            "location": new google.maps.LatLng(35.191331, -114.065592),
             "url": "http://www.teslamotors.com/supercharger/kingman",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25072-Supercharger-Kingman-AZ",
             "dateOpened": Dates.fromString("2014-01-22"),
@@ -366,10 +366,10 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
         {
             "displayName": "Hagerstown, MD",
             "address": new Address("495 Premium Outlets Blvd", "Hagerstown", "MD", "21740", "USA"),
-            "location": new google.maps.LatLng(39.609247, -77.732129),
-            "url": "http://www.teslamotorsclub.com/showthread.php/25085-Maryland-Superchargers?p=523453#post523453",
-            "dateOpened": Dates.fromString(""),
-            "construction": true,
+            "location": new google.maps.LatLng(39.605859, -77.733324),
+            "url": "http://www.teslamotors.com/supercharger/hagerstown",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/25085-Maryland-Superchargers?p=523453#post523453",
+            "dateOpened": Dates.fromString("2014-01-23"),
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| Minnesota
