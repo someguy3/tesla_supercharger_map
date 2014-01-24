@@ -1,4 +1,4 @@
-define(['site/SiteIterator', 'util/Dates', 'lib/stupidtable' ], function (SiteIterator, Dates) {
+define(['util/Objects', 'site/SiteIterator', 'util/Dates', 'lib/stupidtable' ], function (Objects, SiteIterator, Dates) {
 
     /**
      * Constructor
@@ -6,6 +6,8 @@ define(['site/SiteIterator', 'util/Dates', 'lib/stupidtable' ], function (SiteIt
     var DataViewTable = function () {
         this.superChargerDataTable = $("#supercharger-data-table");
     };
+
+    DataViewTable.DEFAULT_DISCUSS_URL = "http://www.teslamotorsclub.com/forumdisplay.php/77-Charging-Standards-and-Infrastructure";
 
     DataViewTable.prototype.createTable = function () {
         this.appendTableContent();
@@ -29,13 +31,23 @@ define(['site/SiteIterator', 'util/Dates', 'lib/stupidtable' ], function (SiteIt
                     "<td class='gps'>" + supercharger.location.toUrlValue() + "</td>" +
                     "<td>" + (supercharger.construction ? "Construction" : "Open") + "</td>" +
                     "<td>" + Dates.toString(supercharger.dateOpened) + "</td>" +
-                    "<td class='tog'>" + "<a href='" + supercharger.url + "'>link</a></td>" +
+                    "<td class='link'>" + asLink(supercharger.url, "SC") + "</td>" +
+                    "<td class='link'>" + buildDiscussionLink(supercharger) + "</td>" +
                     "</tr>"
                 );
             }
         );
-
     };
+
+    function buildDiscussionLink(supercharger) {
+        return (Objects.isNullOrUndef(supercharger.urlDiscuss) ?
+            asLink(DataViewTable.DEFAULT_DISCUSS_URL, "forum") :
+            asLink(supercharger.urlDiscuss, "thread"));
+    }
+
+    function asLink(href, content) {
+        return "<a href='" + href + "'>" + content + "</a>";
+    }
 
     DataViewTable.prototype.setupTableSortPlugin = function () {
         var table = $("#supercharger-data-table").stupidtable({});
