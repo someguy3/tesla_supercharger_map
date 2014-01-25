@@ -43,6 +43,16 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "count": true
         },
         {
+            "displayName": "Gila Bend, AZ",
+            "address": new Address("826 W Pima St", "Gila Bend", "AZ", "85337", "USA"),
+            "location": new google.maps.LatLng(32.943969, -112.733506),
+            "url": "http://www.teslamotorsclub.com/showthread.php/26077-Supercharger-Gila-Bend-AZ",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/26077-Supercharger-Gila-Bend-AZ",
+            "dateOpened": Dates.fromString(""),
+            "construction": true,
+            "count": true
+        },
+        {
             "displayName": "Holbrook, AZ",
             "address": new Address("2096 Navajo Blvd", "Holbrook", "AZ", "86025", "USA"),
             "location": new google.maps.LatLng(34.922962, -110.145558),
