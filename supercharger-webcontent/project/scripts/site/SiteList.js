@@ -132,6 +132,16 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "count": true
         },
         {
+            "displayName": "El Centro, CA",
+            "address": new Address("3451 S Dogwood Rd", "El Centro", "CA", "92243", "USA"),
+            "location": new google.maps.LatLng(32.7637233, -115.5315171),
+            "url": "http://www.teslamotorsclub.com/showthread.php/26691-Supercharger-El-Centro-CA",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/26691-Supercharger-El-Centro-CA",
+            "dateOpened": Dates.fromString(""),
+            "construction": true,
+            "count": true
+        },
+        {
             "displayName": "Folsom, CA",
             "address": new Address("13000 Folsom Blvd", "Folsom", "CA", "95630", "USA"),
             "location": new google.maps.LatLng(38.64258, -121.18806),
