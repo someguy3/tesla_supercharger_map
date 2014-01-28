@@ -665,6 +665,16 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "count": true
         },
         {
+            "displayName": "Green River, UT",
+            "address": new Address("1765 E Main St", "Green River", "UT", "84525", "USA"),
+            "location": new google.maps.LatLng(38.9930036, -110.1400054),
+            "url": "http://www.teslamotorsclub.com/showthread.php/26516-Supercharger-Green-River-UT",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/26516-Supercharger-Green-River-UT",
+            "dateOpened": Dates.fromString(""),
+            "construction": true,
+            "count": true
+        },
+        {
             "displayName": "Moab, UT",
             "address": new Address("16 South Main St.", "Moab", "UT", "84511", "USA"),
             "location": new google.maps.LatLng(38.573122, -109.552368),
