@@ -393,11 +393,10 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
         {
             "displayName": "Bethesda, MD",
             "address": new Address("7101 Democracy Blvd", "Bethesda", "MD", "20817", "USA"),
-            "location": new google.maps.LatLng(39.0250333, -77.1480333),
-            "url": "http://www.teslamotorsclub.com/showthread.php/26484-Supercharger-Bethesda-MD",
+            "location": new google.maps.LatLng(39.023876, -77.144352),
+            "url": "http://www.teslamotors.com/supercharger/bethesda",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/26484-Supercharger-Bethesda-MD",
-            "dateOpened": Dates.fromString(""),
-            "construction": true,
+            "dateOpened": Dates.fromString("2014-01-30"),
             "count": true
         },
         {
