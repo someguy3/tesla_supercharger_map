@@ -730,11 +730,11 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
         //-----------------------------------------------------------------------------------------------------------------| Wisconsin
         {
             "displayName": "Eau Claire, WI",
-            "address": new Address("4639 Keystone Crossing", "Eau Claire", "WI", "54701", "USA"),
-            "location": new google.maps.LatLng(44.7709, -91.4370833333),
-            "url": "http://www.teslamotorsclub.com/showthread.php/24337-Wisconsin-Supercharger-Discussion-amp-Tracking/page31",
-            "construction": true,
-            "dateOpened": Dates.fromString(""),
+            "address": new Address("4601 Keystone Crossing", "Eau Claire", "WI", "54701", "USA"),
+            "location": new google.maps.LatLng(44.77083,-91.43711),
+            "url" : "http://www.teslamotors.com/supercharger/eauclaire",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24337-Wisconsin-Supercharger-Discussion-amp-Tracking/page31",
+            "dateOpened": Dates.fromString("2014-01-30"),
             "count": true
         },
         {
