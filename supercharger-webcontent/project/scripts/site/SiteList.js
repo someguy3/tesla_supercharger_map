@@ -501,6 +501,16 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "count": true
         },
         {
+            "displayName": "Plymouth, NC",
+            "address": new Address("840 U.S. 64", "Plymouth", "NC", "27962", "USA"),
+            "location": new google.maps.LatLng(35.850609, -76.756162),
+            "url": "http://www.teslamotorsclub.com/showthread.php/22396-Plymouth-NC-Supercharger-Location",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/22396-Plymouth-NC-Supercharger-Location",
+            "construction": true,
+            "dateOpened": Dates.fromString(""),
+            "count": true
+        },
+        {
             "displayName": "Rocky Mount, NC",
             "address": new Address("651 N. Winstead Avenue", "Rocky Mount", "NC", "27804", "USA"),
             "location": new google.maps.LatLng(35.972874, -77.846870),
@@ -730,8 +740,8 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
         {
             "displayName": "Eau Claire, WI",
             "address": new Address("4601 Keystone Crossing", "Eau Claire", "WI", "54701", "USA"),
-            "location": new google.maps.LatLng(44.77083,-91.43711),
-            "url" : "http://www.teslamotors.com/supercharger/eauclaire",
+            "location": new google.maps.LatLng(44.77083, -91.43711),
+            "url": "http://www.teslamotors.com/supercharger/eauclaire",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/24337-Wisconsin-Supercharger-Discussion-amp-Tracking/page31",
             "dateOpened": Dates.fromString("2014-01-30"),
             "count": true
