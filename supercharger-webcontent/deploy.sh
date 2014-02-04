@@ -6,7 +6,7 @@
 WEB_APP_DIR='project-built'
 REMOTE_HOST=dev.redshiftsoft.com
 SSH_USER=keith
-DIR_DEPLOY=/var/www/wiki_tesla/supercharger
+DIR_DEPLOY=/var/www/wiki_tesla/supercharge.info
 BANNER="##########################################################"
 
 # The string check here is for extra safely.
