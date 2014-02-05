@@ -91,11 +91,10 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
         {
             "displayName": "Yuma, AZ",
             "address": new Address("310 N Madison Ave", "Yuma", "AZ", "85364", "USA"),
-            "location": new google.maps.LatLng(32.7276, -114.6189833),
-            "url": "http://www.teslamotorsclub.com/showthread.php/26337-Supercharger-Yuma-AZ",
+            "location": new google.maps.LatLng(32.726686, -114.619093),
+            "url": "http://www.teslamotors.com/supercharger/yuma",
             "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/26337-Supercharger-Yuma-AZ",
-            "dateOpened": Dates.fromString(""),
-            "construction": "true",
+            "dateOpened": Dates.fromString("2014-02-04"),
             "count": true
         },
         //-----------------------------------------------------------------------------------------------------------------| California
