@@ -235,6 +235,16 @@ define(['util/Dates', 'model/Address'], function (Dates, Address) {
             "count": true
         },
         {
+            "displayName": "Lonetree, CO",
+            "address": new Address("8401 Park Meadows Center Dr", "Lonetree", "CO", "80124", "USA"),
+            "location": new google.maps.LatLng(39.562125, -104.8761924),
+            "url": "http://www.teslamotorsclub.com/showthread.php/27255-Supercharger-Lonetree-CO",
+            "urlDiscuss": "http://www.teslamotorsclub.com/showthread.php/27255-Supercharger-Lonetree-CO",
+            "dateOpened": Dates.fromString(""),
+            "construction": true,
+            "count": true
+        },
+        {
             "displayName": "Silverthorne, CO",
             "address": new Address("309 Rainbow Dr", "Silverthorne", "CO", "80498", "USA"),
             "location": new google.maps.LatLng(39.631457, -106.070816),
