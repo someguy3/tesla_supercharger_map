@@ -12,7 +12,7 @@ define(['util/Objects'], function (Objects) {
     };
 
     SitePredicates.notCustom = function (site) {
-        return !site.custom;
+        return !site.isUserAdded();
     };
 
     SitePredicates.openAndCounted = function (site) {

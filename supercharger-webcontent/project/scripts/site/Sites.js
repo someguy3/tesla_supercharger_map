@@ -1,4 +1,4 @@
-define(['util/Asserts', 'site/Address', 'siteload/SiteTransform'], function (Asserts, Address, SiteList) {
+define(['util/Asserts', 'site/Address', 'site/Supercharger', 'siteload/SiteTransform'], function (Asserts, Address, Supercharger, SiteList) {
 
     var Sites = {};
 
@@ -27,15 +27,7 @@ define(['util/Asserts', 'site/Address', 'siteload/SiteTransform'], function (Ass
     };
 
     Sites.addSupercharger = function (displayName, location) {
-        var charger = {
-            "id": (Sites.LIST.length + 25000),
-            "displayName": displayName,
-            "address": new Address("", "", "", "", ""),
-            "location": location,
-            "url": null,
-            "count": false,
-            "custom": true
-        };
+        var charger = Supercharger.buildNewCustom((Sites.LIST.length + 25000), displayName, location);
         Sites.LIST.push(charger);
         return charger;
     };

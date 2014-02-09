@@ -1,9 +1,26 @@
 define([], function () {
 
     var Status = {
-        PLANNED: {value: 0, displayName: "Planned"},
-        CONSTRUCTION: {value: 1, displayName: "Under Construction"},
-        OPEN: {value: 2, displayName: "Open"}
+        PLANNED: {
+            value: 0,
+            displayName: "Planned",
+            iconUrl: 'images/dots/green_dot_16.png'
+        },
+        CONSTRUCTION: {
+            value: 1,
+            displayName: "Under Construction",
+            iconUrl: 'images/construction-cone-marker.png'
+        },
+        OPEN: {
+            value: 2,
+            displayName: "Open",
+            iconUrl: 'images/dots/red_dot_16.png'
+        },
+        USER_ADDED: {
+            value: 3,
+            displayName: "Custom",
+            iconUrl: 'images/dots/blue_dot_16.png'
+        }
     };
 
     Status.fromString = function (string) {
@@ -14,6 +31,8 @@ define([], function () {
             return Status.CONSTRUCTION;
         } else if (s === 'OPEN') {
             return Status.OPEN;
+        } else if (s === 'USER_ADDED') {
+            return Status.USER_ADDED;
         }
         throw new Error("invalid status: " + string);
     };

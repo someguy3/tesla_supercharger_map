@@ -266,14 +266,11 @@ define(
                 map: googleMap,
                 title: supercharger.displayName,
                 icon: {
-                    url: (supercharger.custom ? 'images/dots/blue_dot_16.png' : 'images/dots/red_dot_16.png'),
-                    anchor: { x: 8, y: 8 }
+                    url: supercharger.status.iconUrl,
+                    anchor: supercharger.isConstruction() ? null : { x: 8, y: 8 }
                 },
                 animation: google.maps.Animation.DROP
             };
-            if (supercharger.isConstruction()) {
-                markerOptions.icon = "images/construction-cone-marker.png";
-            }
             var marker = new google.maps.Marker(markerOptions);
             supercharger.marker = marker;
             marker.supercharger = supercharger;
@@ -302,7 +299,7 @@ define(
             //
             // Web Page
             //
-            if (supercharger.url !== null) {
+            if (Objects.isNotNullOrUndef(supercharger.url)) {
                 popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>";
                 popupContent += "&nbsp;&nbsp;&nbsp;";
             }
@@ -315,7 +312,7 @@ define(
             //
             // Remove Marker
             //
-            if (supercharger.custom) {
+            if (supercharger.isUserAdded()) {
                 popupContent += "<a class='marker-toggle-trigger' href='" + supercharger.id + "'>remove</a>";
                 popupContent += "&nbsp;&nbsp;&nbsp;";
             }

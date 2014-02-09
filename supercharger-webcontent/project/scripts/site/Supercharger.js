@@ -9,7 +9,6 @@ define(['site/Address', 'site/SiteStatus', 'util/Objects'], function (Address, S
          * id           -- [Integer] uniquely identifies each record.
          * circle       -- [google.maps.Circle] a reference to the google-maps Circle object indicating range for this supercharger.
          * marker       -- [google.maps.Marker] a reference to the google-maps Marker object associated with this supercharger.
-         * custom       -- [Boolean] true indicates that this is a custom marker added by the customer.
          *
          * @constructor
          */
@@ -17,6 +16,17 @@ define(['site/Address', 'site/SiteStatus', 'util/Objects'], function (Address, S
             this.address = new Address();
             this.count = true;
             this.status = Status.OPEN;
+        };
+
+        Supercharger.buildNewCustom = function (id, displayName, location) {
+            var supercharger = new Supercharger();
+            supercharger.id = id;
+            supercharger.displayName = displayName;
+            supercharger.address = new Address("", "", "", "", "");
+            supercharger.location = location;
+            supercharger.count = false;
+            supercharger.status = Status.USER_ADDED;
+            return supercharger;
         };
 
         Supercharger.prototype.isPlanned = function () {
@@ -27,6 +37,9 @@ define(['site/Address', 'site/SiteStatus', 'util/Objects'], function (Address, S
         };
         Supercharger.prototype.isOpen = function () {
             return this.status === Status.OPEN;
+        };
+        Supercharger.prototype.isUserAdded = function () {
+            return this.status === Status.USER_ADDED;
         };
 
         Supercharger.prototype.hasOpenDate = function () {
