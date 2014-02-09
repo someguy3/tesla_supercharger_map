@@ -28,7 +28,7 @@ define(['util/Asserts', 'model/Address', 'site/SiteList'], function (Asserts, Ad
 
     Sites.addSupercharger = function (displayName, location) {
         var charger = {
-            "id": (Sites.LIST.length + 10 * 1000),
+            "id": (Sites.LIST.length + 25000),
             "displayName": displayName,
             "address": new Address("", "", "", "", ""),
             "location": location,
