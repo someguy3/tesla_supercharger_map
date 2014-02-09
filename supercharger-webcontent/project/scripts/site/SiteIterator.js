@@ -12,6 +12,7 @@ define(['util/Objects', 'siteload/SiteTransform', 'site/SitePredicates', 'site/S
     SiteIterator.FUN_SORT_BY_OPEN_DATE = SiteSorting.sortByOpenedDate;
 
     SiteIterator.PRED_IS_OPEN = SitePredicates.open;
+    SiteIterator.PRED_IS_USA = SitePredicates.isUSA;
     SiteIterator.PRED_IS_COUNTED = SitePredicates.counted;
     SiteIterator.PRED_NOT_USER_ADDED = SitePredicates.notUserAdded;
     SiteIterator.PRED_HAS_CIRCLE = SitePredicates.hasCircle;

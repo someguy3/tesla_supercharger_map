@@ -23,6 +23,9 @@ define(['util/Objects'], function (Objects) {
         return Objects.isNotNullOrUndef(site.circle);
     };
 
+    SitePredicates.isUSA = function (site) {
+        return site.address.isUSA();
+    };
 
     return SitePredicates;
 
