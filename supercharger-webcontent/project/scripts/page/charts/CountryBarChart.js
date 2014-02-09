@@ -63,13 +63,7 @@ define(['site/Sites', 'site/SiteIterator', 'util/Objects', 'lib/highcharts'], fu
             },
             yAxis: {
                 title: {
-                    text: 'Count'
-                }
-            },
-            tooltip: {
-                formatter: function () {
-                    return '<b>' + this.series.name + '</b><br/>' +
-                        "superchargers: " + this.y;
+                    text: 'Supercharger Count'
                 }
             },
             plotOptions: {

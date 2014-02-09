@@ -67,12 +67,6 @@ define(['site/Sites', 'site/SiteIterator', 'util/Objects', 'lib/highcharts'], fu
                     text: 'Supercharger Count'
                 }
             },
-            tooltip: {
-                formatter: function () {
-                    return '<b>' + this.series.name + '</b><br/>' +
-                        "superchargers: " + this.y;
-                }
-            },
             plotOptions: {
                 bar: {
                     dataLabels: {
