@@ -4,6 +4,20 @@
 Map Page
 ---------------------------------
 
+() Map Options Menu
+    () Range circles on
+        () should set default range to 50 miles if range is currently zero.
+        () should turn on just one range circle, if already off.
+        () should work when only displaying various combinations of PLANNED, USER_ADDED, CONSTRUCTION
+    () Range circles off.
+    () Range Adjuster
+    () Status Selection
+    () Rendering Options
+        () Fill color
+        () Border color
+        () Fill opacity
+        () Border opacity
+
 () Context Menu
     () Should be able to right-click and get context menu inside or outside of a range circle.
     () Context menu should be hidden after an item is selected.
@@ -23,6 +37,8 @@ Map Page
     () Verify counts are correct for all statuses.
     () Verify scrolling up and own works.
     () Verify up/down chevrons fade to gray when scroll reaches top/bottom.
+
+() Zoom to location
 
 ---------------------------------
 Data Page

@@ -1,20 +1,20 @@
-define(['page/data/CountryCodes', 'site/SiteIterator'], function (CountryCodes, SiteIterator) {
+define(['site/SiteIterator'], function (SiteIterator) {
 
     /**
      *
      * @constructor
      */
-    var ConstructionCount = function () {
+    var SiteCount = function () {
     };
 
     /**
-     * Construction count.
+     * Site count.
      *
      * RETURNED ARRAY:
      *
      *  [
-     *   { countryName: 'USA',    countryCode: 'us', open: 3, construction: 7, planned: 2  },
-     *   { countryName: 'Germany',countryCode: 'de', open: 3, construction: 4, planned: 1   }
+     *   { countryName: 'USA',    open: 3, construction: 7, planned: 2  },
+     *   { countryName: 'Germany',open: 3, construction: 4, planned: 1   }
      *  ]
      *
      * REFERENCE MAP:
@@ -23,7 +23,7 @@ define(['page/data/CountryCodes', 'site/SiteIterator'], function (CountryCodes, 
      *   de: arrayRef
      * }
      */
-    ConstructionCount.getConstructionCount = function () {
+    SiteCount.getCountList = function () {
         var i = 0,
             countryRefMap = {},
             countryArray = [],
@@ -37,7 +37,7 @@ define(['page/data/CountryCodes', 'site/SiteIterator'], function (CountryCodes, 
             .iterate(function (supercharger) {
                 var countryName = supercharger.address.country;
                 if (!countryRefMap[countryName]) {
-                    var newEntry = { countryName: countryName, countryCode: CountryCodes.fromName(countryName), open: 0, construction: 0, planned: 0 };
+                    var newEntry = { countryName: countryName, open: 0, construction: 0, planned: 0 };
                     countryRefMap[countryName] = newEntry;
                     countryArray.push(newEntry);
                 }
@@ -58,16 +58,16 @@ define(['page/data/CountryCodes', 'site/SiteIterator'], function (CountryCodes, 
             }
         );
 
-        countryArray.push({ countryName: 'Total', countryCode: 'Total', open: totalOpen, construction: totalConstruction, planned: totalPlanned });
-        countryArray.sort(ConstructionCount.sortByOpenCount);
+        countryArray.push({ countryName: 'Total', open: totalOpen, construction: totalConstruction, planned: totalPlanned });
+        countryArray.sort(SiteCount.sortByOpenCount);
         return countryArray;
     };
 
 
-    ConstructionCount.sortByOpenCount = function (one, two) {
+    SiteCount.sortByOpenCount = function (one, two) {
         return two.open - one.open;
     };
 
-    return ConstructionCount;
+    return SiteCount;
 
 });

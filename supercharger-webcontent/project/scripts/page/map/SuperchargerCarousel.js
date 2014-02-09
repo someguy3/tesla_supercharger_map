@@ -1,4 +1,4 @@
-define(['page/data/ConstructionCount'], function (ConstructionCount) {
+define(['site/SiteCount'], function (SiteCount) {
 
 
     /**
@@ -7,7 +7,7 @@ define(['page/data/ConstructionCount'], function (ConstructionCount) {
      */
     var SuperchargerCarousel = function () {
         this.currentIndex = 0;
-        this.countryCountArray = ConstructionCount.getConstructionCount();
+        this.countryCountArray = SiteCount.getCountList();
         this.table = $("#carousel-table");
 
         this.cellUp = this.table.find("td.up");
