@@ -33,6 +33,9 @@ define(['model/Address', 'model/SiteStatus', 'util/Objects'], function (Address,
             return Objects.isNotNullOrUndef(this.dateOpened);
         };
 
+        Supercharger.prototype.toString = function () {
+            return JSON.stringify(this);
+        };
 
         return Supercharger;
     }

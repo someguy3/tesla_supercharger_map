@@ -1,8 +1,8 @@
 /**
  * Takes the collection of raw sites and validates them then transforms them into supercharger objects.
  */
-define(['siteload/SiteMapsRaw', 'siteload/FieldDefinitions', 'model/Supercharger', 'util/Objects'],
-    function (SiteMapsRaw, FieldDefinitions, Supercharger, Objects) {
+define(['siteload/SiteMapsRaw', 'siteload/FieldDefinitions', 'model/Supercharger', 'util/Objects', 'util/Asserts'],
+    function (SiteMapsRaw, FieldDefinitions, Supercharger, Objects, Asserts) {
 
         var SiteTransform = [
         ];
@@ -10,8 +10,8 @@ define(['siteload/SiteMapsRaw', 'siteload/FieldDefinitions', 'model/Supercharger
         $.each(SiteMapsRaw, function (index, siteMap) {
             var supercharger = transformSite(siteMap);
             supercharger.id = index + 1;
+            postConstructionValidation(supercharger);
             SiteTransform.push(supercharger);
-
         });
 
         function transformSite(siteMap) {
@@ -29,6 +29,12 @@ define(['siteload/SiteMapsRaw', 'siteload/FieldDefinitions', 'model/Supercharger
             });
 
             return supercharger;
+        }
+
+        function postConstructionValidation(supercharger) {
+            Asserts.isFalse(supercharger.isStatusConstruction() && supercharger.hasOpenDate(), "construction site should not have open date:" + supercharger);
+            Asserts.isFalse(supercharger.isStatusPlanned() && supercharger.hasOpenDate(), "planned site should not have open date:" + supercharger);
+            Asserts.isFalse(supercharger.isOpen() && !supercharger.hasOpenDate(), "open site should have open date:" + supercharger);
         }
 
         function assertFieldValuePresentIfRequired(fieldDef, siteMap) {
