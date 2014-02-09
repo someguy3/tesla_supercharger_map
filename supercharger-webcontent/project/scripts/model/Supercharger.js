@@ -19,13 +19,13 @@ define(['model/Address', 'model/SiteStatus', 'util/Objects'], function (Address,
             this.status = Status.OPEN;
         };
 
-        Supercharger.prototype.isStatusPlanned = function () {
+        Supercharger.prototype.isPlanned = function () {
             return this.status === Status.PLANNED;
         };
-        Supercharger.prototype.isStatusConstruction = function () {
+        Supercharger.prototype.isConstruction = function () {
             return this.status === Status.CONSTRUCTION;
         };
-        Supercharger.prototype.isStatusOpen = function () {
+        Supercharger.prototype.isOpen = function () {
             return this.status === Status.OPEN;
         };
 

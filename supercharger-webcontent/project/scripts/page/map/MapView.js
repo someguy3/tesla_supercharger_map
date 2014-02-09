@@ -119,8 +119,8 @@ define(
         };
 
         MapView.prototype.shouldDraw = function (supercharger) {
-            return (supercharger.isStatusConstruction() && this.controlState.showConstruction) ||
-                (!supercharger.isStatusConstruction() && this.controlState.showCompleted);
+            return (supercharger.isConstruction() && this.controlState.showConstruction) ||
+                (!supercharger.isConstruction() && this.controlState.showCompleted);
         };
 
         MapView.prototype.buildRangeCircleOptions = function () {
@@ -271,7 +271,7 @@ define(
                 },
                 animation: google.maps.Animation.DROP
             };
-            if (supercharger.isStatusConstruction()) {
+            if (supercharger.isConstruction()) {
                 markerOptions.icon = "images/construction-cone-marker.png";
             }
             var marker = new google.maps.Marker(markerOptions);
@@ -292,7 +292,7 @@ define(
             //
             // Construction
             //
-            if (supercharger.isStatusConstruction()) {
+            if (supercharger.isConstruction()) {
                 popupContent += "<div style='color: orange; font-size: smaller; font-weight: bold'>under construction</div>";
             }
             //
