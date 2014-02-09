@@ -14,8 +14,8 @@ define(['page/charts/TotalOpenChart', 'page/charts/CountryBarChart', 'page/chart
         ChartsPage.prototype.onPageShow = function () {
             if (!this.page.data(ChartsPage.INIT_PROP)) {
                 new TotalOpenChart().draw();
-                new CountryBarChart().draw();
                 new StateBarChart().draw();
+                new CountryBarChart().draw();
                 this.page.data(ChartsPage.INIT_PROP, true);
             }
         };

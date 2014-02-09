@@ -26,12 +26,21 @@ define(['site/Sites', 'site/SiteIterator', 'util/Objects', 'lib/highcharts'], fu
                 }
             });
 
-        var stateNameList= [];
+        var sortableList = [];
+        $.each(stateMap, function (key, value) {
+            sortableList.push({stateName: key, count: value});
+        });
+
+        sortableList.sort(function (a, b) {
+            return b.count - a.count;
+        });
+
+        var stateNameList = [];
         var stateCountList = [];
 
-        $.each(stateMap, function (key, value) {
-            stateNameList.push(key);
-            stateCountList.push(value);
+        $.each(sortableList, function (index, value) {
+            stateNameList.push(value.stateName);
+            stateCountList.push(value.count);
         });
 
         $("#chart-state-bar").highcharts({
@@ -42,7 +51,7 @@ define(['site/Sites', 'site/SiteIterator', 'util/Objects', 'lib/highcharts'], fu
                 enabled: false
             },
             title: {
-                text: 'Superchargers Per Country'
+                text: 'Superchargers Per US State'
             },
             subtitle: {
                 text: null
@@ -55,7 +64,7 @@ define(['site/Sites', 'site/SiteIterator', 'util/Objects', 'lib/highcharts'], fu
             },
             yAxis: {
                 title: {
-                    text: 'Count'
+                    text: 'Supercharger Count'
                 }
             },
             tooltip: {
