@@ -1,16 +1,18 @@
 ######################################################################################################################################################
 #
+# Source data for map at: http://supercharge.info/
+#
 # Information for all superchargers, world wide.
 #
 # File format specification:
 #   -- Encoding: UTF-8
 #   -- Lines starting with '#' are comments (ignored by reader)
 #   -- Empty/blank/all-white-space lines are ignored by reader
-#   -- Each supercharger is represented by a single record, which consists of multiple entries, an entry having a key and a value.
-#   -- Entries are delimited by newline
+#   -- Each supercharger is represented by a single record, records consist of multiple entries, each entry has one key and one value.
+#   -- Entries are delimited by newline.
 #   -- Entries keys proceed the first ':' on a line, values follow it.
 #   -- Each record starts with the required entry having key 'name'.  Entry order otherwise does not matter.
-#   -- Leading and trailing spaces of keys and values are not significant (should be ignored by reader)
+#   -- Leading and trailing spaces of keys and values are not significant (ignored by reader)
 #   -- boolean values are specified exactly 'true' or 'false' (without quotes)
 #
 #
