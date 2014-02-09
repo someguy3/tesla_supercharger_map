@@ -4,12 +4,19 @@
 Map View
 ---------------------------------
 
-() Should be able to right-click and get context menu inside or outside of a range circle.
-() Custom Makers
-    () Add
+() Context Menu
+    () Should be able to right-click and get context menu inside or outside of a range circle.
+    () Context menu should be hidden after an item is selected.
+    () right clicking again somewhere else should MOVE the context menu, not show two.
+
+() Custom Markers
+    () Info Window
+        () User provided name shows up.
+        () Correct links show up: 'circle off', 'remove', 'add to route'
     () Toggle Circle
     () Remove
     () Adjust Circle
+    () Routing works
 
 ---------------------------------
 Control View -- Raw Data
