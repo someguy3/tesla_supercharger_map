@@ -1,4 +1,4 @@
-define(['util/Asserts', 'site/Address', 'site/Supercharger', 'siteload/SiteTransform'], function (Asserts, Address, Supercharger, SiteList) {
+define(['util/Asserts', 'site/Supercharger', 'siteload/SiteTransform'], function (Asserts, Supercharger, SiteList) {
 
     var Sites = {};
 
