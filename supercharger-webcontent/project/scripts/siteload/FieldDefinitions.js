@@ -13,14 +13,18 @@ define(['siteload/FieldDefinition', 'util/Dates'], function (FieldDefinition, Da
     };
 
     var GPS = function (supercharger, key, value) {
-        var i = value.indexOf(',');
-        var lat = value.substr(0, i).trim();
-        var lon = value.substr(i + 1).trim();
+        var commonPos = value.indexOf(',');
+        var lat = value.substr(0, commonPos).trim();
+        var lon = value.substr(commonPos + 1).trim();
         supercharger.location = new google.maps.LatLng(lat, lon);
     };
 
     var BOOLEAN = function (supercharger, key, value) {
-        supercharger[key] = (value === 'true');
+        var upperValue = value.toUpperCase();
+        if (upperValue !== 'TRUE' && upperValue !== 'FALSE') {
+            throw new Error("bad boolean value '" + value + "' in supercharger=" + JSON.stringify(supercharger));
+        }
+        supercharger[key] = (upperValue === 'TRUE');
     };
 
     var DATE = function (supercharger, key, value) {
@@ -37,7 +41,7 @@ define(['siteload/FieldDefinition', 'util/Dates'], function (FieldDefinition, Da
 
         'street': new FieldDefinition('street', true, ADDRESS),
         'city': new FieldDefinition('city', true, ADDRESS),
-        'state': new FieldDefinition('state', true, ADDRESS),
+        'state': new FieldDefinition('state', false, ADDRESS),
         'zip': new FieldDefinition('zip', true, ADDRESS),
         'country': new FieldDefinition('country', true, ADDRESS),
 

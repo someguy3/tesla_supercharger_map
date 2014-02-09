@@ -35,7 +35,7 @@ define(['siteload/SiteMapsRaw', 'siteload/FieldDefinitions', 'model/Supercharger
             if (fieldDef.required) {
                 var key = fieldDef.name;
                 var value = siteMap[key];
-                if (Objects.isNullOrUndef(value)) {
+                if (Objects.isNullOrUndef(value) || value.trim().length === 0) {
                     throw new Error("missing required field '" + key + "' in " + JSON.stringify(siteMap));
                 }
             }

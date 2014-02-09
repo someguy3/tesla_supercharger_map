@@ -4,13 +4,14 @@
 #
 # File format specification:
 #   -- Encoding: UTF-8
+#   -- Lines starting with '#' are comments (ignored by reader)
+#   -- Empty/blank/all-white-space lines are ignored by reader
 #   -- Each supercharger is represented by a single record, which consists of multiple entries, an entry having a key and a value.
 #   -- Entries are delimited by newline
 #   -- Entries keys proceed the first ':' on a line, values follow it.
 #   -- Each record starts with the required entry having key 'name'.  Entry order otherwise does not matter.
 #   -- Leading and trailing spaces of keys and values are not significant (should be ignored by reader)
-#   -- Lines starting with '#' are comments (ignored by reader)
-#   -- Empty/blank/all-white-space lines are ignored by reader
+#   -- boolean values are specified exactly 'true' or 'false' (without quotes)
 #
 #
 # Keys:
@@ -27,7 +28,7 @@
 #              |              |          |
 # street       | string       | yes      | address
 # city         | string       | yes      | address
-# state        | string       | yes      | address
+# state        | string       | false    | address
 # zip          | string       | yes      | address
 # country      | string       | yes      | address
 ######################################################################################################################################################
