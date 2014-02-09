@@ -29,4 +29,5 @@ label.control {
 .status-checkbox-panel div {
     display: inline-block;
     margin-right: 1em;
+    cursor: pointer;
 }

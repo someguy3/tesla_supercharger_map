@@ -18,12 +18,12 @@ Map Page
         () Fill opacity
         () Border opacity
 
-() Context Menu
+() Map Context Menu
     () Should be able to right-click and get context menu inside or outside of a range circle.
     () Context menu should be hidden after an item is selected.
     () right clicking again somewhere else should MOVE the context menu, not show two.
 
-() Custom Markers
+() Map Custom Markers
     () Info Window
         () User provided name shows up.
         () Correct links show up: 'circle off', 'remove', 'add to route'
@@ -32,13 +32,17 @@ Map Page
     () Adjust Circle
     () Routing works
 
-() Supercharger Count Carousel
+() Control: Supercharger Count Carousel
     () Country rows should be sorted by number of completed super chargers descending, with the 'Total' row listed first.
     () Verify counts are correct for all statuses.
     () Verify scrolling up and own works.
     () Verify up/down chevrons fade to gray when scroll reaches top/bottom.
 
-() Zoom to location
+() Control: Zoom to location
+
+() Control: Status checkboxes
+    () Mouse pointer should be type 'pointer' when hovering over checkbox, icon, or label.
+    () Should be able to toggle values by clicking on checkbox, icon, or label
 
 ---------------------------------
 Data Page
