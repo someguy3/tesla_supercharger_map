@@ -1,4 +1,4 @@
-define(['model/Range'], function (Range) {
+define(['page/map/Range'], function (Range) {
 
     /**
      *
@@ -18,6 +18,7 @@ define(['model/Range'], function (Range) {
 
         this.showCompleted = true;
         this.showConstruction = true;
+        this.showPlanned = true;
     };
 
     return ControlState;

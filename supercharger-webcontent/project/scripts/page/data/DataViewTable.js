@@ -18,7 +18,9 @@ define(['util/Objects', 'site/SiteIterator', 'util/Dates', 'lib/stupidtable' ], 
 
         var tableBodyData = this.superChargerDataTable.find("tbody");
 
-        new SiteIterator().iterate(
+        new SiteIterator()
+            .withPredicate(SiteIterator.PRED_NOT_USER_ADDED)
+            .iterate(
             function (supercharger) {
                 tableBodyData.append("" +
                     "<tr>" +
@@ -29,7 +31,7 @@ define(['util/Objects', 'site/SiteIterator', 'util/Dates', 'lib/stupidtable' ], 
                     "<td>" + supercharger.address.zip + "</td>" +
                     "<td>" + supercharger.address.country + "</td>" +
                     "<td class='gps'>" + supercharger.location.toUrlValue().replace(",",", ") + "</td>" +
-                    "<td>" + (supercharger.construction ? "Construction" : "Open") + "</td>" +
+                    "<td>" + supercharger.status.displayName + "</td>" +
                     "<td>" + Dates.toString(supercharger.dateOpened) + "</td>" +
                     "<td class='link'>" + asLink(supercharger.url, "SC") + "</td>" +
                     "<td class='link'>" + buildDiscussionLink(supercharger) + "</td>" +

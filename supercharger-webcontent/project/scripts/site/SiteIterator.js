@@ -1,4 +1,4 @@
-define(['util/Objects', 'site/SiteList', 'site/SitePredicates', 'site/SiteSorting'], function (Objects, SiteList, SitePredicates, SiteSorting) {
+define(['util/Objects', 'siteload/SiteTransform', 'site/SitePredicates', 'site/SiteSorting'], function (Objects, SiteList, SitePredicates, SiteSorting) {
 
     /**
      *
@@ -12,8 +12,9 @@ define(['util/Objects', 'site/SiteList', 'site/SitePredicates', 'site/SiteSortin
     SiteIterator.FUN_SORT_BY_OPEN_DATE = SiteSorting.sortByOpenedDate;
 
     SiteIterator.PRED_IS_OPEN = SitePredicates.open;
+    SiteIterator.PRED_IS_USA = SitePredicates.isUSA;
     SiteIterator.PRED_IS_COUNTED = SitePredicates.counted;
-    SiteIterator.PRED_NOT_CUSTOM = SitePredicates.notCustom;
+    SiteIterator.PRED_NOT_USER_ADDED = SitePredicates.notUserAdded;
     SiteIterator.PRED_HAS_CIRCLE = SitePredicates.hasCircle;
 
 

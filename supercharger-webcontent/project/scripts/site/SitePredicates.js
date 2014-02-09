@@ -11,8 +11,8 @@ define(['util/Objects'], function (Objects) {
         return site.count;
     };
 
-    SitePredicates.notCustom = function (site) {
-        return !site.custom;
+    SitePredicates.notUserAdded = function (site) {
+        return !site.isUserAdded();
     };
 
     SitePredicates.openAndCounted = function (site) {
@@ -23,6 +23,9 @@ define(['util/Objects'], function (Objects) {
         return Objects.isNotNullOrUndef(site.circle);
     };
 
+    SitePredicates.isUSA = function (site) {
+        return site.address.isUSA();
+    };
 
     return SitePredicates;
 

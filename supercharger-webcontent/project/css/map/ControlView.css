@@ -20,3 +20,13 @@ label.control {
     margin-right: .6em;
     margin-left: 1em;
 }
+
+.status-checkbox-panel {
+    display: inline-block;
+    font-size: larger;
+}
+
+.status-checkbox-panel div {
+    display: inline-block;
+    margin-right: 1em;
+}

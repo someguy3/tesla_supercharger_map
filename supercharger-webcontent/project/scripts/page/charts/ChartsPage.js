@@ -1,23 +1,28 @@
-define(['page/charts/TotalOpenChart'], function (TotalOpenChart) {
+define(['page/charts/TotalOpenChart', 'page/charts/CountryBarChart', 'page/charts/StateBarChart'],
+    function (TotalOpenChart, CountryBarChart, StateBarChart) {
 
-    /**
-     *
-     * @constructor
-     */
-    var ChartsPage = function () {
-        this.page = $("#page-charts");
-    };
+        /**
+         *
+         * @constructor
+         */
+        var ChartsPage = function () {
+            this.page = $("#page-charts");
+        };
 
-    ChartsPage.INIT_PROP = "page-initialized";
+        ChartsPage.INIT_PROP = "page-initialized";
 
-    ChartsPage.prototype.onPageShow = function () {
-        if (!this.page.data(ChartsPage.INIT_PROP)) {
-            new TotalOpenChart().draw();
-            this.page.data(ChartsPage.INIT_PROP, true);
-        }
-    };
+        ChartsPage.prototype.onPageShow = function () {
+            if (!this.page.data(ChartsPage.INIT_PROP)) {
+                new TotalOpenChart().draw();
+                new StateBarChart().draw();
+                new CountryBarChart().draw();
+                this.page.data(ChartsPage.INIT_PROP, true);
+            }
+        };
 
-    return ChartsPage;
+        return ChartsPage;
 
 
-});
+    }
+)
+;

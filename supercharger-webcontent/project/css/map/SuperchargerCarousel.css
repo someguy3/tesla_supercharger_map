@@ -38,6 +38,10 @@
     color: orange;
 }
 
+#carousel-table td.planned {
+    color: #419641;
+}
+
 #carousel-table td.control div {
     font-size: 1.6em;
     margin-right: .5em;

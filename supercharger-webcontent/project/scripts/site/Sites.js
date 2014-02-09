@@ -1,10 +1,8 @@
-define(['util/Asserts', 'model/Address', 'site/SiteList'], function (Asserts, Address, SiteList) {
+define(['util/Asserts', 'site/Supercharger', 'siteload/SiteTransform'], function (Asserts, Supercharger, SiteList) {
 
     var Sites = {};
 
     Sites.LIST = SiteList;
-
-    initializeIds();
 
     Sites.getById = function (id) {
         Asserts.isInteger(id, "id must be an integer");
@@ -29,27 +27,10 @@ define(['util/Asserts', 'model/Address', 'site/SiteList'], function (Asserts, Ad
     };
 
     Sites.addSupercharger = function (displayName, location) {
-        var charger = {
-            "id": (Sites.LIST.length + 10 * 1000),
-            "displayName": displayName,
-            "address": new Address("", "", "", "", ""),
-            "location": location,
-            "url": null,
-            "count": false,
-            "custom": true
-        };
+        var charger = Supercharger.buildNewCustom((Sites.LIST.length + 25000), displayName, location);
         Sites.LIST.push(charger);
         return charger;
     };
-
-    function initializeIds() {
-        var count = 0;
-        var SIZE = Sites.LIST.length;
-        for (var i = 0; i < SIZE; i++) {
-            var supercharger = Sites.LIST[i];
-            supercharger.id = count++;
-        }
-    }
 
     return Sites;
 

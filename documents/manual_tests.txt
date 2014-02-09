@@ -1,25 +1,64 @@
 
 
 ---------------------------------
-Map View
+Map Page
 ---------------------------------
 
-() Should be able to right-click and get context menu inside or outside of a range circle.
-() Custom Makers
-    () Add
+() Map Options Menu
+    () Range circles on
+        () should set default range to 50 miles if range is currently zero.
+        () should turn on just one range circle, if already off.
+        () should work when only displaying various combinations of PLANNED, USER_ADDED, CONSTRUCTION
+    () Range circles off.
+    () Range Adjuster
+    () Status Selection
+    () Rendering Options
+        () Fill color
+        () Border color
+        () Fill opacity
+        () Border opacity
+
+() Context Menu
+    () Should be able to right-click and get context menu inside or outside of a range circle.
+    () Context menu should be hidden after an item is selected.
+    () right clicking again somewhere else should MOVE the context menu, not show two.
+
+() Custom Markers
+    () Info Window
+        () User provided name shows up.
+        () Correct links show up: 'circle off', 'remove', 'add to route'
     () Toggle Circle
     () Remove
     () Adjust Circle
+    () Routing works
+
+() Supercharger Count Carousel
+    () Country rows should be sorted by number of completed super chargers descending, with the 'Total' row listed first.
+    () Verify counts are correct for all statuses.
+    () Verify scrolling up and own works.
+    () Verify up/down chevrons fade to gray when scroll reaches top/bottom.
+
+() Zoom to location
 
 ---------------------------------
-Control View -- Raw Data
+Data Page
 ---------------------------------
 
+() Should NOT show custom markers.
 () GPS coordinates should be displayed in monospace font.
+() All three statuses should show up correct in status column.
+() Sorting should work
 
 
 ---------------------------------
-Control View -- Supercharger Counts
+Charts Page
 ---------------------------------
 
-() Country columns should be sorted (left to right) by number of completed super chargers.
+---------------------------------
+Changes Page
+---------------------------------
+
+---------------------------------
+About Page
+---------------------------------
+

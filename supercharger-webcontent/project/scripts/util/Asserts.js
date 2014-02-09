@@ -11,5 +11,17 @@ define([], function () {
         }
     };
 
+    Asserts.isFalse = function (testArg, message) {
+        if (testArg) {
+            throw new Error(message);
+        }
+    };
+
+    Asserts.isTrue = function (testArg, message) {
+        if (!testArg) {
+            throw new Error(message);
+        }
+    };
+
     return Asserts;
 });

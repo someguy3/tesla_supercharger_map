@@ -1,0 +1,1159 @@
+######################################################################################################################################################
+#
+# Source data for map at: http://supercharge.info/
+#
+# Information for all superchargers, world wide.
+#
+# File format specification:
+#
+#   -- Encoding: UTF-8
+#   -- Lines starting with '#' are comments (ignored by reader)
+#   -- Empty/blank/all-white-space lines are ignored by reader
+#   -- Each supercharger is represented by a single record, records consist of multiple entries, each entry has one key and one value.
+#   -- Entries are delimited by newline.
+#   -- Entries keys proceed the first ':' on a line, values follow it.
+#   -- Each record starts with the required entry having key 'name'.  Entry order otherwise does not matter.
+#   -- Leading and trailing spaces of keys and values are not significant (ignored by reader)
+#   -- boolean values are specified exactly 'true' or 'false' (without quotes)
+#
+#
+# Keys:
+# ----------------------------------------------------------------------------------------------------------------------------------------------------
+# Name         | Type         | Required | Default | Description
+# ----------------------------------------------------------------------------------------------------------------------------------------------------
+# name         | string       | yes      |         | display name for the site
+# location     | float, float | yes      |         | GPS coordinates
+# url          | string       | yes      |         | URL pointing to Tesla's web page for this supercharger
+# urlDiscuss   | string       | no       |         | URL pointing to discussion forum/thread for this supercharger
+# dateOpened   | string       | no       |         | date opened
+# construction | boolean      | no       |         | true indicates that this location is under construction
+# status       | enum         | yes      | OPEN    | must be one of OPEN, CONSTRUCTION, PLANNED.
+# count        | boolean      | no       | true    | false means this location should NOT be counted (because part of pair Tesla counts as 1).
+#              |              |          |
+# street       | string       | yes      |         | address
+# city         | string       | yes      |         | address
+# state        | string       | false    |         | address
+# zip          | string       | yes      |         | address
+# country      | string       | yes      |         | address
+######################################################################################################################################################
+
+
+#-----------------------------------------------------------------------------------------------------------------------------| Arizona
+name: Buckeye, AZ
+street: 444 S Watson RD
+city: Buckeye
+state: AZ
+zip: 85326
+country: USA
+gps: 33.443242, -112.557378
+url: http://www.teslamotorsclub.com/showthread.php/25317-Supercharger-Buckeye-AZ
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25317-Supercharger-Buckeye-AZ
+status: CONSTRUCTION
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Flagstaff, AZ
+street: 2650 S Beulah Blvd
+city: Flagstaff
+state: AZ
+zip: 86001
+country: USA
+gps: 35.174272, -111.66328
+url: http://www.teslamotors.com/supercharger/flagstaff
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24922-Supercharger-Flagstaff-AZ
+dateOpened: 2014-01-10
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Gila Bend, AZ
+street: 826 W Pima St
+city: Gila Bend
+state: AZ
+zip: 85337
+country: USA
+gps: 32.943969, -112.733506
+url: http://www.teslamotorsclub.com/showthread.php/26077-Supercharger-Gila-Bend-AZ
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26077-Supercharger-Gila-Bend-AZ
+status: CONSTRUCTION
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Holbrook, AZ
+street: 2096 Navajo Blvd
+city: Holbrook
+state: AZ
+zip: 86025
+country: USA
+gps: 34.922962, -110.145558
+url: http://www.teslamotors.com/supercharger/holbrook
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25375-Supercharger-Holbrook-AZ
+dateOpened: 2014-01-15
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Kingman, AZ
+street: 789 West Beale Street
+city: Kingman
+state: AZ
+zip: 86401
+country: USA
+gps: 35.191331, -114.065592
+url: http://www.teslamotors.com/supercharger/kingman
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25072-Supercharger-Kingman-AZ
+dateOpened: 2014-01-22
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Quartzsite, AZ
+street: 1451 W Main St
+city: Quartzsite
+state: AZ
+zip: 85346
+country: USA
+gps: 33.661314, -114.242174
+url: http://www.teslamotors.com/supercharger/quartzsite
+dateOpened: 2013-11-14
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Wickenburg, AZ
+street: 155 N Tegner Tt
+city: Wickenburg
+state: AZ
+zip: 85390
+country: USA
+gps: 33.9702333, -112.73165
+url: http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ
+status: PLANNED
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Yuma, AZ
+street: 310 N Madison Ave
+city: Yuma
+state: AZ
+zip: 85364
+country: USA
+gps: 32.726686, -114.619093
+url: http://www.teslamotors.com/supercharger/yuma
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26337-Supercharger-Yuma-AZ
+dateOpened: 2014-02-04
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| California
+name: Atascadero, CA
+street: 6950 El Camino Real
+city: Atascadero
+state: CA
+zip: 93422
+country: USA
+gps: 35.48656, -120.66633
+url: http://www.teslamotors.com/supercharger/atascadero
+dateOpened: 2013-07-03
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Barstow, CA
+street: 2812 Lenwood Rd
+city: Barstow
+state: CA
+zip: 92311
+country: USA
+gps: 34.849129, -117.085446
+url: http://www.teslamotors.com/supercharger/barstow
+dateOpened: 2012-11-19
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Buellton, CA
+street: 555 McMurray RD
+city: Buellton
+state: CA
+zip: 93427
+country: USA
+gps: 34.614560, -120.188387
+url: http://www.teslamotors.com/supercharger/buellton
+dateOpened: 2012-07-03
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Corning, CA
+street: 950 Hwy 99
+city: W Corning
+state: CA
+zip: 96021
+country: USA
+gps: 39.926454, -122.198393
+url: http://www.teslamotors.com/supercharger/corning
+dateOpened: 2013-10-18
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: El Centro, CA
+street: 3451 S Dogwood Rd
+city: El Centro
+state: CA
+zip: 92243
+country: USA
+gps: 32.7637233, -115.5315171
+url: http://www.teslamotorsclub.com/showthread.php/26691-Supercharger-El-Centro-CA
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26691-Supercharger-El-Centro-CA
+status: CONSTRUCTION
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Folsom, CA
+street: 13000 Folsom Blvd
+city: Folsom
+state: CA
+zip: 95630
+country: USA
+gps: 38.64258, -121.18806
+url: http://www.teslamotors.com/supercharger/folsom
+dateOpened: 2013-11-19
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Fremont, CA
+street: 45500 Fremont Blvd
+city: Fremont
+state: CA
+zip: 94538
+country: USA
+gps: 37.493447, -121.945654
+url: http://www.teslamotors.com/supercharger/fremont
+dateOpened: 2013-08-16
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Gilroy, CA
+street: 681 Leavesley Road
+city: Gilroy
+state: CA
+zip: 95020
+country: USA
+gps: 37.02493, -121.56542
+url: http://www.teslamotors.com/supercharger/gilroy
+dateOpened: 2012-11-19
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Harris Ranch, CA
+street: 24505 W. Dorris Ave
+city: Coalinga
+state: CA
+zip: 93210
+country: USA
+gps: 36.254150, -120.237896
+url: http://www.teslamotors.com/supercharger/harrisranch
+dateOpened: 2012-11-19
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Hawthorne, CA
+street: 1 Rocket Rd
+city: Hawthorne
+state: CA
+zip: 90250
+country: USA
+gps: 33.921068, -118.330054
+url: http://www.teslamotors.com/supercharger/losangeles
+dateOpened: 2012-11-19
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Mt Shasta, CA
+street: 111 Morgan Way
+city: Mt. Shasta
+state: CA
+zip: 96067
+country: USA
+gps: 41.310233, -122.317278
+url: http://www.teslamotors.com/supercharger/mtshasta
+dateOpened: 2013-10-23
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Tejon Ranch, CA
+street: 5602 Dennis McCarthy Dr
+city: Lebec
+state: CA
+zip: 93243
+country: USA
+gps: 34.98734, -118.94623
+url: http://www.teslamotors.com/supercharger/tejonranch
+dateOpened: 2012-11-19
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: San Juan Capistrano, CA
+street: 31971 Camino Capistrano
+city: San Juan Capistrano
+state: CA
+zip: 92675
+country: USA
+gps: 33.498458, -117.6632
+url: http://www.teslamotorsclub.com/showthread.php/24984-Supercharger-San-Juan-Capistrano-CA
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24984-Supercharger-San-Juan-Capistrano-CA
+status: CONSTRUCTION
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Vacaville, CA
+street: 321 Nut Tree RD
+city: Vacaville
+state: CA
+zip: 95687
+country: USA
+gps: 38.366645, -121.958136
+url: http://www.teslamotors.com/supercharger/vacaville
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24773-Supercharger-Vacaville-CA
+dateOpened: 2013-12-19
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#-----------------------------------------------------------------------------------------------------------------------------| Colorado
+name: Glenwood Springs, CO
+street: 125 Wulfsohn Rd
+city: Glenwood Springs
+state: CO
+zip: 81601
+country: USA
+gps: 39.552680, -107.340168
+url: http://www.teslamotors.com/supercharger/glenwoodsprings
+dateOpened: 2012-09-17
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Grand Junction, CO
+street: 2420 U.S. 6
+city: Grand Junction
+state: CO
+zip: 81505
+country: USA
+gps: 39.090758, -108.604325
+url: http://www.teslamotors.com/supercharger/grandjunction
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24867-Grand-Junction-CO-Supercharger
+dateOpened: 2014-01-10
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Lonetree, CO
+street: 8401 Park Meadows Center Dr
+city: Lonetree
+state: CO
+zip: 80124
+country: USA
+gps: 39.562125, -104.8761924
+url: http://www.teslamotorsclub.com/showthread.php/27255-Supercharger-Lonetree-CO
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/27255-Supercharger-Lonetree-CO
+status: CONSTRUCTION
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Silverthorne, CO
+street: 309 Rainbow Dr
+city: Silverthorne
+state: CO
+zip: 80498
+country: USA
+gps: 39.631457, -106.070816
+url: http://www.teslamotors.com/supercharger/silverthorne
+dateOpened: 2013-10-03
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Connecticut
+name: Milford, CT (north)
+street: 1 CT Turnpike N
+city: Milford
+state: CT
+zip: 06460
+country: USA
+gps: 41.245814, -73.008988
+url: http://www.teslamotors.com/supercharger/milfordnorth
+dateOpened: 2012-12-16
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Milford, CT (south)
+street: 1 CT Turnpike N
+city: Milford
+state: CT
+zip: 06460
+country: USA
+gps: 41.246232, -73.010529
+url: http://www.teslamotors.com/supercharger/milfordsouth
+dateOpened: 2012-12-16
+count: false
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+name: Darien, CT (north)
+street: Connecticut Welcome Center
+city: North Darien
+state: CT
+zip: 06820
+country: USA
+gps: 41.080599, -73.461905
+url: http://www.teslamotors.com/supercharger/dariennorth
+dateOpened: 2013-06-19
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Darien, CT (south)
+street: I-95 South after exit 10
+city: Darien
+state: CT
+zip: 06820
+country: USA
+gps: 41.068167, -73.504659
+url: http://www.teslamotors.com/supercharger/dariensouth
+dateOpened: 2013-06-19
+count: false
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+name: Greenwich, CT (north)
+street: Merritt Pkwy (near NY border)
+city: Greenwich
+state: CT
+zip: 06831
+country: USA
+gps: 41.0414, -73.6718333
+url: http://www.teslamotors.com/supercharger/greenwichnorth
+status: CONSTRUCTION
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Greenwich, CT (south)
+street: Merritt Pkwy (near NY border)
+city: Greenwich
+state: CT
+zip: 06831
+country: USA
+gps: 41.0405333333, -73.6734166667
+url: http://www.teslamotors.com/supercharger/greenwichsouth
+status: CONSTRUCTION
+count: false
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#-----------------------------------------------------------------------------------------------------------------------------| Delaware
+name: Newark, DE
+street: 530 JFK Memorial Highway
+city: Newark
+state: DE
+zip: 19725
+country: USA
+gps: 39.662313, -75.691980
+url: http://www.teslamotors.com/supercharger/newark
+dateOpened: 2012-12-21
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Florida
+name: Fort Myers, FL
+street: 9903 Gulf Coast Main Street
+city: Fort Myers
+state: FL
+zip: 33913
+country: USA
+gps: 26.485640, -81.787136
+url: http://www.teslamotors.com/supercharger/fortmyers
+dateOpened: 2013-07-25
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Port Orange, FL
+street: 5302 S. Williamson Blvd
+city: Port Orange
+state: FL
+zip: 32128
+country: USA
+gps: 29.108566, -81.034569
+url: http://www.teslamotors.com/supercharger/portorange
+dateOpened: 2013-09-13
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Port St. Lucie, FL
+street: 1773 N.W. St. Lucie W. Boulevard
+city: Port St. Lucie
+state: FL
+zip: 34986
+country: USA
+gps: 27.313023, -80.406688
+url: http://www.teslamotors.com/supercharger/portstlucie
+dateOpened: 2013-07-24
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: St Augustine, FL
+street: 2700 State Road 16, Suite 200
+city: St. Augustine
+state: FL
+zip: 32092
+country: USA
+gps: 29.9207352, -81.416337
+url: http://www.teslamotorsclub.com/showthread.php/25177-St-Augustine-Supercharger
+dateOpened: 2014-01-03
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#-----------------------------------------------------------------------------------------------------------------------------| Georgia
+name: Savannah, GA
+street: 400 Airways Avenue
+city: Savannah
+state: GA
+zip: 31408
+country: USA
+gps: 32.135507, -81.212767
+url: http://www.teslamotors.com/supercharger/savannah
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24771-Supercharger-Savannah-GA
+dateOpened: 2014-01-15
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Illinois
+name: Highland Park, IL Service Center
+street: 1200 Old Skokie Road
+city: Highland Park
+state: IL
+zip: 60035
+country: USA
+gps: 42.17434, -87.816626
+url: http://www.teslamotors.com/supercharger/highlandpark
+dateOpened: 2013-12-20
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Rockford, IL
+street: 7200 Harrison Ave
+city: Rockford
+state: IL
+zip: 61112
+country: USA
+gps: 42.243896, -88.978877
+url: http://www.teslamotors.com/supercharger/rockford
+dateOpened: 2013-09-12
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Normal, IL
+street: Uptown Station Parking Deck 11 Uptown Circle
+city: Normal
+state: IL
+zip: 61761
+country: USA
+gps: 40.508497, -88.985575
+url: http://www.teslamotors.com/supercharger/normal
+dateOpened: 2013-06-26
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Indiana
+name: Angola, IN
+street: 3855 Indiana Rte 127
+city: Angola
+state: IN
+zip: 46703
+country: USA
+gps: 41.699048, -85.000326
+url: http://www.teslamotors.com/supercharger/angola
+dateOpened: 2013-12-09
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Mishawaka, IN
+street: 6501 Grape Rd
+city: Mishawaka
+state: IN
+zip: 46545
+country: USA
+gps: 41.7174, -86.1887
+url: http://www.teslamotors.com/supercharger/mishawaka
+dateOpened: 2013-12-11
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Maryland
+name: Bethesda, MD
+street: 7101 Democracy Blvd
+city: Bethesda
+state: MD
+zip: 20817
+country: USA
+gps: 39.023876, -77.144352
+url: http://www.teslamotors.com/supercharger/bethesda
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26484-Supercharger-Bethesda-MD
+dateOpened: 2014-01-30
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Hagerstown, MD
+street: 495 Premium Outlets Blvd
+city: Hagerstown
+state: MD
+zip: 21740
+country: USA
+gps: 39.605859, -77.733324
+url: http://www.teslamotors.com/supercharger/hagerstown
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25085-Maryland-Superchargers?p=523453#post523453
+dateOpened: 2014-01-23
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Minnesota
+name: Albert Lea, MN
+street: 811 East Plaza St
+city: Albert Lea
+state: MN
+zip: 56007
+country: USA
+gps: 43.68606, -93.357721
+url: http://www.teslamotors.com/supercharger/albertlea
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25097-Minnesota-Supercharging-Discussion-amp-Tracking
+dateOpened: 2014-01-15
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Worthington, MN
+street: 1290 Ryan's Rd
+city: Worthington
+state: MN
+zip: 56187
+country: USA
+gps: 43.63385, -95.595647
+url: http://www.teslamotors.com/supercharger/worthington
+dateOpened: 2013-12-11
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Michigan
+name: St. Joseph, MI
+street: 3260 Niles Rd
+city: St. Joseph
+state: MI
+zip: 49085
+country: USA
+gps: 42.056357, -86.456352
+url: http://www.teslamotors.com/supercharger/stjoseph
+dateOpened: 2013-11-26
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| New Mexico
+name: Farmington, NM
+street: 4200 Sierra Vista Dr
+city: Farmington
+state: NM
+zip: 87402
+country: USA
+gps: 36.766371, -108.144047
+url: http://www.teslamotors.com/supercharger/farmington
+dateOpened: 2014-01-10
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Gallup, NM
+street: 111 Twin Buttes Rd
+city: Gallup
+state: NM
+zip: 87301
+country: USA
+gps: 35.505278, -108.828094
+url: http://www.teslamotors.com/supercharger/gallup
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24954-Supercharger-Gallup-NM
+dateOpened: 2014-01-07
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Nevada
+name: Las Vegas, NV
+street: 701 Bridger Ave
+city: Las Vegas
+state: NV
+zip: 89101
+country: USA
+gps: 36.1657833333, -115.1393166667
+url: http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV
+status: CONSTRUCTION
+#-----------------------------------------------------------------------------------------------------------------------------| New Jersey
+name: Edison, NJ
+street: 199 Lafayette Ave
+city: Edison
+state: NJ
+zip: 08837
+country: USA
+gps: 40.5448144,-74.333248
+url: http://www.teslamotorsclub.com/showthread.php/26730-Supercharger-Edison-NJ
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26730-Supercharger-Edison-NJ
+status: PLANNED
+#-----------------------------------------------------------------------------------------------------------------------------| New York
+name: JFK Airport, NY
+street: 150th Ave and 147th St
+city: Queens
+state: NY
+zip: 11430
+country: USA
+gps: 40.66319, -73.793192
+url: http://www.teslamotors.com/supercharger/jfk
+dateOpened: 2013-12-23
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Syosset, NY
+street: 7 Aeriel Way
+city: Syosset
+state: NY
+zip: 11791
+country: USA
+gps: 40.7998387, -73.5152669
+url: http://www.teslamotors.com/service/syosset
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26175-Supercharger-Syosset-NY
+dateOpened: 2014-01-18
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| North Carolina
+name: Burlington, NC
+street: 1080 Piper Ln
+city: Burlington
+state: NC
+zip: 27215
+country: USA
+gps: 36.070790, -79.511211
+url: http://www.teslamotors.com/supercharger/burlingtonnc
+dateOpened: 2013-10-16
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Lumberton, NC
+street: 5093 Fayetteville Road
+city: Lumberton
+state: NC
+zip: 28358
+country: USA
+gps: 34.667629, -79.002343
+url: http://www.teslamotors.com/supercharger/lumberton
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24770-Supercharger-Lumberton-NC
+dateOpened: 2014-01-17
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Plymouth, NC
+street: 840 U.S. 64
+city: Plymouth
+state: NC
+zip: 27962
+country: USA
+gps: 35.850609, -76.756162
+url: http://www.teslamotorsclub.com/showthread.php/22396-Plymouth-NC-Supercharger-Location
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/22396-Plymouth-NC-Supercharger-Location
+status: CONSTRUCTION
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Rocky Mount, NC
+street: 651 N. Winstead Avenue
+city: Rocky Mount
+state: NC
+zip: 27804
+country: USA
+gps: 35.972874, -77.846870
+url: http://www.teslamotors.com/supercharger/rockymount
+dateOpened: 2013-11-08
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Ohio
+name: Macedonia, OH
+street: 8210 Macedonia Commons Blvd
+city: Macedonia
+state: OH
+zip: 44056
+country: USA
+gps: 41.313663, -81.517018
+url: http://www.teslamotors.com/supercharger/macedonia
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24872-Supercharger-Macedonia-OH
+dateOpened: 2014-01-15
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Maumee, OH
+street: 1391 Conant Street
+city: Maumee
+state: OH
+zip: 43537
+country: USA
+gps: 41.57835, -83.66465
+url: http://www.teslamotors.com/supercharger/maumee
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25482-Supercharger-Maumee-OH
+dateOpened: 2014-01-13
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Oregon
+name: Detroit Lake, OR
+street: 210 D Street
+city: Detroit
+state: OR
+zip: 97342
+country: USA
+gps: 44.737025, -122.152108
+url: http://www.teslamotors.com/supercharger/detroitlake
+dateOpened: 2013-12-23
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Grants Pass, OR
+street: 1900 NW 6th St.
+city: Grants Pass
+state: OR
+zip: 97526
+country: USA
+gps: 42.460883, -123.324124
+url: http://www.teslamotors.com/supercharger/grantspass
+dateOpened: 2013-10-22
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Springfield, OR
+street: 919 Kruse Way
+city: Springfield
+state: OR
+zip: 97477
+country: USA
+gps: 44.082605, -123.037471
+url: http://www.teslamotors.com/supercharger/springfield
+dateOpened: 2013-11-02
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Woodburn, OR
+street: 255 N Arney Rd
+city: Woodburn
+state: OR
+zip: 97071
+country: USA
+gps: 45.15313, -122.881254
+url: http://www.teslamotors.com/supercharger/woodburn
+dateOpened: 2013-08-28
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Pennsylvania
+name: Cranberry, PA
+street: 1308 Freedom Rd
+city: Cranberry
+state: PA
+zip: 16066
+country: USA
+gps: 40.683982, -80.10839
+url: http://www.teslamotorsclub.com/showthread.php/25840-Cranberry-PA-Supercharger-Location-(NW-of-Pittsburgh)
+status: CONSTRUCTION
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Somerset, PA
+street: 1030 North Center Avenue
+city: Somerset
+state: PA
+zip: 15501
+country: USA
+gps: 40.0173833333, -79.0771166667
+url: http://www.teslamotors.com/supercharger/somerset
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25319-Somerset-PA-Supercharger-(confirmed!)
+dateOpened: 2014-01-10
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Rhode Island
+name: East Greenwich, RI
+street: 1000 Division St
+city: East Greenwich
+state: RI
+zip: 02818
+country: USA
+gps: 41.660517, -71.497242
+url: http://www.teslamotors.com/supercharger/eastgreenwich
+dateOpened: 2014-01-06
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| South Carolina
+name: Santee, SC
+street: 114 Bradford Blvd.
+city: Santee
+state: SC
+zip: 29142
+country: USA
+gps: 33.485858, -80.475763
+url: http://www.teslamotors.com/supercharger/santee
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25065-Supercharger-Santee-SC
+dateOpened: 2013-12-27
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| South Dakota
+name: Mitchell, SD
+street: 1305 W. Havens Street
+city: Mitchell
+state: SD
+zip: 57301
+country: USA
+gps: 43.701129, -98.04449999999997
+url: http://www.teslamotors.com/supercharger/mitchell
+dateOpened: 2013-12-18
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Murdo, SD
+street: 302 W 5th St
+city: Murdo
+state: SD
+zip: 57559
+country: USA
+gps: 43.886915, -100.716887
+url: http://www.teslamotors.com/supercharger/murdo
+dateOpened: 2013-12-31
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Rapid City, SD
+street: 2200 N. Maple Ave
+city: Rapid City
+state: SD
+zip: 57701
+country: USA
+gps: 44.105601, -103.212569
+url: http://www.teslamotors.com/supercharger/rapidcity
+dateOpened: 2013-11-25
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Texas
+name: Columbus, TX
+street: 2535 Texas 71
+city: Columbus
+state: TX
+zip: 78934
+country: USA
+gps: 29.690062, -96.537725
+url: http://www.teslamotors.com/supercharger/columbus
+dateOpened: 2013-10-07
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Corsicana, TX
+street: 2035 Interstate 45 Frontage Rd
+city: Corsicana
+state: TX
+zip: 75109
+country: USA
+gps: 32.068577, -96.448229
+url: http://www.teslamotors.com/supercharger/corsicana
+dateOpened: 2013-11-15
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Huntsville, TX
+street: 148 Interstate 45
+city: Huntsville
+state: TX
+zip: 77340
+country: USA
+gps: 30.716158, -95.565944
+url: http://www.teslamotors.com/supercharger/huntsville
+dateOpened: 2013-11-20
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: San Marcos, TX
+street: 3939 Interstate 35
+city: San Marcos
+state: TX
+zip: 78666
+country: USA
+gps: 29.827692, -97.979677
+url: http://www.teslamotors.com/supercharger/sanmarcos
+dateOpened: 2013-08-20
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Waco, TX
+street: 701 Interstate 35
+city: Bellmead
+state: TX
+zip: 76705
+country: USA
+gps: 31.58224, -97.10915
+url: http://www.teslamotors.com/supercharger/waco
+dateOpened: 2013-09-07
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Utah
+name: Blanding, UT
+street: 12 N Grayson Pkwy
+city: Blanding
+state: UT
+zip: 84511
+country: USA
+gps: 37.6255534, -109.47384199999999
+url: http://www.teslamotors.com/supercharger/blanding
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/21121-Utah-Super-Charger-Locations
+dateOpened: 2014-01-13
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Green River, UT
+street: 1765 E Main St
+city: Green River
+state: UT
+zip: 84525
+country: USA
+gps: 38.9930036, -110.1400054
+url: http://www.teslamotorsclub.com/showthread.php/26516-Supercharger-Green-River-UT
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26516-Supercharger-Green-River-UT
+status: CONSTRUCTION
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Moab, UT
+street: 16 South Main St.
+city: Moab
+state: UT
+zip: 84511
+country: USA
+gps: 38.573122, -109.552368
+url: http://www.teslamotors.com/supercharger/moab
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/21121-Utah-Super-Charger-Locations
+dateOpened: 2014-01-22
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Virginia
+name: Glen Allen, VA
+street: 9860 Brook Rd
+city: Glen Allen
+state: VA
+zip: 23059
+country: USA
+gps: 37.669832, -77.461419
+url: http://www.teslamotors.com/supercharger/glenallen
+dateOpened: 2013-10-24
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Washington
+name: Burlington, WA
+street: 9384 Old Highway 99
+city: North Burlington
+state: WA
+zip: 98233
+country: USA
+gps: 48.509772, -122.338625
+url: http://www.teslamotors.com/supercharger/burlington
+dateOpened: 2013-07-13
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Centralia, WA
+street: 1200 Lum Rd
+city: Centralia
+state: WA
+zip: 98531
+country: USA
+gps: 46.729732, -122.977454
+url: http://www.teslamotors.com/supercharger/centralia
+dateOpened: 2013-07-17
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Ellensburg, WA
+street: 1620 Canyon Rd
+city: Ellensburg
+state: WA
+zip: 98926
+country: USA
+gps: 46.976918, -120.54162
+url: http://www.teslamotors.com/supercharger/ellensburg
+dateOpened: 2013-12-23
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Wisconsin
+name: Eau Claire, WI
+street: 4601 Keystone Crossing
+city: Eau Claire
+state: WI
+zip: 54701
+country: USA
+gps: 44.77083, -91.43711
+url: http://www.teslamotors.com/supercharger/eauclaire
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24337-Wisconsin-Supercharger-Discussion-amp-Tracking/page31
+dateOpened: 2014-01-30
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: La Crosse, WI
+street: 2845 Midwest Dr
+city: Onalaska
+state: WI
+zip: 54650
+country: USA
+gps: 43.879042, -91.188428
+url: http://www.teslamotors.com/supercharger/lacrosse
+dateOpened: 2014-01-05
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Madison, WI
+street: 89 E Towne Mall
+city: Madison
+state: WI
+zip: 53704
+country: USA
+gps: 43.12669, -89.306896
+url: http://www.teslamotors.com/supercharger/madison
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/21123-Madison-WI-Supercharger
+dateOpened: 2014-01-13
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Mauston, WI
+street: 640 Mc Evoy St
+city: Mauston
+state: WI
+zip: 53948
+country: USA
+gps: 43.795551, -90.059358
+url: http://www.teslamotors.com/supercharger/mauston
+dateOpened: 2013-12-09
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Pleasant Prairie, WI
+street: 11211 120th Avenue
+city: Pleasant Prairie
+state: WI
+zip: 53158
+country: USA
+gps: 42.5187, -87.9504666667
+url: http://www.teslamotors.com/forum/forums/supercharger-locations-existingplanned-confirmed-not-rumored-or-speculated%E2%80%A6?page=50
+status: CONSTRUCTION
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| Wyoming
+name: Cheyenne, WY
+street: 1400 Dell Range Blvd
+city: Cheyenne
+state: WY
+zip: 82009
+country: USA
+gps: 41.161085, -104.804955
+url: http://www.teslamotors.com/supercharger/cheyenne
+dateOpened: 2014-01-20
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Lusk, WY
+street: 730 S. Main St
+city: Lusk
+state: WY
+zip: 82225
+country: USA
+gps: 42.75625, -104.45267
+url: http://www.teslamotors.com/supercharger/lusk
+dateOpened: 2013-12-19
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+##################################################################################################################
+##################################################################################################################
+###
+### Europe
+###
+##################################################################################################################
+##################################################################################################################
+
+#-----------------------------------------------------------------------------------------------------------------------------| GERMANY
+name: St. Anton, Austria
+street: 73 Arlbergstrasse
+city: St. Anton am Arlberg
+state: 
+zip: 6580
+country: Austria
+gps: 47.130137, 10.269231
+url: http://www.teslamotors.com/supercharger/stanton
+dateOpened: 2013-12-19
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| GERMANY
+name: Aichstetten, Germany
+street: Am Waizenhof 12 (Autohof)
+city: Aichstetten
+state: 
+zip: 88317
+country: Germany
+gps: 47.8804833333, 10.0397833333
+url: http://www.teslamotors.com/supercharger/aichstetten
+dateOpened: 2013-12-14
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Bad Rappenau, Germany
+street: Buchäckerring 40 (Autohof)
+city: Bad Rappenau
+state: 
+zip: 74906
+country: Germany
+gps: 49.211936, 9.077322
+url: http://www.teslamotors.com/supercharger/badrappenau
+dateOpened: 2013-12-14
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Jettingen-Scheppach, Germany
+street: Robert-Bosch-Str. 10 (Autohof)
+city: Jettingen-Scheppach
+state: 
+zip: 89343
+country: Germany
+gps: 48.411685, 10.439755
+url: http://www.teslamotors.com/supercharger/jettingen
+dateOpened: 2013-12-13
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Wilnsdorf, Germany
+street: Elkersberg 2 (Autohof)
+city: Wilnsdorf
+state: 
+zip: 57234
+country: Germany
+gps: 50.817046, 8.087663
+url: http://www.teslamotors.com/supercharger/wilnsdorf
+dateOpened: 2013-12-13
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#-----------------------------------------------------------------------------------------------------------------------------| NETHERLANDS
+name: Oosterhout, Netherlands
+street: Beneluxweg 1
+city: Oosterhout
+state: 
+zip: 4904 SJ
+country: Netherlands
+gps: 51.626423, 4.869517
+url: http://www.teslamotors.com/supercharger/oosterhout
+dateOpened: 2013-12-06
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Zevenaar, Netherlands
+street: Doesburgseweg 39
+city: Zevenaar
+state: 
+zip: 6902 PL
+country: Netherlands
+gps: 51.94066, 6.08180
+url: http://www.teslamotors.com/supercharger/zevenaar
+dateOpened: 2013-12-06
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| NORWAY
+
+name: Dombås, Norway
+street: P plass bak KIWI Mini Pris
+city: Dombås
+state: 
+zip: 2660
+country: Norway
+gps: 62.074926, 9.128281
+url: http://www.teslamotors.com/supercharger/dombas
+dateOpened: 2013-08-30
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Lillehammer, Norway
+street: Korgvegen 37
+city: Lillehammer
+state: 
+zip: 2619
+country: Norway
+gps: 61.13045, 10.43491
+url: http://www.teslamotors.com/supercharger/lillehammer
+dateOpened: 2013-08-30
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Gol, Norway
+street: Heradvegen 5
+city: Gol
+state: 
+zip: 3550
+country: Norway
+gps: 60.70232, 8.98620
+url: http://www.teslamotors.com/supercharger/gol
+dateOpened: 2013-08-30
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Aurland, Norway
+street: Nyheim Aurland
+city: Aurland
+state: 
+zip: 5745
+country: Norway
+gps: 60.89863, 7.21082
+url: http://www.teslamotors.com/supercharger/aurland
+dateOpened: 2013-08-30
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Cinderella, Norway
+street: Gnr 3 Bnr 318 Brokelandsheia
+city: Sundebru
+state: 
+zip: 4993
+country: Norway
+gps: 58.820783, 9.073746
+url: http://www.teslamotors.com/supercharger/cinderella
+dateOpened: 2013-08-30
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Lyngdal, Norway
+street: 1 Fiboveien
+city: Lyngdal
+state: 
+zip: 4580
+country: Norway
+gps: 58.15653, 7.10298
+url: http://www.teslamotors.com/supercharger/lyngdal
+dateOpened: 2013-08-30
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| SWITZERLAND
+name: Lully, Switzerland
+street: Restoroute 1470 Lully FR (Autogrill)
+city: Lully
+state: 
+zip: 1470
+country: Switzerland
+gps: 46.832233, 6.859269
+url: http://www.teslamotors.com/supercharger/lully
+dateOpened: 2013-12-13
+count: true
