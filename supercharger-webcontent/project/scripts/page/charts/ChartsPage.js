@@ -1,4 +1,4 @@
-define(['page/charts/TotalOpenChart'], function (TotalOpenChart) {
+define(['page/charts/TotalOpenChart', 'page/charts/CountryBarChart'], function (TotalOpenChart, CountryBarChart) {
 
     /**
      *
@@ -13,6 +13,7 @@ define(['page/charts/TotalOpenChart'], function (TotalOpenChart) {
     ChartsPage.prototype.onPageShow = function () {
         if (!this.page.data(ChartsPage.INIT_PROP)) {
             new TotalOpenChart().draw();
+            new CountryBarChart().draw();
             this.page.data(ChartsPage.INIT_PROP, true);
         }
     };
