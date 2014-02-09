@@ -9,6 +9,7 @@ define(['siteload/SiteMapsRaw', 'siteload/FieldDefinitions', 'model/Supercharger
 
         $.each(SiteMapsRaw, function (index, siteMap) {
             var supercharger = transformSite(siteMap);
+            supercharger.id = index + 1;
             SiteTransform.push(supercharger);
 
         });

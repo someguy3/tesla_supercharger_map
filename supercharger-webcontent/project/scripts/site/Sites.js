@@ -4,8 +4,6 @@ define(['util/Asserts', 'model/Address', 'site/SiteList'], function (Asserts, Ad
 
     Sites.LIST = SiteList;
 
-    initializeIds();
-
     Sites.getById = function (id) {
         Asserts.isInteger(id, "id must be an integer");
         for (var i = 0; i < Sites.LIST.length; i++) {
@@ -41,15 +39,6 @@ define(['util/Asserts', 'model/Address', 'site/SiteList'], function (Asserts, Ad
         Sites.LIST.push(charger);
         return charger;
     };
-
-    function initializeIds() {
-        var count = 0;
-        var SIZE = Sites.LIST.length;
-        for (var i = 0; i < SIZE; i++) {
-            var supercharger = Sites.LIST[i];
-            supercharger.id = count++;
-        }
-    }
 
     return Sites;
 
