@@ -4,7 +4,7 @@ define([], function () {
         PLANNED: {
             value: 0,
             displayName: "Planned",
-            iconUrl: 'images/dots/green_dot_16.png'
+            iconUrl: 'images/dots/blue_dot_16.png'
         },
         CONSTRUCTION: {
             value: 1,
@@ -19,7 +19,7 @@ define([], function () {
         USER_ADDED: {
             value: 3,
             displayName: "Custom",
-            iconUrl: 'images/dots/blue_dot_16.png'
+            iconUrl: 'images/dots/green_dot_16.png'
         }
     };
 
