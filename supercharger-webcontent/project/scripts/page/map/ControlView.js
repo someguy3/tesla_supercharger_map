@@ -1,4 +1,4 @@
-define(['model/Range', 'lib/spectrum'], function (Range) {
+define(['page/map/Range', 'lib/spectrum'], function (Range) {
 
 
     /**

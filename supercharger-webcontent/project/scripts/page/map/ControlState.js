@@ -1,4 +1,4 @@
-define(['model/Range'], function (Range) {
+define(['page/map/Range'], function (Range) {
 
     /**
      *
