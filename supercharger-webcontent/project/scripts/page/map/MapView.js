@@ -1,6 +1,6 @@
 define(
-    ['util/Events', 'util/Objects', 'site/SiteIterator', 'site/Sites', 'page/map/MapViewContextMenu'],
-    function (Events, Objects, SiteIterator, Sites, MapViewContextMenu) {
+    ['util/Events', 'util/Objects', 'site/SiteIterator', 'site/Sites', 'page/map/MapViewContextMenu', 'page/map/InfoWindowRender'],
+    function (Events, Objects, SiteIterator, Sites, MapViewContextMenu, InfoWindowRender) {
 
 
         /**
@@ -119,9 +119,10 @@ define(
         };
 
         MapView.prototype.shouldDraw = function (supercharger) {
-            return (supercharger.isConstruction() && this.controlState.showConstruction) ||
-                (supercharger.isOpen() && this.controlState.showCompleted) ||
-                (supercharger.isPlanned() && this.controlState.showPlanned);
+            return (supercharger.isOpen() && this.controlState.showCompleted) ||
+                (supercharger.isConstruction() && this.controlState.showConstruction) ||
+                (supercharger.isPlanned() && this.controlState.showPlanned) ||
+                supercharger.isUserAdded();
         };
 
         MapView.prototype.buildRangeCircleOptions = function () {
@@ -226,7 +227,7 @@ define(
                 var newCharger = Sites.addSupercharger(markerName, event.latLng);
                 MapView.addMarkerToSupercharger(mapView.googleMap, newCharger);
                 mapView.redraw(false);
-                MapView.showInfoWindowForMarker.call(newCharger.marker);
+                InfoWindowRender.showInfoWindowForMarker(newCharger.marker, newCharger);
             }
 
             markerDialog.show().dialog(
@@ -274,58 +275,9 @@ define(
             };
             var marker = new google.maps.Marker(markerOptions);
             supercharger.marker = marker;
-            marker.supercharger = supercharger;
-            google.maps.event.addListener(supercharger.marker, 'click', MapView.showInfoWindowForMarker);
-        };
-
-        MapView.showInfoWindowForMarker = function () {
-            var myMarker = this;
-            var supercharger = myMarker.supercharger;
-            var popupContent = "";
-            popupContent += "<div class='info-window-content'>";
-            //
-            // Title/Supercharger-name
-            //
-            popupContent += "<div class='title'>" + supercharger.displayName + "</div>" + "";
-            //
-            // Construction
-            //
-            if (supercharger.isConstruction()) {
-                popupContent += "<div style='color: orange; font-size: smaller; font-weight: bold'>under construction</div>";
-            }
-            //
-            // Street Address
-            //
-            popupContent += supercharger.address.street + "<br/>";
-            //
-            // Web Page
-            //
-            if (Objects.isNotNullOrUndef(supercharger.url)) {
-                popupContent += "<a target='_blank' href='" + supercharger.url + "'>web page</a>";
-                popupContent += "&nbsp;&nbsp;&nbsp;";
-            }
-            //
-            // Circle On/Off
-            //
-            var circleOnOffLabel = (Objects.isNotNullOrUndef(supercharger.circle) && supercharger.circle.getVisible()) ? "circle off" : "circle on";
-            popupContent += "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a>";
-            popupContent += "&nbsp;&nbsp;&nbsp;";
-            //
-            // Remove Marker
-            //
-            if (supercharger.isUserAdded()) {
-                popupContent += "<a class='marker-toggle-trigger' href='" + supercharger.id + "'>remove</a>";
-                popupContent += "&nbsp;&nbsp;&nbsp;";
-            }
-            //
-            // Add to Route
-            //
-            popupContent += "<a class='add-to-route-trigger' href='" + supercharger.id + "'>add to route</a>";
-            popupContent += "</div>";
-
-            var windowOptions = { content: popupContent };
-            var infoWindow = new google.maps.InfoWindow(windowOptions);
-            infoWindow.open(myMarker.map, myMarker);
+            google.maps.event.addListener(supercharger.marker, 'click', function () {
+                InfoWindowRender.showInfoWindowForMarker(marker, supercharger);
+            });
         };
 
         return MapView;
