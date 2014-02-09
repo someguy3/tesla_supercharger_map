@@ -104,17 +104,27 @@ define(['page/map/Range', 'lib/spectrum'], function (Range) {
     };
 
     ControlView.prototype.initStatusCheckboxes = function () {
+
+        function toggleCheckbox(enclosingDiv, newCheckState) {
+            var imageSpan = enclosingDiv.find(".glyphicon");
+            imageSpan.toggleClass("glyphicon-unchecked", !newCheckState);
+            imageSpan.toggleClass("glyphicon-check", newCheckState);
+        }
+
         var controlView = this;
-        $("#status-completed-check").change(function (event) {
-            controlView.controlState.showCompleted = $(this).is(':checked');
+        $("#status-completed-check").click(function (event) {
+            controlView.controlState.showCompleted = !controlView.controlState.showCompleted;
+            toggleCheckbox($(this), controlView.controlState.showCompleted);
             controlView.trigger("station-status-change-event", controlView.controlState);
         });
-        $("#status-construction-check").change(function (event) {
-            controlView.controlState.showConstruction = $(this).is(':checked');
+        $("#status-construction-check").click(function (event) {
+            controlView.controlState.showConstruction = !controlView.controlState.showConstruction;
+            toggleCheckbox($(this), controlView.controlState.showConstruction);
             controlView.trigger("station-status-change-event", controlView.controlState);
         });
-        $("#status-planned-check").change(function (event) {
-            controlView.controlState.showPlanned = $(this).is(':checked');
+        $("#status-planned-check").click(function (event) {
+            controlView.controlState.showPlanned = !controlView.controlState.showPlanned;
+            toggleCheckbox($(this), controlView.controlState.showPlanned);
             controlView.trigger("station-status-change-event", controlView.controlState);
         });
     };
