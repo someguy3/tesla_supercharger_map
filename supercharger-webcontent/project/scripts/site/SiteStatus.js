@@ -8,7 +8,7 @@ define([], function () {
         },
         CONSTRUCTION: {
             value: 1,
-            displayName: "Under Construction",
+            displayName: "Construction",
             iconUrl: 'images/construction-cone.png'
         },
         OPEN: {
