@@ -8,17 +8,14 @@
  */
 define(['text!siteload/superchargers.txt'], function (superchargerText) {
 
-        var SiteMapsRaw = [
-        ];
 
+        var SiteMapsRaw = [];
         var KEY_MIN_LENGTH_CHARS = 2;
         var KEY_NAME_RECORD_SEPARATOR = 'name';
-
-        var lines = superchargerText.split("\n");
-
+        var lineList = superchargerText.split("\n");
         var currentMap = null;
 
-        $.each(lines, function (index, line) {
+        $.each(lineList, function (index, line) {
             line = line.trim();
             if (line.charAt(0) === '#') {
                 return;
@@ -33,7 +30,7 @@ define(['text!siteload/superchargers.txt'], function (superchargerText) {
             var key = line.substr(0, sepIndex).trim();
             var value = line.substr(sepIndex + 1).trim();
 
-            if (key === KEY_NAME_RECORD_SEPARATOR) {
+            if (key === KEY_NAME_RECORD_SEPARATOR || (index === lineList.length - 1)) {
                 if (currentMap !== null) {
                     SiteMapsRaw.push(currentMap);
                 }
