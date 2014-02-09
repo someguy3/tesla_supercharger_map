@@ -5,6 +5,8 @@
 #   -- records are delimited by newline
 #   -- keys delimited by first ':' character
 #   -- leading and trailing spaces of keys and values are not significant (should be ignored by reader)
+#   -- lines starting with '#' are comments (ignored by reader)
+#   -- empty/blank/all-white-space lines are ignored by reader
 #
 #
 # Allowed keys:
