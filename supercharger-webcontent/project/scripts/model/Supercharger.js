@@ -15,6 +15,7 @@ define(['model/Address'], function (Address) {
          */
         var Supercharger = function () {
             this.address = new Address();
+            this.count = true;
         };
 
 

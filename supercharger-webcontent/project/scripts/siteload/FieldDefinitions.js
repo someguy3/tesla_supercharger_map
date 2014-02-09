@@ -51,7 +51,7 @@ define(['siteload/FieldDefinition', 'util/Dates'], function (FieldDefinition, Da
 
         'construction': new FieldDefinition('construction', false, BOOLEAN),
 
-        'count': new FieldDefinition('count', true, BOOLEAN)
+        'count': new FieldDefinition('count', false, BOOLEAN)
     };
 
 
