@@ -9,7 +9,7 @@ define([], function () {
         CONSTRUCTION: {
             value: 1,
             displayName: "Under Construction",
-            iconUrl: 'images/construction-cone-marker.png'
+            iconUrl: 'images/construction-cone.png'
         },
         OPEN: {
             value: 2,

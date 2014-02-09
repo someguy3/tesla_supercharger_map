@@ -142,10 +142,19 @@ Navigation Bar
             <div class="col-md-6" style="text-align: center">
                 <label class="control">Status</label>
 
-                <div style="display:inline-block; font-size: larger">
-                    <input id="status-completed-check" checked="checked" type="checkbox"/><img src="images/dots/red_dot_16.png"/>Open&nbsp;&nbsp;
-                    <input id="status-construction-check" checked="checked" type="checkbox"/><img src="images/construction-cone-marker.png"/>Construction
-                    <input id="status-planned-check" checked="checked" type="checkbox"/><img src="images/dots/green_dot_16.png"/>Planned&nbsp;&nbsp;
+                <div class="status-checkbox-panel">
+                    <input id="status-completed-check" checked="checked" type="checkbox"/>
+                    <label for=status-completed-check><img src="images/dots/red_dot_16.png"/>Open</label>
+
+                    &nbsp;&nbsp;
+
+                    <input id="status-construction-check" checked="checked" type="checkbox"/>
+                    <label for="status-construction-check"><img src="images/construction-cone_20.png"/>Construction</label>
+
+                    &nbsp;&nbsp;
+
+                    <input id="status-planned-check" checked="checked" type="checkbox"/>
+                    <label for="status-planned-check"><img src="images/dots/green_dot_16.png"/>Planned</label>
                 </div>
             </div>
         </div>
