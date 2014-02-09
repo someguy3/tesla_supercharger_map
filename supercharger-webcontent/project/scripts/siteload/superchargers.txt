@@ -22,8 +22,8 @@
 # ----------------------------------------------------------------------------------------------------------------------------------------------------
 # name         | string       | yes      | display name for the site
 # location     | float, float | yes      | GPS coordinates
-# url          | string       | yes      | url for tesla web site
-# urlDiscuss   | string       | no       | url for discussion forum
+# url          | string       | yes      | URL pointing to Tesla's web page for this supercharger
+# urlDiscuss   | string       | no       | URL pointing to discussion forum/thread for this supercharger
 # dateOpened   | string       | no       | date opened
 # construction | boolean      | no       | true indicates that this location is under construction
 # count        | boolean      | no       | false means this location should NOT be counted (because part of pair Tesla counts as 1).  Default=true
