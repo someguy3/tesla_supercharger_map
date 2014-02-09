@@ -48,7 +48,6 @@ country: USA
 gps: 33.443242, -112.557378
 url: http://www.teslamotorsclub.com/showthread.php/25317-Supercharger-Buckeye-AZ
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25317-Supercharger-Buckeye-AZ
-dateOpened: 
 status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Flagstaff, AZ
@@ -71,7 +70,6 @@ country: USA
 gps: 32.943969, -112.733506
 url: http://www.teslamotorsclub.com/showthread.php/26077-Supercharger-Gila-Bend-AZ
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26077-Supercharger-Gila-Bend-AZ
-dateOpened: 
 status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Holbrook, AZ
@@ -115,7 +113,6 @@ country: USA
 gps: 33.9702333, -112.73165
 url: http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ
-dateOpened: 
 status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Yuma, AZ
@@ -179,7 +176,6 @@ country: USA
 gps: 32.7637233, -115.5315171
 url: http://www.teslamotorsclub.com/showthread.php/26691-Supercharger-El-Centro-CA
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26691-Supercharger-El-Centro-CA
-dateOpened: 
 status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Folsom, CA
@@ -262,7 +258,6 @@ gps: 33.498458, -117.6632
 url: http://www.teslamotorsclub.com/showthread.php/24984-Supercharger-San-Juan-Capistrano-CA
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24984-Supercharger-San-Juan-Capistrano-CA
 status: CONSTRUCTION
-dateOpened: 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Vacaville, CA
 street: 321 Nut Tree RD
@@ -307,7 +302,6 @@ country: USA
 gps: 39.562125, -104.8761924
 url: http://www.teslamotorsclub.com/showthread.php/27255-Supercharger-Lonetree-CO
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/27255-Supercharger-Lonetree-CO
-dateOpened:
 status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Silverthorne, CO
@@ -371,7 +365,6 @@ zip: 06831
 country: USA
 gps: 41.0414, -73.6718333
 url: http://www.teslamotors.com/supercharger/greenwichnorth
-dateOpened: 
 status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Greenwich, CT (south)
@@ -382,7 +375,6 @@ zip: 06831
 country: USA
 gps: 41.0405333333, -73.6734166667
 url: http://www.teslamotors.com/supercharger/greenwichsouth
-dateOpened: 
 status: CONSTRUCTION
 count: false
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -591,7 +583,6 @@ country: USA
 gps: 36.1657833333, -115.1393166667
 url: http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV
-dateOpened: 
 status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| New York
@@ -648,7 +639,6 @@ gps: 35.850609, -76.756162
 url: http://www.teslamotorsclub.com/showthread.php/22396-Plymouth-NC-Supercharger-Location
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/22396-Plymouth-NC-Supercharger-Location
 status: CONSTRUCTION
-dateOpened: 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Rocky Mount, NC
 street: 651 N. Winstead Avenue
@@ -872,7 +862,6 @@ country: USA
 gps: 38.9930036, -110.1400054
 url: http://www.teslamotorsclub.com/showthread.php/26516-Supercharger-Green-River-UT
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26516-Supercharger-Green-River-UT
-dateOpened: 
 status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Moab, UT
@@ -980,7 +969,6 @@ country: USA
 gps: 42.5187, -87.9504666667
 url: http://www.teslamotors.com/forum/forums/supercharger-locations-existingplanned-confirmed-not-rumored-or-speculated%E2%80%A6?page=50
 status: CONSTRUCTION
-dateOpened: 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Wyoming
 name: Cheyenne, WY

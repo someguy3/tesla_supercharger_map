@@ -1,4 +1,4 @@
-define(['model/Address', 'model/SiteStatus'], function (Address, Status) {
+define(['model/Address', 'model/SiteStatus', 'util/Objects'], function (Address, Status, Objects) {
 
 
         /**
@@ -27,6 +27,10 @@ define(['model/Address', 'model/SiteStatus'], function (Address, Status) {
         };
         Supercharger.prototype.isStatusOpen = function () {
             return this.status === Status.OPEN;
+        };
+
+        Supercharger.prototype.hasOpenDate = function () {
+            return Objects.isNotNullOrUndef(this.dateOpened);
         };
 
 

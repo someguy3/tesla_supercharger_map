@@ -10,7 +10,7 @@ define(['util/Strings', 'util/Objects'], function (Strings, Objects) {
         if (parts.length === 3) {
             return new Date(parts[0], parts[1] - 1, parts[2]);
         }
-        return null;
+        throw new Error("invalid date: " + string);
     };
 
     /**

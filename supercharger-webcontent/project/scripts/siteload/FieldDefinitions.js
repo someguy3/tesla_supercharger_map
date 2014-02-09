@@ -28,7 +28,11 @@ define(['siteload/FieldDefinition', 'util/Dates', 'model/SiteStatus'], function 
     };
 
     var DATE = function (supercharger, key, value) {
-        supercharger[key] = Dates.fromString(value);
+        try {
+            supercharger[key] = Dates.fromString(value);
+        } catch (error) {
+            throw new Error("bad date value '" + value + "' in supercharger=" + JSON.stringify(supercharger));
+        }
     };
 
     var STATUS = function (supercharger, key, value) {
