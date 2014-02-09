@@ -584,7 +584,17 @@ gps: 36.1657833333, -115.1393166667
 url: http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV
 status: CONSTRUCTION
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#-----------------------------------------------------------------------------------------------------------------------------| New Jersey
+name: Edison, NJ
+street: 199 Lafayette Ave
+city: Edison
+state: NJ
+zip: 08837
+country: USA
+gps: 40.5448144,-74.333248
+url: http://www.teslamotorsclub.com/showthread.php/26730-Supercharger-Edison-NJ
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26730-Supercharger-Edison-NJ
+status: PLANNED
 #-----------------------------------------------------------------------------------------------------------------------------| New York
 name: JFK Airport, NY
 street: 150th Ave and 147th St
