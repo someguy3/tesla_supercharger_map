@@ -113,7 +113,7 @@ country: USA
 gps: 33.9702333, -112.73165
 url: http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ
-status: CONSTRUCTION
+status: PLANNED
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Yuma, AZ
 street: 310 N Madison Ave

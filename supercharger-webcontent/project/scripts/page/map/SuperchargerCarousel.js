@@ -52,7 +52,8 @@ define(['page/data/ConstructionCount'], function (ConstructionCount) {
         var nonControlCells = row.find("td[rowspan!=2]");
         nonControlCells.eq(0).text(countryEntry.open);
         nonControlCells.eq(1).text(countryEntry.construction);
-        nonControlCells.eq(2).text(countryEntry.countryName);
+        nonControlCells.eq(2).text(countryEntry.planned);
+        nonControlCells.eq(3).text(countryEntry.countryName);
         if (countryEntry.countryName === "Total") {
             row.addClass("emphasize");
         } else {

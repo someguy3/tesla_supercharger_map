@@ -13,8 +13,8 @@ define(['page/data/CountryCodes', 'site/SiteIterator'], function (CountryCodes, 
      * RETURNED ARRAY:
      *
      *  [
-     *   { countryName: 'USA',    countryCode: 'us', open: 3, construction: 7  },
-     *   { countryName: 'Germany',countryCode: 'de', open: 3, construction: 7  }
+     *   { countryName: 'USA',    countryCode: 'us', open: 3, construction: 7, planned: 2  },
+     *   { countryName: 'Germany',countryCode: 'de', open: 3, construction: 4, planned: 1   }
      *  ]
      *
      * REFERENCE MAP:
@@ -28,7 +28,8 @@ define(['page/data/CountryCodes', 'site/SiteIterator'], function (CountryCodes, 
             countryRefMap = {},
             countryArray = [],
             totalOpen = 0,
-            totalConstruction = 0;
+            totalConstruction = 0,
+            totalPlanned = 0;
 
         new SiteIterator()
             .withPredicate(SiteIterator.PRED_NOT_CUSTOM)
@@ -36,13 +37,17 @@ define(['page/data/CountryCodes', 'site/SiteIterator'], function (CountryCodes, 
             .iterate(function (supercharger) {
                 var countryName = supercharger.address.country;
                 if (!countryRefMap[countryName]) {
-                    var newEntry = { countryName: countryName, countryCode: CountryCodes.fromName(countryName), open: 0, construction: 0 };
+                    var newEntry = { countryName: countryName, countryCode: CountryCodes.fromName(countryName), open: 0, construction: 0, planned: 0 };
                     countryRefMap[countryName] = newEntry;
                     countryArray.push(newEntry);
                 }
                 if (supercharger.isConstruction()) {
                     countryRefMap[countryName].construction++;
                     totalConstruction++;
+                }
+                if (supercharger.isPlanned()) {
+                    countryRefMap[countryName].planned++;
+                    totalPlanned++;
                 } else {
                     countryRefMap[countryName].open++;
                     totalOpen++;
@@ -50,7 +55,7 @@ define(['page/data/CountryCodes', 'site/SiteIterator'], function (CountryCodes, 
             }
         );
 
-        countryArray.push({ countryName: 'Total', countryCode: 'Total', open: totalOpen, construction: totalConstruction });
+        countryArray.push({ countryName: 'Total', countryCode: 'Total', open: totalOpen, construction: totalConstruction, planned: totalPlanned });
         countryArray.sort(ConstructionCount.sortByOpenCount);
         return countryArray;
     };
