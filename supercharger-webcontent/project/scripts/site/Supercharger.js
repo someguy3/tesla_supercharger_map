@@ -1,4 +1,4 @@
-define(['model/Address', 'site/SiteStatus', 'util/Objects'], function (Address, Status, Objects) {
+define(['site/Address', 'site/SiteStatus', 'util/Objects'], function (Address, Status, Objects) {
 
 
         /**
