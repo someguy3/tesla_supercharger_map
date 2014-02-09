@@ -21,7 +21,7 @@ define([], function () {
         });
 
         google.maps.event.addListener(this.googleMap, 'rightclick', jQuery.proxy(this.show, this));
-        google.maps.event.addListener(this.googleMap, 'click', jQuery.proxy(this.hide, this));
+        google.maps.event.addListener(this.googleMap, 'click', jQuery.proxy(this.hideConditionally, this));
 
         google.maps.event.addListener(this.googleMap, 'mousedown', jQuery.proxy(this.mousedown, this));
         google.maps.event.addListener(this.googleMap, 'mouseup', jQuery.proxy(this.mouseup, this));
@@ -71,10 +71,17 @@ define([], function () {
      * Hide context menu.
      */
     MapViewContextMenu.prototype.hide = function () {
+        this.contextMenuDiv.hide();
+        this.showStartTime = 0;
+    };
+
+    /**
+     * Hide context menu (if visible already for > 900ms)
+     */
+    MapViewContextMenu.prototype.hideConditionally = function () {
         var elapsedTime = new Date().getTime() - this.showStartTime;
         if (elapsedTime > 900) {
-            this.contextMenuDiv.hide();
-            this.showStartTime = 0;
+            this.hide();
         }
     };
 
