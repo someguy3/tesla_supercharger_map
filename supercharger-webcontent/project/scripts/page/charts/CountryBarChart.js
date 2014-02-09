@@ -33,9 +33,6 @@ define(['site/Sites', 'site/SiteIterator', 'util/Objects', 'lib/highcharts'], fu
             countryCountList.push(value);
         });
 
-        alert("one: " + countryNameList);
-        alert("two:" + countryCountList);
-
         $("#chart-country-bar").highcharts({
             chart: {
                 type: 'column'
