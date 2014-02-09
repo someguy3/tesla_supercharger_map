@@ -1,7 +1,7 @@
 
 
 ---------------------------------
-Map View
+Map Page
 ---------------------------------
 
 () Context Menu
@@ -18,15 +18,28 @@ Map View
     () Adjust Circle
     () Routing works
 
+() Supercharger Count Carousel
+    () Country rows should be sorted by number of completed super chargers descending, with the 'Total' row listed first.
+    () Verify counts are correct for all statuses.
+    () Verify scrolling up and own works.
+    () Verify up/down chevrons fade to gray when scroll reaches top/bottom.
+
 ---------------------------------
-Control View -- Raw Data
+Data Page
 ---------------------------------
 
 () GPS coordinates should be displayed in monospace font.
 
 
 ---------------------------------
-Control View -- Supercharger Counts
+Charts Page
 ---------------------------------
 
-() Country columns should be sorted (left to right) by number of completed super chargers.
+---------------------------------
+Changes Page
+---------------------------------
+
+---------------------------------
+About Page
+---------------------------------
+

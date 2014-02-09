@@ -45,12 +45,15 @@ define(['page/data/CountryCodes', 'site/SiteIterator'], function (CountryCodes, 
                     countryRefMap[countryName].construction++;
                     totalConstruction++;
                 }
-                if (supercharger.isPlanned()) {
+                else if (supercharger.isPlanned()) {
                     countryRefMap[countryName].planned++;
                     totalPlanned++;
-                } else {
+                }
+                else if (supercharger.isOpen()) {
                     countryRefMap[countryName].open++;
                     totalOpen++;
+                } else {
+                    throw new Error("unexpected supercharger status" + supercharger);
                 }
             }
         );
