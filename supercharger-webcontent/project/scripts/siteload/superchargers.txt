@@ -3,14 +3,14 @@
 # Information for all superchargers, world wide.
 #
 # File format specification:
-#   -- encoding: UTF-8
-#   -- each supercharger is represented by a single 'record', which const of multiple entries, an entry consisting of a key and a value.
-#   -- entries are delimited by newline
-#   -- entry keys end with ':'
-#   -- each record starts with the required entry having key 'name'
-#   -- leading and trailing spaces of keys and values are not significant (should be ignored by reader)
-#   -- lines starting with '#' are comments (ignored by reader)
-#   -- empty/blank/all-white-space lines are ignored by reader
+#   -- Encoding: UTF-8
+#   -- Each supercharger is represented by a single record, which consists of multiple entries, an entry having a key and a value.
+#   -- Entries are delimited by newline
+#   -- Entries keys proceed the first ':' on a line, values follow it.
+#   -- Each record starts with the required entry having key 'name'.  Entry order otherwise does not matter.
+#   -- Leading and trailing spaces of keys and values are not significant (should be ignored by reader)
+#   -- Lines starting with '#' are comments (ignored by reader)
+#   -- Empty/blank/all-white-space lines are ignored by reader
 #
 #
 # Keys:
