@@ -44,7 +44,10 @@ Map Page
 Data Page
 ---------------------------------
 
+() Should NOT show custom markers.
 () GPS coordinates should be displayed in monospace font.
+() All three statuses should show up correct in status column.
+() Sorting should work
 
 
 ---------------------------------

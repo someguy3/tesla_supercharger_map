@@ -13,7 +13,7 @@ define(['util/Objects', 'siteload/SiteTransform', 'site/SitePredicates', 'site/S
 
     SiteIterator.PRED_IS_OPEN = SitePredicates.open;
     SiteIterator.PRED_IS_COUNTED = SitePredicates.counted;
-    SiteIterator.PRED_NOT_CUSTOM = SitePredicates.notCustom;
+    SiteIterator.PRED_NOT_USER_ADDED = SitePredicates.notUserAdded;
     SiteIterator.PRED_HAS_CIRCLE = SitePredicates.hasCircle;
 
 

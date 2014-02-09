@@ -11,7 +11,7 @@ define(['util/Objects'], function (Objects) {
         return site.count;
     };
 
-    SitePredicates.notCustom = function (site) {
+    SitePredicates.notUserAdded = function (site) {
         return !site.isUserAdded();
     };
 

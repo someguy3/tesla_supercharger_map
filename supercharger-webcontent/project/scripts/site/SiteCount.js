@@ -32,7 +32,7 @@ define(['site/SiteIterator'], function (SiteIterator) {
             totalPlanned = 0;
 
         new SiteIterator()
-            .withPredicate(SiteIterator.PRED_NOT_CUSTOM)
+            .withPredicate(SiteIterator.PRED_NOT_USER_ADDED)
             .withPredicate(SiteIterator.PRED_IS_COUNTED)
             .iterate(function (supercharger) {
                 var countryName = supercharger.address.country;

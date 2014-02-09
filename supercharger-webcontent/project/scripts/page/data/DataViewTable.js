@@ -18,7 +18,9 @@ define(['util/Objects', 'site/SiteIterator', 'util/Dates', 'lib/stupidtable' ], 
 
         var tableBodyData = this.superChargerDataTable.find("tbody");
 
-        new SiteIterator().iterate(
+        new SiteIterator()
+            .withPredicate(SiteIterator.PRED_NOT_USER_ADDED)
+            .iterate(
             function (supercharger) {
                 tableBodyData.append("" +
                     "<tr>" +
