@@ -1,4 +1,9 @@
 
+---------------------------------
+Global
+---------------------------------
+
+() Site specific fav icon should show up in all browsers.
 
 ---------------------------------
 Map Page
