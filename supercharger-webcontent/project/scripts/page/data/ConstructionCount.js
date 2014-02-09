@@ -40,7 +40,7 @@ define(['page/data/CountryCodes', 'site/SiteIterator'], function (CountryCodes, 
                     countryRefMap[countryName] = newEntry;
                     countryArray.push(newEntry);
                 }
-                if (supercharger.construction) {
+                if (supercharger.isStatusConstruction()) {
                     countryRefMap[countryName].construction++;
                     totalConstruction++;
                 } else {

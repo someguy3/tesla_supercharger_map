@@ -5,6 +5,7 @@
 # Information for all superchargers, world wide.
 #
 # File format specification:
+#
 #   -- Encoding: UTF-8
 #   -- Lines starting with '#' are comments (ignored by reader)
 #   -- Empty/blank/all-white-space lines are ignored by reader
@@ -18,21 +19,22 @@
 #
 # Keys:
 # ----------------------------------------------------------------------------------------------------------------------------------------------------
-# Name         | Type         | Required | Description
+# Name         | Type         | Required | Default | Description
 # ----------------------------------------------------------------------------------------------------------------------------------------------------
-# name         | string       | yes      | display name for the site
-# location     | float, float | yes      | GPS coordinates
-# url          | string       | yes      | URL pointing to Tesla's web page for this supercharger
-# urlDiscuss   | string       | no       | URL pointing to discussion forum/thread for this supercharger
-# dateOpened   | string       | no       | date opened
-# construction | boolean      | no       | true indicates that this location is under construction
-# count        | boolean      | no       | false means this location should NOT be counted (because part of pair Tesla counts as 1).  Default=true
+# name         | string       | yes      |         | display name for the site
+# location     | float, float | yes      |         | GPS coordinates
+# url          | string       | yes      |         | URL pointing to Tesla's web page for this supercharger
+# urlDiscuss   | string       | no       |         | URL pointing to discussion forum/thread for this supercharger
+# dateOpened   | string       | no       |         | date opened
+# construction | boolean      | no       |         | true indicates that this location is under construction
+# status       | enum         | yes      | OPEN    | must be one of OPEN, CONSTRUCTION, PLANNED.
+# count        | boolean      | no       | true    | false means this location should NOT be counted (because part of pair Tesla counts as 1).
 #              |              |          |
-# street       | string       | yes      | address
-# city         | string       | yes      | address
-# state        | string       | false    | address
-# zip          | string       | yes      | address
-# country      | string       | yes      | address
+# street       | string       | yes      |         | address
+# city         | string       | yes      |         | address
+# state        | string       | false    |         | address
+# zip          | string       | yes      |         | address
+# country      | string       | yes      |         | address
 ######################################################################################################################################################
 
 
@@ -47,7 +49,7 @@ gps: 33.443242, -112.557378
 url: http://www.teslamotorsclub.com/showthread.php/25317-Supercharger-Buckeye-AZ
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25317-Supercharger-Buckeye-AZ
 dateOpened: 
-construction: true
+status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Flagstaff, AZ
 street: 2650 S Beulah Blvd
@@ -70,7 +72,7 @@ gps: 32.943969, -112.733506
 url: http://www.teslamotorsclub.com/showthread.php/26077-Supercharger-Gila-Bend-AZ
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26077-Supercharger-Gila-Bend-AZ
 dateOpened: 
-construction: true
+status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Holbrook, AZ
 street: 2096 Navajo Blvd
@@ -114,7 +116,7 @@ gps: 33.9702333, -112.73165
 url: http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ
 dateOpened: 
-construction: true
+status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Yuma, AZ
 street: 310 N Madison Ave
@@ -178,7 +180,7 @@ gps: 32.7637233, -115.5315171
 url: http://www.teslamotorsclub.com/showthread.php/26691-Supercharger-El-Centro-CA
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26691-Supercharger-El-Centro-CA
 dateOpened: 
-construction: true
+status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Folsom, CA
 street: 13000 Folsom Blvd
@@ -259,7 +261,7 @@ country: USA
 gps: 33.498458, -117.6632
 url: http://www.teslamotorsclub.com/showthread.php/24984-Supercharger-San-Juan-Capistrano-CA
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24984-Supercharger-San-Juan-Capistrano-CA
-construction: true
+status: CONSTRUCTION
 dateOpened: 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Vacaville, CA
@@ -306,7 +308,7 @@ gps: 39.562125, -104.8761924
 url: http://www.teslamotorsclub.com/showthread.php/27255-Supercharger-Lonetree-CO
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/27255-Supercharger-Lonetree-CO
 dateOpened:
-construction: true
+status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Silverthorne, CO
 street: 309 Rainbow Dr
@@ -370,7 +372,7 @@ country: USA
 gps: 41.0414, -73.6718333
 url: http://www.teslamotors.com/supercharger/greenwichnorth
 dateOpened: 
-construction: true
+status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Greenwich, CT (south)
 street: Merritt Pkwy (near NY border)
@@ -381,7 +383,7 @@ country: USA
 gps: 41.0405333333, -73.6734166667
 url: http://www.teslamotors.com/supercharger/greenwichsouth
 dateOpened: 
-construction: true
+status: CONSTRUCTION
 count: false
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 #-----------------------------------------------------------------------------------------------------------------------------| Delaware
@@ -590,7 +592,7 @@ gps: 36.1657833333, -115.1393166667
 url: http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV
 dateOpened: 
-construction: true
+status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| New York
 name: JFK Airport, NY
@@ -645,7 +647,7 @@ country: USA
 gps: 35.850609, -76.756162
 url: http://www.teslamotorsclub.com/showthread.php/22396-Plymouth-NC-Supercharger-Location
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/22396-Plymouth-NC-Supercharger-Location
-construction: true
+status: CONSTRUCTION
 dateOpened: 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Rocky Mount, NC
@@ -731,7 +733,7 @@ zip: 16066
 country: USA
 gps: 40.683982, -80.10839
 url: http://www.teslamotorsclub.com/showthread.php/25840-Cranberry-PA-Supercharger-Location-(NW-of-Pittsburgh)
-construction: true
+status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Somerset, PA
 street: 1030 North Center Avenue
@@ -871,7 +873,7 @@ gps: 38.9930036, -110.1400054
 url: http://www.teslamotorsclub.com/showthread.php/26516-Supercharger-Green-River-UT
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26516-Supercharger-Green-River-UT
 dateOpened: 
-construction: true
+status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Moab, UT
 street: 16 South Main St.
@@ -977,7 +979,7 @@ zip: 53158
 country: USA
 gps: 42.5187, -87.9504666667
 url: http://www.teslamotors.com/forum/forums/supercharger-locations-existingplanned-confirmed-not-rumored-or-speculated%E2%80%A6?page=50
-construction: true
+status: CONSTRUCTION
 dateOpened: 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Wyoming

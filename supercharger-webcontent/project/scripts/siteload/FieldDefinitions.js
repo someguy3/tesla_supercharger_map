@@ -1,4 +1,4 @@
-define(['siteload/FieldDefinition', 'util/Dates'], function (FieldDefinition, Dates) {
+define(['siteload/FieldDefinition', 'util/Dates', 'model/SiteStatus'], function (FieldDefinition, Dates, SiteStatus) {
 
     var I = function (supercharger, key, value) {
         supercharger[key] = value;
@@ -31,6 +31,11 @@ define(['siteload/FieldDefinition', 'util/Dates'], function (FieldDefinition, Da
         supercharger[key] = Dates.fromString(value);
     };
 
+    var STATUS = function (supercharger, key, value) {
+        supercharger[key] = SiteStatus.fromString(value);
+    };
+
+
     /**
      *
      * @constructor
@@ -53,7 +58,7 @@ define(['siteload/FieldDefinition', 'util/Dates'], function (FieldDefinition, Da
 
         'dateOpened': new FieldDefinition('dateOpened', false, DATE),
 
-        'construction': new FieldDefinition('construction', false, BOOLEAN),
+        'status': new FieldDefinition('construction', false, STATUS),
 
         'count': new FieldDefinition('count', false, BOOLEAN)
     };

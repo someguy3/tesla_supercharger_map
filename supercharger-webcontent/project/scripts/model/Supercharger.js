@@ -1,4 +1,4 @@
-define(['model/Address'], function (Address) {
+define(['model/Address', 'model/SiteStatus'], function (Address, Status) {
 
 
         /**
@@ -16,10 +16,20 @@ define(['model/Address'], function (Address) {
         var Supercharger = function () {
             this.address = new Address();
             this.count = true;
+            this.status = Status.OPEN;
+        };
+
+        Supercharger.prototype.isStatusPlanned = function () {
+            return this.status === Status.PLANNED;
+        };
+        Supercharger.prototype.isStatusConstruction = function () {
+            return this.status === Status.CONSTRUCTION;
+        };
+        Supercharger.prototype.isStatusOpen = function () {
+            return this.status === Status.OPEN;
         };
 
 
         return Supercharger;
-
     }
 );
