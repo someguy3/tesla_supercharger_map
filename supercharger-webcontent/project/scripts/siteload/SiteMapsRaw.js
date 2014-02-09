@@ -8,7 +8,6 @@
  */
 define(['text!siteload/superchargers.txt'], function (superchargerText) {
 
-
         var SiteMapsRaw = [];
         var KEY_MIN_LENGTH_CHARS = 2;
         var KEY_NAME_RECORD_SEPARATOR = 'name';
