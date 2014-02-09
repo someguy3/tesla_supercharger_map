@@ -1,6 +1,6 @@
 define(
-    ['util/Events', 'util/Objects', 'site/SiteIterator', 'site/Sites', 'page/map/MapViewContextMenu', 'page/map/InfoWindowRender'],
-    function (Events, Objects, SiteIterator, Sites, MapViewContextMenu, InfoWindowRender) {
+    ['util/Events', 'util/Objects', 'site/SiteIterator', 'site/Sites', 'page/map/MapViewContextMenu', 'page/map/InfoWindowRender', 'page/map/MarkerFactory'],
+    function (Events, Objects, SiteIterator, Sites, MapViewContextMenu, InfoWindowRender, MarkerFactory) {
 
 
         /**
@@ -90,7 +90,7 @@ define(
                     if (mapView.shouldDraw(supercharger)) {
                         if (drawMarkers) {
                             if (Objects.isNullOrUndef(supercharger.marker)) {
-                                MapView.addMarkerToSupercharger(mapView.googleMap, supercharger);
+                                supercharger.marker = MarkerFactory.createMarker(mapView.googleMap, supercharger);
                             }
                         }
 
@@ -223,9 +223,8 @@ define(
                 markerDialog.dialog("close");
                 var markerName = markerInput.val();
                 markerInput.val("");
-                // add marker
                 var newCharger = Sites.addSupercharger(markerName, event.latLng);
-                MapView.addMarkerToSupercharger(mapView.googleMap, newCharger);
+                newCharger.marker = MarkerFactory.createMarker(mapView.googleMap, newCharger);
                 mapView.redraw(false);
                 InfoWindowRender.showInfoWindowForMarker(newCharger.marker, newCharger);
             }
@@ -255,29 +254,6 @@ define(
                     supercharger.circle.setVisible(isVisible);
                 }
             );
-        };
-
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// CLASS level methods
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-        MapView.addMarkerToSupercharger = function (googleMap, supercharger) {
-            var markerOptions = {
-                position: supercharger.location,
-                map: googleMap,
-                title: supercharger.displayName,
-                icon: {
-                    url: supercharger.status.iconUrl,
-                    anchor: supercharger.isConstruction() ? null : { x: 8, y: 8 }
-                },
-                animation: google.maps.Animation.DROP
-            };
-            var marker = new google.maps.Marker(markerOptions);
-            supercharger.marker = marker;
-            google.maps.event.addListener(supercharger.marker, 'click', function () {
-                InfoWindowRender.showInfoWindowForMarker(marker, supercharger);
-            });
         };
 
         return MapView;
