@@ -25,12 +25,21 @@ define(['site/Sites', 'site/SiteIterator', 'util/Objects', 'lib/highcharts'], fu
                 }
             });
 
+        var sortableList = [];
+        $.each(countryMap, function (key, value) {
+            sortableList.push({countryName: key, count: value});
+        });
+
+        sortableList.sort(function (a, b) {
+            return b.count - a.count;
+        });
+
         var countryNameList = [];
         var countryCountList = [];
 
-        $.each(countryMap, function (key, value) {
-            countryNameList.push(key);
-            countryCountList.push(value);
+        $.each(sortableList, function (index, map) {
+            countryNameList.push(map.countryName);
+            countryCountList.push(map.count);
         });
 
         $("#chart-country-bar").highcharts({
