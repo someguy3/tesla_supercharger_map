@@ -1,4 +1,4 @@
-define(['util/Objects', 'site/SiteList', 'site/SitePredicates', 'site/SiteSorting'], function (Objects, SiteList, SitePredicates, SiteSorting) {
+define(['util/Objects', 'siteload/SiteTransform', 'site/SitePredicates', 'site/SiteSorting'], function (Objects, SiteList, SitePredicates, SiteSorting) {
 
     /**
      *
