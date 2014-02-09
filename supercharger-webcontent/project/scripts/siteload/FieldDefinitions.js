@@ -1,4 +1,4 @@
-define(['siteload/FieldDefinition', 'util/Dates', 'model/SiteStatus'], function (FieldDefinition, Dates, SiteStatus) {
+define(['siteload/FieldDefinition', 'util/Dates', 'site/SiteStatus'], function (FieldDefinition, Dates, SiteStatus) {
 
     var I = function (supercharger, key, value) {
         supercharger[key] = value;

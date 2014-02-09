@@ -1,7 +1,7 @@
 /**
  * Takes the collection of raw sites and validates them then transforms them into supercharger objects.
  */
-define(['siteload/SiteMapsRaw', 'siteload/FieldDefinitions', 'model/Supercharger', 'util/Objects', 'util/Asserts'],
+define(['siteload/SiteMapsRaw', 'siteload/FieldDefinitions', 'site/Supercharger', 'util/Objects', 'util/Asserts'],
     function (SiteMapsRaw, FieldDefinitions, Supercharger, Objects, Asserts) {
 
         var SiteTransform = [
