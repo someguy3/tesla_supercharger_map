@@ -18,6 +18,7 @@ define(['page/map/Range'], function (Range) {
 
         this.showCompleted = true;
         this.showConstruction = true;
+        this.showPlanned = true;
     };
 
     return ControlState;

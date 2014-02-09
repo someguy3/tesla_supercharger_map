@@ -120,7 +120,8 @@ define(
 
         MapView.prototype.shouldDraw = function (supercharger) {
             return (supercharger.isConstruction() && this.controlState.showConstruction) ||
-                (!supercharger.isConstruction() && this.controlState.showCompleted);
+                (supercharger.isOpen() && this.controlState.showCompleted) ||
+                (supercharger.isPlanned() && this.controlState.showPlanned);
         };
 
         MapView.prototype.buildRangeCircleOptions = function () {

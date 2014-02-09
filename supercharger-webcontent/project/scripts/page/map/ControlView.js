@@ -113,6 +113,10 @@ define(['page/map/Range', 'lib/spectrum'], function (Range) {
             controlView.controlState.showConstruction = $(this).is(':checked');
             controlView.trigger("station-status-change-event", controlView.controlState);
         });
+        $("#status-planned-check").change(function (event) {
+            controlView.controlState.showPlanned = $(this).is(':checked');
+            controlView.trigger("station-status-change-event", controlView.controlState);
+        });
     };
 
     /**
