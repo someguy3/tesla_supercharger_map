@@ -71,3 +71,5 @@ Changes Page
 About Page
 ---------------------------------
 
+() Verify email address is inserted correctly.
+() Verify version (last changed date) is loaded correctly.
