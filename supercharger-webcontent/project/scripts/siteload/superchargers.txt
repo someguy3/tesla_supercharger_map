@@ -125,7 +125,6 @@ gps: 32.726686, -114.619093
 url: http://www.teslamotors.com/supercharger/yuma
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26337-Supercharger-Yuma-AZ
 dateOpened: 2014-02-04
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| California
 name: Atascadero, CA
 street: 6950 El Camino Real
@@ -269,8 +268,6 @@ gps: 38.366645, -121.958136
 url: http://www.teslamotors.com/supercharger/vacaville
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24773-Supercharger-Vacaville-CA
 dateOpened: 2013-12-19
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 #-----------------------------------------------------------------------------------------------------------------------------| Colorado
 name: Glenwood Springs, CO
 street: 125 Wulfsohn Rd
@@ -313,7 +310,6 @@ country: USA
 gps: 39.631457, -106.070816
 url: http://www.teslamotors.com/supercharger/silverthorne
 dateOpened: 2013-10-03
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Connecticut
 name: Milford, CT (north)
 street: 1 CT Turnpike N
@@ -377,7 +373,6 @@ gps: 41.0405333333, -73.6734166667
 url: http://www.teslamotors.com/supercharger/greenwichsouth
 status: CONSTRUCTION
 count: false
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 #-----------------------------------------------------------------------------------------------------------------------------| Delaware
 name: Newark, DE
 street: 530 JFK Memorial Highway
@@ -442,7 +437,6 @@ gps: 32.135507, -81.212767
 url: http://www.teslamotors.com/supercharger/savannah
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24771-Supercharger-Savannah-GA
 dateOpened: 2014-01-15
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Illinois
 name: Highland Park, IL Service Center
 street: 1200 Old Skokie Road
@@ -473,7 +467,6 @@ country: USA
 gps: 40.508497, -88.985575
 url: http://www.teslamotors.com/supercharger/normal
 dateOpened: 2013-06-26
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Indiana
 name: Angola, IN
 street: 3855 Indiana Rte 127
@@ -494,7 +487,6 @@ country: USA
 gps: 41.7174, -86.1887
 url: http://www.teslamotors.com/supercharger/mishawaka
 dateOpened: 2013-12-11
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Maryland
 name: Bethesda, MD
 street: 7101 Democracy Blvd
@@ -517,7 +509,6 @@ gps: 39.605859, -77.733324
 url: http://www.teslamotors.com/supercharger/hagerstown
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25085-Maryland-Superchargers?p=523453#post523453
 dateOpened: 2014-01-23
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Minnesota
 name: Albert Lea, MN
 street: 811 East Plaza St
@@ -539,7 +530,6 @@ country: USA
 gps: 43.63385, -95.595647
 url: http://www.teslamotors.com/supercharger/worthington
 dateOpened: 2013-12-11
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Michigan
 name: St. Joseph, MI
 street: 3260 Niles Rd
@@ -550,7 +540,6 @@ country: USA
 gps: 42.056357, -86.456352
 url: http://www.teslamotors.com/supercharger/stjoseph
 dateOpened: 2013-11-26
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| New Mexico
 name: Farmington, NM
 street: 4200 Sierra Vista Dr
@@ -572,7 +561,6 @@ gps: 35.505278, -108.828094
 url: http://www.teslamotors.com/supercharger/gallup
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24954-Supercharger-Gallup-NM
 dateOpened: 2014-01-07
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Nevada
 name: Las Vegas, NV
 street: 701 Bridger Ave
@@ -616,7 +604,6 @@ gps: 40.7998387, -73.5152669
 url: http://www.teslamotors.com/service/syosset
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26175-Supercharger-Syosset-NY
 dateOpened: 2014-01-18
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| North Carolina
 name: Burlington, NC
 street: 1080 Piper Ln
@@ -659,7 +646,6 @@ country: USA
 gps: 35.972874, -77.846870
 url: http://www.teslamotors.com/supercharger/rockymount
 dateOpened: 2013-11-08
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Ohio
 name: Macedonia, OH
 street: 8210 Macedonia Commons Blvd
@@ -682,7 +668,6 @@ gps: 41.57835, -83.66465
 url: http://www.teslamotors.com/supercharger/maumee
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25482-Supercharger-Maumee-OH
 dateOpened: 2014-01-13
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Oregon
 name: Detroit Lake, OR
 street: 210 D Street
@@ -723,7 +708,6 @@ country: USA
 gps: 45.15313, -122.881254
 url: http://www.teslamotors.com/supercharger/woodburn
 dateOpened: 2013-08-28
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Pennsylvania
 name: Cranberry, PA
 street: 1308 Freedom Rd
@@ -745,7 +729,6 @@ gps: 40.0173833333, -79.0771166667
 url: http://www.teslamotors.com/supercharger/somerset
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25319-Somerset-PA-Supercharger-(confirmed!)
 dateOpened: 2014-01-10
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Rhode Island
 name: East Greenwich, RI
 street: 1000 Division St
@@ -756,7 +739,6 @@ country: USA
 gps: 41.660517, -71.497242
 url: http://www.teslamotors.com/supercharger/eastgreenwich
 dateOpened: 2014-01-06
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| South Carolina
 name: Santee, SC
 street: 114 Bradford Blvd.
@@ -768,7 +750,6 @@ gps: 33.485858, -80.475763
 url: http://www.teslamotors.com/supercharger/santee
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25065-Supercharger-Santee-SC
 dateOpened: 2013-12-27
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| South Dakota
 name: Mitchell, SD
 street: 1305 W. Havens Street
@@ -799,7 +780,6 @@ country: USA
 gps: 44.105601, -103.212569
 url: http://www.teslamotors.com/supercharger/rapidcity
 dateOpened: 2013-11-25
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Texas
 name: Columbus, TX
 street: 2535 Texas 71
@@ -850,7 +830,6 @@ country: USA
 gps: 31.58224, -97.10915
 url: http://www.teslamotors.com/supercharger/waco
 dateOpened: 2013-09-07
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Utah
 name: Blanding, UT
 street: 12 N Grayson Pkwy
@@ -884,7 +863,6 @@ gps: 38.573122, -109.552368
 url: http://www.teslamotors.com/supercharger/moab
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/21121-Utah-Super-Charger-Locations
 dateOpened: 2014-01-22
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Virginia
 name: Glen Allen, VA
 street: 9860 Brook Rd
@@ -895,7 +873,6 @@ country: USA
 gps: 37.669832, -77.461419
 url: http://www.teslamotors.com/supercharger/glenallen
 dateOpened: 2013-10-24
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Washington
 name: Burlington, WA
 street: 9384 Old Highway 99
@@ -926,7 +903,6 @@ country: USA
 gps: 46.976918, -120.54162
 url: http://www.teslamotors.com/supercharger/ellensburg
 dateOpened: 2013-12-23
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Wisconsin
 name: Eau Claire, WI
 street: 4601 Keystone Crossing
@@ -979,7 +955,6 @@ country: USA
 gps: 42.5187, -87.9504666667
 url: http://www.teslamotors.com/forum/forums/supercharger-locations-existingplanned-confirmed-not-rumored-or-speculated%E2%80%A6?page=50
 status: CONSTRUCTION
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| Wyoming
 name: Cheyenne, WY
 street: 1400 Dell Range Blvd
@@ -1020,7 +995,6 @@ country: Austria
 gps: 47.130137, 10.269231
 url: http://www.teslamotors.com/supercharger/stanton
 dateOpened: 2013-12-19
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| GERMANY
 name: Aichstetten, Germany
 street: Am Waizenhof 12 (Autohof)
@@ -1061,8 +1035,6 @@ country: Germany
 gps: 50.817046, 8.087663
 url: http://www.teslamotors.com/supercharger/wilnsdorf
 dateOpened: 2013-12-13
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 #-----------------------------------------------------------------------------------------------------------------------------| NETHERLANDS
 name: Oosterhout, Netherlands
 street: Beneluxweg 1
@@ -1083,9 +1055,7 @@ country: Netherlands
 gps: 51.94066, 6.08180
 url: http://www.teslamotors.com/supercharger/zevenaar
 dateOpened: 2013-12-06
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| NORWAY
-
 name: Dombås, Norway
 street: P plass bak KIWI Mini Pris
 city: Dombås
@@ -1145,7 +1115,6 @@ country: Norway
 gps: 58.15653, 7.10298
 url: http://www.teslamotors.com/supercharger/lyngdal
 dateOpened: 2013-08-30
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #-----------------------------------------------------------------------------------------------------------------------------| SWITZERLAND
 name: Lully, Switzerland
 street: Restoroute 1470 Lully FR (Autogrill)
