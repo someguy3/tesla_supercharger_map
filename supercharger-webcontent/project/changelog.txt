@@ -1,3 +1,36 @@
+Sun Feb 9 2014 || supercharger added:  Woodbridge, VA (planned)
+Sun Feb 9 2014 || supercharger added:  St George, UT (planned)
+Sun Feb 9 2014 || supercharger added:  Edison, NJ (planned)
+Sat Feb 8 2014 || supercharger added:  Lonetree, CO
+Tue Feb 4 2014 || supercharger live: Yuma, AZ
+Sat Feb 1 2014 || supercharger added:  Plymouth, NC
+Thu Jan 30 2014 || supercharger live: Bethesda, MD
+Thu Jan 30 2014 || supercharger live: Eau Claire, WI
+Mon Jan 27 2014 || supercharger added:  El Centro, CA
+Mon Jan 27 2014 || supercharger added:  Green River, UT
+Fri Jan 24 2014 || Greenwich, CT reverted to 'under construction' to match Tesla website.
+Fri Jan 24 2014 || supercharger added: Gila Bend, AZ
+Thu Jan 23 2014 || supercharger added:  Wickenburg, AZ (planned)
+Thu Jan 23 2014 || supercharger live: Hagerstown, MD
+Wed Jan 22 2014 || supercharger added: Bethesda, MD
+Wed Jan 22 2014 || supercharger live:  Kingman, AZ
+Tue Jan 21 2014 || supercharger live:  Moab, UT
+Tue Jan 21 2014 || supercharger live: Greenwich, CT (north+south)
+Mon Jan 20 2014 || supercharger live: Cheyenne, WY
+Mon Jan 20 2014 || supercharger added: Yuma, AZ
+Sun Jan 19 2014 || supercharger live: Syosset, NY
+Sat Jan 18 2014 || Added 'Charts' page.
+Fri Jan 17 2014 || supercharger live: Lumberton, NC
+Wed Jan 15 2014 || supercharger live: Holbrook, AZ
+Wed Jan 15 2014 || supercharger live: Macedonia, OH
+Wed Jan 15 2014 || supercharger added: Cranberry, PA
+Wed Jan 15 2014 || supercharger added: Syosset, NY
+Wed Jan 15 2014 || supercharger live: Albert Lea, MN
+Wed Jan 15 2014 || supercharger live: Savannah, GA
+Tue Jan 14 2014 || Added "Open Date" to supercharger table.
+Mon Jan 13 2014 || supercharger live: Madison, WI
+Mon Jan 13 2014 || supercharger live: Maumee, OH
+Mon Jan 13 2014 || supercharger live: Blanding, UT
 Mon Jan 13 2014 || deployed version 2.0 of this site
 Fri Jan 10 2014 || supercharger live: Somerset, PA
 Fri Jan 10 2014 || supercharger live: Farmington, NM

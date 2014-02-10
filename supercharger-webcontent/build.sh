@@ -39,7 +39,7 @@ sed -i "s/\${project.version}/${PROJECT_VERSION}/g" ${DIR_BUILT}/version.json
 #
 TEMP_FILE=/tmp/newlog.txt
 
-git log --grep='@changeLog' --pretty=format:'%cd || %s' --date=local --since 'Sun Jan 12 15:55:31 2014 -0600' | sed 's/ [0-9]*:[0-9]*:[0-9]*//' > ${TEMP_FILE}
+git log --grep='@changeLog' --pretty=format:'%cd || %s' --date=local --since 'Sun Feb 9 21:40:00 2014 -0600' | sed 's/ [0-9]*:[0-9]*:[0-9]*//' > ${TEMP_FILE}
 printf "\n" >> ${TEMP_FILE}
 cat ${TEMP_FILE} ${FILE_CHANGE_LOG} > ${FILE_CHANGE_LOG}.tmp
 mv ${FILE_CHANGE_LOG}.tmp ${FILE_CHANGE_LOG}
