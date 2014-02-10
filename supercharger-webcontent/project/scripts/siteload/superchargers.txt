@@ -884,6 +884,17 @@ country: USA
 gps: 37.669832, -77.461419
 url: http://www.teslamotors.com/supercharger/glenallen
 dateOpened: 2013-10-24
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Woodbridge, VA
+street: Potomac Mills Circle
+city: Woodbridge
+state: VA
+zip: 22192
+country: USA
+gps: 38.6422662,-77.294923
+url: http://www.teslamotorsclub.com/showthread.php/26526-Supercharger-Woodbridge-VA
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26526-Supercharger-Woodbridge-VA
+status: PLANNED
 #-----------------------------------------------------------------------------------------------------------------------------| Washington
 name: Burlington, WA
 street: 9384 Old Highway 99
