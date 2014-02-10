@@ -1,0 +1,20 @@
+
+.about-page-list {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.about-page-list li {
+    display: list-item;
+    margin-left: 10px;
+    list-style-type: disc;
+}
+
+#page-about h3 {
+    margin-top: 0;
+}
+
+#page-about h3.margin-top {
+    margin-top: 1.25em;
+}
