@@ -863,6 +863,17 @@ gps: 38.573122, -109.552368
 url: http://www.teslamotors.com/supercharger/moab
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/21121-Utah-Super-Charger-Locations
 dateOpened: 2014-01-22
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: St George, UT
+street: 1091 N Bluff St
+city: Saint George
+state: UT
+zip: 84770
+country: USA
+gps: 37.1253361, -113.6027197
+url: http://www.teslamotorsclub.com/showthread.php/27242-Supercharger-St-George-UT
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/27242-Supercharger-St-George-UT
+status: PLANNED
 #-----------------------------------------------------------------------------------------------------------------------------| Virginia
 name: Glen Allen, VA
 street: 9860 Brook Rd
