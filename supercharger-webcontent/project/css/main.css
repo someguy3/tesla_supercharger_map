@@ -8,13 +8,13 @@
 @import "global/layout.css";
 @import "global/NavBar.css";
 /* - - - - - - - - - - - - - - - - - - - - PAGE: Map */
-@import "map/ControlView.css";
-@import "map/MapView.css";
-@import "map/Routing.css";
-@import "map/SuperchargerCarousel.css";
+@import "page/map/ControlView.css";
+@import "page/map/MapView.css";
+@import "page/map/Routing.css";
+@import "page/map/SuperchargerCarousel.css";
 /* - - - - - - - - - - - - - - - - - - - - PAGE: Data */
-@import "data/SuperChargerDataTable.css";
+@import "page/data/SuperChargerDataTable.css";
 /* - - - - - - - - - - - - - - - - - - - - PAGE: Changes*/
-@import "changes/Changes.css";
+@import "page/changes/Changes.css";
 /* - - - - - - - - - - - - - - - - - - - - PAGE: About */
-@import "about/About.css";
+@import "page/about/About.css";
