@@ -1,19 +1,20 @@
-/* - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - Third Party */
 @import "bootstrap.css";
 @import "bootstrap-theme.css";
 @import "lib/spectrum.css";
-/* - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - Third party override */
 @import "jQuery-ui-override.css";
+/* - - - - - - - - - - - - - - - - - - - - Naviation */
 @import "navigation/NavBar.css";
-/* - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - PAGE: Map */
 @import "map/ControlView.css";
 @import "map/Main.css";
 @import "map/MapView.css";
 @import "map/Routing.css";
 @import "map/SuperchargerCarousel.css";
-/* - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - PAGE: Data */
 @import "data/SuperChargerDataTable.css";
-/* - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - PAGE: Changes*/
 @import "changes/Changes.css";
-/* - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - PAGE: About */
 @import "about/About.css";
