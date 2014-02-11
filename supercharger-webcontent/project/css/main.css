@@ -5,10 +5,10 @@
 /* - - - - - - - - - - - - - - - - - - - - Third party override */
 @import "jQuery-ui-override.css";
 /* - - - - - - - - - - - - - - - - - - - - Naviation */
+@import "global/layout.css";
 @import "global/NavBar.css";
 /* - - - - - - - - - - - - - - - - - - - - PAGE: Map */
 @import "map/ControlView.css";
-@import "map/Main.css";
 @import "map/MapView.css";
 @import "map/Routing.css";
 @import "map/SuperchargerCarousel.css";
