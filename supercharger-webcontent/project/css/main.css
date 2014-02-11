@@ -3,7 +3,8 @@
 @import "bootstrap-theme.css";
 @import "lib/spectrum.css";
 /* - - - - - - - - - - - - - - - - - - - - Third party override */
-@import "jQuery-ui-override.css";
+@import "lib/jquery-ui-override.css";
+@import "lib/bootstrap-override.css";
 /* - - - - - - - - - - - - - - - - - - - - Naviation */
 @import "global/layout.css";
 @import "global/NavBar.css";
