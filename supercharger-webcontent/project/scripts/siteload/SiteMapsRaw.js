@@ -8,11 +8,20 @@
  */
 define(['text!siteload/superchargers.txt'], function (superchargerText) {
 
-        var SiteMapsRaw = [];
         var KEY_MIN_LENGTH_CHARS = 2;
         var KEY_NAME_RECORD_SEPARATOR = 'name';
+
+        var SiteMapsRaw = [];
+
         var lineList = superchargerText.split("\n");
         var currentMap = null;
+
+        function addRecord() {
+            if (currentMap !== null) {
+                SiteMapsRaw.push(currentMap);
+            }
+            currentMap = {};
+        }
 
         function handleLine(index, line) {
             line = line.trim();
@@ -33,13 +42,13 @@ define(['text!siteload/superchargers.txt'], function (superchargerText) {
         }
 
         function handleKeyValue(index, key, value) {
-            if (key === KEY_NAME_RECORD_SEPARATOR || (index === lineList.length - 1)) {
-                if (currentMap !== null) {
-                    SiteMapsRaw.push(currentMap);
-                }
-                currentMap = {};
+            if (key === KEY_NAME_RECORD_SEPARATOR) {
+                addRecord();
             }
             currentMap[key] = value;
+            if (index === lineList.length - 1) {
+                addRecord();
+            }
         }
 
         $.each(lineList, handleLine);
