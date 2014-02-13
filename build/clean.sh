@@ -2,4 +2,4 @@
 
 DIR_PROJECT='../webcontent-built'
 
-rm -rf project-built
+rm -rf ${DIR_PROJECT}
