@@ -27563,7 +27563,7 @@ require({
     catchError: {
         define: true
     }
-},       ['env!env/args', 'env!env/quit', 'logger', 'build'],
+},       ['env!env/args', 'env!env/quit', 'logger', '.'],
 function (args, quit, logger, build) {
     build(args).then(function () {}, function (err) {
         logger.error(err);
