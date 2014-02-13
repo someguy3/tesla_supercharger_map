@@ -361,7 +361,7 @@ zip: 06831
 country: USA
 gps: 41.0414, -73.6718333
 url: http://www.teslamotors.com/supercharger/greenwichnorth
-status: CONSTRUCTION
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25176-Greenwich-CT-Merritt-Parkway-Supercharger
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Greenwich, CT (south)
 street: Merritt Pkwy (near NY border)
@@ -371,7 +371,7 @@ zip: 06831
 country: USA
 gps: 41.0405333333, -73.6734166667
 url: http://www.teslamotors.com/supercharger/greenwichsouth
-status: CONSTRUCTION
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25176-Greenwich-CT-Merritt-Parkway-Supercharger
 count: false
 #-----------------------------------------------------------------------------------------------------------------------------| Delaware
 name: Newark, DE
