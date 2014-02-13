@@ -3,7 +3,7 @@
 # Deploy
 #==============================================================================================
 
-WEB_APP_DIR='project-built'
+WEB_APP_DIR='../webcontent-built'
 REMOTE_HOST=dev.redshiftsoft.com
 SSH_USER=keith
 DIR_DEPLOY=/var/www/supercharge.info
