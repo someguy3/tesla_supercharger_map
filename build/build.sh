@@ -2,8 +2,8 @@
 
 PROJECT_VERSION='2.0'
 BUILD_TIMESTAMP=`date +'%b %d, %I:%M %p %Z'`
-DIR_PROJECT='project'
-DIR_BUILT='project-built'
+DIR_PROJECT='../webcontent'
+DIR_BUILT='../webcontent-built'
 FILE_CHANGE_LOG=${DIR_BUILT}/changelog.txt
 
 echo "------------------------------------------------"
