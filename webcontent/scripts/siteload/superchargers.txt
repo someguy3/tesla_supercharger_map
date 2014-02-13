@@ -258,6 +258,17 @@ url: http://www.teslamotorsclub.com/showthread.php/24984-Supercharger-San-Juan-C
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24984-Supercharger-San-Juan-Capistrano-CA
 status: CONSTRUCTION
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+name: Roseville, CA
+street: 1131 Galleria Blvd
+city: Roseville
+state: CA
+zip: 95678
+country: USA
+gps: 38.771576, -121.268783
+url: http://www.teslamotorsclub.com/showthread.php/25321-Supercharger-Roseville-CA
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25321-Supercharger-Roseville-CA
+status: PLANNED
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Vacaville, CA
 street: 321 Nut Tree RD
 city: Vacaville
