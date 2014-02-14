@@ -26,6 +26,11 @@ label.control {
     font-size: larger;
 }
 
+.status-checkbox-panel img {
+    vertical-align: top;
+    margin-right: .5em;
+}
+
 .status-checkbox-panel div {
     display: inline-block;
     margin-right: 1em;
