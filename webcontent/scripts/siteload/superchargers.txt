@@ -986,9 +986,10 @@ city: Pleasant Prairie
 state: WI
 zip: 53158
 country: USA
-gps: 42.5187, -87.9504666667
-url: http://www.teslamotors.com/forum/forums/supercharger-locations-existingplanned-confirmed-not-rumored-or-speculated%E2%80%A6?page=50
-status: CONSTRUCTION
+gps: 42.518715, -87.950428
+url: http://www.teslamotors.com/supercharger/pleasantprairie/
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24337-Wisconsin-Supercharger-Discussion-Tracking
+dateOpened: 2014-02-13
 #-----------------------------------------------------------------------------------------------------------------------------| Wyoming
 name: Cheyenne, WY
 street: 1400 Dell Range Blvd
