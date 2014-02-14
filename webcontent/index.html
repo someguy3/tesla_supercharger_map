@@ -58,8 +58,8 @@ Navigation Bar
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav" id="navbar-map-dropdown">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown">Map
-                        Options<b class="glyphicon glyphicon-chevron-down btn-sm"></b></a>
+                    <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown">Map Options&nbsp;
+                        <b class="glyphicon glyphicon-chevron-down btn-xs"></b></a>
                     <ul class="dropdown-menu" id="navbar-dropdown-menu-item-list">
                         <li><a href="#range-circles-all-on">All Range Circles On</a></li>
                         <li><a href="#range-circles-all-off">All Range Circles Off</a></li>
@@ -117,203 +117,205 @@ Navigation Bar
 
 <div class="layout-content">
 
-    <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-    PAGE: map
-    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
-    <div class="page" id="page-map">
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+PAGE: map
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
+<div class="page" id="page-map">
 
-        <div class="row" id="control-row-one">
-            <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * Control: Range-->
-            <div class="col-md-6" style="text-align: center">
-                <label class="control">Range</label>
+    <div class="row" id="control-row-one">
+        <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * Control: Range-->
+        <div class="col-md-6" style="text-align: center">
+            <label class="control">Range</label>
 
-                <div id="range-slider" class="slider-control"></div>
-                <div id="range-number-text" class="slider-value-label"></div>
+            <div id="range-slider" class="slider-control"></div>
+            <div id="range-number-text" class="slider-value-label"></div>
 
-                <div class="btn-group" data-toggle="buttons" style="vertical-align: top">
-                    <label id="range-unit-mi-label" class="btn btn-default btn-xs active">
-                        <input type="radio" name="options" id="option1">mi
-                    </label>
-                    <label id="range-unit-km-label" class="btn btn-default btn-xs">
-                        <input type="radio" name="options" id="option2">km
-                    </label>
-                </div>
-
+            <div class="btn-group" data-toggle="buttons" style="vertical-align: top">
+                <label id="range-unit-mi-label" class="btn btn-default btn-xs active">
+                    <input type="radio" name="options" id="option1">mi
+                </label>
+                <label id="range-unit-km-label" class="btn btn-default btn-xs">
+                    <input type="radio" name="options" id="option2">km
+                </label>
             </div>
-            <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * Control: Status-->
-            <div class="col-md-6" style="text-align: center">
-                <label class="control">Status</label>
 
-                <div class="status-checkbox-panel">
-                    <div id="status-completed-check">
-                        <span class="glyphicon glyphicon-check"></span>
-                        <img src="images/dots/red_dot_16.png" alt="open" style="margin-top: 4px"/>Open
-                    </div>
-                    <div id="status-construction-check">
-                        <span class="glyphicon glyphicon-check"></span>
-                        <img src="images/construction-cone_20.png" alt="construction"/>Construction
-                    </div>
-                    <div id="status-permit-check">
-                        <span class="glyphicon glyphicon-check"></span>
-                        <img src="images/dots/blue_dot_16.png" alt="permit" style="margin-top: 4px"/>Permit
-                    </div>
+        </div>
+        <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * Control: Status-->
+        <div class="col-md-6" style="text-align: center">
+            <label class="control">Status</label>
+
+            <div class="status-checkbox-panel">
+                <div id="status-completed-check">
+                    <span class="glyphicon glyphicon-check"></span>
+                    <img src="images/dots/red_dot_16.png" alt="open" style="margin-top: 4px"/>Open
+                </div>
+                <div id="status-construction-check">
+                    <span class="glyphicon glyphicon-check"></span>
+                    <img src="images/construction-cone_20.png" alt="construction"/>Construction
+                </div>
+                <div id="status-permit-check">
+                    <span class="glyphicon glyphicon-check"></span>
+                    <img src="images/dots/blue_dot_16.png" alt="permit" style="margin-top: 4px"/>Permit
                 </div>
             </div>
         </div>
-        <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * Control: Render-->
-        <div class="row" id="control-row-rendering" style="display: none">
-            <div class="col-md-12">
+    </div>
+    <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * Control: Render-->
+    <div class="row" id="control-row-rendering" style="display: none">
+        <div class="col-md-12">
 
-                <table id="rendering-controls-table" style="margin: auto">
-                    <tr>
-                        <th>
-                            <label class="control">Fill Color</label>
-                        </th>
-                        <td style="text-align: left">
-                            <input type='text' id="fill-color-input"/>
-                        </td>
-                        <th>
-                            <label class="control">Opacity</label>
-                        </th>
-                        <td>
-                            <div id="fill-opacity-slider" class="slider-control"></div>
-                            <div id="fill-opacity-number-text" class="slider-value-label"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <label class="control">Border Color</label>
-                        </th>
-                        <td style="text-align: left">
-                            <input type='text' id="border-color-input"/>
-                        </td>
-                        <th>
-                            <label class="control">Border Opacity</label>
-                        </th>
-                        <td>
-                            <div id="border-opacity-slider" class="slider-control"></div>
-                            <div id="border-opacity-number-text" class="slider-value-label"></div>
-                        </td>
-                    </tr>
-                </table>
+            <table id="rendering-controls-table" style="margin: auto">
+                <tr>
+                    <th>
+                        <label class="control">Fill Color</label>
+                    </th>
+                    <td style="text-align: left">
+                        <input type='text' id="fill-color-input"/>
+                    </td>
+                    <th>
+                        <label class="control">Opacity</label>
+                    </th>
+                    <td>
+                        <div id="fill-opacity-slider" class="slider-control"></div>
+                        <div id="fill-opacity-number-text" class="slider-value-label"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label class="control">Border Color</label>
+                    </th>
+                    <td style="text-align: left">
+                        <input type='text' id="border-color-input"/>
+                    </td>
+                    <th>
+                        <label class="control">Border Opacity</label>
+                    </th>
+                    <td>
+                        <div id="border-opacity-slider" class="slider-control"></div>
+                        <div id="border-opacity-number-text" class="slider-value-label"></div>
+                    </td>
+                </tr>
+            </table>
 
-            </div>
         </div>
+    </div>
 
-        <div class="row" style="height: 100%" id="map-row-main-content">
+    <div class="row" style="height: 100%" id="map-row-main-content">
 
-            <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * Route Details -->
-            <div class="" style="height: 100%; display: none">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a id="route-panel-close-trigger" href="" class="glyphicon glyphicon-remove" style="float: right"></a>
+        <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * Route Details -->
+        <div class="" style="height: 100%; display: none">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a id="route-panel-close-trigger" href="" class="glyphicon glyphicon-remove" style="float: right"></a>
 
-                        <h3 class="panel-title">Route Details</h3>
-                    </div>
-                    <div class="panel-body" id="route-directions-panel">
-                    </div>
+                    <h3 class="panel-title">Route Details</h3>
                 </div>
-
+                <div class="panel-body" id="route-directions-panel">
+                </div>
             </div>
 
-            <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * MAP -->
-            <div class="col-md-12" style="height: 100%">
-                <div id="map-canvas"></div>
-            </div>
         </div>
 
+        <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * MAP -->
+        <div class="col-md-12" style="height: 100%">
+            <div id="map-canvas"></div>
+        </div>
     </div>
 
-    <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-    PAGE: data
-    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
-    <div class="page" id="page-data" style="display:none">
+</div>
 
-        <table id="supercharger-data-table" class="table table-condensed table-hover">
-            <thead>
-            <tr>
-                <th data-sort='string'>Supercharger</th>
-                <th data-sort='string'>Street Address</th>
-                <th data-sort='string'>City</th>
-                <th data-sort='string'>State</th>
-                <th data-sort='int'>Zip</th>
-                <th data-sort='string'>Country</th>
-                <th data-sort='string'>GPS</th>
-                <th data-sort='string'>Status</th>
-                <th data-sort="string">Open Date</th>
-                <th>Tesla</th>
-                <th>Discuss</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <br/><br/>
-    </div>
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+PAGE: data
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
+<div class="page" id="page-data" style="display:none">
 
-    <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-    PAGE: charts
-    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
-    <div class="page" id="page-charts" style="display:none">
-        <div id="chart-supercharger-over-time"></div>
-        <div id="chart-state-bar"></div>
-        <div id="chart-country-bar"></div>
-    </div>
+    <table id="supercharger-data-table" class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th data-sort='string'>Supercharger</th>
+            <th data-sort='string'>Street Address</th>
+            <th data-sort='string'>City</th>
+            <th data-sort='string'>State</th>
+            <th data-sort='int'>Zip</th>
+            <th data-sort='string'>Country</th>
+            <th data-sort='string'>GPS</th>
+            <th data-sort='string'>Status</th>
+            <th data-sort="string">Open Date</th>
+            <th>Tesla</th>
+            <th>Discuss</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <br/><br/>
+</div>
 
-    <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-    PAGE: changes
-    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
-    <div class="page" id="page-changes" style="display:none">
-        <table id='changes-table' class='table table-condensed table-hover'>
-            <thead>
-            <tr>
-                <th>Date</th>
-                <th>Change</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+PAGE: charts
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
+<div class="page" id="page-charts" style="display:none">
+    <div id="chart-supercharger-over-time"></div>
+    <div id="chart-state-bar"></div>
+    <div id="chart-country-bar"></div>
+</div>
 
-    <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-    PAGE: about
-    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
-    <div class="page" id="page-about" style="display:none; padding: 10px">
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+PAGE: changes
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
+<div class="page" id="page-changes" style="display:none">
+    <table id='changes-table' class='table table-condensed table-hover'>
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Change</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
 
-        <h3>About</h3>
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+PAGE: about
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
+<div class="page" id="page-about" style="display:none; padding: 10px">
 
-        Created by Tesla forum member BlueShift. <span id="page-about-email-container"></span>
+    <h3>About</h3>
 
-        <br/><br/>
-        This project is now on github: <a href="https://github.com/kdwink/tesla_supercharger_map">https://github.com/kdwink/tesla_supercharger_map</a>
+    Created by Tesla forum member BlueShift. <span id="page-about-email-container"></span>
 
-        <h3 class="margin-top">Version</h3>
+    <br/><br/>
+    This project is now on github: <a href="https://github.com/kdwink/tesla_supercharger_map">https://github.com/kdwink/tesla_supercharger_map</a>
 
-        <div id="page-about-version-container"></div>
+    <h3 class="margin-top">Version</h3>
 
-        <h3 class="margin-top">Supercharger Status</h3>
+    <div id="page-about-version-container"></div>
 
-        <ul class="about-page-list">
-            <li><img src="images/dots/blue_dot_16.png" alt="permit"/>&nbsp;Permit - Tesla has submitted an permit/plan/application for a specific address.</li>
-            <li><img src="images/construction-cone_20.png" alt="construction"/>&nbsp;Construction - Construction progress is visible at the site.</li>
-            <li><img src="images/dots/red_dot_16.png" alt="open"/>&nbsp;Open - It is possible to supercharge at the site.</li>
-        </ul>
+    <h3 class="margin-top">Supercharger Status</h3>
 
-        <h3 class="margin-top">Site Usage Tips</h3>
+    <ul class="about-page-list">
+        <li><img src="images/dots/blue_dot_16.png" alt="permit"/>&nbsp;Permit - Tesla has submitted an permit/plan/application for a specific address.
+        </li>
+        <li><img src="images/construction-cone_20.png" alt="construction"/>&nbsp;Construction - Construction progress is visible at the site.</li>
+        <li><img src="images/dots/red_dot_16.png" alt="open"/>&nbsp;Open - It is possible to supercharge at the site.</li>
+    </ul>
 
-        <ul class="about-page-list">
-            <li class="">Right-click the map to add a custom marker and range circle. (Long-press for three seconds on
-                phones/tablets).
-            </li>
-            <li class="">Click on a "construction" or "permit" supercharger, then click "web page" to read updates on progress.</li>
-            <li>This site is tested using <a href="http://www.google.com/intl/en/chrome/browser/">Google Chrome</a> and consequently may
-                perform best when viewed using that web browser.
-            </li>
-            <li>If .info domains are blocked from your location this site can also be viewed at <a href="http://supercharge.redshiftsoft.com/">supercharge.redshiftsoft.com</a></li>
-        </ul>
+    <h3 class="margin-top">Site Usage Tips</h3>
 
-    </div>
+    <ul class="about-page-list">
+        <li class="">Right-click the map to add a custom marker and range circle. (Long-press for three seconds on
+            phones/tablets).
+        </li>
+        <li class="">Click on a "construction" or "permit" supercharger, then click "web page" to read updates on progress.</li>
+        <li>This site is tested using <a href="http://www.google.com/intl/en/chrome/browser/">Google Chrome</a> and consequently may
+            perform best when viewed using that web browser.
+        </li>
+        <li>If .info domains are blocked from your location this site can also be viewed at <a href="http://supercharge.redshiftsoft.com/">supercharge.redshiftsoft.com</a>
+        </li>
+    </ul>
+
+</div>
 
 
 </div>
