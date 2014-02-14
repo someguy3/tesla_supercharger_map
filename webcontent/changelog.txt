@@ -1,18 +1,18 @@
-Thu Feb 13 2014 || supercharger added:  Roseville, CA (permit)
+Thu Feb 13 2014 || supercharger added: Roseville, CA (permit)
 Wed Feb 12 2014 || supercharger live: Greenwich, CT (north+south)
-Sun Feb 9 2014 || supercharger added:  Woodbridge, VA (permit)
-Sun Feb 9 2014 || supercharger added:  St George, UT (permit)
-Sun Feb 9 2014 || supercharger added:  Edison, NJ (permit)
-Sat Feb 8 2014 || supercharger added:  Lonetree, CO
+Sun Feb 9 2014 || supercharger added: Woodbridge, VA (permit)
+Sun Feb 9 2014 || supercharger added: St George, UT (permit)
+Sun Feb 9 2014 || supercharger added: Edison, NJ (permit)
+Sat Feb 8 2014 || supercharger added: Lonetree, CO
 Tue Feb 4 2014 || supercharger live: Yuma, AZ
-Sat Feb 1 2014 || supercharger added:  Plymouth, NC
+Sat Feb 1 2014 || supercharger added: Plymouth, NC
 Thu Jan 30 2014 || supercharger live: Bethesda, MD
 Thu Jan 30 2014 || supercharger live: Eau Claire, WI
-Mon Jan 27 2014 || supercharger added:  El Centro, CA
-Mon Jan 27 2014 || supercharger added:  Green River, UT
+Mon Jan 27 2014 || supercharger added: El Centro, CA
+Mon Jan 27 2014 || supercharger added: Green River, UT
 Fri Jan 24 2014 || Greenwich, CT reverted to 'under construction' to match Tesla website.
 Fri Jan 24 2014 || supercharger added: Gila Bend, AZ
-Thu Jan 23 2014 || supercharger added:  Wickenburg, AZ (permit)
+Thu Jan 23 2014 || supercharger added: Wickenburg, AZ (permit)
 Thu Jan 23 2014 || supercharger live: Hagerstown, MD
 Wed Jan 22 2014 || supercharger added: Bethesda, MD
 Wed Jan 22 2014 || supercharger live:  Kingman, AZ
