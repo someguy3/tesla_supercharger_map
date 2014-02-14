@@ -2,22 +2,22 @@ define([], function () {
 
     var Status = {
         PERMIT: {
-            value: 0,
+            value: 'PERMIT',
             displayName: "Permit",
             iconUrl: 'images/dots/blue_dot_16.png'
         },
         CONSTRUCTION: {
-            value: 1,
+            value: 'CONSTRUCTION',
             displayName: "Construction",
             iconUrl: 'images/construction-cone.png'
         },
         OPEN: {
-            value: 2,
+            value: 'OPEN',
             displayName: "Open",
             iconUrl: 'images/dots/red_dot_16.png'
         },
         USER_ADDED: {
-            value: 3,
+            value: 'USER_ADDED',
             displayName: "Custom",
             iconUrl: 'images/dots/green_dot_16.png'
         }

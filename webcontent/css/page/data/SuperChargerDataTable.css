@@ -4,6 +4,14 @@
     padding: 0;
 }
 
+#supercharger-data-table td.PERMIT {
+    color: #0000ff;
+}
+
+#supercharger-data-table td.CONSTRUCTION {
+    color: orange;
+}
+
 #supercharger-data-table th {
     text-align: left;
 }
