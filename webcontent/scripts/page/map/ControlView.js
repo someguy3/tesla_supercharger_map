@@ -113,8 +113,8 @@ define(['page/map/Range', 'lib/spectrum'], function (Range) {
 
         var controlView = this;
         $("#status-completed-check").click(function (event) {
-            controlView.controlState.showCompleted = !controlView.controlState.showCompleted;
-            toggleCheckbox($(this), controlView.controlState.showCompleted);
+            controlView.controlState.showOpen = !controlView.controlState.showOpen;
+            toggleCheckbox($(this), controlView.controlState.showOpen);
             controlView.trigger("station-status-change-event", controlView.controlState);
         });
         $("#status-construction-check").click(function (event) {
@@ -122,9 +122,9 @@ define(['page/map/Range', 'lib/spectrum'], function (Range) {
             toggleCheckbox($(this), controlView.controlState.showConstruction);
             controlView.trigger("station-status-change-event", controlView.controlState);
         });
-        $("#status-planned-check").click(function (event) {
-            controlView.controlState.showPlanned = !controlView.controlState.showPlanned;
-            toggleCheckbox($(this), controlView.controlState.showPlanned);
+        $("#status-permit-check").click(function (event) {
+            controlView.controlState.showPermit = !controlView.controlState.showPermit;
+            toggleCheckbox($(this), controlView.controlState.showPermit);
             controlView.trigger("station-status-change-event", controlView.controlState);
         });
     };

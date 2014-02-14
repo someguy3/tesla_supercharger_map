@@ -119,9 +119,9 @@ define(
         };
 
         MapView.prototype.shouldDraw = function (supercharger) {
-            return (supercharger.isOpen() && this.controlState.showCompleted) ||
+            return (supercharger.isOpen() && this.controlState.showOpen) ||
                 (supercharger.isConstruction() && this.controlState.showConstruction) ||
-                (supercharger.isPlanned() && this.controlState.showPlanned) ||
+                (supercharger.isPermit() && this.controlState.showPermit) ||
                 supercharger.isUserAdded();
         };
 

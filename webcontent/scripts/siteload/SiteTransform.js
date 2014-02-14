@@ -33,7 +33,7 @@ define(['siteload/SiteMapsRaw', 'siteload/FieldDefinitions', 'site/Supercharger'
 
         function postConstructionValidation(supercharger) {
             Asserts.isFalse(supercharger.isConstruction() && supercharger.hasOpenDate(), "construction site should not have open date:" + supercharger);
-            Asserts.isFalse(supercharger.isPlanned() && supercharger.hasOpenDate(), "planned site should not have open date:" + supercharger);
+            Asserts.isFalse(supercharger.isPermit() && supercharger.hasOpenDate(), "permit site should not have open date:" + supercharger);
             Asserts.isFalse(supercharger.isOpen() && !supercharger.hasOpenDate(), "open site should have open date:" + supercharger);
         }
 

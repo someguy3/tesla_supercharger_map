@@ -1,9 +1,9 @@
 define([], function () {
 
     var Status = {
-        PLANNED: {
+        PERMIT: {
             value: 0,
-            displayName: "Planned",
+            displayName: "Permit",
             iconUrl: 'images/dots/blue_dot_16.png'
         },
         CONSTRUCTION: {
@@ -25,8 +25,8 @@ define([], function () {
 
     Status.fromString = function (string) {
         var s = string.trim();
-        if (s === 'PLANNED') {
-            return Status.PLANNED;
+        if (s === 'PERMIT') {
+            return Status.PERMIT;
         } else if (s === 'CONSTRUCTION') {
             return Status.CONSTRUCTION;
         } else if (s === 'OPEN') {

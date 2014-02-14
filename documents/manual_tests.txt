@@ -13,7 +13,7 @@ Map Page
     () Range circles on
         () should set default range to 50 miles if range is currently zero.
         () should turn on just one range circle, if already off.
-        () should work when only displaying various combinations of PLANNED, USER_ADDED, CONSTRUCTION
+        () should work when only displaying various combinations of OPEN, CONSTRUCTION, PERMIT, USER_ADDED
     () Range circles off.
     () Range Adjuster
     () Status Selection

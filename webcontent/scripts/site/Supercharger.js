@@ -29,8 +29,8 @@ define(['site/Address', 'site/SiteStatus', 'util/Objects'], function (Address, S
             return supercharger;
         };
 
-        Supercharger.prototype.isPlanned = function () {
-            return this.status === Status.PLANNED;
+        Supercharger.prototype.isPermit = function () {
+            return this.status === Status.PERMIT;
         };
         Supercharger.prototype.isConstruction = function () {
             return this.status === Status.CONSTRUCTION;

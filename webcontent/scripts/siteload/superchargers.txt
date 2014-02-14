@@ -27,7 +27,7 @@
 # urlDiscuss   | string       | no       |         | URL pointing to discussion forum/thread for this supercharger
 # dateOpened   | string       | no       |         | date opened
 # construction | boolean      | no       |         | true indicates that this location is under construction
-# status       | enum         | yes      | OPEN    | must be one of OPEN, CONSTRUCTION, PLANNED.
+# status       | enum         | yes      | OPEN    | must be one of OPEN, CONSTRUCTION, PERMIT.
 # count        | boolean      | no       | true    | false means this location should NOT be counted (because part of pair Tesla counts as 1).
 #              |              |          |
 # street       | string       | yes      |         | address
@@ -113,7 +113,7 @@ country: USA
 gps: 33.9702333, -112.73165
 url: http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26363-Supercharger-Wickenburg-AZ
-status: PLANNED
+status: PERMIT
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Yuma, AZ
 street: 310 N Madison Ave
@@ -267,7 +267,7 @@ country: USA
 gps: 38.771576, -121.268783
 url: http://www.teslamotorsclub.com/showthread.php/25321-Supercharger-Roseville-CA
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25321-Supercharger-Roseville-CA
-status: PLANNED
+status: PERMIT
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Vacaville, CA
 street: 321 Nut Tree RD
@@ -594,7 +594,7 @@ country: USA
 gps: 40.5448144,-74.333248
 url: http://www.teslamotorsclub.com/showthread.php/26730-Supercharger-Edison-NJ
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26730-Supercharger-Edison-NJ
-status: PLANNED
+status: PERMIT
 #-----------------------------------------------------------------------------------------------------------------------------| New York
 name: JFK Airport, NY
 street: 150th Ave and 147th St
@@ -885,7 +885,7 @@ country: USA
 gps: 37.1253361, -113.6027197
 url: http://www.teslamotorsclub.com/showthread.php/27242-Supercharger-St-George-UT
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/27242-Supercharger-St-George-UT
-status: PLANNED
+status: PERMIT
 #-----------------------------------------------------------------------------------------------------------------------------| Virginia
 name: Glen Allen, VA
 street: 9860 Brook Rd
@@ -906,7 +906,7 @@ country: USA
 gps: 38.6422662,-77.294923
 url: http://www.teslamotorsclub.com/showthread.php/26526-Supercharger-Woodbridge-VA
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26526-Supercharger-Woodbridge-VA
-status: PLANNED
+status: PERMIT
 #-----------------------------------------------------------------------------------------------------------------------------| Washington
 name: Burlington, WA
 street: 9384 Old Highway 99

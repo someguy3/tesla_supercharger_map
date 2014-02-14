@@ -13,8 +13,8 @@ define(['site/SiteIterator'], function (SiteIterator) {
      * RETURNED ARRAY:
      *
      *  [
-     *   { countryName: 'USA',    open: 3, construction: 7, planned: 2  },
-     *   { countryName: 'Germany',open: 3, construction: 4, planned: 1   }
+     *   { countryName: 'USA',    open: 3, construction: 7, permit: 2  },
+     *   { countryName: 'Germany',open: 3, construction: 4, permit: 1   }
      *  ]
      *
      * REFERENCE MAP:
@@ -29,7 +29,7 @@ define(['site/SiteIterator'], function (SiteIterator) {
             countryArray = [],
             totalOpen = 0,
             totalConstruction = 0,
-            totalPlanned = 0;
+            totalPermit = 0;
 
         new SiteIterator()
             .withPredicate(SiteIterator.PRED_NOT_USER_ADDED)
@@ -37,7 +37,7 @@ define(['site/SiteIterator'], function (SiteIterator) {
             .iterate(function (supercharger) {
                 var countryName = supercharger.address.country;
                 if (!countryRefMap[countryName]) {
-                    var newEntry = { countryName: countryName, open: 0, construction: 0, planned: 0 };
+                    var newEntry = { countryName: countryName, open: 0, construction: 0, permit: 0 };
                     countryRefMap[countryName] = newEntry;
                     countryArray.push(newEntry);
                 }
@@ -45,9 +45,9 @@ define(['site/SiteIterator'], function (SiteIterator) {
                     countryRefMap[countryName].construction++;
                     totalConstruction++;
                 }
-                else if (supercharger.isPlanned()) {
-                    countryRefMap[countryName].planned++;
-                    totalPlanned++;
+                else if (supercharger.isPermit()) {
+                    countryRefMap[countryName].permit++;
+                    totalPermit++;
                 }
                 else if (supercharger.isOpen()) {
                     countryRefMap[countryName].open++;
@@ -58,7 +58,7 @@ define(['site/SiteIterator'], function (SiteIterator) {
             }
         );
 
-        countryArray.push({ countryName: 'Total', open: totalOpen, construction: totalConstruction, planned: totalPlanned });
+        countryArray.push({ countryName: 'Total', open: totalOpen, construction: totalConstruction, permit: totalPermit });
         countryArray.sort(SiteCount.sortByOpenCount);
         return countryArray;
     };

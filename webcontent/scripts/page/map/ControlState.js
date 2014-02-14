@@ -16,9 +16,9 @@ define(['page/map/Range'], function (Range) {
         this.borderOpacity = 0.3;
         this.borderColor = "#181fe7";
 
-        this.showCompleted = true;
+        this.showOpen = true;
         this.showConstruction = true;
-        this.showPlanned = true;
+        this.showPermit = true;
     };
 
     return ControlState;
