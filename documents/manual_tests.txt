@@ -29,6 +29,11 @@ Map Page
     () right clicking again somewhere else should MOVE the context menu, not show two.
 
 () Map Custom Markers
+    () Creation
+        () New marker dialog should appear after selecting "Add custom marker..." from map context menu.
+        () Dialog should have title "New Marker"
+        () Add and cancel buttons should work.
+        () Text input field (Marker Name) should have focus when dialog is visible.
     () Info Window
         () User provided name shows up.
         () Correct links show up: 'circle off', 'remove', 'add to route'

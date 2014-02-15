@@ -218,28 +218,22 @@ define(
             var markerDialog = $("#new-marker-dialog");
             var mapView = this;
 
-
-            function handleOK() {
-                markerDialog.dialog("close");
+            markerDialog.find(".btn-primary").click(function () {
+                markerDialog.modal("hide");
                 var markerName = markerInput.val();
                 markerInput.val("");
                 var newCharger = Sites.addSupercharger(markerName, event.latLng);
                 newCharger.marker = MarkerFactory.createMarker(mapView.googleMap, newCharger);
                 mapView.redraw(false);
                 InfoWindowRender.showInfoWindowForMarker(newCharger.marker, newCharger);
-            }
+            });
 
-            markerDialog.show().dialog(
-                {
-                    width: 400,
-                    buttons: [
-                        {
-                            text: "OK",
-                            click: handleOK
-                        }
-                    ]
-                }
-            );
+            // Focus on input field after dialog is shown.
+            markerDialog.on('shown.bs.modal', function (e) {
+                markerDialog.find("input").focus();
+            });
+
+            markerDialog.modal();
         };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

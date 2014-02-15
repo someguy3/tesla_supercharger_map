@@ -320,14 +320,25 @@ PAGE: about
 
 </div>
 
-<div id="new-marker-dialog" style="display:none" title="New Marker">
-    <table>
-        <tr>
-            <td><label for="new-marker-name-input">Marker Name&nbsp;</label></td>
-            <td><input id="new-marker-name-input" type="text"></td>
-        </tr>
-    </table>
+<div id="new-marker-dialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">New Marker</h4>
+            </div>
+            <div class="modal-body">
+                <label for="new-marker-name-input">Marker Name&nbsp;</label>
+                <input id="new-marker-name-input" type="text">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 </body>
 </html>
