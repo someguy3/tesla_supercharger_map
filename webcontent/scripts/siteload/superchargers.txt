@@ -175,7 +175,7 @@ country: USA
 gps: 32.7637233, -115.5315171
 url: http://www.teslamotorsclub.com/showthread.php/26691-Supercharger-El-Centro-CA
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26691-Supercharger-El-Centro-CA
-status: CONSTRUCTION
+status: PERMIT
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Folsom, CA
 street: 13000 Folsom Blvd
