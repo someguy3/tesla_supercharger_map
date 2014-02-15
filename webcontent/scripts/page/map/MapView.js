@@ -214,14 +214,14 @@ define(
          * Add a custom marker and range circle to the map.
          */
         MapView.prototype.handleAddMarker = function (event) {
-            var markerInput = $("#new-marker-name-input");
             var markerDialog = $("#new-marker-dialog");
+            var markerNameInput = $("#new-marker-name-input");
+            var markerAddButton = markerDialog.find(".btn-primary");
             var mapView = this;
 
-            markerDialog.find(".btn-primary").click(function () {
+            markerAddButton.click(function () {
                 markerDialog.modal("hide");
-                var markerName = markerInput.val();
-                markerInput.val("");
+                var markerName = markerNameInput.val();
                 var newCharger = Sites.addSupercharger(markerName, event.latLng);
                 newCharger.marker = MarkerFactory.createMarker(mapView.googleMap, newCharger);
                 mapView.redraw(false);
@@ -230,7 +230,12 @@ define(
 
             // Focus on input field after dialog is shown.
             markerDialog.on('shown.bs.modal', function (e) {
-                markerDialog.find("input").focus();
+                markerNameInput.focus();
+            });
+            // Clear input field after any type of dialog close
+            markerDialog.on('hidden.bs.modal', function (e) {
+                markerNameInput.val("");
+                markerAddButton.unbind();
             });
 
             markerDialog.modal();

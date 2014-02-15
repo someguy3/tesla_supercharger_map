@@ -34,6 +34,7 @@ Map Page
         () Dialog should have title "New Marker"
         () Add and cancel buttons should work.
         () Text input field (Marker Name) should have focus when dialog is visible.
+        () Each time the dialog appears the text input should be blank (After 'Add' or 'Cancel').
     () Info Window
         () User provided name shows up.
         () Correct links show up: 'circle off', 'remove', 'add to route'
