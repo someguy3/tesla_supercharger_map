@@ -936,6 +936,7 @@ zip: 98926
 country: USA
 gps: 46.976918, -120.54162
 url: http://www.teslamotors.com/supercharger/ellensburg
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/23850-Ellensburg-Supercharger
 dateOpened: 2013-12-23
 #-----------------------------------------------------------------------------------------------------------------------------| Wisconsin
 name: Eau Claire, WI
