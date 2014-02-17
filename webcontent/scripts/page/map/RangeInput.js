@@ -13,9 +13,9 @@ define([], function () {
         this.sliderDiv.attr('max', max);
         this.sliderDiv.attr('step', step);
         this.sliderDiv.val(value);
-        this.sliderDiv.change(jQuery.proxy(this.updateLabel, this));
+        this.sliderDiv.change(jQuery.proxy(internalHandleSliderMoved, this));
 
-        this.updateLabel();
+        internalHandleSliderMoved.call(this);
     };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -33,14 +33,8 @@ define([], function () {
     };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    /**
-     * Update the range text display value.
-     */
-    RangeInput.prototype.updateLabel = function () {
-        this.label.text(this.sliderDiv.val());
-        this.trigger("range-change-event", this.sliderDiv.val());
-    };
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     /**
      * Update the range text display value.
@@ -50,6 +44,19 @@ define([], function () {
         this.sliderDiv.val(newValue);
         this.trigger("range-change-event", this.sliderDiv.val());
     };
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    /**
+     * Update the range text display value.
+     */
+    function internalHandleSliderMoved() {
+        this.label.text(this.sliderDiv.val());
+        this.trigger("range-change-event", this.sliderDiv.val());
+    }
+
 
     return RangeInput;
 });
