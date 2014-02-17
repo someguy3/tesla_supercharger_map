@@ -28,7 +28,7 @@ define([], function () {
     };
 
     AboutPage.prototype.insertEmailAddress = function (data) {
-        this.emailContainer.html("Send updates/corrections to <b>map" + "@superch" + "arge.info</b>.");
+        this.emailContainer.html("<b>map" + "@superch" + "arge.info</b>");
     };
 
 

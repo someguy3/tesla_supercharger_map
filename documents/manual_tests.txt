@@ -78,4 +78,5 @@ About Page
 ---------------------------------
 
 () Verify email address is inserted correctly.
+() Email address should not appear followed by period or other punctuation that user will copy when copying-and-pasting into their mail client.
 () Verify version (last changed date) is loaded correctly.
