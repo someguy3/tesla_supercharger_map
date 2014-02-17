@@ -13,7 +13,6 @@ define([], function () {
         this.sliderDiv.attr('max', max);
         this.sliderDiv.attr('step', step);
         this.sliderDiv.val(value);
-        this.sliderDiv.change(changeCallback);
         this.sliderDiv.change(jQuery.proxy(this.updateLabel, this));
 
         this.updateLabel();
@@ -40,7 +39,16 @@ define([], function () {
      */
     RangeInput.prototype.updateLabel = function () {
         this.label.text(this.sliderDiv.val());
-        this.trigger("range-change-event");
+        this.trigger("range-change-event", this.sliderDiv.val());
+    };
+
+    /**
+     * Update the range text display value.
+     */
+    RangeInput.prototype.setValue = function (newValue) {
+        this.label.text(newValue);
+        this.sliderDiv.val(newValue);
+        this.trigger("range-change-event", this.sliderDiv.val());
     };
 
     return RangeInput;

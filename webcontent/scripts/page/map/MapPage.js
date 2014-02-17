@@ -54,7 +54,7 @@ define(
 
             this.navBarDropDown.on("nav-dropdown-event-circles-on", function () {
                 if (controlView.controlState.range.getCurrent() === 0) {
-                    controlView.updateRangeSliderValue(50);
+                    controlView.getRangeSlider().setValue(50);
                     mapView.redraw(false);
                 }
                 mapView.setAllRangeCircleVisibility(true);

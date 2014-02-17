@@ -136,8 +136,12 @@ define(['page/map/Range', 'page/map/RangeInput', 'lib/spectrum'], function (Rang
             this.controlState.range.getMin(),
             this.controlState.range.getMax(),
             10,
-            this.controlState.range.getCurrent(),
-            jQuery.proxy(this.handleRangeSlide, this));
+            this.controlState.range.getCurrent());
+
+        var controlState = this.controlState;
+        this.rangeSlider.on("range-change-event", function (event, newRange) {
+            controlState.range.setCurrent(newRange);
+        });
     };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -158,14 +162,6 @@ define(['page/map/Range', 'page/map/RangeInput', 'lib/spectrum'], function (Rang
     ControlView.prototype.handleBorderColorChange = function (newColor) {
         this.controlState.borderColor = "" + newColor;
         this.trigger("border-color-change-event", this.controlState);
-    };
-
-    /**
-     * Handle range slider change.
-     */
-    ControlView.prototype.handleRangeSlide = function (event) {
-        var newValue = $("#range-slider").val();
-        this.controlState.range.setCurrent(newValue);
     };
 
     /**
@@ -226,14 +222,6 @@ define(['page/map/Range', 'page/map/RangeInput', 'lib/spectrum'], function (Rang
      */
     ControlView.prototype.updateTextBorderOpacityDisplay = function () {
         $("#border-opacity-number-text").text(this.controlState.borderOpacity);
-    };
-
-    /**
-     * Update the range slider value (new value interpreted in whatever current units are).
-     */
-    ControlView.prototype.updateRangeSliderValue = function (newValue) {
-        this.controlState.range.setCurrent(newValue);
-        $("#range-slider").val(newValue);
     };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
