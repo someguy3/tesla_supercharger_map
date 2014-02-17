@@ -1,4 +1,4 @@
-define(['page/map/Range', 'lib/spectrum'], function (Range) {
+define(['page/map/Range', 'page/map/RangeInput', 'lib/spectrum'], function (Range, RangeInput) {
 
 
     /**
@@ -16,7 +16,6 @@ define(['page/map/Range', 'lib/spectrum'], function (Range) {
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Event methods that delegate to jquery object for triggering/observing custom events.
 //
-// range-change-event          [newRadiusMeters]
 // fill-opacity-change-event   [newFillOpacity]
 // fill-color-event-change     [newFillColor]
 // border-opacity-change-event [newBorderOpacity]
@@ -61,23 +60,23 @@ define(['page/map/Range', 'lib/spectrum'], function (Range) {
     };
 
     ControlView.prototype.initColorSliders = function () {
-        $("#fill-opacity-slider").slider(
-            {
-                value: this.controlState.fillOpacity,
-                min: 0.0,
-                max: 1.0,
-                step: 0.10,
-                slide: jQuery.proxy(this.handleFillOpacitySlide, this)
-            });
-
-        $("#border-opacity-slider").slider(
-            {
-                value: this.controlState.borderOpacity,
-                min: 0.0,
-                max: 1.0,
-                step: 0.10,
-                slide: jQuery.proxy(this.handleBorderOpacitySlide, this)
-            });
+//        $("#fill-opacity-slider").slider(
+//            {
+//                value: this.controlState.fillOpacity,
+//                min: 0.0,
+//                max: 1.0,
+//                step: 0.10,
+//                slide: jQuery.proxy(this.handleFillOpacitySlide, this)
+//            });
+//
+//        $("#border-opacity-slider").slider(
+//            {
+//                value: this.controlState.borderOpacity,
+//                min: 0.0,
+//                max: 1.0,
+//                step: 0.10,
+//                slide: jQuery.proxy(this.handleBorderOpacitySlide, this)
+//            });
     };
 
     ControlView.prototype.initColorInputs = function () {
@@ -133,15 +132,12 @@ define(['page/map/Range', 'lib/spectrum'], function (Range) {
      * Initialize range control.
      */
     ControlView.prototype.initRangeControl = function () {
-        $("#range-slider").slider(
-            {
-                value: this.controlState.range.getCurrent(),
-                min: this.controlState.range.getMin(),
-                max: this.controlState.range.getMax(),
-                step: 5,
-                slide: jQuery.proxy(this.handleRangeSlide, this)
-            });
-        this.updateTextRangeDisplay();
+        this.rangeSlider = new RangeInput("#range-slider", "#range-number-text",
+            this.controlState.range.getMin(),
+            this.controlState.range.getMax(),
+            10,
+            this.controlState.range.getCurrent(),
+            jQuery.proxy(this.handleRangeSlide, this));
     };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -168,30 +164,28 @@ define(['page/map/Range', 'lib/spectrum'], function (Range) {
      * Handle range slider change.
      */
     ControlView.prototype.handleRangeSlide = function (event) {
-        var newValue = $("#range-slider").slider("value");
+        var newValue = $("#range-slider").val();
         this.controlState.range.setCurrent(newValue);
-        this.updateTextRangeDisplay();
-        this.trigger("range-change-event", this.controlState);
     };
 
     /**
      * Handle fill-opacity slider change.
      */
     ControlView.prototype.handleFillOpacitySlide = function (event) {
-        var newFillOpacity = $("#fill-opacity-slider").slider("value");
-        this.controlState.fillOpacity = newFillOpacity;
-        this.updateTextFillOpacityDisplay();
-        this.trigger("fill-opacity-changed-event", this.controlState);
+//        var newFillOpacity = $("#fill-opacity-slider").slider("value");
+//        this.controlState.fillOpacity = newFillOpacity;
+//        this.updateTextFillOpacityDisplay();
+//        this.trigger("fill-opacity-changed-event", this.controlState);
     };
 
     /**
      * Handle border-opacity slider change.
      */
     ControlView.prototype.handleBorderOpacitySlide = function (event) {
-        var newBorderOpacity = $("#border-opacity-slider").slider("value");
-        this.controlState.borderOpacity = newBorderOpacity;
-        this.updateTextBorderOpacityDisplay();
-        this.trigger("border-opacity-changed-event", this.controlState);
+//        var newBorderOpacity = $("#border-opacity-slider").slider("value");
+//        this.controlState.borderOpacity = newBorderOpacity;
+//        this.updateTextBorderOpacityDisplay();
+//        this.trigger("border-opacity-changed-event", this.controlState);
     };
 
     /**
@@ -221,13 +215,6 @@ define(['page/map/Range', 'lib/spectrum'], function (Range) {
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     /**
-     * Update the range text display value.
-     */
-    ControlView.prototype.updateTextRangeDisplay = function () {
-        $("#range-number-text").text(this.controlState.range.getCurrent());
-    };
-
-    /**
      * Update the fill-opacity text display value.
      */
     ControlView.prototype.updateTextFillOpacityDisplay = function () {
@@ -246,10 +233,21 @@ define(['page/map/Range', 'lib/spectrum'], function (Range) {
      */
     ControlView.prototype.updateRangeSliderValue = function (newValue) {
         this.controlState.range.setCurrent(newValue);
-        this.updateTextRangeDisplay();
-        $("#range-slider").slider("value", newValue);
+        $("#range-slider").val(newValue);
+    };
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// getters
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    /**
+     *
+     */
+    ControlView.prototype.getRangeSlider = function () {
+        return this.rangeSlider;
     };
 
     return ControlView;
 
 });
+

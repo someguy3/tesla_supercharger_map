@@ -83,9 +83,8 @@ define(
 
             // Callback: range change
             //
-            controlView.on("range-change-event", function (event, controlState) {
+            controlView.getRangeSlider().on("range-change-event", function (event) {
                 jQuery.doTimeout("rangeTimerId", 200, function () {
-                    mapView.setControlState(controlState);
                     mapView.redraw(false);
                 });
             });

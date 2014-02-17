@@ -123,10 +123,11 @@ PAGE: map
     <div class="row" id="control-row-one">
         <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * Control: Range-->
         <div class="col-md-6" style="text-align: center">
-            <label class="control">Range</label>
 
-            <div id="range-slider" class="slider-control"></div>
-            <div id="range-number-text" class="slider-value-label"></div>
+            <label for="range-slider" class="control">Range</label>
+            <input id="range-slider" type="range" min="0" max="300" step="10" value="0" class="slider-control"/>
+
+            <div id="range-number-text" class="slider-value-label">0</div>
 
             <div class="btn-group" data-toggle="buttons" style="vertical-align: top">
                 <label id="range-unit-mi-label" class="btn btn-default btn-xs active">
