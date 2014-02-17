@@ -42,7 +42,11 @@ define([], function () {
     RangeInput.prototype.setValue = function (newValue) {
         this.label.text(newValue);
         this.sliderDiv.val(newValue);
-        this.trigger("range-change-event", this.sliderDiv.val());
+        this.notifyListeners(this.sliderDiv.val());
+    };
+
+    RangeInput.prototype.notifyListeners = function (newValue) {
+        this.trigger("range-change-event", newValue);
     };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -54,7 +58,7 @@ define([], function () {
      */
     function internalHandleSliderMoved() {
         this.label.text(this.sliderDiv.val());
-        this.trigger("range-change-event", this.sliderDiv.val());
+        this.notifyListeners(this.sliderDiv.val());
     }
 
 
