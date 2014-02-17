@@ -16,9 +16,7 @@ define(['page/map/Range', 'page/map/RangeInput', 'lib/spectrum'], function (Rang
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Event methods that delegate to jquery object for triggering/observing custom events.
 //
-// fill-opacity-change-event   [newFillOpacity]
 // fill-color-event-change     [newFillColor]
-// border-opacity-change-event [newBorderOpacity]
 // border-color-event-change   [newBorderColor]
 // control-event-zoom-location [newLocation]
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -44,9 +42,6 @@ define(['page/map/Range', 'page/map/RangeInput', 'lib/spectrum'], function (Rang
         this.initRangeUnitControls();
         this.initColorSliders();
         this.initColorInputs();
-
-        this.updateTextFillOpacityDisplay();
-        this.updateTextBorderOpacityDisplay();
     };
 
     ControlView.prototype.initRangeUnitControls = function () {
@@ -60,23 +55,8 @@ define(['page/map/Range', 'page/map/RangeInput', 'lib/spectrum'], function (Rang
     };
 
     ControlView.prototype.initColorSliders = function () {
-//        $("#fill-opacity-slider").slider(
-//            {
-//                value: this.controlState.fillOpacity,
-//                min: 0.0,
-//                max: 1.0,
-//                step: 0.10,
-//                slide: jQuery.proxy(this.handleFillOpacitySlide, this)
-//            });
-//
-//        $("#border-opacity-slider").slider(
-//            {
-//                value: this.controlState.borderOpacity,
-//                min: 0.0,
-//                max: 1.0,
-//                step: 0.10,
-//                slide: jQuery.proxy(this.handleBorderOpacitySlide, this)
-//            });
+        this.fillOpacitySlider = new RangeInput("#fill-opacity-slider", "#fill-opacity-number-text", 0.0, 1.0, 0.1, this.controlState.fillOpacity);
+        this.borderOpacitySlider = new RangeInput("#border-opacity-slider", "#border-opacity-number-text", 0.0, 1.0, 0.1, this.controlState.borderOpacity);
     };
 
     ControlView.prototype.initColorInputs = function () {
@@ -135,13 +115,8 @@ define(['page/map/Range', 'page/map/RangeInput', 'lib/spectrum'], function (Rang
         this.rangeSlider = new RangeInput("#range-slider", "#range-number-text",
             this.controlState.range.getMin(),
             this.controlState.range.getMax(),
-            10,
+            5,
             this.controlState.range.getCurrent());
-
-        var controlState = this.controlState;
-        this.rangeSlider.on("range-change-event", function (event, newRange) {
-            controlState.range.setCurrent(newRange);
-        });
     };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -165,26 +140,6 @@ define(['page/map/Range', 'page/map/RangeInput', 'lib/spectrum'], function (Rang
     };
 
     /**
-     * Handle fill-opacity slider change.
-     */
-    ControlView.prototype.handleFillOpacitySlide = function (event) {
-//        var newFillOpacity = $("#fill-opacity-slider").slider("value");
-//        this.controlState.fillOpacity = newFillOpacity;
-//        this.updateTextFillOpacityDisplay();
-//        this.trigger("fill-opacity-changed-event", this.controlState);
-    };
-
-    /**
-     * Handle border-opacity slider change.
-     */
-    ControlView.prototype.handleBorderOpacitySlide = function (event) {
-//        var newBorderOpacity = $("#border-opacity-slider").slider("value");
-//        this.controlState.borderOpacity = newBorderOpacity;
-//        this.updateTextBorderOpacityDisplay();
-//        this.trigger("border-opacity-changed-event", this.controlState);
-    };
-
-    /**
      * Handle changes to distance unit.
      */
     ControlView.prototype.handleDistanceUnit = function (newUnit) {
@@ -205,34 +160,18 @@ define(['page/map/Range', 'page/map/RangeInput', 'lib/spectrum'], function (Rang
         this.trigger("control-event-zoom-location", locationText);
     };
 
-
-//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// Display update methods.
-//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    /**
-     * Update the fill-opacity text display value.
-     */
-    ControlView.prototype.updateTextFillOpacityDisplay = function () {
-        $("#fill-opacity-number-text").text(this.controlState.fillOpacity);
-    };
-
-    /**
-     * Update the border-opacity text display value.
-     */
-    ControlView.prototype.updateTextBorderOpacityDisplay = function () {
-        $("#border-opacity-number-text").text(this.controlState.borderOpacity);
-    };
-
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // getters
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    /**
-     *
-     */
     ControlView.prototype.getRangeSlider = function () {
         return this.rangeSlider;
+    };
+    ControlView.prototype.getBorderOpacitySlider = function () {
+        return this.borderOpacitySlider;
+    };
+    ControlView.prototype.getFillOpacitySlider = function () {
+        return this.fillOpacitySlider;
     };
 
     return ControlView;

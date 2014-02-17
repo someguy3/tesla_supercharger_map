@@ -83,17 +83,18 @@ define(
 
             // Callback: range change
             //
-            controlView.getRangeSlider().on("range-change-event", function (event) {
+            controlView.getRangeSlider().on("range-change-event", function (event, newRange) {
                 jQuery.doTimeout("rangeTimerId", 200, function () {
+                    controlView.controlState.range.setCurrent(newRange);
                     mapView.redraw(false);
                 });
             });
 
             // Callback: fill-opacity change
             //
-            controlView.on("fill-opacity-changed-event", function (event, controlState) {
+            controlView.getFillOpacitySlider().on("range-change-event", function (event, newFillOpacity) {
                 jQuery.doTimeout("fillOpacityTimerId", 400, function () {
-                    mapView.setControlState(controlState);
+                    controlView.controlState.fillOpacity = newFillOpacity;
                     mapView.redraw(false);
                 });
 
@@ -108,9 +109,9 @@ define(
 
             // Callback: fill-opacity change
             //
-            controlView.on("border-opacity-changed-event", function (event, controlState) {
+            controlView.getBorderOpacitySlider().on("range-change-event", function (event, newBorderOpacity) {
                 jQuery.doTimeout("borderOpacityTimerId", 400, function () {
-                    mapView.setControlState(controlState);
+                    controlView.controlState.borderOpacity = newBorderOpacity;
                     mapView.redraw(false);
                 });
             });

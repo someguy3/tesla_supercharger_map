@@ -5,7 +5,7 @@ define([], function () {
      *
      * @constructor
      */
-    var RangeInput = function (inputSelectorString, labelSelectorString, min, max, step, value, changeCallback) {
+    var RangeInput = function (inputSelectorString, labelSelectorString, min, max, step, value) {
         this.label = $(labelSelectorString);
 
         this.sliderDiv = $(inputSelectorString);
