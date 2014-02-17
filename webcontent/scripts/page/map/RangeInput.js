@@ -15,7 +15,7 @@ define([], function () {
         this.sliderDiv.val(value);
         this.sliderDiv.change(jQuery.proxy(internalHandleSliderMoved, this));
 
-        internalHandleSliderMoved.call(this);
+        this.setLabelText(value);
     };
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -37,12 +37,16 @@ define([], function () {
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     /**
-     * Update the range text display value.
+     * Update the range value represented by this class.
      */
     RangeInput.prototype.setValue = function (newValue) {
-        this.label.text(newValue);
+        this.setLabelText(newValue);
         this.sliderDiv.val(newValue);
         this.notifyListeners(this.sliderDiv.val());
+    };
+
+    RangeInput.prototype.setLabelText = function (newValue) {
+        this.label.text(newValue);
     };
 
     RangeInput.prototype.notifyListeners = function (newValue) {
@@ -57,8 +61,9 @@ define([], function () {
      * Update the range text display value.
      */
     function internalHandleSliderMoved() {
-        this.label.text(this.sliderDiv.val());
-        this.notifyListeners(this.sliderDiv.val());
+        var newValue = this.sliderDiv.val();
+        this.setLabelText(newValue);
+        this.notifyListeners(newValue);
     }
 
 

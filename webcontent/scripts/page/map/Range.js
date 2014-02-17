@@ -9,7 +9,7 @@ define(function () {
     };
 
     Range.MILES_MIN = 0;
-    Range.MILES_MAX = 305;
+    Range.MILES_MAX = 300;
     Range.METERS_PER_MILE = 1609.34;
     Range.METERS_PER_KM = 1000.0;
 
