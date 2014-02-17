@@ -214,32 +214,31 @@ define(
          * Add a custom marker and range circle to the map.
          */
         MapView.prototype.handleAddMarker = function (event) {
-            var markerInput = $("#new-marker-name-input");
             var markerDialog = $("#new-marker-dialog");
+            var markerNameInput = $("#new-marker-name-input");
+            var markerAddButton = markerDialog.find(".btn-primary");
             var mapView = this;
 
-
-            function handleOK() {
-                markerDialog.dialog("close");
-                var markerName = markerInput.val();
-                markerInput.val("");
+            markerAddButton.click(function () {
+                markerDialog.modal("hide");
+                var markerName = markerNameInput.val();
                 var newCharger = Sites.addSupercharger(markerName, event.latLng);
                 newCharger.marker = MarkerFactory.createMarker(mapView.googleMap, newCharger);
                 mapView.redraw(false);
                 InfoWindowRender.showInfoWindowForMarker(newCharger.marker, newCharger);
-            }
+            });
 
-            markerDialog.show().dialog(
-                {
-                    width: 400,
-                    buttons: [
-                        {
-                            text: "OK",
-                            click: handleOK
-                        }
-                    ]
-                }
-            );
+            // Focus on input field after dialog is shown.
+            markerDialog.on('shown.bs.modal', function (e) {
+                markerNameInput.focus();
+            });
+            // Clear input field after any type of dialog close
+            markerDialog.on('hidden.bs.modal', function (e) {
+                markerNameInput.val("");
+                markerAddButton.unbind();
+            });
+
+            markerDialog.modal();
         };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

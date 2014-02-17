@@ -9,12 +9,10 @@
     <title>Superchargers</title>
 
     <!-- CSS -->
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="css/main.css" rel="stylesheet" type="text/css" media="all"/>
 
     <!-- JS -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB43_4OTJDH7REegECW9B6rmfuXPOTT1R4&amp;sensor=false" type="text/javascript"></script>
     <script src="scripts/require.js" data-main="scripts/main"></script>
 
@@ -125,10 +123,10 @@ PAGE: map
     <div class="row" id="control-row-one">
         <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * Control: Range-->
         <div class="col-md-6" style="text-align: center">
-            <label class="control">Range</label>
 
-            <div id="range-slider" class="slider-control"></div>
-            <div id="range-number-text" class="slider-value-label"></div>
+            <label for="range-slider" class="control">Range</label>
+            <input id="range-slider" type="range" min="0" max="300" step="10" value="0" class="slider-control"/>
+            <div id="range-number-text" class="slider-value-label">0</div>
 
             <div class="btn-group" data-toggle="buttons" style="vertical-align: top">
                 <label id="range-unit-mi-label" class="btn btn-default btn-xs active">
@@ -176,7 +174,7 @@ PAGE: map
                         <label class="control">Opacity</label>
                     </th>
                     <td>
-                        <div id="fill-opacity-slider" class="slider-control"></div>
+                        <input id="fill-opacity-slider" type="range" class="slider-control"/>
                         <div id="fill-opacity-number-text" class="slider-value-label"></div>
                     </td>
                 </tr>
@@ -191,7 +189,7 @@ PAGE: map
                         <label class="control">Border Opacity</label>
                     </th>
                     <td>
-                        <div id="border-opacity-slider" class="slider-control"></div>
+                        <input id="border-opacity-slider" type="range" class="slider-control"/>
                         <div id="border-opacity-number-text" class="slider-value-label"></div>
                     </td>
                 </tr>
@@ -322,14 +320,25 @@ PAGE: about
 
 </div>
 
-<div id="new-marker-dialog" style="display:none" title="New Marker">
-    <table>
-        <tr>
-            <td><label for="new-marker-name-input">Marker Name&nbsp;</label></td>
-            <td><input id="new-marker-name-input" type="text"></td>
-        </tr>
-    </table>
+<div id="new-marker-dialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">New Marker</h4>
+            </div>
+            <div class="modal-body">
+                <label for="new-marker-name-input">Marker Name&nbsp;</label>
+                <input id="new-marker-name-input" type="text">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 </body>
 </html>

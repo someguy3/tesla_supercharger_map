@@ -11,8 +11,8 @@
 }
 
 .slider-control {
-    display: inline-block;
-    width: 270px
+    display: inline-block !important;
+    width: 270px !important;
 }
 
 label.control {
