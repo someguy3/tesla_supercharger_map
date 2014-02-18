@@ -20,6 +20,7 @@ define(['util/Objects', 'site/SiteIterator', 'util/Dates', 'lib/stupidtable' ], 
 
         new SiteIterator()
             .withPredicate(SiteIterator.PRED_NOT_USER_ADDED)
+            .withSort(SiteIterator.FUN_SORT_BY_OPEN_DATE_DESC)
             .iterate(
             function (supercharger) {
                 tableBodyData.append("" +
@@ -52,9 +53,10 @@ define(['util/Objects', 'site/SiteIterator', 'util/Dates', 'lib/stupidtable' ], 
     }
 
     DataViewTable.prototype.setupTableSortPlugin = function () {
-        var table = $("#supercharger-data-table").stupidtable({});
+        this.superChargerDataTable.stupidtable({});
+        this.superChargerDataTable.find("th.data-open-date").eq(0).click();
 
-        table.on("aftertablesort", function (event, data) {
+        this.superChargerDataTable.on("aftertablesort", function (event, data) {
             var th = $(this).find("th");
             th.find(".arrow").remove();
             var dir = $.fn.stupidtable.dir;

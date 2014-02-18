@@ -24,6 +24,10 @@ define(['util/Objects'], function (Objects) {
         return 0;
     };
 
+    SiteSorting.sortByOpenedDateDesc = function (siteOne, siteTwo) {
+        return -1 * SiteSorting.sortByOpenedDate(siteOne, siteTwo);
+    };
+
     return SiteSorting;
 
 });

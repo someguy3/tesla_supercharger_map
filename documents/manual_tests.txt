@@ -59,10 +59,12 @@ Map Page
 Data Page
 ---------------------------------
 
+() Default sort should be by opened date descending (with null opened dates listed last/bottom).
 () Should NOT show custom markers.
 () GPS coordinates should be displayed in monospace font.
-() All three statuses should show up correct in status column.
-() Sorting should work
+() All three statuses should show up correctly in status column.
+() Status values should be colors (Construction=orange, Permit=blue)
+() Table should sort when clicking each table header.
 
 
 ---------------------------------
