@@ -580,10 +580,10 @@ city: Las Vegas
 state: NV
 zip: 89101
 country: USA
-gps: 36.1657833333, -115.1393166667
-url: http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV
+gps: 36.165906, -115.138655
+url: http://www.teslamotors.com/supercharger/lasvegas
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24924-Supercharger-Las-Vegas-NV
-status: CONSTRUCTION
+dateOpened: 2014-02-19
 #-----------------------------------------------------------------------------------------------------------------------------| New Jersey
 name: Edison, NJ
 street: 199 Lafayette Ave
