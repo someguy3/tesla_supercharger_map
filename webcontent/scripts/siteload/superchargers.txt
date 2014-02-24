@@ -450,6 +450,16 @@ url: http://www.teslamotors.com/supercharger/savannah
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/24771-Supercharger-Savannah-GA
 dateOpened: 2014-01-15
 #-----------------------------------------------------------------------------------------------------------------------------| Illinois
+name: Aurora, IL
+street: 205 N. Broadway
+city: Aurora
+state: IL
+zip: 60505
+country: USA
+gps: 41.760671, -88.309184
+url: http://www.teslamotors.com/supercharger/aurora
+dateOpened: 2014-02-24
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Highland Park, IL Service Center
 street: 1200 Old Skokie Road
 city: Highland Park
