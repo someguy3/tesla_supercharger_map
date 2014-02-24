@@ -596,6 +596,17 @@ url: http://www.teslamotorsclub.com/showthread.php/26730-Supercharger-Edison-NJ
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26730-Supercharger-Edison-NJ
 status: PERMIT
 #-----------------------------------------------------------------------------------------------------------------------------| New York
+name: Albany, NY
+street: 131 Colonie Center
+city: Albany
+state: NJ
+zip: 12205
+country: USA
+gps: 42.7111943,-73.8180484
+url: http://www.teslamotorsclub.com/showthread.php/25874-Albany-Supercharger-Updates
+urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25874-Albany-Supercharger-Updates
+status: PERMIT
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: JFK Airport, NY
 street: 150th Ave and 147th St
 city: Queens
