@@ -204,14 +204,18 @@ PAGE: map
     <div class="row" style="height: 100%" id="map-row-main-content">
 
         <!-- *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * Route Details -->
-        <div class="" style="height: 100%; display: none">
+        <div style="height:100%; display: none">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <a id="route-panel-close-trigger" href="" class="glyphicon glyphicon-remove" style="float: right"></a>
+                    <a id="route-panel-close-trigger" href="" class="glyphicon glyphicon-remove" style="float:right"></a>
 
                     <h3 class="panel-title">Route Details</h3>
                 </div>
-                <div class="panel-body" id="route-directions-panel">
+                <div class="panel-body">
+                    <div id="route-waypoints-panel">
+                        <ul class="list-group"></ul>
+                    </div>
+                    <div id="route-directions-panel"></div>
                 </div>
             </div>
 
@@ -286,7 +290,7 @@ PAGE: about
 
     This site was created by Tesla forum member BlueShift. Tesla enthusiasts from around the globe have contributed by sending notification of
     new sites, status updates, and corrections. Anyone may email <span id="page-about-email-container"></span> with new information. Include a link to
-    the information source in emails if possible. This site is updated daily. This project is now open source and on
+    the information source in emails if possible. This site is updated daily. This project is now open source and is on
     <a href="https://github.com/kdwink/tesla_supercharger_map">github</a>.
 
     <h3 class="margin-top">Version</h3>
@@ -305,10 +309,10 @@ PAGE: about
     <h3 class="margin-top">Site Usage Tips</h3>
 
     <ul class="about-page-list">
-        <li class="">Right-click the map to add a custom marker and range circle. (Long-press for three seconds on
+        <li>Right-click the map to add a custom marker and range circle. (Long-press for three seconds on
             phones/tablets).
         </li>
-        <li class="">Click on a "construction" or "permit" supercharger, then click "web page" to read updates on progress.</li>
+        <li>Click on a "construction" or "permit" supercharger, then click "web page" to read updates on progress.</li>
         <li>This site is tested using <a href="http://www.google.com/intl/en/chrome/browser/">Google Chrome</a> and consequently may
             perform best when viewed using that web browser.
         </li>

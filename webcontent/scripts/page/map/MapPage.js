@@ -36,12 +36,12 @@ define(
         MapPage.prototype.initialize = function () {
             var controlState = new ControlState();
 
-            this.routing = new Routing();
             this.navBarDropDown = new NavBarDropDown();
 
             this.superChargerCarousel = new SuperchargerCarousel();
             this.mapView = new MapView(controlState);
             this.controlView = new ControlView(controlState);
+            this.routing = new Routing(this.mapView.googleMap);
 
             this.initMapViewListeners();
             this.initControlViewListeners();
