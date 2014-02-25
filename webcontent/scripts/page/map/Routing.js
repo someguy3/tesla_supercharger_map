@@ -1,11 +1,11 @@
-define(['page/map/RoutingPanel'], function (RoutingPanel) {
+define(['page/map/RoutingPanel', 'page/map/RoutingModel'], function (RoutingPanel, RoutingModel) {
 
     /**
      *
      * @constructor
      */
     var Routing = function (googleMap) {
-        this.waypointList = [];
+        this.routingModel = RoutingModel.INSTANCE;
         this.googleMap = googleMap;
         this.directionsService = new google.maps.DirectionsService();
         this.routingPanel = new RoutingPanel();
@@ -18,29 +18,17 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
     Routing.prototype.handleAddRoute = function (routingWaypoint) {
         this.initializeDirectionRenderer();
         this.routingPanel.show();
+        this.routingModel.addWaypoint(routingWaypoint);
 
-        this.waypointList.push(routingWaypoint);
-        this.routingPanel.updateWaypoints(this.waypointList);
-        var routeListLength = this.waypointList.length;
-
-        if (routeListLength > 1) {
-            var routeListClone = this.waypointList.slice(0);
+        if (this.routingModel.size() > 1) {
             var directionsRequest = {
-                origin: routeListClone.shift().latLng,
-                destination: routeListClone.pop().latLng,
-                waypoints: this.calcWayPoints(routeListClone),
+                origin: this.routingModel.getFirstLatLng().latLng,
+                destination: this.routingModel.getLastLatLng().latLng,
+                waypoints: this.routingModel.getBetweenLatLngList(),
                 travelMode: google.maps.TravelMode.DRIVING
             };
             this.directionsService.route(directionsRequest, jQuery.proxy(this.handleRouteResponse, this));
         }
-    };
-
-    Routing.prototype.calcWayPoints = function (locationList) {
-        var wayPoints = [];
-        jQuery.each(locationList, function (index, value) {
-            wayPoints.push({ location: value.latLng, stopover: true});
-        });
-        return wayPoints;
     };
 
     Routing.prototype.handleRouteResponse = function (response, status) {

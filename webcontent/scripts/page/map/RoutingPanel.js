@@ -1,14 +1,16 @@
-define([], function () {
+define(['page/map/RoutingModel'], function (RoutingModel) {
 
     /**
      * @constructor
      */
     var RoutingPanel = function () {
-        this.routingWaypointList = [];
+        this.routingModel = RoutingModel.INSTANCE;
         this.directionPanel = $("#route-directions-panel");
         this.waypointsPanel = $("#route-waypoints-panel");
 
         $("#route-panel-close-trigger").click(jQuery.proxy(this.hide, this));
+
+        this.routingModel.on("model-changed", jQuery.proxy(this.updateWaypoints, this));
     };
 
     RoutingPanel.prototype.clearDirections = function () {
@@ -40,7 +42,7 @@ define([], function () {
     RoutingPanel.prototype.updateWaypoints = function () {
         var unorderedList = this.waypointsPanel.find("ul");
         unorderedList.html("");
-        $.each(this.routingWaypointList, function (index, routingWaypoint) {
+        $.each(this.routingModel.getWaypoints(), function (index, routingWaypoint) {
             unorderedList.append(
                 "<li class='list-group-item'>" +
                     "<button type='button' class='close' data-index='" + index + "'>&times;</button>" +
@@ -50,14 +52,12 @@ define([], function () {
                     "</li>"
             );
         });
-        var panel = this;
         unorderedList.find("button").on("click", jQuery.proxy(this.handleRemoveWaypoint, this));
     };
 
     RoutingPanel.prototype.handleRemoveWaypoint = function () {
         var index = $(event.target).data('index');
-        this.routingWaypointList.splice(index, 1);
-        this.updateWaypoints(this.routingWaypointList);
+        this.routingModel.removeWaypoint(index);
     };
 
     RoutingPanel.prototype.getDirectionsPanel = function () {
