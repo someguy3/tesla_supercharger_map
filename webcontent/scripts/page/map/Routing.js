@@ -12,10 +12,6 @@ define(['page/map/RoutingPanel', 'page/map/RoutingModel'], function (RoutingPane
     };
 
     Routing.prototype.handleAddRouteEvent = function (event, routingWaypoint) {
-        this.handleAddRoute(routingWaypoint);
-    };
-
-    Routing.prototype.handleAddRoute = function (routingWaypoint) {
         this.initializeDirectionRenderer();
         this.routingPanel.show();
         this.routingModel.addWaypoint(routingWaypoint);
