@@ -4,14 +4,13 @@ define([], function () {
      * @constructor
      */
     var RoutingPanel = function () {
-
         this.directionPanel = $("#route-directions-panel");
+        this.waypointsPanel = $("#route-waypoints-panel");
 
         $("#route-panel-close-trigger").click(jQuery.proxy(this.hide, this));
-
     };
 
-    RoutingPanel.prototype.clear = function () {
+    RoutingPanel.prototype.clearDirections = function () {
         this.directionPanel.html("");
     };
 
@@ -37,12 +36,13 @@ define([], function () {
         mapDiv.addClass("col-md-12");
     };
 
-    RoutingPanel.prototype.getDirectionsPanel = function (event) {
+    RoutingPanel.prototype.addWaypoint = function (latLnt) {
+        this.waypointsPanel.find("ul").append("<li>" + latLnt + "</li>");
+    };
+
+    RoutingPanel.prototype.getDirectionsPanel = function () {
         return this.directionPanel;
     };
 
-
     return RoutingPanel;
-
-
 });

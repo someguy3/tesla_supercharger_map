@@ -20,6 +20,7 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
         this.routingPanel.show();
 
         this.routeList.push(latLng);
+        this.routingPanel.addWaypoint(latLng);
         var routeListLength = this.routeList.length;
 
         if (routeListLength > 1) {
@@ -43,7 +44,7 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
     };
 
     Routing.prototype.handleRouteResponse = function (response, status) {
-        this.routingPanel.clear();
+        this.routingPanel.clearDirections();
         if (status === google.maps.DirectionsStatus.OK) {
             this.directionsRenderer.setDirections(response);
         }
