@@ -37,6 +37,10 @@ define([], function () {
         mapDiv.addClass("col-md-12");
     };
 
+    RoutingPanel.prototype.getDirectionsPanel = function (event) {
+        return this.directionPanel;
+    };
+
 
     return RoutingPanel;
 

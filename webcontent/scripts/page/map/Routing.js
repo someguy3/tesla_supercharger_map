@@ -52,7 +52,7 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
     Routing.prototype.initializeDirectionRenderer = function (googleMap) {
         this.directionsRenderer = new google.maps.DirectionsRenderer({
             map: googleMap,
-            panel: document.getElementById('route-directions-panel'),
+            panel: this.routingPanel.getDirectionsPanel().get(0),
             preserveViewport: true,
             suppressMarkers: true,
             draggable: true
