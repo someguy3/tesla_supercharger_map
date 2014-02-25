@@ -4,6 +4,7 @@ define([], function () {
      * @constructor
      */
     var RoutingPanel = function () {
+        this.routingWaypointList = [];
         this.directionPanel = $("#route-directions-panel");
         this.waypointsPanel = $("#route-waypoints-panel");
 
@@ -36,19 +37,27 @@ define([], function () {
         mapDiv.addClass("col-md-12");
     };
 
-    RoutingPanel.prototype.updateWaypoints = function (routingWaypointList) {
+    RoutingPanel.prototype.updateWaypoints = function () {
         var unorderedList = this.waypointsPanel.find("ul");
         unorderedList.html("");
-        $.each(routingWaypointList, function (index, routingWaypoint) {
+        $.each(this.routingWaypointList, function (index, routingWaypoint) {
             unorderedList.append(
                 "<li class='list-group-item'>" +
-                    "<button type='button' class='close' aria-hidden='true'>&times;</button>" +
+                    "<button type='button' class='close' data-index='" + index + "'>&times;</button>" +
                     "<span class='badge pull-left'>" + String.fromCharCode(65 + index) + "</span>" +
                     "&nbsp;&nbsp;" +
                     routingWaypoint.displayName +
                     "</li>"
             );
         });
+        var panel = this;
+        unorderedList.find("button").on("click", jQuery.proxy(this.handleRemoveWaypoint, this));
+    };
+
+    RoutingPanel.prototype.handleRemoveWaypoint = function () {
+        var index = $(event.target).data('index');
+        this.routingWaypointList.splice(index, 1);
+        this.updateWaypoints(this.routingWaypointList);
     };
 
     RoutingPanel.prototype.getDirectionsPanel = function () {
