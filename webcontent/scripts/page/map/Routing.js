@@ -5,6 +5,7 @@ define(['page/map/RoutingPanel', 'page/map/RoutingModel'], function (RoutingPane
      * @constructor
      */
     var Routing = function (googleMap) {
+        this.googleMap = googleMap;
         this.directionsService = new google.maps.DirectionsService();
         this.routingPanel = new RoutingPanel();
         this.routingModel = RoutingModel.INSTANCE;
@@ -27,6 +28,7 @@ define(['page/map/RoutingPanel', 'page/map/RoutingModel'], function (RoutingPane
     Routing.prototype.handleModelChange = function () {
         this.routingPanel.clearDirections();
         if (this.routingModel.size() > 1) {
+            this.directionsRenderer.setMap(this.googleMap);
             var directionsRequest = {
                 origin: this.routingModel.getFirstLatLng().latLng,
                 destination: this.routingModel.getLastLatLng().latLng,
@@ -34,6 +36,8 @@ define(['page/map/RoutingPanel', 'page/map/RoutingModel'], function (RoutingPane
                 travelMode: google.maps.TravelMode.DRIVING
             };
             this.directionsService.route(directionsRequest, jQuery.proxy(this.handleRouteResponse, this));
+        } else {
+            this.directionsRenderer.setMap(null);
         }
     };
 
