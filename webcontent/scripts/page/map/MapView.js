@@ -197,7 +197,7 @@ define(
             var eventDetail = Events.eventDetail(event);
             var id = parseInt(eventDetail.actionName);
             var supercharger = Sites.getById(id);
-            this.trigger("map-event-route-added", { latLng: supercharger.location, googleMap: this.googleMap });
+            this.trigger("map-event-route-added", { latLng: supercharger.location});
         };
 
 
@@ -207,7 +207,7 @@ define(
 
 
         MapView.prototype.handleAddToRouteContextMenu = function (event) {
-            this.trigger("map-event-route-added", { latLng: event.latLng, googleMap: this.googleMap });
+            this.trigger("map-event-route-added", { latLng: event.latLng });
         };
 
         /**

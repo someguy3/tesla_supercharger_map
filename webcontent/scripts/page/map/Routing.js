@@ -4,19 +4,20 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
      *
      * @constructor
      */
-    var Routing = function () {
+    var Routing = function (googleMap) {
         this.routeList = [];
+        this.googleMap = googleMap;
         this.directionsService = new google.maps.DirectionsService();
         this.routingPanel = new RoutingPanel();
     };
 
     Routing.prototype.handleAddRouteEvent = function (event, eventData) {
-        this.handleAddRoute(eventData.latLng, eventData.googleMap);
+        this.handleAddRoute(eventData.latLng);
     };
 
 
-    Routing.prototype.handleAddRoute = function (latLng, googleMap) {
-        this.initializeDirectionRenderer(googleMap);
+    Routing.prototype.handleAddRoute = function (latLng) {
+        this.initializeDirectionRenderer();
         this.routingPanel.show();
 
         this.routeList.push(latLng);
@@ -50,9 +51,9 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
         }
     };
 
-    Routing.prototype.initializeDirectionRenderer = function (googleMap) {
+    Routing.prototype.initializeDirectionRenderer = function () {
         this.directionsRenderer = new google.maps.DirectionsRenderer({
-            map: googleMap,
+            map: this.googleMap,
             panel: this.routingPanel.getDirectionsPanel().get(0),
             preserveViewport: true,
             suppressMarkers: true,
