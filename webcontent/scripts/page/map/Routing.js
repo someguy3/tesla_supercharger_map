@@ -5,17 +5,20 @@ define(['page/map/RoutingPanel', 'page/map/RoutingModel'], function (RoutingPane
      * @constructor
      */
     var Routing = function (googleMap) {
-        this.routingModel = RoutingModel.INSTANCE;
         this.googleMap = googleMap;
         this.directionsService = new google.maps.DirectionsService();
         this.routingPanel = new RoutingPanel();
+        this.routingModel = RoutingModel.INSTANCE;
+        this.routingModel.on("model-changed", jQuery.proxy(this.handleModelChange, this));
     };
 
     Routing.prototype.handleAddRouteEvent = function (event, routingWaypoint) {
         this.initializeDirectionRenderer();
         this.routingPanel.show();
         this.routingModel.addWaypoint(routingWaypoint);
+    };
 
+    Routing.prototype.handleModelChange = function () {
         if (this.routingModel.size() > 1) {
             var directionsRequest = {
                 origin: this.routingModel.getFirstLatLng().latLng,
