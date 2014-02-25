@@ -11,17 +11,17 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
         this.routingPanel = new RoutingPanel();
     };
 
-    Routing.prototype.handleAddRouteEvent = function (event, eventData) {
-        this.handleAddRoute(eventData.latLng);
+    Routing.prototype.handleAddRouteEvent = function (event, routingWaypoint) {
+        this.handleAddRoute(routingWaypoint);
     };
 
 
-    Routing.prototype.handleAddRoute = function (latLng) {
+    Routing.prototype.handleAddRoute = function (routingWaypoint) {
         this.initializeDirectionRenderer();
         this.routingPanel.show();
 
-        this.routeList.push(latLng);
-        this.routingPanel.addWaypoint(latLng);
+        this.routeList.push(routingWaypoint.latLng);
+        this.routingPanel.addWaypoint(routingWaypoint.displayName);
         var routeListLength = this.routeList.length;
 
         if (routeListLength > 1) {

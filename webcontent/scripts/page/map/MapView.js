@@ -1,6 +1,6 @@
 define(
-    ['util/Events', 'util/Objects', 'site/SiteIterator', 'site/Sites', 'page/map/MapViewContextMenu', 'page/map/InfoWindowRender', 'page/map/MarkerFactory'],
-    function (Events, Objects, SiteIterator, Sites, MapViewContextMenu, InfoWindowRender, MarkerFactory) {
+    ['util/Events', 'util/Objects', 'site/SiteIterator', 'site/Sites', 'page/map/MapViewContextMenu', 'page/map/InfoWindowRender', 'page/map/MarkerFactory', 'page/map/RoutingWaypoint'],
+    function (Events, Objects, SiteIterator, Sites, MapViewContextMenu, InfoWindowRender, MarkerFactory, RoutingWaypoint) {
 
 
         /**
@@ -197,7 +197,7 @@ define(
             var eventDetail = Events.eventDetail(event);
             var id = parseInt(eventDetail.actionName);
             var supercharger = Sites.getById(id);
-            this.trigger("map-event-route-added", { latLng: supercharger.location});
+            this.trigger("map-event-route-added", new RoutingWaypoint(supercharger.location, supercharger.displayName));
         };
 
 
@@ -207,7 +207,7 @@ define(
 
 
         MapView.prototype.handleAddToRouteContextMenu = function (event) {
-            this.trigger("map-event-route-added", { latLng: event.latLng });
+            this.trigger("map-event-route-added", new RoutingWaypoint(event.latLng, "Custom Location"));
         };
 
         /**
