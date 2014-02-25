@@ -25,13 +25,13 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
 
         if (routeListLength > 1) {
             var routeListClone = this.routeList.slice(0);
-            var request = {
+            var directionsRequest = {
                 origin: routeListClone.shift(),
                 destination: routeListClone.pop(),
                 waypoints: this.calcWayPoints(routeListClone),
                 travelMode: google.maps.TravelMode.DRIVING
             };
-            this.directionsService.route(request, jQuery.proxy(this.handleRouteResponse, this));
+            this.directionsService.route(directionsRequest, jQuery.proxy(this.handleRouteResponse, this));
         }
     };
 
