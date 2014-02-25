@@ -36,8 +36,19 @@ define([], function () {
         mapDiv.addClass("col-md-12");
     };
 
-    RoutingPanel.prototype.addWaypoint = function (latLnt) {
-        this.waypointsPanel.find("ul").append("<li>" + latLnt + "</li>");
+    RoutingPanel.prototype.updateWaypoints = function (routingWaypointList) {
+        var unorderedList = this.waypointsPanel.find("ul");
+        unorderedList.html("");
+        $.each(routingWaypointList, function (index, routingWaypoint) {
+            unorderedList.append(
+                "<li class='list-group-item'>" +
+                    "<button type='button' class='close' aria-hidden='true'>&times;</button>" +
+                    "<span class='badge pull-left'>" + String.fromCharCode(65 + index) + "</span>" +
+                    "&nbsp;&nbsp;" +
+                    routingWaypoint.displayName +
+                    "</li>"
+            );
+        });
     };
 
     RoutingPanel.prototype.getDirectionsPanel = function () {

@@ -5,7 +5,7 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
      * @constructor
      */
     var Routing = function (googleMap) {
-        this.routeList = [];
+        this.waypointList = [];
         this.googleMap = googleMap;
         this.directionsService = new google.maps.DirectionsService();
         this.routingPanel = new RoutingPanel();
@@ -15,20 +15,19 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
         this.handleAddRoute(routingWaypoint);
     };
 
-
     Routing.prototype.handleAddRoute = function (routingWaypoint) {
         this.initializeDirectionRenderer();
         this.routingPanel.show();
 
-        this.routeList.push(routingWaypoint.latLng);
-        this.routingPanel.addWaypoint(routingWaypoint.displayName);
-        var routeListLength = this.routeList.length;
+        this.waypointList.push(routingWaypoint);
+        this.routingPanel.updateWaypoints(this.waypointList);
+        var routeListLength = this.waypointList.length;
 
         if (routeListLength > 1) {
-            var routeListClone = this.routeList.slice(0);
+            var routeListClone = this.waypointList.slice(0);
             var directionsRequest = {
-                origin: routeListClone.shift(),
-                destination: routeListClone.pop(),
+                origin: routeListClone.shift().latLng,
+                destination: routeListClone.pop().latLng,
                 waypoints: this.calcWayPoints(routeListClone),
                 travelMode: google.maps.TravelMode.DRIVING
             };
@@ -39,7 +38,7 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
     Routing.prototype.calcWayPoints = function (locationList) {
         var wayPoints = [];
         jQuery.each(locationList, function (index, value) {
-            wayPoints.push({ location: value, stopover: true});
+            wayPoints.push({ location: value.latLng, stopover: true});
         });
         return wayPoints;
     };
@@ -61,8 +60,6 @@ define(['page/map/RoutingPanel'], function (RoutingPanel) {
         });
     };
 
-
     return Routing;
-
 });
 
