@@ -19,6 +19,7 @@ define(['page/map/RoutingPanel', 'page/map/RoutingModel'], function (RoutingPane
     };
 
     Routing.prototype.handleModelChange = function () {
+        this.routingPanel.clearDirections();
         if (this.routingModel.size() > 1) {
             var directionsRequest = {
                 origin: this.routingModel.getFirstLatLng().latLng,
@@ -31,7 +32,6 @@ define(['page/map/RoutingPanel', 'page/map/RoutingModel'], function (RoutingPane
     };
 
     Routing.prototype.handleRouteResponse = function (response, status) {
-        this.routingPanel.clearDirections();
         if (status === google.maps.DirectionsStatus.OK) {
             this.directionsRenderer.setDirections(response);
         }
