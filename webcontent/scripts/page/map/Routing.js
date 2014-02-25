@@ -5,15 +5,21 @@ define(['page/map/RoutingPanel', 'page/map/RoutingModel'], function (RoutingPane
      * @constructor
      */
     var Routing = function (googleMap) {
-        this.googleMap = googleMap;
         this.directionsService = new google.maps.DirectionsService();
         this.routingPanel = new RoutingPanel();
         this.routingModel = RoutingModel.INSTANCE;
         this.routingModel.on("model-changed", jQuery.proxy(this.handleModelChange, this));
+
+        this.directionsRenderer = new google.maps.DirectionsRenderer({
+            map: googleMap,
+            panel: this.routingPanel.getDirectionsPanel().get(0),
+            preserveViewport: true,
+            suppressMarkers: true,
+            draggable: true
+        });
     };
 
     Routing.prototype.handleAddRouteEvent = function (event, routingWaypoint) {
-        this.initializeDirectionRenderer();
         this.routingPanel.show();
         this.routingModel.addWaypoint(routingWaypoint);
     };
@@ -37,15 +43,6 @@ define(['page/map/RoutingPanel', 'page/map/RoutingModel'], function (RoutingPane
         }
     };
 
-    Routing.prototype.initializeDirectionRenderer = function () {
-        this.directionsRenderer = new google.maps.DirectionsRenderer({
-            map: this.googleMap,
-            panel: this.routingPanel.getDirectionsPanel().get(0),
-            preserveViewport: true,
-            suppressMarkers: true,
-            draggable: true
-        });
-    };
 
     return Routing;
 });
