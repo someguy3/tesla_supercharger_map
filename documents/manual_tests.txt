@@ -57,13 +57,16 @@ Map Page
 
 () Routing
     () Should be able to add sites with any status.
-    () Should be able tvo add arbitrary location on map.
-    () Route pane should be displayed when first site is added to route.
+    () Should be able to add arbitrary location on map.
+    () Route panel should be displayed when first site is added to route.
     () Each waypoint should be listed (above directions panel) and have:
         () Badge 'A', 'B', 'C', etc.
         () Friendly display name.
         () Close icon.
     () Directions should be displayed below list of waypoints.
+    () Clicking 'x' in route panel title should close the panel.
+        () Directions to removed waypoint should go away.
+        () Rendered directions on map should go away.
 
 ---------------------------------
 Data Page
