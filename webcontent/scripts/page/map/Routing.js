@@ -1,4 +1,4 @@
-define([], function () {
+define(['page/map/RoutingPanel'], function (RoutingPanel) {
 
     /**
      *
@@ -7,7 +7,7 @@ define([], function () {
     var Routing = function () {
         this.routeList = [];
         this.directionsService = new google.maps.DirectionsService();
-        $("#route-panel-close-trigger").click(jQuery.proxy(this.closeRoutePanel, this));
+        this.routingPanel = new RoutingPanel();
     };
 
     Routing.prototype.handleAddRouteEvent = function (event, eventData) {
@@ -17,7 +17,7 @@ define([], function () {
 
     Routing.prototype.handleAddRoute = function (latLng, googleMap) {
         this.initializeDirectionRenderer(googleMap);
-        this.showRoutePanel();
+        this.routingPanel.show();
 
         this.routeList.push(latLng);
         var routeListLength = this.routeList.length;
@@ -43,7 +43,7 @@ define([], function () {
     };
 
     Routing.prototype.handleRouteResponse = function (response, status) {
-        $("#route-directions-panel").html("");
+        this.routingPanel.clear();
         if (status === google.maps.DirectionsStatus.OK) {
             this.directionsRenderer.setDirections(response);
         }
@@ -59,28 +59,6 @@ define([], function () {
         });
     };
 
-    Routing.prototype.closeRoutePanel = function (event) {
-        event.preventDefault();
-        var mapMainContentRow = $("#map-row-main-content");
-        var routeDiv = mapMainContentRow.children().eq(0);
-        var mapDiv = mapMainContentRow.children().eq(1);
-
-        routeDiv.hide();
-        routeDiv.removeClass("col-md-4");
-        mapDiv.removeClass("col-md-8");
-        mapDiv.addClass("col-md-12");
-    };
-
-
-    Routing.prototype.showRoutePanel = function () {
-        var mapMainContentRow = $("#map-row-main-content");
-        var routeDiv = mapMainContentRow.children().eq(0);
-        var mapDiv = mapMainContentRow.children().eq(1);
-
-        routeDiv.show();
-        routeDiv.addClass("col-md-4");
-        mapDiv.addClass("col-md-8");
-    };
 
     return Routing;
 
