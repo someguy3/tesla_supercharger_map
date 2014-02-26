@@ -310,7 +310,7 @@ country: USA
 gps: 39.562125, -104.8761924
 url: http://www.teslamotorsclub.com/showthread.php/27255-Supercharger-Lonetree-CO
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/27255-Supercharger-Lonetree-CO
-status: CONSTRUCTION
+dateOpened: 2014-02-26
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 name: Silverthorne, CO
 street: 309 Rainbow Dr
