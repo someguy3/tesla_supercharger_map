@@ -19,6 +19,8 @@ define(
             jQuery(document).on('click', '.marker-toggle-trigger', jQuery.proxy(this.handleMarkerRemove, this));
             // handle clicks to remove supercharger marker
             jQuery(document).on('click', '.add-to-route-trigger', jQuery.proxy(this.handleAddToRoute, this));
+            // handle clicks to remove supercharger marker
+            jQuery(document).on('click', '.zoom-to-site-trigger', jQuery.proxy(this.zoomToMarker, this));
 
             //
             // Map context menu
@@ -199,6 +201,15 @@ define(
             var id = parseInt(eventDetail.actionName);
             var supercharger = Sites.getById(id);
             this.trigger("map-event-route-added", new RoutingWaypoint(supercharger.location, supercharger.displayName));
+        };
+
+        MapView.prototype.zoomToMarker = function (event) {
+            var eventDetail = Events.eventDetail(event);
+            var id = parseInt(eventDetail.actionName);
+            var supercharger = Sites.getById(id);
+
+            this.googleMap.setZoom(15);
+            this.googleMap.panTo(supercharger.location);
         };
 
 

@@ -87,7 +87,7 @@ define(['util/Objects'], function (Objects) {
     }
 
     function buildLinkZoom(supercharger) {
-        return "<a class='zoom-to-site-trigger' href='" + supercharger.id + "'>zoom</a>";
+        return "<a class='zoom-to-site-trigger' href='" + supercharger.id + "'>zoom in</a>";
     }
 
 
