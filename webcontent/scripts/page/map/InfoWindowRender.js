@@ -35,12 +35,12 @@ define(['util/Objects'], function (Objects) {
         var content = "<div class='links-container'>";
 
         var linkList = [
+            buildLinkZoom(supercharger),
+            buildLinkCircleToggle(supercharger),
+            buildLinkAddToRoute(supercharger),
             buildLinkURL(supercharger),
             buildLinkDiscussURL(supercharger),
-            buildLinkCircleToggle(supercharger),
-            buildLinkRemoveMarker(supercharger),
-            buildLinkAddToRoute(supercharger),
-            buildLinkZoom(supercharger)
+            buildLinkRemoveMarker(supercharger)
         ];
 
         var count = 1;
@@ -54,6 +54,19 @@ define(['util/Objects'], function (Objects) {
         });
         content += "</div>";
         return content;
+    }
+
+    function buildLinkZoom(supercharger) {
+        return "<a class='zoom-to-site-trigger' href='" + supercharger.id + "'>zoom in</a>";
+    }
+
+    function buildLinkCircleToggle(supercharger) {
+        var circleOnOffLabel = (Objects.isNotNullOrUndef(supercharger.circle) && supercharger.circle.getVisible()) ? "circle off" : "circle on";
+        return "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a>";
+    }
+
+    function buildLinkAddToRoute(supercharger) {
+        return "<a class='add-to-route-trigger' href='" + supercharger.id + "'>add to route</a>";
     }
 
     function buildLinkURL(supercharger) {
@@ -70,26 +83,12 @@ define(['util/Objects'], function (Objects) {
         return null;
     }
 
-    function buildLinkCircleToggle(supercharger) {
-        var circleOnOffLabel = (Objects.isNotNullOrUndef(supercharger.circle) && supercharger.circle.getVisible()) ? "circle off" : "circle on";
-        return "<a class='circle-toggle-trigger' href='" + supercharger.id + "'>" + circleOnOffLabel + "</a>";
-    }
-
     function buildLinkRemoveMarker(supercharger) {
         if (supercharger.isUserAdded()) {
             return "<a class='marker-toggle-trigger' href='" + supercharger.id + "'>remove</a>";
         }
         return null;
     }
-
-    function buildLinkAddToRoute(supercharger) {
-        return "<a class='add-to-route-trigger' href='" + supercharger.id + "'>add to route</a>";
-    }
-
-    function buildLinkZoom(supercharger) {
-        return "<a class='zoom-to-site-trigger' href='" + supercharger.id + "'>zoom in</a>";
-    }
-
 
     return Renderer;
 
