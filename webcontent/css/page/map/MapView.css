@@ -20,3 +20,24 @@ Info Window
     font-weight: bold !important;
     font-size: 1.5em !important;
 }
+
+.info-window-content .construction {
+    color: orange;
+    font-size: smaller;
+    font-weight: bold
+}
+
+.info-window-content .permit {
+    color: #0000ff;
+    font-size: smaller;
+    font-weight: bold
+}
+
+.info-window-content .links-container {
+    border: 0 solid black;
+}
+
+.info-window-content .links-container a {
+    line-height: 2em;
+    margin: 0 1em 0 0;
+}
