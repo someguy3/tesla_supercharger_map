@@ -37,11 +37,19 @@ Map Page
         () Each time the dialog appears the text input should be blank (After 'Add' or 'Cancel').
     () Info Window
         () User provided name shows up.
-        () Correct links show up: 'circle off', 'remove', 'add to route'
-    () Toggle Circle
-    () Remove
-    () Adjust Circle
-    () Routing works
+        () Correct links show up: 'zoom in', 'circle off', 'add to route', 'remove',
+        () Links all work.
+
+() Map Normal Markers
+    () Title is bold and larger font.
+    () Status is show orange for under construction markers and blue for permit.
+    () Street address is shown.
+    () Actions
+        () Zoom In
+        () Toggle Circle
+        () Add To Route
+        () URL
+        () URL Discuss
 
 () Control: Supercharger Count Carousel
     () Country rows should be sorted by number of completed super chargers descending, with the 'Total' row listed first.
