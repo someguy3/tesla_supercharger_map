@@ -371,7 +371,7 @@ state: CT
 zip: 06831
 country: USA
 gps: 41.0414, -73.6718333
-url: http://www.teslamotors.com/supercharger/greenwichnorth
+url: http://www.teslamotorsclub.com/showthread.php/25176-Greenwich-CT-Merritt-Parkway-Supercharger
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25176-Greenwich-CT-Merritt-Parkway-Supercharger
 dateOpened: 2014-02-12
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -382,7 +382,7 @@ state: CT
 zip: 06831
 country: USA
 gps: 41.0405333333, -73.6734166667
-url: http://www.teslamotors.com/supercharger/greenwichsouth
+url: http://www.teslamotorsclub.com/showthread.php/25176-Greenwich-CT-Merritt-Parkway-Supercharger
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/25176-Greenwich-CT-Merritt-Parkway-Supercharger
 dateOpened: 2014-02-12
 count: false
@@ -634,7 +634,7 @@ state: NY
 zip: 11791
 country: USA
 gps: 40.7998387, -73.5152669
-url: http://www.teslamotors.com/service/syosset
+url: http://www.teslamotors.com/supercharger/syosset
 urlDiscuss: http://www.teslamotorsclub.com/showthread.php/26175-Supercharger-Syosset-NY
 dateOpened: 2014-01-18
 #-----------------------------------------------------------------------------------------------------------------------------| North Carolina
