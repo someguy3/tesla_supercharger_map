@@ -1,4 +1,4 @@
-define(['page/map/InfoWindowRender'], function (InfoWindowRender) {
+define(['page/map/InfoWindowRender', 'lib/jquery.browser'], function (InfoWindowRender, browser) {
 
     var MarkerFactory = {};
 
@@ -13,9 +13,16 @@ define(['page/map/InfoWindowRender'], function (InfoWindowRender) {
             icon: {
                 url: supercharger.status.iconUrl,
                 anchor: supercharger.isConstruction() ? null : { x: 8, y: 8 }
-            },
-            animation: google.maps.Animation.DROP
+            }
         };
+
+        /**
+         * The animation seems to crash Safari on iOS 7
+         */
+        if (!($.browser.iphone || $.browser.ipad)) {
+            markerOptions.animation = google.maps.Animation.DROP;
+        }
+
         var marker = new google.maps.Marker(markerOptions);
 
         google.maps.event.addListener(marker, 'click', function () {
