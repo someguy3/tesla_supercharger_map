@@ -2,6 +2,8 @@ define(['util/Objects'], function (Objects) {
 
     var Renderer = {};
 
+    var openedWindow = null;
+    
     Renderer.showInfoWindowForMarker = function (marker, supercharger) {
         var popupContent = "<div class='info-window-content'>";
         //
@@ -25,10 +27,15 @@ define(['util/Objects'], function (Objects) {
         popupContent += buildLinksDiv(supercharger);
 
         popupContent += "</div>";
-
-        var windowOptions = { content: popupContent };
-        var infoWindow = new google.maps.InfoWindow(windowOptions);
-        infoWindow.open(marker.map, marker);
+        
+        if (!openedWindow) {
+            var windowOptions = { content: popupContent };
+            openedWindow = new google.maps.InfoWindow(windowOptions);
+        } else {
+            openedWindow.close();
+            openedWindow.content = popupContent;
+        }
+        openedWindow.open(marker.map, marker);
     };
 
     function buildLinksDiv(supercharger) {
